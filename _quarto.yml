@@ -1,0 +1,68 @@
+project:
+  type: website
+  output-dir: docs
+  render: 
+    - "*.qmd"
+
+website:
+  page-navigation: true
+  title: "Introduction to Statistical Computing in R"
+  description: "Homepage for STAT 331/531 at Cal Poly Spring 2025"
+  site-url: "https://github.com/manncz/stat-331-s25"
+  repo-url: https://github.com/manncz/stat-331-s25
+  repo-actions: [issue]
+
+  page-footer:
+    right: "This page is built with ❤️️ and [Quarto](https://quarto.org/)."
+    left: "Built by Charlotte Mann, adapted from materials by Allison Theobold, Emily Robinson, Zoe Rehnberg, and Kelly Bodwin."
+    background: "#D9E3E4"
+
+  sidebar:
+    background: "#5D737E"
+    pinned: true
+    align: center
+    tools:
+      - icon: github
+        href: https://github.com/manncz/stat-331-s25
+        text: "GitHub organization"
+      - icon: person-fill
+        href: https://canvas.calpoly.edu
+        text: "Cal Poly Canvas"
+
+    style: "docked"
+    search: true
+    collapse-level: 1
+    contents:
+      - section: "Course information"
+        contents:
+          - href: course-info/course-syllabus.qmd
+            text: Syllabus
+          # - href: course-materials/course-support.qmd
+          #   text: Support
+          - href: index.qmd
+            text: Schedule
+          - href: course-materials/course-resources.qmd
+            text: R Resources
+      - section: "Slides"
+      - section: "Labs"
+        contents:
+          - href: labs/lab1/lab1-quarto.qmd
+            text: "Lab 1"
+      - section: "Practice Activities"
+        contents:
+          - href: practice-activities/pa1.qmd
+            text: "Practice Activity 1"
+    
+format:
+  html:
+    theme:
+      light: [cosmo, style/stat331.scss]
+      dark: [cosmo, style/stat331.scss, style/dark.scss]
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+    linkcolor: "#5D737E"
+#    highlight-style: a11y-dark
+
+editor: source
