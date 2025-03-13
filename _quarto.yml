@@ -35,13 +35,13 @@ website:
     contents:
       - section: "Course information"
         contents:
-          - href: course-info/course-syllabus.qmd
+          - href: course-info/syllabus-w25.qmd
             text: Syllabus
           # - href: course-materials/course-support.qmd
           #   text: Support
           - href: index.qmd
             text: Schedule
-          - href: course-materials/course-resources.qmd
+          - href: course-info/course-resources.qmd
             text: R Resources
       - section: "Slides"
       - section: "Labs"
