@@ -19,8 +19,7 @@ website:
     background: "#bfd3e6"
 
   sidebar:
-    background: "#8856a7"
-    logo: "images/r-hex.jpg"
+    background: "#8c96c6"
     pinned: true
     align: center
     tools:
@@ -64,7 +63,7 @@ format:
     code-copy: true
     code-overflow: wrap
     toc: true
-    linkcolor: "#8c96c6"
+    linkcolor: "#8856a7"
 #    highlight-style: a11y-dark
 
 editor: source
