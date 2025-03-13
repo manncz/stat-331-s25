@@ -3,6 +3,7 @@ title: "PA 1: Find the Mistakes"
 subtitle: "Working with R Objects"
 author: "YOUR NAME "
 format: html
+embed-resources: true
 execute:
   echo: true
   error: true
