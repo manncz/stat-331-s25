@@ -1,20 +1,11 @@
 ---
-title: "Stat 331/531: Statistical Computing with R"
+title: "Stat 331/531: Statistical Computing with R Syllabus"
 subtitle: "Spring 2025"
-format: 
-  html:
-    self-contained: true
-    toc: true
-fontfamily: mathpazo
-fontsize: 12pt
-editor: 
-  markdown: 
-    wrap: 72
 ---
 
 ```{r}
 #| include: false
-#| eval: false
+#| eval: true
 library(tidyverse)
 
 # Create a calendar for your syllabus ----
@@ -35,11 +26,12 @@ not_here_dates <- c(
   )
 
 # Dates of Exams
-exam_dates <- c(ymd(20250212), 
-                ymd(20250315)
+exam_dates <- c(ymd(20250508), 
+                ymd(20250610),
+                ymd(20250612)
                 )
-finals_week <- seq(ymd(20250317), ymd(20250321), by = 1)
-project_dates <- ymd(20250319)
+finals_week <- seq(ymd(20250607), ymd(20250613), by = 1)
+project_dates <- ymd(20250606)
 
 # Custom function for treating the first day of the month as the first week 
 # of the month up until the first Sunday 
@@ -50,7 +42,7 @@ wom <- function(date) {
 }
 
 # Create a data frame of dates, assign to Cal
-Cal <- tibble(date = seq(ymd(20250101), ymd(20250331), by = 1))  |> 
+Cal <- tibble(date = seq(ymd(20250401), ymd(20250630), by = 1))  |> 
   mutate(mon      = lubridate::month(date, label = T, abbr = F),
          wkdy     = weekdays(date, abbreviate = T),
          wkdy     = fct_relevel(wkdy, "Sun", "Mon", "Tue", "Wed", "Thu","Fri", "Sat"), # make sure Sunday comes first
@@ -66,7 +58,7 @@ Cal <- tibble(date = seq(ymd(20250101), ymd(20250331), by = 1))  |>
                               exams ~ "Exam",
                               not_here ~ "Cal Poly Holiday",
                               wkdy %in% class_wdays & !not_here & !exam_wk & date %in% semester_dates ~ "Class Day",
-                              date %in% ymd(20250121) ~ "Class Day",
+                           #   date %in% ymd(20250121) ~ "Class Day",
                               semester ~ "Finals",
                               TRUE ~ "NA")
          )
@@ -106,11 +98,12 @@ class_cal <- Cal |>
 exam_days <- Cal |> 
   filter(category == "Exam") |> 
   mutate(topic = c("Midterm Exam", 
-                   "Final Exam"
+                   "Final Exam (70)",
+                   "Final Exam (71)"
                    )
          ) |> 
   rowwise() |> 
-  mutate(sem_week = week(date),
+  mutate(sem_week = isoweek(date),
          Date = paste(format(date, "%b %e"), sep = ",", collapse = ", "))
 
 project_days <- Cal |> 
@@ -118,7 +111,8 @@ project_days <- Cal |>
   mutate(topic = c("Project Final Report Due")
          ) |> 
   rowwise() |> 
-  mutate(Date = paste(format(date, "%b %e"), sep = ",", collapse = ", "))
+  mutate(sem_week = isoweek(date),
+         Date = paste(format(date, "%b %e"), sep = ",", collapse = ", "))
 
 
 
@@ -126,12 +120,13 @@ class_days <- Cal |>
   filter(date %in% semester_dates,
          category %in% c("Class Day")
          ) |>  
-  group_by(mon, week) |> 
+  mutate(sem_week = isoweek(date)) |> 
+  group_by(sem_week) |> 
   summarize(Date = paste(format(date, "%b %e"), sep = ",", collapse = ", ")) |> 
   ungroup() |>
   mutate(topic = c(
     "Introduction to R",
-    "Tidy Data + Basics of Graphics",
+    "Basics of Graphics",
     "Data Cleaning and Manipulation",
     "Data Transformations + Factors",
     "Special Data Types",
@@ -139,15 +134,15 @@ class_days <- Cal |>
     "Functions",
     "Functional Programming",
     "Simulation",
-    "Predictive Checks")) |> 
+    "TBA")) |> 
   bind_rows(project_days) |> 
   bind_rows(exam_days) |> 
-  arrange(mon, week) |> 
+  arrange(sem_week) |> 
   select(Date, Topic = topic)
 
 
 # Weekday(s) of office hours
-officehr_wdays <- c("Tue", "Thu", "Fri")
+officehr_wdays <- c("Mon", "Wed", "Fri")
 
 # Create a data frame of dates, assign to Cal
 Cal2 <- tibble(date = seq(ymd(20240107), ymd(20240113), by = 1))  |> 
@@ -157,7 +152,7 @@ Cal2 <- tibble(date = seq(ymd(20240107), ymd(20240113), by = 1))  |>
          week     = wom(date),
          classday = wkdy %in% class_wdays,
          officehrday = wkdy %in% officehr_wdays,
-         officehrtime = c(NA, NA, "1:00-2:00pm",NA,  "10:00-\n11:00am", "12:00-1:00pm", NA)
+         officehrtime = c(NA, "10:30am-\n12:00pm", NA, "9:00-10:00am",  NA, "1:00-2:00pm\n(remote)", NA)
   )
 
 
@@ -236,26 +231,20 @@ You can call me Professor, Professor/Prof. C. or Dr. C.
 **Course Discord Page:**
 
 For questions of general interest, such as course clarifications or
-conceptual questions, please use the course [Discord page](https://support.discord.com/hc/en-us/articles/360033931551-Getting-Started) (you will join
-this Week 1). If you have a question – someone else in class does too! I
-encourage you all to respond to each other. I will check Discord at
-least twice each weekday during working hours (8-6) to ensure that
-questions are being answered accurately.
+conceptual questions, please use the course [Discord page](discord-instructions.html) (you will join
+this Week 1). If you have a question – someone else in class does too! I encourage you all to respond to each other. I will do my best to check Discord at least twice each weekday during working hours (8-6) to ensure that questions are being answered accurately.
 
 I encourage you to give your post a concise and informative initial
-sentence, so that other people can find it. For example, *“How do I
-color bars in a barplot with ggplot?”* is a better opening sentence than
-*“help with plotting”*.
+sentence, so that other people can find it. For example, *“How do I color bars in a barplot with ggplot?”* is a better opening sentence than *“help with plotting”*.
 
 You may post snippets of your code and errors on Discord, but please do
 not post full solutions to lab assignments.
 
-`r fontawesome::fa("brain")` While your posts are not anonymous, in this
-case there is no such thing as a bad question!
+`r fontawesome::fa("brain")` While your posts are not anonymous, in this case there is no such thing as a bad question!
 
 ## Course Logistics
 
-**Class Meeting Times:** Mondays/Wednesdays
+**Class Meeting Times:** Tuesdays / Thursdays
 
 ```{r}
 #| eval: false
@@ -271,10 +260,12 @@ case there is no such thing as a bad question!
 classday_cal
 ```
 
--   Section 70: 12:10am - 2:00pm
--   Section 71: 2:10pm - 4:00pm
+-   Section 70: 9:10am - 11:00am
+-   Section 71: 12:10pm - 2:00pm
 
-**Room:** 180-272 (Baker Center - Math & Science)
+**Room:** 
+- Section 70: 38-122 (Math & Science)
+- Section 71: 180-272 (Baker Center - Math & Science)
 
 **Office Hours** are held in my office (25-201) during the following
 times:
@@ -288,7 +279,6 @@ times:
 <!-- ::: -->
 
 ```{r}
-#| eval: false
 #| echo: false
 #| warning: false
 #| message: false
@@ -312,6 +302,7 @@ officehr_cal
 
 - **Office hours are for you!** During this time, I am available to talk about anything related to the course. 
 - Office hours are also helpful for me… This is my chance to get to know you all better and also get a good idea of what is most challenging and most interesting to you.
+- Friday office hours will be remote by default, but can be in-person on request.
 - See [this resource](https://lsc.cornell.edu/consult-with/how-to-use-office-hours/) for ways that students use office hours. 
 - One thing I will not do during office hours is tell you whether an answer to a problem is “correct” or not. We can talk through your thinking that led to your solution, but will leave the final assessment to once you have submitted an assignment.
 - Note that office hours are not just for when you have content questions.
@@ -363,7 +354,9 @@ Additionally, it is my hope that you will learn to:
 All course material will be made available on our Canvas page, including check-ins, practice
 activities, lab assignments, challenges, review questions, and selected solutions. Canvas will
 also contain detailed weekly schedules throughout the term. You are responsible for
-checking the Canvas page on a regular basis.
+checking the Canvas page on a *regular* basis.
+
+I will also be posting material on [this website](https://manncz.github.io/stat-331-s25/) for easy access to materials. Please note that **this website does not include deadlines** and all material will additionally be posted to Canvas. Canvas will always contain the most updated information about course deadlines and details, so always defer to these. 
 
 **Textbook**
 
@@ -416,28 +409,23 @@ This schedule is tentative and subject to change.
 
 ```{r calendar}
 #| echo: false
-#| eval: false
+#| eval: true
 #| warning: false
 #| fig-width: 8
 #| fig-height: 3.5
 #| fig-pos: 'h'
-#| fig-cap: "Note: Tuesday, January 21st will follow a Monday class schedule."
+#| fig-cap: "Note: Tuesday, May 27th will follow a Monday class schedule."
 class_cal
 ```
 
 ```{r schedule}
 #| echo: false
-#| eval: false
+#| eval: true
 #| fig-pos: 'h'
 class_days |> 
 kableExtra::kable(caption = "Tentative schedule of class topics and important due dates", format = "simple")
 ```
 
-::: callout-tip
-## **Final Exam** Saturday March 15th 1:10 - 4:00 pm
-
-The final exam will take place Sat 3/15 from 1:10-4:00 pm in 42-0205E. If you have a conflict with the common final time, please communicate this to me as soon as possible and by the end of Week 8 at the latest.
-:::
 
 ## Assessments
 
@@ -467,17 +455,16 @@ rubrics to evaluate your work.
 #### Check-ins
 
 Each week, you will find short Check-In questions or tasks throughout
-the text to make sure you are prepared for class that week. Make sure
-you submit your answers to these on Canvas to get credit for your
-efforts. Note that the Canvas Check-in quizzes can be submitted two two
-times and your highest score will be kept, so you should get close to
-100% on this part of the course!
+the text to make sure you are prepared for class that week. **Check-Ins are based on the material in each week's reading from the textbook.** Note that the Canvas Check-in quizzes can be submitted two two
+times and your highest score will be kept, so you should get close to 100% on this part of the course!
 
--   Check-ins are (typically) due **Mondays at 12:00pm**.
+-   Check-ins are (typically) due **Tuesdays before class**.
+    - Section 70: 9:00am
+    - Section 71: 12:00pm
 
 #### Practice Activities
 
-Most Monday's, you will be given a Practice Activity to complete, to get
+Most Tuesdays's, you will be given a Practice Activity to complete, to get
 the hang of the week’s necessary `R` skills. These activities will
 always result in a single, straightforward correct answer, that you will
 submit via Canvas (two attempts, the average score being kept).
@@ -486,7 +473,9 @@ Since these activities are intended to be your first attempt at new
 skills, *they are meant to be done with help from me and your peers*.
 Therefore, you will always be given some time in class to work on them.
 
--   Practice Activities are (typically) due **Wednesdays at 12:00pm.**
+-   Practice Activities are (typically) due **Thursdays before class.**
+    - Section 70: 9:00am
+    - Section 71: 12:00pm
 
 #### Lab Assignments
 
@@ -496,10 +485,10 @@ each lab's instructions to complete tasks in `R` and submit a rendered
 
 Most weeks, there will be class time on Wednesdays dedicated to working
 on completing lab assignments. While you will work with peers during
-class time on Wednesdays, you will be expected to submit your own
+class time on Thursdays, you will be expected to submit your own
 individual work for the final submission.
 
--   Labs are due on **Saturdays at 11:59pm**.
+-   Labs are (typically) due on **Mondays (of the following week) at 11:59pm**.
 
 ### Evaluative Assessments
 
@@ -557,9 +546,7 @@ Your grade in STAT 331/531 will contain the following components:
 | Final Project       | 15%    |
 | Final Exam          | 25%    |
 
-Lower bounds for grade cutoffs are shown in the following table. I will
-not "round up" grades at the end of the quarter, but it is possible that
-I could lower any of the grade cutoffs. <!-- ::: column-margin -->
+Lower bounds for grade cutoffs are shown in the following table. It is possible that I could lower any of the grade cutoffs. You will only have the opportunity for grade rounding if you completed all assignments in the course. <!-- ::: column-margin -->
 
 <!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"> -->
 
@@ -626,10 +613,8 @@ others. Personal attacks of any kind will not be tolerated.
 
 ### Group Work
 
-This course will rely heavily on in-class group work. You will be assigned groups throughout the course and will be expected to work with your
-group on in-class material. If you have concerns about random group assignment, please
+This course will rely heavily on in-class group work. You will be expected to work with classmates on in-class material. If you have concerns about random group assignment, please
 talk to me at the start of the term.
-Group member discussion is expected for the completion of all practice activities. 
 
 You are
 also encouraged to discuss your ideas for lab assignments; however, I expect that these
