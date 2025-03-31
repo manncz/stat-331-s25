@@ -16,9 +16,9 @@ If you have completed *Check-in 1.3*, you have already completed steps 1 & 2.
 
 2.  Create an RStudio Project **inside** of this folder.
 
-3.  Inside your Stat 331 folder, create another folder called either "week_1" or "labs". Remember, we are trying to be organized and **not work out of our Downloads folder**!
+3.  Inside your Stat 331 folder, create another folder called either "week-1" or "labs". Remember, we are trying to be organized and **not work out of our Downloads folder**!
 
-4.  Inside of this folder, create another folder called "lab_1" or similar.
+4.  Inside of this folder, create another folder called "lab1" or similar.
 
 ### Create your Lab 1 File
 

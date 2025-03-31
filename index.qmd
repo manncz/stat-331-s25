@@ -7,7 +7,7 @@ This page contains an outline of the topics, content, and assignments for the qu
 
 | Week | Day          | Topic / Reading                                                                                                         | Slides                                   | Practice Activity                   | Lab   |
 |------------|------------|------------|------------|------------|------------|
-| 1    | Tue, 4/1     | [1: Introduction](https://manncz.github.io/stat331-calpoly-text/01-introduction.html)                                   | Syllabus & Intro to R                    | [PA 1](practice-activities/pa1.qmd) |       |
+| 1    | Tue, 4/1     | [1: Introduction](https://manncz.github.io/stat331-calpoly-text/01-introduction.html)                                   | [Syllabus & Intro to R](slides/week-1/w1-intro-r.qmd)                    | [PA 1](practice-activities/pa1.qmd) |       |
 |      | Thu, 4/3     |                                                                                                                         | Intro to R & Quarto                      |                                     | Lab 1 |
 | 2    | Tue, 4/8     | [2: Basics of Graphics](https://manncz.github.io/stat331-calpoly-text/02-tidy-data-and-basics-of-graphics.html)         | Importing Data + Graphics with `ggplot2` |                                     |       |
 |      | Thu, 4/10    |                                                                                                                         | More Graphics!                           |                                     |       |

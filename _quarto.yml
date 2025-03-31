@@ -44,7 +44,6 @@ website:
             text: Schedule
           - href: course-info/course-resources.qmd
             text: R Resources
-      - section: "Slides"
       - section: "Labs"
         contents:
           - href: labs/lab1/lab1-quarto.qmd
