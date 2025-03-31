@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/manncz/stat-331-s25/slides/week-1/w1-notebooks.html</loc>
+    <lastmod>2025-03-31T22:11:52.493Z</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa1.html</loc>
-    <lastmod>2025-03-15T22:17:40.338Z</lastmod>
+    <lastmod>2025-03-31T21:36:11.479Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/index.html</loc>
@@ -23,5 +27,9 @@
   <url>
     <loc>https://github.com/manncz/stat-331-s25/labs/lab1/lab1-quarto.html</loc>
     <lastmod>2025-03-24T12:43:47.566Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/manncz/stat-331-s25/slides/week-1/w1-intro-r.html</loc>
+    <lastmod>2025-03-31T23:11:50.924Z</lastmod>
   </url>
 </urlset>
