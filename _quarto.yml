@@ -44,14 +44,6 @@ website:
             text: Schedule
           - href: course-info/course-resources.qmd
             text: R Resources
-      - section: "Labs"
-        contents:
-          - href: labs/lab1/lab1-quarto.qmd
-            text: "Lab 1"
-      - section: "Practice Activities"
-        contents:
-          - href: practice-activities/pa1.qmd
-            text: "Practice Activity 1"
     
 format:
   html:
