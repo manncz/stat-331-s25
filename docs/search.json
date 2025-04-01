@@ -431,7 +431,7 @@
     "href": "slides/week-1/w1-intro-r.html#tuesday-april-1",
     "title": "Intro to STAT 331/531 + Intro to R",
     "section": "Tuesday, April 1",
-    "text": "Tuesday, April 1\nToday we will…\n\nWelcome to Stat 331/531: Statistical Computing in R\nIntro to Me + You + the course\n\nIntro to R + RStudio\nOrganization\nR Basics & Troubleshooting\nPA 1: Find the Mistakes"
+    "text": "Tuesday, April 1\nToday we will…\n\nWelcome to Stat 331/531: Statistical Computing in R\nIntro to Me + You + the course\n“Unplugged” Warm-up\nIntro to R + RStudio\nOrganization\nR Basics & Troubleshooting\nPA 1: Find the Mistakes"
   },
   {
     "objectID": "slides/week-1/w1-intro-r.html#me",
@@ -448,11 +448,95 @@
     "text": "You!\nI am looking forward to reading your introductions on Discord!\n\nPlease read the intros of your classmates so you can discover who you will be learning with this quarter."
   },
   {
+    "objectID": "slides/week-1/w1-intro-r.html#communication",
+    "href": "slides/week-1/w1-intro-r.html#communication",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "Communication",
+    "text": "Communication\n\n\n✉️ email\n\nwith your @calpoly.edu email address\nwith questions that relate to you as an individual\n\n💬 Discord\n\nany and all questions!!\nyou will join and introduce yourself before Thursday\n\n🏢 office hours\n\ncome and discuss anything during my scheduled hours!\nreach out to schedule other times"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#course-materials",
+    "href": "slides/week-1/w1-intro-r.html#course-materials",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "Course Materials",
+    "text": "Course Materials\n\n\n🏫 Canvas\n\neverything will be linked or posted on Canvas!\nrefer to Canvas for current deadilnes & announcements\n\n📕 “textbook”\n\nonline course notes\nincludes videos & tutorials\n\n🖥️ materials website\n\nslides, labs, and practice activities are organized\nthis is for convenience, but everything will also be linked in Canvas"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#assessments---formative",
+    "href": "slides/week-1/w1-intro-r.html#assessments---formative",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "Assessments - Formative",
+    "text": "Assessments - Formative\n\n\nCheck-In’s (5%)\n\n“check” that you are prepared for the week\nbased on reading from the textbook\n\nPractice Activities (10%)\n\nfirst attempt at new skills\nget the hang of the week’s R skills\n\nLab Activities (30%)\n\n“homework”\n\n\n\n\n\n\n\n\n\n\nWork with other’s!\n\n\nYou should work with other’s on all assignments! The final work you submit for a Lab should be your own."
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#assessments---evaluative",
+    "href": "slides/week-1/w1-intro-r.html#assessments---evaluative",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "Assessments - Evaluative",
+    "text": "Assessments - Evaluative\n\nExams\n\nMidterm Exam (15%)\nFinal Exam (25%)\n\nFinal project (15%)\n\ngroup project\ndue end of week 10\n\n\n\n\n\n\n\n\nExam Conflicts\n\n\nIf you have a known conflict with an exam, please discuss it with me at least three weeks prior to the exam date"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#assessments---general-criteria",
+    "href": "slides/week-1/w1-intro-r.html#assessments---general-criteria",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "Assessments - General Criteria",
+    "text": "Assessments - General Criteria\n\n\ncorrect outputs are great, but you will also need to demonstrate that you are intellectually engaging with the material in assignments\nin addition to getting a correct output from your code, you will be assessed for efficiency and formatting\ntechnical communication will also be an important element of assessments\nI hope you will be proud of your work in this class!"
+  },
+  {
     "objectID": "slides/week-1/w1-intro-r.html#weekly-overview",
     "href": "slides/week-1/w1-intro-r.html#weekly-overview",
     "title": "Intro to STAT 331/531 + Intro to R",
     "section": "Weekly Overview",
     "text": "Weekly Overview"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#course-policies",
+    "href": "slides/week-1/w1-intro-r.html#course-policies",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "Course Policies",
+    "text": "Course Policies\n\nLate Policy\n\n4 “deadline extensions”\nemail me before the deadline for a 24 hour extention\n\nAttendance\nAccessibility and Accomodations\n\nlet me know what I can do better\nemail me if you use the DRC"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#academic-integrity",
+    "href": "slides/week-1/w1-intro-r.html#academic-integrity",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "Academic Integrity",
+    "text": "Academic Integrity\n\n\nlet’s be proactive to prevent situations where you are overwhelmed!\nuse Chat GPT as a tutor, not a substitute for your own work\ncite outside resources!\nplease review the syllabus carefully"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#my-expectations-for-you",
+    "href": "slides/week-1/w1-intro-r.html#my-expectations-for-you",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "My expectations for you",
+    "text": "My expectations for you\n\n\nask lots of questions\ntake advantage of resources to help you learn\n\nthis includes working with others!\n\nengage with what we are all doing together during class\nwork towards independent learning"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#my-expectations-for-me",
+    "href": "slides/week-1/w1-intro-r.html#my-expectations-for-me",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "My expectations for me",
+    "text": "My expectations for me\n\n\ncreating an inclusive and accessible classroom\nproviding resources needed to learn the material\nproviding prompt and clear feedback\ndoing my best to make class worth your time\nclearly communicating"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#what-to-expect-from-this-course",
+    "href": "slides/week-1/w1-intro-r.html#what-to-expect-from-this-course",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "What to expect from this course",
+    "text": "What to expect from this course\n\n\neveryone comes with different knowledge and skills – figure out what helps you learn the best in this course\nindependent learning and learning from documentation is part of the course\ncoding involves unique challenges, frustrations, and satisfaction!"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#statistical-computing-involves",
+    "href": "slides/week-1/w1-intro-r.html#statistical-computing-involves",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "Statistical computing involves…",
+    "text": "Statistical computing involves…\n\n\nunderstanding data structures\n\ni.e. “what you have to work with”\n\ndeveloping an algorithm\n\ni.e. “what you want the computer to do”\n\nknowing the syntax of a specific language\n\ni.e. “how to tell the computer what to do so it will understand”\n\nimproving efficiency of your code\n\n\n\n\n\n\n\n\n\nNot just syntax\n\n\nAll of these skills improve as the others improve and we will work on all of them in this course!"
+  },
+  {
+    "objectID": "slides/week-1/w1-intro-r.html#paper-planes",
+    "href": "slides/week-1/w1-intro-r.html#paper-planes",
+    "title": "Intro to STAT 331/531 + Intro to R",
+    "section": "Paper Planes",
+    "text": "Paper Planes\n\n\nWork with the person next to you & introduce yourself!\nWrite a set of instructions to fold a paper airplane\n\n\nvideo / picture instructions if you don’t know/remember how\n\n\nSwap the instructions with the pair next to you\nFollow their instructions as literally as possible to fold a plane"
   },
   {
     "objectID": "slides/week-1/w1-intro-r.html#what-is-r",
@@ -733,103 +817,5 @@
     "title": "Intro to STAT 331/531 + Intro to R",
     "section": "To do…",
     "text": "To do…\n\nRead Chapter 1: Introduction\nCheck-ins 1.1 - 1.4\n\nDue Thursday (4/3) before class\n\nPA 1: Find the Mistakes\n\nDue Friday (4/4) at 11:59 pm"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#communication",
-    "href": "slides/week-1/w1-intro-r.html#communication",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Communication",
-    "text": "Communication\n\n\n✉️ email\n\nwith your @calpoly.edu email address\nwith questions that relate to you as an individual\n\n💬 Discord\n\nany and all questions!!\nyou will join and introduce yourself before Thursday\n\n🏢 office hours\n\ncome and discuss anything during my scheduled hours!\nreach out if any"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#course-materials",
-    "href": "slides/week-1/w1-intro-r.html#course-materials",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Course Materials",
-    "text": "Course Materials\n\n\n🏫 Canvas\n\neverything will be linked or posted on Canvas!\nrefer to Canvas for current deadilnes & announcements\n\n📕 “textbook”\n\nonline course notes\nincludes videos & tutorials\n\n🖥️ materials website\n\nslides, labs, and practice activities are organized\nthis is for convenience, but everything will also be linked in Canvas"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#assessments---general-criteria",
-    "href": "slides/week-1/w1-intro-r.html#assessments---general-criteria",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Assessments - General Criteria",
-    "text": "Assessments - General Criteria\n\n\ncorrect outputs are great, but you will also need to demonstrate that you are intellectually engaging with the material in assignments\nin addition to getting a correct output from your code, you will be assessed for efficiency and formatting\ntechnical communication will also be an important element of assessments\nI hope you will be proud of your work in this class!"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#assessments---formative",
-    "href": "slides/week-1/w1-intro-r.html#assessments---formative",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Assessments - Formative",
-    "text": "Assessments - Formative\n\n\nCheck-In’s (5%)\n\n“check” that you are prepared for the week\nbased on reading from the textbook\n\nPractice Activities (10%)\n\nfirst attempt at new skills\nget the hang of the week’s R skills\n\nLab Activities (30%)\n\n“homework”\n\n\n\n\n\n\n\n\n\n\nWork with other’s!\n\n\nYou should work with other’s on all assignments! The final work you submit for a Lab should be your own."
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#assessments---evaluative",
-    "href": "slides/week-1/w1-intro-r.html#assessments---evaluative",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Assessments - Evaluative",
-    "text": "Assessments - Evaluative\n\nExams\n\nMidterm Exam (15%)\nFinal Exam (25%)\n\nFinal project (15%)\n\ngroup project\ndue end of week 10\n\n\n\n\n\n\n\n\nExam Conflicts\n\n\nIf you have a known conflict with an exam, please discuss it with me at least three weeks prior to the exam date"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#late-policy",
-    "href": "slides/week-1/w1-intro-r.html#late-policy",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Late Policy",
-    "text": "Late Policy"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#course-policies",
-    "href": "slides/week-1/w1-intro-r.html#course-policies",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Course Policies",
-    "text": "Course Policies\n\nLate Policy\n\n4 “deadline extensions”\nemail me before the deadline for a 24 hour extention\n\nAttendance\nAccessibility and Accomodations\n\nlet me know what I can do better\nemail me if you use the DRC"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#academic-integrity",
-    "href": "slides/week-1/w1-intro-r.html#academic-integrity",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Academic Integrity",
-    "text": "Academic Integrity\n\n\nlet’s be proactive to prevent situations where you are overwhelmed!\nuse Chat GPT as a tutor, not a substitute for your own work\ncite outside resources!\nplease review the syllabus carefully"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#my-expectations-for-you",
-    "href": "slides/week-1/w1-intro-r.html#my-expectations-for-you",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "My expectations for you",
-    "text": "My expectations for you\n\n\nask lots of questions\ntake advantage of resources to help you learn\n\nthis includes working with others!\n\nengage with what we are all doing together during class\nwork towards independent learning"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#my-expectations-for-me",
-    "href": "slides/week-1/w1-intro-r.html#my-expectations-for-me",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "My expectations for me",
-    "text": "My expectations for me\n\n\ncreating an inclusive and accessible classroom\nproviding resources needed to learn the material\nproviding prompt and clear feedback\ndoing my best to make class worth your time\nclearly communicating"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#what-to-expect-from-this-course",
-    "href": "slides/week-1/w1-intro-r.html#what-to-expect-from-this-course",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "What to expect from this course",
-    "text": "What to expect from this course\n\n\neveryone comes with different knowledge and skills – you will need to figure out what helps you learn the best in this course\nindependent learning and learning from documentation is part of the course\ncoding involves unique challenges, frustrations, and satisfaction!"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#statistical-computing-involves",
-    "href": "slides/week-1/w1-intro-r.html#statistical-computing-involves",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Statistical computing involves…",
-    "text": "Statistical computing involves…\n\n\nunderstanding data structures\n\ni.e. “what you have to work with”\n\ndeveloping an algorithm\n\ni.e. “what you want the computer to do”\n\nknowing the syntax of a specific language\n\ni.e. “how to tell the computer what to do so it will understand”\n\nimproving efficiency of your code\n\n\n\n\n\n\n\n\n\nNot just syntax\n\n\nAll of these skills improve as the others improve and we will work on all of them in this course!"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#paper-planes",
-    "href": "slides/week-1/w1-intro-r.html#paper-planes",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Paper Planes",
-    "text": "Paper Planes\n\n\nWork with the person next to you & introduce yourself!\nWrite a set of instructions to fold a paper airplane\n\n\nvideo / picture instructions if you don’t know/remember how\n\n\nSwap the instructions with the pair next to you\nFollow their instructions as literally as possible to fold a plane"
-  },
-  {
-    "objectID": "slides/week-1/w1-intro-r.html#paper-planes-1",
-    "href": "slides/week-1/w1-intro-r.html#paper-planes-1",
-    "title": "Intro to STAT 331/531 + Intro to R",
-    "section": "Paper Planes",
-    "text": "Paper Planes\n\nSwap the instructions with the pair next to you\nFollow their instructions as literally as possible to fold a plane"
   }
 ]

@@ -15,6 +15,7 @@ Today we will...
 
 -  Welcome to Stat 331/531: Statistical Computing in R
 -  Intro to Me + You + the course
+-  "Unplugged" Warm-up
 -  Intro to `R` + RStudio
 -  Organization
 -  `R` Basics & Troubleshooting
@@ -54,9 +55,196 @@ I am looking forward to reading your introductions on Discord!
 
 # Syllabus
 
+
+## Communication
+
+::: incremental
+- ✉️ email
+  - with your @calpoly.edu email address
+  - with questions that relate to you as an individual
+  
+- 💬 Discord
+  - any and all questions!!
+  - you will join and introduce yourself before Thursday
+  
+- 🏢 office hours
+  - come and discuss anything during my scheduled hours!
+  - reach out to schedule other times
+
+:::
+
+## Course Materials
+
+::: incremental
+- 🏫 Canvas
+  - **everything** will be linked or posted on Canvas!
+  - refer to Canvas for current deadilnes & announcements
+  
+- 📕 ["textbook"](https://manncz.github.io/stat331-calpoly-text/) 
+  - online course notes
+  - includes videos & tutorials
+
+- 🖥️ [materials website](https://manncz.github.io/stat-331-s25/)
+  - slides, labs, and practice activities are organized
+  - this is for convenience, but everything will also be linked in Canvas
+
+:::
+
+
+## Assessments - Formative
+
+::: incremental
+- Check-In's (5%)
+  - "check" that you are prepared for the week
+  - based on reading from the textbook
+
+- Practice Activities (10%)
+  - first attempt at new skills
+  - get the hang of the week's `R` skills
+
+- Lab Activities (30%)
+  - "homework"
+  
+:::
+
+. . .
+
+:::callout-tip
+# Work with other's!
+
+You should work with other's on all assignments! The final work you submit for a Lab should be your own.
+:::
+
+## Assessments - Evaluative
+
+- Exams
+  - Midterm Exam (15%)
+  - Final Exam (25%)
+- Final project (15%)
+  - group project
+  - due end of week 10
+
+::: callout-warning
+# Exam Conflicts
+If you have a known conflict with an exam, please discuss it with me at least three weeks prior to the exam date
+:::
+
+## Assessments - General Criteria
+
+::: incremental
+- correct outputs are great, but you will also need to demonstrate that you are **intellectually engaging** with the material in assignments
+- in addition to getting a correct output from your code, you will be assessed for **efficiency and formatting**
+- technical **communication** will also be an important element of assessments
+- I hope you will be proud of your work in this class!
+:::
+
+
+
 ## Weekly Overview
 
 ![](images/weeklyschedule.png)
+
+## Course Policies
+
+:::incremental 
+
+**Late Policy**
+
+- 4 "deadline extensions"
+- email me *before* the deadline for a 24 hour extention 
+
+**Attendance**
+
+
+**Accessibility and Accomodations**
+
+- let me know what I can do better
+- email me if you use the DRC
+
+:::
+
+## Academic Integrity
+
+
+::: incremental
+
+- let’s be **proactive** to prevent situations where you are overwhelmed!
+- use Chat GPT as a tutor, not a substitute for your own work
+- **cite outside resources!**
+- please review the [syllabus](https://manncz.github.io/stat-331-s25/course-info/syllabus-w25.html#academic-integrity-and-class-conduct) carefully
+
+:::
+
+
+## My expectations for you
+
+::: incremental
+- ask lots of questions
+- take advantage of resources to help you learn
+  - this includes working with others!
+- engage with what we are all doing together during class
+- work towards independent learning
+
+:::
+
+## My expectations for me
+
+::: incremental
+- creating an inclusive and accessible classroom
+- providing resources needed to learn the material
+- providing prompt and clear feedback
+- doing my best to make class worth your time
+- clearly communicating
+:::
+
+## What to expect from this course
+
+::: incremental
+- everyone comes with different knowledge and skills -- figure out what helps you learn the best in this course
+- independent learning and learning from documentation is *part* of the course 
+- coding involves unique challenges, frustrations, and satisfaction!
+:::
+
+![](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/5ccff989-900e-4f2b-aece-55278b563cfa_rw_3840.png?h=0e42e3b3516e2d9ae08909ffee7fed0c){fig-align="center" width=70%}
+
+# "Unplugged" Warmup
+
+## Statistical computing involves...
+
+::: incremental
+- understanding data structures
+  - i.e. "what you have to work with"
+- developing an algorithm 
+  - i.e. "what you want the computer to do"
+- knowing the syntax of a specific language
+  - i.e. "how to tell the computer what to do so it will understand"
+- improving efficiency of your code
+
+:::
+
+. . .
+
+:::callout-tip
+# Not *just* syntax
+All of these skills improve as the others improve and we will work on *all* of them in this course!
+:::
+
+
+## Paper Planes
+
+
+::: incremental
+0. Work with the person next to you & introduce yourself!
+
+1. Write a set of instructions to fold a paper airplane
+  - [video](https://youtu.be/r9ReNKZiZNc?t=24) /  [picture instructions](https://childhoodmagic.com/wp-content/uploads/2023/09/paper-airplane-easy-how-to-kids-classic-1-1-scaled.jpg) if you don't know/remember how
+
+2. Swap the instructions with the pair next to you
+3. Follow their instructions as literally as possible to fold a plane
+
+:::
+
+![](https://www.diy-magazine.com/wp-content/uploads/2021/03/Long-distance-paper-airplane-kite-flyer-00-768x384.jpg){fig-align="center" width=40%}
 
 
 # Intro to R
@@ -65,6 +253,10 @@ I am looking forward to reading your introductions on Discord!
 
 -   `R` is a programming language designed originally for *statistical analyses*.
 -   `R` is **open source**
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/R_logo.svg/1920px-R_logo.svg.png){fig-align="center" width=30%}
+
+
 
 ## What' going on with R?
 
@@ -270,7 +462,7 @@ I cannot stress how important this is!!
 ::: callout-tip
 # Open our "starter" notes to follow along
 
-- If on your computer: Download and save [w1-notes.qmd](../../student-versions/notes/w1-notes.qmd) on your computer file and open it in RStudio.
+- If on your computer: Download and save [w1-notes.qmd](../../student-versions/notes/w1-notes.qmd) on your computer and open it in RStudio.
 
 - If on Posit Cloud: Open "w1-notes.qmd"
 :::
@@ -689,7 +881,7 @@ Often, `R` will give you a **warning**.
 #| code-line-numbers: false
 my_vec <- c("a", "b", "c")
 
-my_new_vec <- as.integer(my_vec)
+my_new_vec <- as.numeric(my_vec)
 ```
 
 . . .
