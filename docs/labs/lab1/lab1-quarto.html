@@ -216,26 +216,20 @@ window.Quarto = {
   <ul>
   <li><a href="#setup" id="toc-setup" class="nav-link active" data-scroll-target="#setup">Setup</a>
   <ul class="collapse">
-  <li><a href="#make-a-stat-331531-and-lab-1-folder" id="toc-make-a-stat-331531-and-lab-1-folder" class="nav-link" data-scroll-target="#make-a-stat-331531-and-lab-1-folder">Make a Stat 331/531 and Lab 1 Folder</a></li>
+  <li><a href="#make-a-lab-directory" id="toc-make-a-lab-directory" class="nav-link" data-scroll-target="#make-a-lab-directory">Make a Lab Directory</a></li>
   <li><a href="#create-your-lab-1-file" id="toc-create-your-lab-1-file" class="nav-link" data-scroll-target="#create-your-lab-1-file">Create your Lab 1 File</a></li>
   </ul></li>
-  <li><a href="#lab-instructions" id="toc-lab-instructions" class="nav-link" data-scroll-target="#lab-instructions">Lab Instructions</a>
-  <ul class="collapse">
   <li><a href="#changing-the-execution-options" id="toc-changing-the-execution-options" class="nav-link" data-scroll-target="#changing-the-execution-options">Changing the Execution Options</a></li>
-  </ul></li>
-  <li><a href="#running-the-provided-code" id="toc-running-the-provided-code" class="nav-link" data-scroll-target="#running-the-provided-code">Running the Provided Code</a>
-  <ul class="collapse">
+  <li><a href="#running-the-provided-code" id="toc-running-the-provided-code" class="nav-link" data-scroll-target="#running-the-provided-code">Running the Provided Code</a></li>
   <li><a href="#check-the-data-documentation" id="toc-check-the-data-documentation" class="nav-link" data-scroll-target="#check-the-data-documentation">Check the Data Documentation</a></li>
-  </ul></li>
-  <li><a href="#sec-creating-a-plot" id="toc-sec-creating-a-plot" class="nav-link" data-scroll-target="#sec-creating-a-plot">Creating a Plot</a>
-  <ul class="collapse">
+  <li><a href="#sec-creating-a-plot" id="toc-sec-creating-a-plot" class="nav-link" data-scroll-target="#sec-creating-a-plot">Creating a Plot</a></li>
   <li><a href="#inserting-a-new-code-chunk" id="toc-inserting-a-new-code-chunk" class="nav-link" data-scroll-target="#inserting-a-new-code-chunk">Inserting a New Code Chunk</a></li>
   <li><a href="#conducting-statistical-analyses" id="toc-conducting-statistical-analyses" class="nav-link" data-scroll-target="#conducting-statistical-analyses">Conducting Statistical Analyses</a></li>
   <li><a href="#render-your-document" id="toc-render-your-document" class="nav-link" data-scroll-target="#render-your-document">Render your Document</a></li>
+  <li><a href="#include-an-image" id="toc-include-an-image" class="nav-link" data-scroll-target="#include-an-image">Include an Image</a></li>
   <li><a href="#styling-your-quarto-document" id="toc-styling-your-quarto-document" class="nav-link" data-scroll-target="#styling-your-quarto-document">Styling your Quarto Document</a></li>
   <li><a href="#render-again" id="toc-render-again" class="nav-link" data-scroll-target="#render-again">Render again!</a></li>
   <li><a href="#turn-it-in" id="toc-turn-it-in" class="nav-link" data-scroll-target="#turn-it-in">Turn it in!</a></li>
-  </ul></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/manncz/stat-331-s25/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
@@ -263,13 +257,13 @@ window.Quarto = {
 
 <section id="setup" class="level2">
 <h2 class="anchored" data-anchor-id="setup">Setup</h2>
-<section id="make-a-stat-331531-and-lab-1-folder" class="level3">
-<h3 class="anchored" data-anchor-id="make-a-stat-331531-and-lab-1-folder">Make a Stat 331/531 and Lab 1 Folder</h3>
+<section id="make-a-lab-directory" class="level3">
+<h3 class="anchored" data-anchor-id="make-a-lab-directory">Make a Lab Directory</h3>
 <p>If you have completed <em>Check-in 1.3</em>, you have already completed steps 1 &amp; 2.</p>
 <ol type="1">
-<li><p>If you have not already, create a folder on your computer called “Stat 331” or similar.</p></li>
+<li><p>If you have not already, create a folder on your computer called “stat-331” or similar.</p></li>
 <li><p>Create an RStudio Project <strong>inside</strong> of this folder.</p></li>
-<li><p>Inside your Stat 331 folder, create another folder called either “week-1” or “labs”. Remember, we are trying to be organized and <strong>not work out of our Downloads folder</strong>!</p></li>
+<li><p>Inside your stat-331 folder, create another folder called either “week-1” or “labs”. Remember, we are trying to be organized and <strong>not work out of our Downloads folder</strong>!</p></li>
 <li><p>Inside of this folder, create another folder called “lab1” or similar.</p></li>
 </ol>
 </section>
@@ -289,14 +283,12 @@ window.Quarto = {
 <li>(optional) add a line to specify the <code>editor</code> as your preference for either source or visual.</li>
 </ul>
 <ol start="5" type="1">
-<li>Save the Quarto file as “lab1” in your “week_1” or “labs” folder. You can change up the name of your document, but the name <strong>cannot</strong> have spaces and it should describe what the document is.</li>
+<li>Save the Quarto file as “lab1.qmd” in your “week-1” or “labs” folder. You can change up the name of your document, but the name <strong>cannot</strong> have spaces and it should describe what the document is.</li>
 </ol>
 </section>
 </section>
-<section id="lab-instructions" class="level2">
-<h2 class="anchored" data-anchor-id="lab-instructions">Lab Instructions</h2>
-<section id="changing-the-execution-options" class="level3">
-<h3 class="anchored" data-anchor-id="changing-the-execution-options">Changing the Execution Options</h3>
+<section id="changing-the-execution-options" class="level2">
+<h2 class="anchored" data-anchor-id="changing-the-execution-options">Changing the Execution Options</h2>
 <p>Execution options specify how the R code in your Quarto document should be displayed. This <a href="https://quarto.org/docs/computations/execution-options.html">guide</a> provides descriptions on the options you can specify in a document’s execution.</p>
 <p>To start, your YAML should look something like this:</p>
 <div class="cell">
@@ -316,7 +308,6 @@ window.Quarto = {
 <li>your document will render even if there are errors.</li>
 </ol>
 </section>
-</section>
 <section id="running-the-provided-code" class="level2">
 <h2 class="anchored" data-anchor-id="running-the-provided-code">Running the Provided Code</h2>
 <p>Next, click on the “Play” button on the right of the first auto-populated code chunk. Alternatively, you can highlight (or simply put your cursor on the line of) the code you want to run and hit <kbd>ctrl</kbd> + <kbd>Enter</kbd> or <kbd>⌘</kbd> + <kbd>Enter</kbd>.</p>
@@ -326,17 +317,20 @@ window.Quarto = {
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a dataset into the R Environment.</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(ToothGrowth)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at the summary of the variables in the dataset.</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ToothGrowth)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(ToothGrowth)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Look at a frequency table of a categorical variable.</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(ToothGrowth<span class="sc">$</span>supp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>Now run this code. You should see a six-number summary of the variables <code>len</code> and <code>dose</code> included in the <code>ToothGrowth</code> dataset, as well as the frequency of the levels contained in the <code>supp</code> variable. Further, if you inspect the Environment tab, the <code>ToothGrowth</code> dataset should appear. You can click on the dataset name (not the blue play button!) to look at the data.</p>
-<section id="check-the-data-documentation" class="level3">
-<h3 class="anchored" data-anchor-id="check-the-data-documentation">Check the Data Documentation</h3>
+<p>Now run this code. You should see a six-number summary of the variables <code>len</code> and <code>dose</code> included in the <code>ToothGrowth</code> dataset, as well as the frequency of the levels contained in the <code>supp</code> variable. Second, there is just the frequency table for the <code>supp</code> variable. Further, if you inspect the Environment tab, the <code>ToothGrowth</code> dataset should appear. You can click on the dataset name (not the blue play button!) to look at the data.</p>
+</section>
+<section id="check-the-data-documentation" class="level2">
+<h2 class="anchored" data-anchor-id="check-the-data-documentation">Check the Data Documentation</h2>
 <p>In your <strong>console</strong> (<em>not</em> in the Quarto document), type <code>?ToothGrowth</code> (or alternatively <code>help(ToothGrowth)</code>.</p>
 <p>Use the information that pops up in the <em>Help</em> pane in RStudio to fill in the blanks below. Add the questions and your responses <em>after</em> the R code chunk. <em>Before</em> the code chunk, create a section header (using <code>#</code>s) that describes the contents of the section (e.g., Tooth Growth Dataset).</p>
 <p><em>This dataset investigates the effect of ______ ____ on tooth growth in _________ ________.</em></p>
 <p><em>The two supplement delivery methods include OJ (_______ _______) and VC (_________ ______).</em></p>
 <p><em>It is a data frame with ____ observations and ____ variables.</em></p>
-<p>Your Tooth Growth Dataset section should look something like this:</p>
+<p>Your Tooth Growth Dataset section should look something like this (although it will also include the table of <code>supp</code>):</p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
@@ -347,12 +341,11 @@ window.Quarto = {
 </div>
 </div>
 </section>
-</section>
 <section id="sec-creating-a-plot" class="level2">
 <h2 class="anchored" data-anchor-id="sec-creating-a-plot">Creating a Plot</h2>
 <p>Your second code chunk is just as boring as your first, so let’s spice it up! Replace the <code>2 * 2</code> code with the following (we will talk about graphics next week!):</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure to load the package ggplot2 (or alternatively tidyverse)</span></span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># make sure to load the package ggplot2</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="at">data =</span> ToothGrowth, </span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> supp,</span>
@@ -362,11 +355,12 @@ window.Quarto = {
 </div>
 <p>Now, run this code chunk! You should see side-by-side boxplots comparing tooth length between the two supplement delivery methods contained in the <code>ToothGrowth</code> data set.</p>
 <p>Look back at the help documentation for the <code>ToothGrowth</code> dataset to determine what <code>len</code> represents (i.e., “Length of xxx”).</p>
-<p>Next, look up the help file on the <code>labs()</code> ggplot2 function to find the arguments you can use to specify the <span class="math inline">\(x\)</span>- and <span class="math inline">\(y\)</span>-axis labels. Change the <span class="math inline">\(x\)</span>-axis and <span class="math inline">\(y\)</span>-axis labels to display reader-friendly axis labels as found in the <code>ToothGrowth</code> help file. For example, “Supplement Type” is better than “supp”.</p>
-<p>Note that <code>#| echo: false</code> is an output option applied only to this specific code chunk. Remove this line so the code appears in your final rendered document.</p>
+<p>Next, look up the help file on the <code>labs()</code> ggplot2 function to find the arguments you can use to specify the <span class="math inline">\(x\)</span>- and <span class="math inline">\(y\)</span>-axis labels. Particularly, looking at the <em>examples</em> at the bottom of the help file and <a href="https://www.sthda.com/english/wiki/ggplot2-title-main-axis-and-legend-titles">this site</a> may also be helpful. Change the <span class="math inline">\(x\)</span>-axis and <span class="math inline">\(y\)</span>-axis labels to display reader-friendly axis labels as found in the <code>ToothGrowth</code> help file. For example, “Supplement Type” is better than “supp”.</p>
+<p>Note that <code>#| echo: false</code> is an output option applied only to this specific code chunk. <strong>Remove this line so the code appears in your final rendered document.</strong></p>
 <p>Create another section header (like you did before) stating what is included in this section.</p>
-<section id="inserting-a-new-code-chunk" class="level3">
-<h3 class="anchored" data-anchor-id="inserting-a-new-code-chunk">Inserting a New Code Chunk</h3>
+</section>
+<section id="inserting-a-new-code-chunk" class="level2">
+<h2 class="anchored" data-anchor-id="inserting-a-new-code-chunk">Inserting a New Code Chunk</h2>
 <p>Navigate to the last sentence of the Quarto document. We’re now going to insert a new <code>R</code> code chunk at the bottom of the document.</p>
 <p>There are four different ways to do this:</p>
 <ol type="1">
@@ -385,8 +379,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="conducting-statistical-analyses" class="level3">
-<h3 class="anchored" data-anchor-id="conducting-statistical-analyses">Conducting Statistical Analyses</h3>
+<section id="conducting-statistical-analyses" class="level2">
+<h2 class="anchored" data-anchor-id="conducting-statistical-analyses">Conducting Statistical Analyses</h2>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -400,7 +394,7 @@ Refresher on a two-sample independent t-test
 <p>While a second course in statistics is a pre-requisite for this class, you may want to go <a href="https://openintro-ims.netlify.app/inference-two-means">here</a> for a refresher on conducting two-sample independent t-tests.</p>
 </div>
 </div>
-<p>In this section, we are going to conduct a two-sample independent t-test to compare tooth length between the two supplement methods in the <code>ToothGrowth</code> dataset. I have outlined the null and alternative hypotheses we will be testing:</p>
+<p>In this section, we are going to conduct a <strong>two-sample independent t-test</strong> to compare tooth length between the two supplement methods in the <code>ToothGrowth</code> dataset. I have outlined the null and alternative hypotheses we will be testing:</p>
 <div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -429,45 +423,81 @@ Alternative
 </div>
 <p>Carry out the following steps:</p>
 <ol type="1">
-<li><p>Look up the help documentation for <code>t.test()</code>. Hint: look at the examples at the bottom for comparing <code>extra</code> across groups in the <code>sleep</code> dataset.</p></li>
+<li>Look up the help documentation for <code>t.test()</code>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Look at the “traditional interface” example at the bottom for comparing <code>extra</code> across groups in the <code>sleep</code> dataset. You will need to change one element from the example to implement an independent two-sample test rather than a paired test.</p>
+</div>
+</div>
+<ol start="2" type="1">
 <li><p>Using the function <code>t.test()</code>, write code to carry out the analysis. You can assume unequal variances and a two-sided alternative.</p></li>
 <li><p>Run your code chunk to obtain the output for your statistical test.</p></li>
-<li><p>Write a numbered list (in Markdown) below the code chunk containing:</p></li>
-</ol>
-<ul>
+<li><p>Write a numbered list (in Markdown) below the code chunk containing:</p>
+<ol type="1">
 <li>Your conclusion (in the context of these data) based on the p-value.</li>
 <li>An interpretation of the confidence interval (make sure to read what confidence level is used by default).</li>
-</ul>
-<ol start="5" type="1">
-<li>Create another section header, describing the contents of this section.</li>
+</ol></li>
+<li><p>Create another section header, describing the contents of this section.</p></li>
 </ol>
 </section>
-<section id="render-your-document" class="level3">
-<h3 class="anchored" data-anchor-id="render-your-document">Render your Document</h3>
+<section id="render-your-document" class="level2">
+<h2 class="anchored" data-anchor-id="render-your-document">Render your Document</h2>
 <p>Render your document as an <strong>html</strong> file. Use the “Render” button (the blue arrow!) at the top of your screen.</p>
 <p>If you run into trouble rendering your document, try restarting R and running your code chunks in order, and see if you can find the problem.</p>
 <p>Another common issue is deleting the tick marks (<code>```</code>) that surround your code chunks. If you notice that the code chunks are not showing a “Play” button, or that they are not highlighted in gray, double check your tick marks!</p>
 <p>Recall we included <code>error: true</code> in our YAML execution options. This means that your document will still render even if there are errors. Make sure you are double checking your work!</p>
 <p>You will notice that there is auto-generated text that is unrelated to the work that you completed. It is always a good idea to delete this extra text!</p>
 </section>
-<section id="styling-your-quarto-document" class="level3">
-<h3 class="anchored" data-anchor-id="styling-your-quarto-document">Styling your Quarto Document</h3>
+<section id="include-an-image" class="level2">
+<h2 class="anchored" data-anchor-id="include-an-image">Include an Image</h2>
+<ol type="1">
+<li>Save an image of an activity, place, book, or movie that you enjoy. Save the image somewhere that makes sense to you in your course directory.</li>
+<li>Check out this <a href="https://quarto.org/docs/authoring/figures.html">documentation</a> for how to include an image/figure in Markdown.</li>
+<li>Include your image at the end of your lab, along with a brief description.</li>
+</ol>
+<ul>
+<li>The Markdown code will look something like: <code>![Brief description](relativepath/image.png)</code></li>
+<li>You must use a <strong>relative file path</strong> to your image!</li>
+<li>You may want to adjust the image size.</li>
+</ul>
+<ol start="4" type="1">
+<li>Add a new section header before your image.</li>
+<li>Render your document again to make sure it worked.</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/Paper_Menagerie_cover-360x570.jpg" class="img-fluid figure-img" style="width:30.0%"></p>
+<figcaption>I am obsessed with this book of short stories by Ken Liu.</figcaption>
+</figure>
+</div>
+</section>
+<section id="styling-your-quarto-document" class="level2">
+<h2 class="anchored" data-anchor-id="styling-your-quarto-document">Styling your Quarto Document</h2>
 <p>You can find a list of every option you can use to format an HTML document <a href="https://quarto.org/docs/output-formats/html-basics.html">here</a> and <a href="https://quarto.org/docs/reference/cells/cells-knitr.html">here</a>. Further, <a href="https://quarto.org/docs/output-formats/html-themes.html">here</a> are lists of different themes you can specify in your YAML to produce differently styled outputs.</p>
 <p>Make the following changes to your document:</p>
 <ol type="1">
-<li><p>Specify <strong>“code-folding”</strong> in your YAML document options.</p></li>
+<li><p>Specify <strong>“Code Folding”</strong> in your YAML document options.</p></li>
 <li><p>Specify in the code chunk options that your boxplots of tooth length by supplement delivery method should be <strong>center aligned</strong>.</p></li>
 <li><p>Write and include a <strong>figure caption</strong> for the boxplots using a code-chunk option.</p></li>
 </ol>
 <p>You might have fun playing around with other themes or options!</p>
 </section>
-<section id="render-again" class="level3">
-<h3 class="anchored" data-anchor-id="render-again">Render again!</h3>
+<section id="render-again" class="level2">
+<h2 class="anchored" data-anchor-id="render-again">Render again!</h2>
 <p>Notice that when you render the document, all of the code reruns again, producing the same output as before, but with your changes – this is called reproducibility!</p>
 <p>You should render <strong>often</strong> while completing your practice activities and lab assignments. Make small changes, then make sure the file still renders rather than making a bunch of big changes and then realizing something is wrong.</p>
 </section>
-<section id="turn-it-in" class="level3">
-<h3 class="anchored" data-anchor-id="turn-it-in">Turn it in!</h3>
+<section id="turn-it-in" class="level2">
+<h2 class="anchored" data-anchor-id="turn-it-in">Turn it in!</h2>
 <p>Open the .html file on your computer to make sure it looks as you expected. Then upload the rendered (.html extension) document to Canvas!</p>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -482,12 +512,21 @@ Caution
 <p>Double check that you have <code>embed-resources: true</code> in your YAML. Without this, your html will <strong>not</strong> be formatted correctly on Canvas. You may want to look at what you turn in through your Canvas portal!</p>
 </div>
 </div>
-<blockquote class="blockquote">
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>You’ll be doing this same process for all your future Lab Assignments. Each of these will involve a Quarto file. Some weeks, I may have a template for you to copy into the Quarto file just as with the first practice activity.</p>
-</blockquote>
+</div>
+</div>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
