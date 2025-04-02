@@ -1,11 +1,9 @@
 ---
-title: "Intro to STAT 331/531 + Intro to R"
+title: "Quarto & Reproducibility"
 format: 
   revealjs:
-    #theme: [default, ../slide_custom.scss]
-    theme: default
+    theme: [default, ../slide_custom.scss]
 editor: source
-self-contained: true
 ---
 
 ## Wednesday, January 8
@@ -17,9 +15,50 @@ Today we will...
     -   Chapter 1 Reading?
     -   PA 1: Find the Mistakes?
 -   New Material
+    -   Reproducibility
     -   Scripts + Notebooks
 -   Lab 1: Introduction to Quarto
 
+# Reproducibility & R Projects
+
+## Reproducibility
+
+::: incremental
+- In computing: analyses can be executed again with identical results (either by you or by someone else!)
+
+- **Discussion: Why does it matter?**
+:::
+
+
+![Abstruse Goose](https://miro.medium.com/v2/resize:fit:1400/format:webp/1*4kMWHzPLU0tCYlQd9wsNFg.png)
+
+## Principles of Reproducibility
+
+You can to send your code to someone else, and they can jump in and start working right away.
+
+This means:
+
+::: incremental
+
+1.  Files are organized and well-named.
+2.  References to data and code work for everyone.
+3.  Package dependency is clear.
+4.  Code will run the same every time, even if data values change.
+5.  Analysis process is well-explained and easy to read.
+
+:::
+
+## Principles of Reproducibility
+
+You can to send your code to someone else, and they can jump in and start working right away.
+
+This means:
+
+1.  Files are organized and well-named.
+2.  **References to data and code work for everyone.**
+3.  Package dependency is clear.
+4.  Code will run the same every time, even if data values change.
+5.  Analysis process is well-explained and easy to read.
 
 
 ## Paths
@@ -38,11 +77,37 @@ This file lives in my user files `Users/`...
 
 ...in a series of **organized** folders.
 
-## Working Directories
 
--   Your **working directory** is the folder that `R` "thinks" it lives in at the moment.
+## Absolute vs. Relative File Paths
 
+- **absolute file path**: full path from the root directory on *your* computer
+
+- **relative file path**: path based on the relationship with a current *working directory* in terms of a hierarchichy of directories 
+  - `../` is the relative path to a parent directory 
+  - examples to folow!
+
+. . .
+
+
+::: callout-warning
+An absolute file path will only work on your computer!!
+
+```{r}
+getwd()
+```
+:::
+
+
+## Absolute vs. Relative File Paths
+
+![](images/relative-absolute.png)
+
+## Working Directories in R
+
+-   Your **working directory** is the folder that `R` "thinks it lives" in at the moment.
+    -   If you import or reference files, R will look in the working directory by default
     -   If you save things you have created, they save to your working directory by default.
+
 
 . . .
 
@@ -52,42 +117,27 @@ This file lives in my user files `Users/`...
 getwd()
 ```
 
+. . .
 
+::: callout-warning
+If you are in practice of using `setwd()` to set a working directory in `R` **FORGET THIS**. We will be using other, better practice methods to set a working directory.
+:::
 
-## Reproducibility
+## Reproducibility: Pulling it all together
 
-- In computing: analyses can be executed again with identical results (either by you or by someone else!)
+**Relative file paths** allow someone else to run your code exactly (reproducibly!), as long as they 
 
--   Why does it matter?
-
-## Principles of Reproducibility
-
-You can to send your code to someone else, and they can jump in and start working right away.
-
-This means:
+  1. have everything **organized** the exact way that you do and
+  
+  2. the same **working directory**
 
 . . .
 
-1.  Files are organized and well-named.
+Enter **R Projects!**
 
-. . . 
-
-2.  References to data and code work for everyone.
-
-. . .
-
-3.  Package dependency is clear.
-
-. . .
-
-4.  Code will run the same every time, even if data values change.
-
-. . .
-
-5.  Analysis process is well-explained and easy to read.
-
-
-
+```{r, out.width = "30%", fig.align='center', echo = F}
+knitr::include_graphics("images/project_flag.jpg")
+```
 
 ## The Beauty of R Projects
 
@@ -103,7 +153,9 @@ This means:
 
 2.  Sets the working directory to be wherever the .Rproj file lives.
 
-3.  Links to GitHub, if set up (more on that later!)
+3. Has any files open or elements in your environment that you last saved.
+
+4.  Links to GitHub, if set up (more on that later!)
 :::
 
 ::: {.column width="50%"}
@@ -113,42 +165,19 @@ knitr::include_graphics("images/project_flag.jpg")
 :::
 :::
 
-## RStudio Projects & Reproducibility
+## The Beauty of R Projects
 
-RStudio Projects are great for **reproducibility**!
+::: incremental
+- R Projects are great for **reproducibility**!
 
--   You can send anyone your folder with your .Rproj file and they will be able to run your code on their computer.
+  -   You can send anyone your folder with your .Rproj file and they will be able to run your code on their computer.
+  
+- R Projects are great for **organization**
+  - Having a separate R project for every ..well.. project will keep your analyses separate and organized!
+  - Whenever you want to work on this class, double click the R Project you created to open everything up
+  
+:::
 
--   We will be using RStudio Projects throughout this course.
-
-# [Setting up an RStudio Project](https://manncz.github.io/stat331-calpoly-text/01-introduction.html#rprojects)
-
-## Good practice
-
--   Organize your folders carefully, and name them meaningfully:
-    -   `/User/czmann/Stat331/lab1/` rather than `Desktop/stuff/`
--   In general, use **R Projects** liberally - put one in the "main" folder for a project
-
-## Bad practice
-
-If you put something like this at the top of your .qmd file (more on Quarto later), I will set your computer on fire:
-
-```{r}
-#| echo: true
-#| eval: false
-#| code-line-numbers: false
-setwd("/User/chappelroan/Desktop/R_Class/Lab_1/")
-```
-
--   Setting working directory by hand = BAD!
-
-. . .
-
-- This is called an "absolute file path"
-
-- That directory is specific to you!
-
-    -   aka, some one else's computer will have no idea "where" that is
     
 # Scripts + Notebooks
 
@@ -184,7 +213,7 @@ Notebooks are an implementation of **literate programming**.
 
 ## What is Markdown?
 
-**Markdown** (without the "R") is a *markup language*.
+**Markdown** is a *markup language*.
 
 -   It uses special symbols and formatting to make pretty documents.
 
@@ -194,25 +223,14 @@ Notebooks are an implementation of **literate programming**.
 
 <center>![](https://d33wubrfki0l68.cloudfront.net/59f29676ef5e4d74685e14f801bbc10c2dbd3cef/c0688/lesson-images/markdown-1-markup.png)</center>
 
-## What is R Markdown?
 
-**R Markdown** (with the "R") uses regular *Markdown*, **AND** it can run and display `R` code.
 
--   (Other languages, too!)
--   R Markdown files have the **.Rmd** extension.
-
-<!--## 
-
-<center>![](https://miro.medium.com/max/1200/1*jL-whKGBhuUlU7Q2oevz9w.png)</center>
-
-## 
-
-<center>![](https://d33wubrfki0l68.cloudfront.net/ece57b678854545e6602a23daede51ad72da2170/21cca/lesson-images/outputs-1-word.png)</center>-->
 
 ## What is Quarto?
 
-Quarto **unifies** and **extends** the R Markdown ecosystem.
+Quarto uses regular *Markdown*, **AND** it can run and display `R` code.
 
+-   (Other languages, too!)
 -   Quarto files have the **.qmd** extension.
 
 ```{r}
@@ -222,22 +240,165 @@ Quarto **unifies** and **extends** the R Markdown ecosystem.
 knitr::include_graphics("images/rmd_ecosystem.png")
 ```
 
-Quarto is the next generation R Markdown.
 
-## Highlights of Quarto
+-   Quarto is the next generation R Markdown
 
--   Consistent implementation of attractive and handy features across outputs:
 
-    -   E.g., tabsets, code-folding, syntax highlighting, etc.
+## Quarto - Rendering
 
--   More accessible defaults and better support for accessibility.
+To take your *.qmd* file and make it look pretty, you have to **render** it.
 
--   Guardrails that are helpful when learning:
+![](images/quarto.png)
 
-    -   E.g., YAML completion, informative syntax errors, etc.
+## Rendering your Quarto Document
 
--   Support for other languages like Python, Julia, Observable, and more.
+<center>
 
+![](images/render.png)
+
+![](images/render_on_save.png)
+
+</center>
+
+## Rendering - What happens?
+
+When you render:
+
+-   Your file is saved.
+-   The R code written in your *.qmd* file gets run **in order**.
+    -   It starts from scratch, even if you previously ran some of the code.
+-   A new file is created.
+    -   If your Quarto file is called "lab1.qmd", then a file called "lab1.html" will be created.
+    -   This will be saved in the same folder as "lab1.qmd".
+
+
+## Rendering - Under the hood
+
+Quarto CLI (command line interface) orchestrates each step of rendering:
+
+1.  Process the executable code chunks with either `knitr` or `jupyter`.
+2.  Convert the resulting Markdown file to the desired output.
+
+```{r, echo = F, fig.align='center'}
+knitr::include_graphics("images/horst_qmd_render_schema.png")
+```
+
+
+## Quarto Components
+
+![](images/quarto_sections.jpeg){width="80%"}
+
+
+
+
+## Quarto - Front Matter
+
+- Configuration instructions: YAML
+- Basic specifications like:
+  - Document type
+  - Title
+  - Author
+  - Date
+- Fancier specifications (you will explore this in Lab 1!)
+
+
+![](images/yaml.png)
+
+## Quarto - Code
+
+- "code chunks"
+- output of code appears below the chunk
+- *good practice:* divide your code throughout a document into steps in different chunks
+- you specify how you want Quarto to handle code in each chunk in the final "rendered" document
+
+
+![](images/code-chunk.png)
+
+## R Code Options in Quarto
+
+**R code chunk** options are included at the top of each code chunk, prefaced with a #\| (hashpipe).
+
+-   These options control how the following code is run and reported in the final Quarto document.
+-   R code options can also be included in the front matter (YAML) and are applied globally to the document.
+
+![](images/code-chunk-options.png)
+
+## 
+
+<center>![](images/code_options.png)</center>
+
+## 
+
+<center>![](images/quarto_code_options.png)</center>
+
+
+## Quarto - Markdown
+
+- Anything other that code and output should be included as Markdown in a Quarto notebook
+
+- Some **Markdown** text basics:
+
+    -   \*text\* -- makes italics
+    -   \*\*text\*\* -- makes bold text
+    -   \# -- makes headers
+    -   \![ \]( ) -- includes images or HTML links
+    -   \< \> -- embeds URLs
+
+- Find more Markdown basics [here](https://quarto.org/docs/authoring/markdown-basics.html).
+
+
+## #so many hashtags??
+
+\#'s are used in three different ways in Quarto documents...
+
+::: incremental
+
+1. In MARKDOWN, they define **HEADERS**
+2. In YAML, they are preceded by a pipe \| to define R **CODE CHUNK OPTIONS**
+3. In R CODE, they define a **COMMENT**
+
+:::
+
+![](images/hashtags.png)
+
+
+## Quarto Working Directory
+
+- Quarto automatically sets the working directory to be **where the notebook you are working in is located**
+- **THIS OVERRIDES R PROJECTS**
+
+. . .
+
+![](images/relative-quarto.png){width=90%}
+
+## Quarto & Relative File Paths
+
+
+:::panel-tabset
+
+# ALWAYS
+
+- Use relative file paths!
+
+- Remember that when you run code within a .qmd file or render it, **the working directory is the directory where the .qmd file is saved.**
+
+# NEVER 💥
+ 
+- put something like this at the top of your .qmd file:
+
+```{r}
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+setwd("/User/chappelroan/Desktop/R_Class/Lab_1/")
+```
+
+-   Setting working directory by hand = ☠️
+-   Absolute file paths = ☠️
+-   some one else's computer will have no idea "where" this working directory is
+
+:::
+    
 ## Quarto Formats
 
 Quarto makes moving between outputs straightforward.
@@ -276,76 +437,37 @@ website:
 :::
 :::
 
-## Quarto Components
 
-![](images/quarto_sections.jpeg){width="80%"}
+## Summary - Highlights of Quarto
 
-## Markdown in Quarto
+::: incremental
 
-A few useful tips for formatting the **Markdown** text in your document:
+- Supports reproducibility!
 
--   \*text\* -- makes italics
--   \*\*text\*\* -- makes bold text
--   \# -- makes headers
--   \![ \]( ) -- includes images or HTML links
--   \< \> -- embeds URLs
+    - Code, output, figures, and text all in one place    
 
-## R Code Options in Quarto
+-   Consistent implementation of pretty and handy features across different formats
 
-**R code chunk** options are included at the top of each code chunk, prefaced with a #\| (hashpipe).
+    - documents, presentations, websites, books, & more
 
--   These options control how the following code is run and reported in the final Quarto document.
--   R code options can also be included in the front matter (YAML) and are applied globally to the document.
+-   Guardrails that are helpful when learning:
 
-## 
+    -   E.g., YAML completion, informative syntax errors, etc.
 
-<center>![](images/code_options.png)</center>
+-   Support for other languages like Python, Julia, Observable, and more.
 
-## 
+::: 
 
-<center>![](images/quarto_code_options.png)</center>
 
-## Rendering your Quarto Document
 
-To take your *.qmd* file and make it look pretty, you have to **render** it.
+## Lab 1: Introduction to Quarto
 
-<center>
 
-![](images/render.png)
-
-![](images/render_on_save.png)
-
-</center>
-
-## Rendering your Quarto Document
-
-Quarto CLI (command line interface) orchestrates each step of rendering:
-
-1.  Process the executable code chunks with either `knitr` or `jupyter`.
-2.  Convert the resulting Markdown file to the desired output.
-
-```{r, echo = F, fig.align='center'}
-knitr::include_graphics("images/horst_qmd_render_schema.png")
-```
-
-<!-- The main difference is that with R Markdown, the R package rmarkdown does the heavy lifting of going from the source Rmd file to the the output, using knitr for evaluating the code chunks. -->
-
-## Rendering your Quarto Document
-
-When you click **Render**:
-
--   Your file is saved.
--   The R code written in your *.qmd* file gets run **in order**.
-    -   It starts from scratch, even if you previously ran some of the code.
--   A new file is created.
-    -   If your Quarto file is called "Lab1.qmd", then a file called "Lab1.html" will be created.
-    -   This will be saved in the same folder as "Lab1.qmd".
-
-## [Lab 1: Introduction to Quarto + Challenge 1: Modifying your Quarto Document](https://zoerehnberg.github.io/STAT331-S23/lab_assignments/lab1/LA1_intro_quarto.html)
+![Artwork by Allison Horst](https://cdn.myportfolio.com/45214904-6a61-4e23-98d6-b140f8654a40/ac60a4fb-6b2e-43f4-b0b9-44e137d4cef4_rw_3840.png?h=08991bf991acf8efd32f4b022354b535){width=10%}
 
 ## To do...
 
 -   **Lab 1: Introduction to Quarto**
-    -   Due Saturday (1/11) at 11:59pm
+    -   Due Monday 4/7 at 11:59pm
 -   **Read Chapter 2: Importing Data + Basics of Graphics**
-    -   **Check-in 2.1 + 2.2** due Monday (1/13 at 10:00am
+    -   **Check-in 2.1 + 2.2** due Tuesday (4/8) before class
