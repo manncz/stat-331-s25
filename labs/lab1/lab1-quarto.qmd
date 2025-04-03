@@ -202,7 +202,7 @@ Carry out the following steps:
 
 :::callout-tip
 ### Hint 
-Look at the "traditional interface" example at the bottom for comparing `extra` across groups in the `sleep` dataset. You will need to change one element from the example to implement an independent two-sample test rather than a paired test.
+Look at the example for a two-sample t-test comparing `mpg` in morning and afternoon with the `mtcars` data.
 :::
 
 2. Using the function `t.test()`, write code to carry out the analysis. You can assume unequal variances and a two-sided alternative.
