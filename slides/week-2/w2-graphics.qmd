@@ -1,0 +1,327 @@
+---
+title: "Basics of Graphics"
+format: 
+  revealjs:
+    theme: [default, ../slide_custom.scss]
+editor: source
+---
+
+```{r setup}
+#| include: false
+#| message: false
+library(tidyverse)
+```
+
+## Thursday, April 10
+
+Today we will...
+
+-   New Material
+    -   What makes a good graphic?
+    -   Color
+-   Lab 2: Exploring Rodents with ggplot2
+
+## On Grading....
+
+I post skeleton rubrics for lab activities on Canvas to share the general structure of how you will be graded.
+
+-   Grading will be on a scale of *Master* to *Practitioner* to *Novice* to *No Effort*.
+-   If you make a meaningful error in your code, you cannot earn *Master* for that question.
+-   Your labs **will** have an appearance/workflow/code format portion. Check out the [guidelines](https://canvas.calpoly.edu/courses/144990/pages/lab-appearance-workflow-and-code-format).
+
+## Graphics
+
+Graphics consist of:
+
+-   **Structure:** boxplot, scatterplot, etc.
+
+-   **Aesthetics:** features such as color, shape, and size that map other variables to structural features.
+
+**Both** the structure and aesthetics should help viewers interpret the information.
+
+## What makes bad graphics bad?
+
+-   BAD DATA.
+-   Too much "chartjunk" -- superfluous details (Tufte).
+-   Design choices that are difficult for the human brain to process, including:
+
+::: columns
+::: {.column width="10%"}
+:::
+
+::: {.column width="50%"}
+-   Colors
+-   Orientation
+-   Organization
+:::
+
+::: {.column width="40%"}
+![](images/bad_graphic.png){.absolute width="300"}
+:::
+:::
+
+## What makes good graphics good?
+
+Edward R. Tufte is a well-known critic of visualizations, and his definition of **graphical excellence** consists of:
+
+::: {.incremental}
+-   communicating complex ideas with **clarity, precision, and efficiency**.
+-   maximizing the **data-to-ink** ratio.
+-   using multivariate displays.
+-   telling the truth about the data.
+:::
+
+## Graphics
+
+-  When creating graphics, we need to think carefully about how we make structural and aesthetic decisions.
+-  This takes iteration and practice!
+
+# Lessons from Visual Perception
+
+## Gestalt Principles
+
+Our brains have an amazing ability to create and perceive structure among visual objects.
+
+-   "Gestalt principles of visual perception"
+-   This framework can help us think about how to create the most expressive and effective data visualizations
+
+## Gestalt Principles
+
+| Gestalt Hierarchy | Graphical Feature |
+|-------------------|-------------------|
+| 1\. Enclosure     | Facets            |
+| 2\. Connection    | Lines             |
+| 3\. Proximitiy    | White Space       |
+| 4\. Similarity    | Color/Shape       |
+
+. . .
+
+Implications for practice:
+
+-   Know that we perceive some groups before others.
+-   Design to facilitate and emphasize the most important comparisons.
+
+
+## Pre-attentive Features
+
+<br>
+
+The next slide will have one point that is not like the others.
+
+<br>
+
+Raise your hand when you notice it.
+
+## Pre-attentive Features
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/pre-atten1.png")
+```
+
+## Pre-attentive Features
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/pre-atten2.png")
+```
+
+## Pre-attentive Features
+
+**Pre-attentive features** are features that we see and perceive before we even think about it.
+
+-   They will jump out at us in less than 250 ms.
+
+-   E.g., color, form, movement, spatial location.
+
+. . .
+
+There is a **hierarchy** of features:
+
+-   Color is stronger than shape.
+-   Combinations of pre-attentive features may **not** be pre-attentive due to interference.
+
+## Double Encoding
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/double.png")
+```
+
+## No Double Encoding
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/no_double.png")
+```
+
+# [Color](https://www.youtube.com/watch?v=zALBl5f1ib4)
+
+## Color
+
+-   Color, hue, and intensity are pre-attentive features, and bigger contrasts lead to faster detection.
+    -   **Hue**: main color family (red, orange, yellow...)
+    -   **Intensity**: amount of color
+
+::: columns
+::: {.column width="30%"}
+```{r}
+#| out-width: 90%
+knitr::include_graphics("images/hue.png")
+```
+:::
+
+::: {.column width="70%"}
+```{r}
+knitr::include_graphics("images/intensity.png")
+```
+:::
+:::
+
+## Color Guidelines
+
+-   Do not use rainbow color gradients!
+
+-   Be conscious of what certain colors “mean”.
+
+    -   Good idea to use red for "good" and green for "bad"?
+
+```{r}
+#| fig-align: center
+#| layout-ncol: 2
+#| out-width: 70%
+knitr::include_graphics("images/rainbow.png")
+knitr::include_graphics("images/red_green.png")
+```
+
+## Color Guidelines
+
+-   For **categorical** data, try not to use more than 7 colors:
+
+```{r}
+#| fig-align: center
+#| out-width: 30%
+knitr::include_graphics("images/small_gradient.png")
+```
+
+Can use `colorRampPalette()` from the `RColorBrewer` package to produce larger palettes:
+
+```{r}
+#| fig-align: center
+knitr::include_graphics("images/big_gradient.png")
+```
+
+## Color Guidelines
+
+-   For **quantitative** data, use mappings from data to color that are **numerically and perceptually uniform**.
+    -   Relative discriminability of two colors should be proportional to the difference between the corresponding data values.
+
+## Color Guidelines
+
+**To colorblind-proof a graphic...**
+
+-   use **double encoding** - when you use color, **also** use another aesthetic (line type, shape, etc.).
+
+```{r}
+#| fig-align: center
+#| out-width: 50%
+knitr::include_graphics("images/double.png")
+```
+
+## Color Guidelines
+
+**To colorblind-proof a graphic...**
+
+-   with a unidirectional scale (e.g., all + values), use a **monochromatic** color gradient.
+
+```{r}
+#| fig-align: center
+#| out-width: 50%
+knitr::include_graphics("images/blues.png")
+```
+
+-   with a bidirectional scale (e.g., + and - values), use a **purple-white-orange** color gradient. Transition through white!
+
+```{r}
+#| fig-align: center
+#| out-width: 70%
+knitr::include_graphics("images/PuOr.png")
+```
+
+## Color Guidelines
+
+**To colorblind-proof a graphic...**
+
+-   print your chart out in black and white -- if you can still read it, it will be safe for all users.
+
+```{r}
+#| fig-align: center
+#| layout-ncol: 2
+knitr::include_graphics("images/nyt_color.png")
+knitr::include_graphics("images/nyt_bw.png")
+```
+
+## Color in ggplot2
+
+There are several packages with color scheme options:
+
+-   Rcolorbrewer
+-   ggsci
+-   viridis
+-   wesanderson
+
+These packages have color palettes hthatare aesthetically pleasing and, in many cases, colorblind friendly.
+
+You can also take a look at other [ways to find nice color palettes](https://lisacharlottemuth.com/2016/04/22/Colors-for-DataVis/). [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) is my personal favorite.
+
+# What Do You Think About This Graphic?
+
+## Example 1
+
+
+```{r}
+#| out-width: 40%
+knitr::include_graphics("images/covid-model.jpg")
+```
+
+
+## Example 2
+
+::: columns
+::: {.column width="50%"}
+
+:::
+::: {.column width="50%"}
+```{r}
+#| out-width: 90%
+knitr::include_graphics("images/house-graphic.png")
+```
+:::
+:::
+
+## Example 3
+
+::: columns
+::: {.column width="50%"}
+
+:::
+::: {.column width="50%"}
+```{r}
+#| out-width: 90%
+knitr::include_graphics("images/we-line-chart-consumer-confidence.png")
+```
+:::
+:::
+
+
+## Lab 2: Exploring Rodents with ggplot2
+
+## To do...
+
+-   **Lab 2: Exploring Rodents with ggplot2**
+    -   due Monday 4/14 at 11:59pm
+-   **Read Chapter 3: Data Cleaning and Manipulation**
+    -   **Check-in 3.1** due Tuesday 4/15 before class
+    
+  
+    

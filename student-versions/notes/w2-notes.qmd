@@ -1,0 +1,264 @@
+---
+title: "Week 2: Class Notes"
+format: html
+embed-resources: true
+---
+
+```{r}
+#| label: "setup"
+#| message: false
+#| echo: false
+
+library(tidyverse)
+library(RColorBrewer)
+```
+
+## Data
+
+Car data:
+
+```{r}
+data(mpg)
+```
+
+Texas housing data:
+```{r}
+data(txhousing)
+
+# taking a subset of cities 
+# don't worry about this code - we haven't learned how to do this yet!
+sm_tx <- txhousing |>
+  filter(city %in% c("Dallas","Fort Worth", "Austin",
+                     "Houston", "El Paso"))
+```
+
+
+```{r}
+?read_csv
+?read.csv
+```
+
+
+## Tuesday - `ggplot2`
+
+
+```{r}
+ggplot(data = mpg)
+```
+
+```{r}
+ggplot(data = mpg, 
+       aes(x = class, y = hwy))
+```
+
+```{r}
+ggplot(data = mpg, 
+       aes(x = class, y = hwy)) +
+  geom_jitter() +
+  geom_boxplot()
+```
+
+
+This is an example of ______ aesthetics:
+```{r}
+ggplot(data = mpg, 
+       mapping = aes(x = class, 
+                     y = hwy)) +
+  geom_boxplot()
+```
+
+
+This is an example of ______ aesthetics:
+```{r}
+ggplot(data = mpg) +
+  geom_boxplot(mapping = aes(x = class, 
+                             y = hwy))
+```
+
+
+This is an example of ______ aesthetics:
+```{r}
+ggplot(data = mpg) +
+  geom_jitter(mapping = aes(x = class, 
+                             y = hwy,
+                             color = class))
+```
+
+
+This is an example of ______ aesthetics:
+```{r}
+ggplot(data = mpg) +
+  geom_jitter(mapping = aes(x = class, 
+                             y = hwy),
+               color = "steelblue")
+
+```
+
+## geoms
+    
+```{r}
+ggplot(data = mpg,
+       aes(x = cty,
+           y = hwy,
+           color = class)) +
+  geom_point() +
+  labs(x = "City (mpg)", y = "Highway (mpg)") +
+  theme(axis.title = element_text(size = 14),
+        legend.title = element_blank(),
+        legend.text = element_text(size = 14))
+```
+                            
+
+## Game Plans
+
+```{r}
+ggplot(data = sm_tx,
+       aes(x = date, y = median, color = city)) + 
+  geom_point() + 
+  geom_smooth(method = "loess") + 
+  labs(x = "Date",
+       y = "Median Home Price",
+       title = "Texas Housing Prices")
+```
+
+## Facets
+
+```{r}
+ggplot(data = sm_tx,
+       aes(x = date, y = median)) + 
+  geom_point() + 
+  facet_grid(cols = vars(city)) +
+  geom_smooth(method = "loess") + 
+  labs(x = "Date",
+       y = "Median Home Price",
+       title = "Texas Housing Prices")
+```
+
+```{r}
+
+ggplot(data = sm_tx,
+       aes(x = date, y = median)) + 
+  geom_point() + 
+  facet_wrap(vars(city)) +
+  geom_smooth(method = "loess") + 
+  labs(x = "Date",
+       y = "Median Home Price",
+       title = "Texas Housing Prices")
+```
+
+##  `stat`
+
+
+```{r}
+ggplot(data = mpg,
+       mapping = aes(x = class)) +
+  geom_bar()
+```
+
+```{r}
+ggplot(data = mpg,
+       mapping = aes(x = class)) +
+  stat_count(geom = "bar")
+```
+
+```{r}
+ggplot(data = mpg,
+       mapping = aes(x = class,
+                     y = hwy)) +
+  stat_summary(geom = "bar",
+               fun = "mean") +
+  scale_y_continuous(limits = c(0,45))
+```
+
+```{r}
+ggplot(data = mpg,
+       mapping = aes(x = class,
+                     y = hwy)) +
+  stat_summary(geom = "bar",
+               fun = "max") +
+  scale_y_continuous(limits = c(0,45))
+```
+
+
+## position
+
+```{r}
+ggplot(mpg, aes(x = fl, fill = drv)) + 
+  geom_bar(position = "dodge")
+```
+```{r}
+ggplot(mpg, aes(x = fl, fill = drv)) + 
+  geom_bar(position = "fill")
+```
+
+```{r}
+ggplot(mpg, aes(x = fl, fill = drv)) + 
+  geom_bar(position = "stack")
+```
+
+## customization
+
+```{r}
+ggplot(mpg, aes(x = fl, fill = drv)) + 
+  geom_bar(position = "fill") +
+  scale_fill_manual(values = c("#d73027", "#fdae61", "#4575b4"),
+                    labels = c("4-wheel","front","rear")) +
+  labs(x = "Fuel Type", 
+       y = "Proportion", 
+       fill = "Drive Train",
+       title = "Fuel Type by Car Drive Train")
+```
+
+## Try it - Diamonds
+
+```{r}
+data(diamonds)
+summary(diamonds)
+```
+
+
+## Try it - mpg
+
+```{r}
+ggplot(data = mpg,
+       mapping = aes(x = cty,
+                     y = hwy,
+                     color = drv)) +
+  geom_point() +
+  facet_grid(cols = vars(year))
+```
+
+
+
+## Thursday - More Graphics
+
+
+## Color
+
+We loaded `RColorBrewer` at the beginning of this document.
+
+
+You can look at pallete options using `display.brewer.all()` or by looking at
+[https://colorbrewer2.org/](https://colorbrewer2.org/):
+
+```{r}
+display.brewer.all(n = 5, type = "div" , colorblindFriendly = TRUE)
+```
+
+
+```{r}
+mycols <- brewer.pal(n = 4, name = "BuPu")
+mycols
+```
+
+
+## Try it out - Colors
+
+```{r}
+ggplot(data = mpg) + 
+  geom_jitter(mapping = aes(x = displ, y = hwy, color = cyl)) + 
+  labs(x = "Engine Displacement (liters)", 
+       y = "Highway MPG", 
+       color = "Number of \nCylinders",
+       title = "Car Efficiency")
+```
