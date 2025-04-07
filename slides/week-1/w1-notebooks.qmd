@@ -6,7 +6,7 @@ format:
 editor: source
 ---
 
-## Wednesday, January 8
+## Thursday, April 3
 
 Today we will...
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Statistical Computing in R – Introduction to Statistical Computing in R</title>
+<title>PA 2: Using Data Visualization to Find the Penguins – Introduction to Statistical Computing in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +20,60 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./course-info/course-resources.html" rel="next">
-<link href="./course-info/syllabus-w25.html" rel="prev">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-43b9c4459d8eb8b985b4dac2a7dcdf36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark-f65e35411853cb03cb95e2a63a013de7.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-43b9c4459d8eb8b985b4dac2a7dcdf36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f65e35411853cb03cb95e2a63a013de7.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +114,9 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-info/syllabus-w25.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item">
+      Introduction to Statistical Computing in R
+      </li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -97,7 +131,7 @@ ul.task-list li input[type="checkbox"] {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Introduction to Statistical Computing in R</a> 
+      <a href="../">Introduction to Statistical Computing in R</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/manncz/stat-331-s25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
@@ -114,28 +148,28 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
  <span class="menu-text">Course information</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-info/syllabus-w25.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-info/syllabus-w25.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./course-info/course-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-info/course-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -146,15 +180,25 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#getting-started" id="toc-getting-started" class="nav-link active" data-scroll-target="#getting-started">Getting Started</a></li>
+  <li><a href="#creating-a-setup-code-chunk" id="toc-creating-a-setup-code-chunk" class="nav-link" data-scroll-target="#creating-a-setup-code-chunk">Creating a Setup Code Chunk</a></li>
+  <li><a href="#dataset-penguins" id="toc-dataset-penguins" class="nav-link" data-scroll-target="#dataset-penguins">Dataset: <code>penguins</code></a></li>
+  <li><a href="#graphics" id="toc-graphics" class="nav-link" data-scroll-target="#graphics">Graphics</a></li>
+  <li><a href="#canvas-quiz" id="toc-canvas-quiz" class="nav-link" data-scroll-target="#canvas-quiz">Canvas Quiz</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/manncz/stat-331-s25/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./course-info/syllabus-w25.html">Course information</a></li><li class="breadcrumb-item"><a href="./index.html">Schedule</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Statistical Computing in R</h1>
+<h1 class="title">PA 2: Using Data Visualization to Find the Penguins</h1>
 </div>
 
 
@@ -171,127 +215,139 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 4%">
-<col style="width: 11%">
-<col style="width: 32%">
-<col style="width: 32%">
-<col style="width: 11%">
-<col style="width: 11%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Week</th>
-<th>Day</th>
-<th>Topic / Reading</th>
-<th>Slides</th>
-<th>Practice Activity</th>
-<th>Lab</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td>Tue, 4/1</td>
-<td><a href="https://manncz.github.io/stat331-calpoly-text/01-introduction.html">1: Introduction</a></td>
-<td><a href="./slides/week-1/w1-intro-r.html">Syllabus &amp; Intro to R</a></td>
-<td><a href="./practice-activities/pa1.html">PA 1</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thu, 4/3</td>
-<td></td>
-<td><a href="./slides/week-1/w1-notebooks.html">Intro to Quarto</a></td>
-<td></td>
-<td><a href="./labs/lab1/lab1-quarto.html">Lab 1</a></td>
-</tr>
-<tr class="odd">
-<td>2</td>
-<td>Tue, 4/8</td>
-<td><a href="https://manncz.github.io/stat331-calpoly-text/02-tidy-data-and-basics-of-graphics.html">2: Basics of Graphics</a></td>
-<td>Importing Data + Graphics with <code>ggplot2</code></td>
-<td><a href="./practice-activities/pa2.html">PA 2</a></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thu, 4/10</td>
-<td></td>
-<td>More Graphics!</td>
-<td></td>
-<td><a href="./labs/lab2/lab2-ggplot.html">Lab 2</a></td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td>Tue, 4/15</td>
-<td><a href="https://manncz.github.io/stat331-calpoly-text/03-data-cleaning-and-manipulation.html">3: Data Cleaning + Manipulation</a></td>
-<td>Data Cleaning with <code>dplyr</code></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thu, 4/17</td>
-<td></td>
-<td>Extending <code>dplyr</code> + Data Ethics</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>4</td>
-<td>Tue, 4/22</td>
-<td><a href="https://manncz.github.io/stat331-calpoly-text/04-data-joins-and-transformations.html">4: Data Joins + Transformations</a></td>
-<td>Data Joins</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thu, 4/24</td>
-<td></td>
-<td>Data Pivots + Factor Variables</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td>Tue, 4/29</td>
-<td><a href="5 Special Data Types">5: Special Data Types</a></td>
-<td>Strings</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td>Thu, 5/1</td>
-<td></td>
-<td>Dates + TBD</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>6</td>
-<td>Tue, 5/6</td>
-<td><a href="6 Version Control">6: Version Control</a></td>
-<td>Version Control</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td></td>
-<td><strong>Thu, 5/8</strong></td>
-<td></td>
-<td><strong>Midterm Exam</strong></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
+<!-- Insert your setup code chunk here. This is just good practice. -->
+<p><a href="../student-versions/pas/pa2.qmd">Download the .qmd template</a> and save it in a reasonable location.</p>
+<p>Today you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.</p>
+<p>Some advice:</p>
+<ul>
+<li><p><strong>Work with those around you.</strong></p></li>
+<li><p>If you aren’t sure how to make a specific plot or how to customize a plot, look over the class text for this week and make use of the <a href="https://manncz.github.io/stat331-calpoly-text/02-tidy-data-and-basics-of-graphics.html#rgraphics">R graphics cheatsheet</a>.</p></li>
+<li><p>Google is your friend! If you aren’t sure how to accomplish a certain task, type what you are trying to accomplish into Google and see what other people are saying.</p>
+<ul>
+<li>Generally, adding <code>ggplot</code> to the end of your search will help make your search results more relevant!</li>
+</ul></li>
+</ul>
+<section id="getting-started" class="level2">
+<h2 class="anchored" data-anchor-id="getting-started">Getting Started</h2>
+<p>We will be creating visualizations using the <code>ggplot2</code> package.</p>
+<p>For this activity, we will be exploring the <code>penguins</code> data from the <code>palmerpenguins</code> package, which has <a href="https://allisonhorst.github.io/palmerpenguins/">fantastic documentation with really awesome artwork</a>. So, you will need to install the <strong>palmerpenguins</strong> package.</p>
+<p><code>install.packages("palmerpenguins")</code></p>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<code>install.packages()</code> in the console NOT in your <code>.qmd</code> file!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You should type this into your console and NOT include it in a code chunk in your <code>.qmd</code> file. Recall that we only have to install a package <strong>once</strong>, but load it each time we open R. Each time you <em>render</em> your <code>.qmd</code> file, <strong>ALL</strong>the code chunks are run. Therefore, installing a package in a code chunk would cause R to unnecessarily install the package over and over again. Not good.</p>
+</div>
+</div>
+</section>
+<section id="creating-a-setup-code-chunk" class="level2">
+<h2 class="anchored" data-anchor-id="creating-a-setup-code-chunk">Creating a Setup Code Chunk</h2>
+<ol type="1">
+<li>Insert a code chunk at the beginning of your document (directly under the YAML).</li>
+<li>Name the code chunk <code>setup</code>.</li>
+<li>Use the hashpipe <code>#|</code> to specify a code chunk option that prevents any messages (e.g., from loading in packages) from appearing.</li>
+<li>Load in the <code>tidyverse</code> or <code>ggplot2</code> package.</li>
+<li>Load in the <code>palmerpenguins</code> package.</li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Code chunk name: <code>setup</code>
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Naming your code chunk “setup” has special properties in a <code>.qmd</code> - specifically, this code chunk will run automatically when you try to run a subsequent code chunk. This ensures all packages and any other specifications for your document are loaded and will not cause you errors or messages.</p>
+</div>
+</div>
+</section>
+<section id="dataset-penguins" class="level2">
+<h2 class="anchored" data-anchor-id="dataset-penguins">Dataset: <code>penguins</code></h2>
+<p>I like to start by <strong>seeing</strong> the dataset I will be working with, so I am going to pull the <code>penguins</code> data into my R environment. Do you see it in the top right Environment tab?</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in data(penguins): data set 'penguins' not found</code></pre>
+</div>
+</div>
+<p>You may notice that a dataset called <code>penquins_raw</code> also loaded. We will ignore this and focus on the <code>penguins</code> dataset.</p>
+<ol start="6" type="1">
+<li>Get to know your data. What are the variables and what units are they measured in? What does each row represent?</li>
+</ol>
+</section>
+<section id="graphics" class="level2">
+<h2 class="anchored" data-anchor-id="graphics">Graphics</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure to give your plots reader friendly axes labels!</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Make sure your final report <strong>does not</strong> display any warnings or messages from RStudio!</p>
+</div>
+</div>
+<ol start="7" type="1">
+<li><p>Use <a href="https://excalidraw.com/" class="uri">https://excalidraw.com/</a> (or pen and paper, a tablet, etc.) to create a <strong>game plan</strong> for a barchart of <code>species</code>, where <code>species</code> is mapped to the fill color of the barchart. Save or take a screenshot of your game plan – you will be uploading this to Canvas with your practice activity submission.</p></li>
+<li><p>Use <code>ggplot2</code> to create the barchart you outlined above.</p></li>
+</ol>
+<ol start="9" type="1">
+<li>Use <code>ggplot2</code> to create a scatterplot of the relationship between the bill length (<code>bill_length_mm</code>) and bill depth (<code>bill_depth_mm</code>).</li>
+</ol>
+<ol start="10" type="1">
+<li>Building on your code from (9), add an aesthetic to differentiate the species by color.</li>
+</ol>
+<ol start="11" type="1">
+<li>Building on your code from (10), add the location of the penguins (<code>island</code>) to your visualization. There us more than one way you could to address this, however, one method will make it easier to answer the questions below, so you might want to read those questions first!</li>
+</ol>
+</section>
+<section id="canvas-quiz" class="level2">
+<h2 class="anchored" data-anchor-id="canvas-quiz">Canvas Quiz</h2>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Use the plots you created to answer the following questions on Canvas.
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Which species of penguins is represented <strong>least</strong> in the Palmer Penguins data set?</p></li>
+<li><p>Which species of penguins are found on <strong>every</strong> island?</p></li>
+<li><p>Which species of penguins are found <strong>only</strong> on Dream Island?</p></li>
+<li><p>Which species of penguins are found <strong>only</strong> on Biscoe Island?</p></li>
+</ol>
+</div>
+</div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -855,18 +911,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./course-info/syllabus-w25.html" class="pagination-link" aria-label="Syllabus">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Syllabus</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./course-info/course-resources.html" class="pagination-link" aria-label="R Resources">
-        <span class="nav-page-text">R Resources</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
@@ -875,7 +919,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/manncz/stat-331-s25/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/manncz/stat-331-s25/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>

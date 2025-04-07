@@ -256,7 +256,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDay\nTopic / Reading\nSlides\nPractice Activity\nLab\n\n\n\n\n1\nTue, 4/1\n1: Introduction\nSyllabus & Intro to R\nPA 1\n\n\n\n\nThu, 4/3\n\nIntro to Quarto\n\nLab 1\n\n\n2\nTue, 4/8\n2: Basics of Graphics\nImporting Data + Graphics with ggplot2\n\n\n\n\n\nThu, 4/10\n\nMore Graphics!\n\n\n\n\n3\nTue, 4/15\n3: Data Cleaning + Manipulation\nData Cleaning with dplyr\n\n\n\n\n\nThu, 4/17\n\nExtending dplyr + Data Ethics\n\n\n\n\n4\nTue, 4/22\n4: Data Joins + Transformations\nData Joins\n\n\n\n\n\nThu, 4/24\n\nData Pivots + Factor Variables\n\n\n\n\n5\nTue, 4/29\n5: Special Data Types\nStrings\n\n\n\n\n\nThu, 5/1\n\nDates + TBD\n\n\n\n\n6\nTue, 5/6\n6: Version Control\nVersion Control\n\n\n\n\n\nThu, 5/8\n\nMidterm Exam",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDay\nTopic / Reading\nSlides\nPractice Activity\nLab\n\n\n\n\n1\nTue, 4/1\n1: Introduction\nSyllabus & Intro to R\nPA 1\n\n\n\n\nThu, 4/3\n\nIntro to Quarto\n\nLab 1\n\n\n2\nTue, 4/8\n2: Basics of Graphics\nImporting Data + Graphics with ggplot2\nPA 2\n\n\n\n\nThu, 4/10\n\nMore Graphics!\n\nLab 2\n\n\n3\nTue, 4/15\n3: Data Cleaning + Manipulation\nData Cleaning with dplyr\n\n\n\n\n\nThu, 4/17\n\nExtending dplyr + Data Ethics\n\n\n\n\n4\nTue, 4/22\n4: Data Joins + Transformations\nData Joins\n\n\n\n\n\nThu, 4/24\n\nData Pivots + Factor Variables\n\n\n\n\n5\nTue, 4/29\n5: Special Data Types\nStrings\n\n\n\n\n\nThu, 5/1\n\nDates + TBD\n\n\n\n\n6\nTue, 5/6\n6: Version Control\nVersion Control\n\n\n\n\n\nThu, 5/8\n\nMidterm Exam",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -494,7 +494,7 @@
     "href": "labs/lab1/lab1-quarto.html#conducting-statistical-analyses",
     "title": "Lab 1: Introduction to Quarto",
     "section": "Conducting Statistical Analyses",
-    "text": "Conducting Statistical Analyses\n\n\n\n\n\n\nRefresher on a two-sample independent t-test\n\n\n\nWhile a second course in statistics is a pre-requisite for this class, you may want to go here for a refresher on conducting two-sample independent t-tests.\n\n\nIn this section, we are going to conduct a two-sample independent t-test to compare tooth length between the two supplement methods in the ToothGrowth dataset. I have outlined the null and alternative hypotheses we will be testing:\n\n\n\n\n\n\nNull\n\n\n\nThe treatment mean tooth length for the OJ supplement delivery method is the same as the treatment mean tooth length for the VC supplement delivery method.\n\n\n\n\n\n\n\n\nAlternative\n\n\n\nThe treatment mean tooth length for the OJ supplement delivery method is different from the treatment mean tooth length for the VC supplement delivery method.\n\n\nCarry out the following steps:\n\nLook up the help documentation for t.test().\n\n\n\n\n\n\n\nHint\n\n\n\nLook at the “traditional interface” example at the bottom for comparing extra across groups in the sleep dataset. You will need to change one element from the example to implement an independent two-sample test rather than a paired test.\n\n\n\nUsing the function t.test(), write code to carry out the analysis. You can assume unequal variances and a two-sided alternative.\nRun your code chunk to obtain the output for your statistical test.\nWrite a numbered list (in Markdown) below the code chunk containing:\n\nYour conclusion (in the context of these data) based on the p-value.\nAn interpretation of the confidence interval (make sure to read what confidence level is used by default).\n\nCreate another section header, describing the contents of this section."
+    "text": "Conducting Statistical Analyses\n\n\n\n\n\n\nRefresher on a two-sample independent t-test\n\n\n\nWhile a second course in statistics is a pre-requisite for this class, you may want to go here for a refresher on conducting two-sample independent t-tests.\n\n\nIn this section, we are going to conduct a two-sample independent t-test to compare tooth length between the two supplement methods in the ToothGrowth dataset. I have outlined the null and alternative hypotheses we will be testing:\n\n\n\n\n\n\nNull\n\n\n\nThe treatment mean tooth length for the OJ supplement delivery method is the same as the treatment mean tooth length for the VC supplement delivery method.\n\n\n\n\n\n\n\n\nAlternative\n\n\n\nThe treatment mean tooth length for the OJ supplement delivery method is different from the treatment mean tooth length for the VC supplement delivery method.\n\n\nCarry out the following steps:\n\nLook up the help documentation for t.test().\n\n\n\n\n\n\n\nHint\n\n\n\nLook at the example for a two-sample t-test comparing mpg in morning and afternoon with the mtcars data.\n\n\n\nUsing the function t.test(), write code to carry out the analysis. You can assume unequal variances and a two-sided alternative.\nRun your code chunk to obtain the output for your statistical test.\nWrite a numbered list (in Markdown) below the code chunk containing:\n\nYour conclusion (in the context of these data) based on the p-value.\nAn interpretation of the confidence interval (make sure to read what confidence level is used by default).\n\nCreate another section header, describing the contents of this section."
   },
   {
     "objectID": "labs/lab1/lab1-quarto.html#render-your-document",
@@ -922,5 +922,75 @@
     "title": "Intro to STAT 331/531 + Intro to R",
     "section": "To do…",
     "text": "To do…\n\nRead Chapter 1: Introduction\nCheck-ins 1.1 - 1.4\n\nDue Thursday (4/3) before class\n\nPA 1: Find the Mistakes\n\nDue Friday (4/4) at 11:59 pm"
+  },
+  {
+    "objectID": "slides/week-1/w1-notebooks.html#thursday-april-3",
+    "href": "slides/week-1/w1-notebooks.html#thursday-april-3",
+    "title": "Quarto & Reproducibility",
+    "section": "Thursday, April 3",
+    "text": "Thursday, April 3\nToday we will…\n\nAnswer Clarifying Questions:\n\nSyllabus?\nChapter 1 Reading?\nPA 1: Find the Mistakes?\n\nNew Material\n\nReproducibility\nScripts + Notebooks\n\nLab 1: Introduction to Quarto"
+  },
+  {
+    "objectID": "practice-activities/pa2.html",
+    "href": "practice-activities/pa2.html",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "",
+    "text": "Download the .qmd template and save it in a reasonable location.\nToday you will be exploring different types of visualizations to uncover which species of penguins reside on different islands.\nSome advice:"
+  },
+  {
+    "objectID": "practice-activities/pa2.html#getting-started",
+    "href": "practice-activities/pa2.html#getting-started",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Getting Started",
+    "text": "Getting Started\nWe will be creating visualizations using the ggplot2 package.\nFor this activity, we will be exploring the penguins data from the palmerpenguins package, which has fantastic documentation with really awesome artwork. So, you will need to install the palmerpenguins package.\ninstall.packages(\"palmerpenguins\")\n\n\n\n\n\n\ninstall.packages() in the console NOT in your .qmd file!\n\n\n\nYou should type this into your console and NOT include it in a code chunk in your .qmd file. Recall that we only have to install a package once, but load it each time we open R. Each time you render your .qmd file, ALLthe code chunks are run. Therefore, installing a package in a code chunk would cause R to unnecessarily install the package over and over again. Not good."
+  },
+  {
+    "objectID": "practice-activities/pa2.html#creating-a-setup-code-chunk",
+    "href": "practice-activities/pa2.html#creating-a-setup-code-chunk",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Creating a Setup Code Chunk",
+    "text": "Creating a Setup Code Chunk\n\nInsert a code chunk at the beginning of your document (directly under the YAML).\nName the code chunk setup.\nUse the hashpipe #| to specify a code chunk option that prevents any messages (e.g., from loading in packages) from appearing.\nLoad in the tidyverse or ggplot2 package.\nLoad in the palmerpenguins package.\n\n\n\n\n\n\n\nCode chunk name: setup\n\n\n\nNaming your code chunk “setup” has special properties in a .qmd - specifically, this code chunk will run automatically when you try to run a subsequent code chunk. This ensures all packages and any other specifications for your document are loaded and will not cause you errors or messages."
+  },
+  {
+    "objectID": "practice-activities/pa2.html#dataset-penguins",
+    "href": "practice-activities/pa2.html#dataset-penguins",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Dataset: penguins",
+    "text": "Dataset: penguins\nI like to start by seeing the dataset I will be working with, so I am going to pull the penguins data into my R environment. Do you see it in the top right Environment tab?\n\ndata(penguins)\n\nWarning in data(penguins): data set 'penguins' not found\n\n\nYou may notice that a dataset called penquins_raw also loaded. We will ignore this and focus on the penguins dataset.\n\nGet to know your data. What are the variables and what units are they measured in? What does each row represent?"
+  },
+  {
+    "objectID": "practice-activities/pa2.html#graphics",
+    "href": "practice-activities/pa2.html#graphics",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Graphics",
+    "text": "Graphics\n\n\n\n\n\n\nNote\n\n\n\nMake sure to give your plots reader friendly axes labels!\n\n\n\n\n\n\n\n\nNote\n\n\n\nMake sure your final report does not display any warnings or messages from RStudio!\n\n\n\nUse https://excalidraw.com/ (or pen and paper, a tablet, etc.) to create a game plan for a barchart of species, where species is mapped to the fill color of the barchart. Save or take a screenshot of your game plan – you will be uploading this to Canvas with your practice activity submission.\nUse ggplot2 to create the barchart you outlined above.\n\n\nUse ggplot2 to create a scatterplot of the relationship between the bill length (bill_length_mm) and bill depth (bill_depth_mm).\n\n\nBuilding on your code from (9), add an aesthetic to differentiate the species by color.\n\n\nBuilding on your code from (10), add the location of the penguins (island) to your visualization. There us more than one way you could to address this, however, one method will make it easier to answer the questions below, so you might want to read those questions first!"
+  },
+  {
+    "objectID": "practice-activities/pa2.html#canvas-quiz",
+    "href": "practice-activities/pa2.html#canvas-quiz",
+    "title": "PA 2: Using Data Visualization to Find the Penguins",
+    "section": "Canvas Quiz",
+    "text": "Canvas Quiz\n\n\n\n\n\n\nUse the plots you created to answer the following questions on Canvas.\n\n\n\n\nWhich species of penguins is represented least in the Palmer Penguins data set?\nWhich species of penguins are found on every island?\nWhich species of penguins are found only on Dream Island?\nWhich species of penguins are found only on Biscoe Island?"
+  },
+  {
+    "objectID": "labs/lab2/lab2-ggplot.html",
+    "href": "labs/lab2/lab2-ggplot.html",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "",
+    "text": "Seeking Help\n\n\n\nPart of learning to program is learning from a variety of resources. Thus, I expect you will use resources that you find on the internet. There is, however, an important balance between copying someone else’s code and using their code to learn. Therefore, if you use external resources, I want to know about it. You can “inform” me of any resources you used by pasting the link to the resource in a code comment next to where you used that resource.\nAdditionally, you are permitted and encouraged to work with your peers as you complete lab assignments, but you are expected to do your own work. Copying from each other is cheating, and letting people copy from you is also cheating. Please don’t do either of those things.\nDownload starter .qmd file here.\nDownload the data - surveys.csv - file here."
+  },
+  {
+    "objectID": "labs/lab2/lab2-ggplot.html#scatterplot",
+    "href": "labs/lab2/lab2-ggplot.html#scatterplot",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "Scatterplot",
+    "text": "Scatterplot\n\n# Scatterplot code for question s 4-8! \n\n4. First, let’s create a scatterplot of the relationship between weight (on the \\(x\\)-axis) and hindfoot_length (on the \\(y\\)-axis).\nWe can see there are a lot of points plotted on top of each other. Let’s try and modify this plot to extract more information from it.\n5. Let’s add transparency (alpha) to the points, to make the points more transparent and (possibly) easier to see.\nDespite our best efforts there is still a substantial amount of overplotting occurring in our scatterplot. Let’s try splitting the dataset into smaller subsets and see if that allows for us to see the trends a bit better.\n6. Facet your scatterplot by species.\n7. No plot is complete without axis labels and a title. Include reader friendly labels and a title to your plot.\nIt takes a larger cognitive load to read text that is rotated. It is common practice in many journals and media outlets to move the \\(y\\)-axis label to the top of the graph under the title.\n8. Specify your \\(y\\)-axis label to be empty and move the \\(y\\)-axis label into the subtitle. You may overwrite your code from Q7."
+  },
+  {
+    "objectID": "labs/lab2/lab2-ggplot.html#boxplots",
+    "href": "labs/lab2/lab2-ggplot.html#boxplots",
+    "title": "Lab 2: Exploring Rodents with ggplot2",
+    "section": "Boxplots",
+    "text": "Boxplots\n9. Sketch out (by hand or using Excalidraw) a game plan for creating side-by-side boxplots to visualize the distribution of weight within each species. Include an image of your game plan. This can take on your own flavor! The ideas is that you are thinking before coding. I recommend saving this in the same folder as your .qmd file.\n \n\n# Boxplot code for question 10 - 15!\n\n10. Implement your game plan to create side-by-side boxplots to visualize the distribution of weight within each species.\nA fundamental complaint of boxplots is that they do not plot the raw data. However, with ggplot we can add the raw points on top of the boxplots!\n11. Add another layer to your previous plot that plots each observation.\nAlright, this should look less than optimal. Your points should appear rather stacked on top of each other. To make them less stacked, we need to jitter them a bit, using geom_jitter().\n12. Remove the previous layer and include a geom_jitter() layer instead. (You can overwrite your code for Q11)\nThat should look a bit better! But its really hard to see the points when everything is black.\n13. Set the color aesthetic in geom_jitter() to change the color of the points and add set the alpha aesthetic to add transparency.\n\n\n\n\n\n\nNote\n\n\n\nYou are welcome to use whatever color you wish! Some of my favorites are “orange3” and “steelblue”.\n\n\nGreat! Now that you can see the points, you should notice something odd: there are two colors of points still being plotted. Some of the observations are being plotted twice, once from geom_boxplot() as outliers and again from geom_jitter()!\n14. Inspect the help file for geom_boxplot() and see how you can remove the outliers from being plotted by geom_boxplot(). Make this change in your code!\nSome small changes can make big differences to plots. One of these changes are better labels for a plot’s axes and legend.\n15. Modify the \\(x\\)-axis and \\(y\\)-axis labels to describe what is being plotted. Be sure to include any necessary units! You might also be getting overlap in the species names – use theme(axis.text.x = ____) or theme(axis.text.y = ____) to turn the species axis labels 45 degrees. (You will need to look at the documentation or Google to find the syntax for this!)\nSome people (and journals) prefer for boxplots to be stacked with a specific orientation! Let’s practice changing the orientation of our boxplots.\n16. Copy-paste your boxplot code from above. Flip the orientation of your boxplots. If you created horizontally stacked boxplots, your boxplots should now be stacked vertically. If you had vertically stacked boxplots, you should now stack your boxplots horizontally!\n\n# Copy-paste boxplot code. Then modify for question 16!\n\nNotice how vertically stacked boxplots make the species labels more readable than horizontally stacked boxplots. This is good practice!"
   }
 ]
