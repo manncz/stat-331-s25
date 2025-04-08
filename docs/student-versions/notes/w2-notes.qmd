@@ -5,7 +5,7 @@ embed-resources: true
 ---
 
 ```{r}
-#| label: "setup"
+#| label: setup
 #| message: false
 #| echo: false
 

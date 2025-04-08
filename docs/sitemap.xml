@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/manncz/stat-331-s25/slides/week-2/w2-import-ggplot.html</loc>
+    <lastmod>2025-04-07T19:59:19.028Z</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/manncz/stat-331-s25/slides/week-1/w1-notebooks.html</loc>
     <lastmod>2025-04-03T15:36:21.801Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa1.html</loc>
-    <lastmod>2025-03-31T21:36:11.479Z</lastmod>
+    <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa2.html</loc>
+    <lastmod>2025-04-07T16:44:52.552Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/manncz/stat-331-s25/labs/lab2/lab2-ggplot.html</loc>
+    <lastmod>2025-04-07T16:57:35.512Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/index.html</loc>
@@ -29,20 +37,12 @@
     <lastmod>2025-04-03T17:23:07.761Z</lastmod>
   </url>
   <url>
+    <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa1.html</loc>
+    <lastmod>2025-03-31T21:36:11.479Z</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/manncz/stat-331-s25/slides/week-1/w1-intro-r.html</loc>
     <lastmod>2025-04-01T21:57:37.720Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa2.html</loc>
-    <lastmod>2025-04-07T16:44:52.552Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/manncz/stat-331-s25/labs/lab2/lab2-ggplot.html</loc>
-    <lastmod>2025-04-07T16:57:35.512Z</lastmod>
-  </url>
-  <url>
-    <loc>https://github.com/manncz/stat-331-s25/slides/week-2/w2-import-ggplot.html</loc>
-    <lastmod>2025-04-07T19:59:19.028Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/slides/week-2/w2-graphics.html</loc>
