@@ -270,9 +270,11 @@ There are several packages with color scheme options:
 -   viridis
 -   wesanderson
 
-These packages have color palettes hthatare aesthetically pleasing and, in many cases, colorblind friendly.
+These packages have color palettes that are aesthetically pleasing and, in many cases, colorblind friendly.
 
 You can also take a look at other [ways to find nice color palettes](https://lisacharlottemuth.com/2016/04/22/Colors-for-DataVis/). [ColorBrewer](https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3) is my personal favorite.
+
+# Let's Practice
 
 # What Do You Think About This Graphic?
 
@@ -284,37 +286,23 @@ You can also take a look at other [ways to find nice color palettes](https://lis
 knitr::include_graphics("images/covid-model.jpg")
 ```
 
-
 ## Example 2
 
-::: columns
-::: {.column width="50%"}
+![https://www.data-to-viz.com/graph/area.html](https://www.data-to-viz.com/graph/area_files/figure-html/unnamed-chunk-2-1.png)
 
-:::
-::: {.column width="50%"}
-```{r}
-#| out-width: 90%
-knitr::include_graphics("images/house-graphic.png")
-```
-:::
-:::
 
 ## Example 3
 
-::: columns
-::: {.column width="50%"}
+![https://r-graph-gallery.com/web-vertical-line-chart-with-ggplot2.html](https://r-graph-gallery.com/web-vertical-line-chart-with-ggplot2_files/figure-html/unnamed-chunk-5-1.png)
 
-:::
-::: {.column width="50%"}
-```{r}
-#| out-width: 90%
-knitr::include_graphics("images/we-line-chart-consumer-confidence.png")
-```
-:::
-:::
+## Example 4
+
+![https://r-graph-gallery.com/web-line-chart-with-labels-at-end-of-line.html](https://r-graph-gallery.com/img/fromTheWeb/web-line-chart-with-labels-at-end-of-line.png)
 
 
 ## Lab 2: Exploring Rodents with ggplot2
+
+![](https://lumiere-a.akamaihd.net/v1/images/p_ratatouille_19736_0814231f.jpeg)
 
 ## To do...
 

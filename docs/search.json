@@ -1439,7 +1439,7 @@
     "href": "slides/week-2/w2-graphics.html#color-in-ggplot2",
     "title": "Basics of Graphics",
     "section": "Color in ggplot2",
-    "text": "Color in ggplot2\nThere are several packages with color scheme options:\n\nRcolorbrewer\nggsci\nviridis\nwesanderson\n\nThese packages have color palettes hthatare aesthetically pleasing and, in many cases, colorblind friendly.\nYou can also take a look at other ways to find nice color palettes. ColorBrewer is my personal favorite."
+    "text": "Color in ggplot2\nThere are several packages with color scheme options:\n\nRcolorbrewer\nggsci\nviridis\nwesanderson\n\nThese packages have color palettes that are aesthetically pleasing and, in many cases, colorblind friendly.\nYou can also take a look at other ways to find nice color palettes. ColorBrewer is my personal favorite."
   },
   {
     "objectID": "slides/week-2/w2-graphics.html#example-1",
@@ -1453,14 +1453,14 @@
     "href": "slides/week-2/w2-graphics.html#example-2",
     "title": "Basics of Graphics",
     "section": "Example 2",
-    "text": "Example 2"
+    "text": "Example 2\n\nhttps://www.data-to-viz.com/graph/area.html"
   },
   {
     "objectID": "slides/week-2/w2-graphics.html#example-3",
     "href": "slides/week-2/w2-graphics.html#example-3",
     "title": "Basics of Graphics",
     "section": "Example 3",
-    "text": "Example 3"
+    "text": "Example 3\n\nhttps://r-graph-gallery.com/web-vertical-line-chart-with-ggplot2.html"
   },
   {
     "objectID": "slides/week-2/w2-graphics.html#lab-2-exploring-rodents-with-ggplot2",
@@ -1475,5 +1475,19 @@
     "title": "Basics of Graphics",
     "section": "To do…",
     "text": "To do…\n\nLab 2: Exploring Rodents with ggplot2\n\ndue Monday 4/14 at 11:59pm\n\nRead Chapter 3: Data Cleaning and Manipulation\n\nCheck-in 3.1 due Tuesday 4/15 before class"
+  },
+  {
+    "objectID": "slides/week-2/w2-graphics.html#example-2-1",
+    "href": "slides/week-2/w2-graphics.html#example-2-1",
+    "title": "Basics of Graphics",
+    "section": "Example 2",
+    "text": "Example 2\n\nhttps://r-graph-gallery.com/web-vertical-line-chart-with-ggplot2.html"
+  },
+  {
+    "objectID": "slides/week-2/w2-graphics.html#example-4",
+    "href": "slides/week-2/w2-graphics.html#example-4",
+    "title": "Basics of Graphics",
+    "section": "Example 4",
+    "text": "Example 4\n\nhttps://r-graph-gallery.com/web-line-chart-with-labels-at-end-of-line.html"
   }
 ]
