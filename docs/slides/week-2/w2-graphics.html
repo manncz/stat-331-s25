@@ -27,6 +27,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto-4cb0d285e5e633b223dc56df76ce2d99.css">
   <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
@@ -144,13 +209,13 @@
 <li>Lab 2: Exploring Rodents with ggplot2</li>
 </ul>
 </section>
-<section id="on-grading." class="slide level2">
-<h2>On Grading….</h2>
-<p>I post skeleton rubrics for lab activities on Canvas to share the general structure of how you will be graded.</p>
+<section id="lab-1-notes" class="slide level2">
+<h2>Lab 1 Notes</h2>
 <ul>
-<li>Grading will be on a scale of <em>Master</em> to <em>Practitioner</em> to <em>Novice</em> to <em>No Effort</em>.</li>
-<li>If you make a meaningful error in your code, you cannot earn <em>Master</em> for that question.</li>
-<li>Your labs <strong>will</strong> have an appearance/workflow/code format portion. Check out the <a href="https://canvas.calpoly.edu/courses/144990/pages/lab-appearance-workflow-and-code-format">guidelines</a>.</li>
+<li>Overall looking nice!</li>
+<li>make sure your code is visible: <code>echo: true</code></li>
+<li>see what your rendered document looks like <em>before</em> you submit it</li>
+<li>if you have questions about statistical interpretations, just ask!</li>
 </ul>
 </section>
 <section id="graphics" class="slide level2">
@@ -337,7 +402,7 @@
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -435,7 +500,7 @@
 <div>
 
 </div>
-<div class="cell quarto-layout-panel" data-layout-align="center" data-layout-ncol="2">
+<div class="cell quarto-layout-panel" data-layout-ncol="2" data-layout-align="center">
 <div class="quarto-layout-row">
 <div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
@@ -466,11 +531,233 @@
 <p>These packages have color palettes that are aesthetically pleasing and, in many cases, colorblind friendly.</p>
 <p>You can also take a look at other <a href="https://lisacharlottemuth.com/2016/04/22/Colors-for-DataVis/">ways to find nice color palettes</a>. <a href="https://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3">ColorBrewer</a> is my personal favorite.</p>
 </section></section>
+<section>
 <section id="lets-practice" class="title-slide slide level1 center">
 <h1>Let’s Practice</h1>
 
 </section>
-
+<section id="penguins---flipper-length-by-species" class="slide level2">
+<h2>Penguins - Flipper Length by Species</h2>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Species X-Axis</a></li><li><a href="#tabset-1-2">Species Facets</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb1-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> flipper_length_mm, </span>
+<span id="cb1-3"><a></a>                              <span class="at">x =</span> species)) <span class="sc">+</span></span>
+<span id="cb1-4"><a></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb1-5"><a></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Flipper Lengths for Penguin Species"</span>, </span>
+<span id="cb1-6"><a></a>         <span class="at">x =</span> <span class="st">"Species"</span> , </span>
+<span id="cb1-7"><a></a>         <span class="at">y =</span> <span class="st">"Flipper Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w2-graphics_files/figure-revealjs/unnamed-chunk-14-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb2-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> flipper_length_mm)) <span class="sc">+</span></span>
+<span id="cb2-3"><a></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb2-4"><a></a>    <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(species)) <span class="sc">+</span></span>
+<span id="cb2-5"><a></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Flipper Lengths for Penguin Species"</span>, </span>
+<span id="cb2-6"><a></a>         <span class="at">y =</span> <span class="st">"Flipper Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w2-graphics_files/figure-revealjs/unnamed-chunk-15-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="penguins---flipper-length-by-species-sex" class="slide level2">
+<h2>Penguins - Flipper Length by Species &amp; Sex</h2>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">Option 1</a></li><li><a href="#tabset-2-2">Option 2</a></li><li><a href="#tabset-2-3">Option 3</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb3-2"><a></a>    <span class="fu">geom_boxplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> flipper_length_mm, </span>
+<span id="cb3-3"><a></a>                             <span class="at">x =</span> species,</span>
+<span id="cb3-4"><a></a>                             <span class="at">color =</span> sex)) <span class="sc">+</span> </span>
+<span id="cb3-5"><a></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Flipper Lengths for Penguin Species"</span>, </span>
+<span id="cb3-6"><a></a>         <span class="at">x =</span> <span class="st">"Species"</span> , </span>
+<span id="cb3-7"><a></a>         <span class="at">y =</span> <span class="st">"Flipper Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w2-graphics_files/figure-revealjs/unnamed-chunk-16-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb4-2"><a></a>    <span class="fu">geom_boxplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb4-3"><a></a>                               <span class="at">x =</span> sex)) <span class="sc">+</span> </span>
+<span id="cb4-4"><a></a>    <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(species)) <span class="sc">+</span></span>
+<span id="cb4-5"><a></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Flipper Lengths for Penguin Species"</span>, </span>
+<span id="cb4-6"><a></a>         <span class="at">y =</span> <span class="st">"Flipper Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w2-graphics_files/figure-revealjs/unnamed-chunk-17-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-2-3">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb5-2"><a></a>    <span class="fu">geom_boxplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">y =</span> flipper_length_mm,</span>
+<span id="cb5-3"><a></a>                               <span class="at">x =</span> species)) <span class="sc">+</span> </span>
+<span id="cb5-4"><a></a>    <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(sex)) <span class="sc">+</span></span>
+<span id="cb5-5"><a></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Distribution of Flipper Lengths for Penguin Species"</span>, </span>
+<span id="cb5-6"><a></a>         <span class="at">y =</span> <span class="st">"Flipper Length (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w2-graphics_files/figure-revealjs/unnamed-chunk-18-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="pa-2-example---two-categorical-variables" class="slide level2">
+<h2>PA 2 Example - Two Categorical Variables</h2>
+<div class="panel-tabset">
+<ul id="tabset-3" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-3-1">Colors &amp; Shapes</a></li><li><a href="#tabset-3-2">Colors &amp; Facets</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins) <span class="sc">+</span></span>
+<span id="cb6-2"><a></a>    <span class="fu">geom_point</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb6-3"><a></a>                             <span class="at">y =</span> bill_depth_mm, </span>
+<span id="cb6-4"><a></a>                             <span class="at">color =</span> species, </span>
+<span id="cb6-5"><a></a>                             <span class="at">shape =</span> island )) <span class="sc">+</span> </span>
+<span id="cb6-6"><a></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relationship Between Bill Length and Bill Depth"</span>, </span>
+<span id="cb6-7"><a></a>         <span class="at">x =</span> <span class="st">"Bill Length (mm)"</span> , </span>
+<span id="cb6-8"><a></a>         <span class="at">y =</span> <span class="st">"Bill Depth (mm)"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w2-graphics_files/figure-revealjs/unnamed-chunk-20-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-3-2">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> penguins,</span>
+<span id="cb7-2"><a></a>       <span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> bill_length_mm, </span>
+<span id="cb7-3"><a></a>                     <span class="at">y =</span> bill_depth_mm, </span>
+<span id="cb7-4"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb7-5"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb7-6"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>island) <span class="sc">+</span></span>
+<span id="cb7-7"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Bill Length (mm)"</span>,</span>
+<span id="cb7-8"><a></a>       <span class="at">y =</span> <span class="st">"Bill Depth (mm)"</span>, </span>
+<span id="cb7-9"><a></a>       <span class="at">title =</span> <span class="st">"Relationship Between Bill Length and Bill Depth"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w2-graphics_files/figure-revealjs/unnamed-chunk-21-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="lecture-example---texas-housing-data" class="slide level2">
+<h2>Lecture Example - Texas Housing Data</h2>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Color</a></li><li><a href="#tabset-4-2">Facet</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> sm_tx,</span>
+<span id="cb8-2"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> median, <span class="at">color =</span> city)) <span class="sc">+</span> </span>
+<span id="cb8-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb8-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>) <span class="sc">+</span> </span>
+<span id="cb8-5"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb8-6"><a></a>       <span class="at">y =</span> <span class="st">"Median Home Price"</span>,</span>
+<span id="cb8-7"><a></a>       <span class="at">title =</span> <span class="st">"Texas Housing Prices over Time for Select Cities"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w2-graphics_files/figure-revealjs/unnamed-chunk-23-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> sm_tx,</span>
+<span id="cb9-2"><a></a>       <span class="fu">aes</span>(<span class="at">x =</span> date, <span class="at">y =</span> median)) <span class="sc">+</span> </span>
+<span id="cb9-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb9-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>) <span class="sc">+</span> </span>
+<span id="cb9-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(city)) <span class="sc">+</span></span>
+<span id="cb9-6"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Date"</span>,</span>
+<span id="cb9-7"><a></a>       <span class="at">y =</span> <span class="st">"Median Home Price"</span>,</span>
+<span id="cb9-8"><a></a>       <span class="at">title =</span> <span class="st">"Texas Housing Prices over Time for Select Cities"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w2-graphics_files/figure-revealjs/unnamed-chunk-24-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section></section>
 <section>
 <section id="what-do-you-think-about-this-graphic" class="title-slide slide level1 center">
 <h1>What Do You Think About This Graphic?</h1>
@@ -496,6 +783,25 @@
 <h2>Lab 2: Exploring Rodents with ggplot2</h2>
 
 <img data-src="https://lumiere-a.akamaihd.net/v1/images/p_ratatouille_19736_0814231f.jpeg" class="r-stretch"></section>
+<section id="lab-formatting" class="slide level2">
+<h2>Lab Formatting</h2>
+<ul>
+<li><p>Starting with Lab 2, your labs <strong>will</strong> be graded more strictly on appearance and code format.</p></li>
+<li><p>Review the <a href="https://canvas.calpoly.edu/courses/150526/pages/lab-appearance-workflow-and-code-format">lab formatting guidelines</a> on Canvas <em>before</em> you submit your lab!</p></li>
+<li><p>Big points:</p>
+<ul>
+<li>use relative file paths</li>
+<li>make sure all markdown renders as expected</li>
+<li>NEVER PRINT OUT FULL DATASETS</li>
+<li>no long code lines - use line breaks liberally</li>
+<li>“clean up” the lab before submitting</li>
+</ul></li>
+</ul>
+</section>
+<section id="ggplot2-cheatsheet" class="slide level2">
+<h2>ggplot2 cheatsheet</h2>
+
+<img data-src="https://rstudio.github.io/cheatsheets/pngs/data-visualization.png" class="r-stretch quarto-figure-center"><p class="caption"><a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf">ggplot2 cheatsheet</a></p></section>
 <section id="to-do" class="slide level2">
 <h2>To do…</h2>
 <ul>
