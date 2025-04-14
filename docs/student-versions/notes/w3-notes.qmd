@@ -292,6 +292,16 @@ cereal |>
   mean(na.rm = T)
 ```
 
+Using `pull()` would fix the issue with Check-In 3.1 Q8:
+
+```{r}
+penguins |> 
+  filter(species == "Adelie") |> 
+  pull(body_mass_g) |> 
+  mean(na.rm = T)
+```
+
+
 ## Frequency tables
 
 ```{r}

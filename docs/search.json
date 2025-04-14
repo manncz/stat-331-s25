@@ -2147,5 +2147,19 @@
     "title": "Data Cleaning & Manipulation",
     "section": "Check-in 3.1 Question 8",
     "text": "Check-in 3.1 Question 8\n\nWhile the following code runs it does not do what we want:\n\n\npenguins |&gt; \n  filter(species == \"Adelie\") |&gt; \n  select(body_mass_g) |&gt; \n  mean(na.rm = T)\n\nWarning in mean.default(select(filter(penguins, species == \"Adelie\"),\nbody_mass_g), : argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n\n\nWe will learn how to fix this code on Thursday\nI will go back and fix grades. Either choosing “Line 4” or “No error” will be considered correct."
+  },
+  {
+    "objectID": "slides/week-3/w3-dplyr.html#style-note-of-the-day---spacing",
+    "href": "slides/week-3/w3-dplyr.html#style-note-of-the-day---spacing",
+    "title": "Data Cleaning & Manipulation",
+    "section": "Style Note of the Day - Spacing",
+    "text": "Style Note of the Day - Spacing\n\n\nAlways put a space after a comma, but never before\nSurround = with spaces when naming arguments\nSurround many mathematical operators (+, -, *) with spaces (but not all!)\nDon’t include spaces around parentheses for function calls (although you may include a new-line)"
+  },
+  {
+    "objectID": "slides/week-3/w3-dplyr.html#style-note-of-the-day---spacing-1",
+    "href": "slides/week-3/w3-dplyr.html#style-note-of-the-day---spacing-1",
+    "title": "Data Cleaning & Manipulation",
+    "section": "Style Note of the Day - Spacing",
+    "text": "Style Note of the Day - Spacing\nNice:\n\nmean(x, na.rm = TRUE)\n\nheight &lt;- (feet * 12) + inches\n\n2^2\n\nNo thank you:\n\nmean(x,na.rm=TRUE)\nmean( x , na.rm = TRUE )\nmean (x, na.rm = TRUE)\n\nheight&lt;-(feet*12)+inches\n\n2 ^ 2"
   }
 ]

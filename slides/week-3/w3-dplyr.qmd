@@ -59,7 +59,7 @@ penguins |>
 
 - I will go back and fix grades. Either choosing "Line 4" or "No error" will be considered correct.
 
-## Syle Note of the Day - [Spacing](https://style.tidyverse.org/syntax.html#spacing)
+## Style Note of the Day - [Spacing](https://style.tidyverse.org/syntax.html#spacing)
 
 :::{.incremental}
 - Always put a space after a comma, but never before
@@ -68,7 +68,7 @@ penguins |>
 - Don't include spaces around parentheses for function calls (although you may include a new-line)
 :::
 
-## Syle Note of the Day - [Spacing](https://style.tidyverse.org/syntax.html#spacing)
+## Style Note of the Day - [Spacing](https://style.tidyverse.org/syntax.html#spacing)
 
 Nice:
 ```{r}
@@ -417,8 +417,8 @@ cereal |>
   filter(sugars < 5,
          type == "hot") |> 
   knitr::kable() |> 
-  kableExtra::scroll_box(height = "400px") |> 
-  kableExtra::kable_styling(font_size = 30)
+  kableExtra::scroll_box(height = "300px") |> 
+  kableExtra::kable_styling(font_size = 25)
 ```
 
 . . .
