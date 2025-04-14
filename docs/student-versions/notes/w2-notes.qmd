@@ -242,13 +242,27 @@ You can look at pallete options using `display.brewer.all()` or by looking at
 [https://colorbrewer2.org/](https://colorbrewer2.org/):
 
 ```{r}
-display.brewer.all(n = 5, type = "div" , colorblindFriendly = TRUE)
+display.brewer.all(n = 3, type = "qual" , colorblindFriendly = TRUE)
 ```
 
 
 ```{r}
-mycols <- brewer.pal(n = 4, name = "BuPu")
+mycols <- brewer.pal(n = 3, name = "Set2")
 mycols
+
+c("#A6611A")
+```
+
+
+```{r}
+ggplot(data = mpg,
+       mapping = aes(x = cty,
+                     y = hwy,
+                     color = drv)) +
+  scale_color_manual(values = mycols) +
+  geom_point() +
+  facet_grid(cols = vars(year))
+
 ```
 
 

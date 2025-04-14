@@ -10,6 +10,7 @@ editor: source
 #| include: false
 #| message: false
 library(tidyverse)
+library(palmerpenguins)
 ```
 
 ## Thursday, April 10
@@ -21,13 +22,13 @@ Today we will...
     -   Color
 -   Lab 2: Exploring Rodents with ggplot2
 
-## On Grading....
+## Lab 1 Notes
 
-I post skeleton rubrics for lab activities on Canvas to share the general structure of how you will be graded.
+- Overall looking nice!
+- make sure your code is visible: `echo: true`
+- see what your rendered document looks like *before* you submit it
+- if you have questions about statistical interpretations, just ask!
 
--   Grading will be on a scale of *Master* to *Practitioner* to *Novice* to *No Effort*.
--   If you make a meaningful error in your code, you cannot earn *Master* for that question.
--   Your labs **will** have an appearance/workflow/code format portion. Check out the [guidelines](https://canvas.calpoly.edu/courses/144990/pages/lab-appearance-workflow-and-code-format).
 
 ## Graphics
 
@@ -276,6 +277,211 @@ You can also take a look at other [ways to find nice color palettes](https://lis
 
 # Let's Practice
 
+## Penguins -  Flipper Length by Species
+
+
+::: panel-tabset
+
+## Species X-Axis
+
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4.5
+#| fig-width: 8
+#| fig-align: "center"
+
+
+ggplot(data = penguins,
+       mapping = aes(y = flipper_length_mm, 
+                              x = species)) +
+    geom_boxplot() + 
+    labs(title = "Distribution of Flipper Lengths for Penguin Species", 
+         x = "Species" , 
+         y = "Flipper Length (mm)")
+```
+
+## Species Facets
+
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4.5
+#| fig-width: 8
+#| fig-align: "center"
+
+
+ggplot(data = penguins,
+       mapping = aes(y = flipper_length_mm)) +
+    geom_boxplot() + 
+    facet_grid(cols = vars(species)) +
+    labs(title = "Distribution of Flipper Lengths for Penguin Species", 
+         y = "Flipper Length (mm)")
+```
+
+:::
+
+## Penguins - Flipper Length by Species & Sex
+
+
+::: panel-tabset
+
+## Option 1
+
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4.5
+#| fig-width: 8
+#| fig-align: "center"
+
+
+ggplot(data = penguins) +
+    geom_boxplot(mapping = aes(y = flipper_length_mm, 
+                             x = species,
+                             color = sex)) + 
+    labs(title = "Distribution of Flipper Lengths for Penguin Species", 
+         x = "Species" , 
+         y = "Flipper Length (mm)")
+```
+
+## Option 2
+
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4.5
+#| fig-width: 8
+#| fig-align: "center"
+
+
+ggplot(data = penguins) +
+    geom_boxplot(mapping = aes(y = flipper_length_mm,
+                               x = sex)) + 
+    facet_grid(cols = vars(species)) +
+    labs(title = "Distribution of Flipper Lengths for Penguin Species", 
+         y = "Flipper Length (mm)")
+```
+## Option 3
+
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4.5
+#| fig-width: 8
+#| fig-align: "center"
+
+
+ggplot(data = penguins) +
+    geom_boxplot(mapping = aes(y = flipper_length_mm,
+                               x = species)) + 
+    facet_grid(cols = vars(sex)) +
+    labs(title = "Distribution of Flipper Lengths for Penguin Species", 
+         y = "Flipper Length (mm)")
+```
+
+:::
+
+## PA 2 Example - Two Categorical Variables
+
+```{r}
+data(penguins)
+```
+
+:::panel-tabset
+
+## Colors & Shapes
+
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4.5
+#| fig-width: 8
+#| fig-align: "center"
+
+ggplot(data = penguins) +
+    geom_point(mapping = aes(x = bill_length_mm, 
+                             y = bill_depth_mm, 
+                             color = species, 
+                             shape = island )) + 
+    labs(title = "Relationship Between Bill Length and Bill Depth", 
+         x = "Bill Length (mm)" , 
+         y = "Bill Depth (mm)")
+```
+
+## Colors & Facets
+
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4.5
+#| fig-width: 8
+#| fig-align: "center"
+
+ggplot(data = penguins,
+       mapping = aes(x = bill_length_mm, 
+                     y = bill_depth_mm, 
+                     color = species)) +
+  geom_point() + 
+  facet_wrap(~island) +
+  labs(x = "Bill Length (mm)",
+       y = "Bill Depth (mm)", 
+       title = "Relationship Between Bill Length and Bill Depth")
+```
+:::
+
+## Lecture Example - Texas Housing Data
+```{r}
+data(txhousing)
+sm_tx <- txhousing |>
+  filter(city %in% c("Dallas","Fort Worth", "Austin",
+                     "Houston", "El Paso"))
+```
+
+:::panel-tabset
+
+## Color
+
+
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4.5
+#| fig-width: 8
+#| fig-align: "center"
+
+ggplot(data = sm_tx,
+       aes(x = date, y = median, color = city)) + 
+  geom_point() + 
+  geom_smooth(method = "loess") + 
+  labs(x = "Date",
+       y = "Median Home Price",
+       title = "Texas Housing Prices over Time for Select Cities")
+```
+## Facet
+
+```{r}
+#| code-fold: true
+#| echo: true
+#| fig-height: 4.5
+#| fig-width: 8
+#| fig-align: "center"
+
+ggplot(data = sm_tx,
+       aes(x = date, y = median)) + 
+  geom_point() + 
+  geom_smooth(method = "loess") + 
+  facet_wrap(vars(city)) +
+  labs(x = "Date",
+       y = "Median Home Price",
+       title = "Texas Housing Prices over Time for Select Cities")
+```
+
+:::
+
+
+
+
 # What Do You Think About This Graphic?
 
 ## Example 1
@@ -303,6 +509,26 @@ knitr::include_graphics("images/covid-model.jpg")
 ## Lab 2: Exploring Rodents with ggplot2
 
 ![](https://lumiere-a.akamaihd.net/v1/images/p_ratatouille_19736_0814231f.jpeg)
+
+## Lab Formatting
+
+- Starting with Lab 2, your labs **will** be graded more strictly on appearance and code format. 
+
+- Review the [lab formatting guidelines](https://canvas.calpoly.edu/courses/150526/pages/lab-appearance-workflow-and-code-format) on Canvas
+*before* you submit your lab!
+
+- Big points:
+  - use relative file paths
+  - make sure all markdown renders as expected 
+  - NEVER PRINT OUT FULL DATASETS
+  - no long code lines - use line breaks liberally
+  - "clean up" the lab before submitting
+  
+
+## ggplot2 cheatsheet
+
+
+![[ggplot2 cheatsheet](https://rstudio.github.io/cheatsheets/data-visualization.pdf)](https://rstudio.github.io/cheatsheets/pngs/data-visualization.png)
 
 ## To do...
 

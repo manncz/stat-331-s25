@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://github.com/manncz/stat-331-s25/slides/week-3/w3-more-dplyr-ethics.html</loc>
+    <lastmod>2025-04-14T17:13:11.710Z</lastmod>
+  </url>
+  <url>
     <loc>https://github.com/manncz/stat-331-s25/slides/week-2/w2-import-ggplot.html</loc>
     <lastmod>2025-04-07T19:59:19.028Z</lastmod>
   </url>
@@ -9,8 +13,12 @@
     <lastmod>2025-04-03T15:36:21.801Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa2.html</loc>
-    <lastmod>2025-04-07T16:44:52.552Z</lastmod>
+    <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa3.html</loc>
+    <lastmod>2025-04-09T18:08:25.065Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa1.html</loc>
+    <lastmod>2025-03-31T21:36:11.479Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/labs/lab2/lab2-ggplot.html</loc>
@@ -18,7 +26,7 @@
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/index.html</loc>
-    <lastmod>2025-04-08T23:03:04.170Z</lastmod>
+    <lastmod>2025-04-14T17:19:13.608Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/course-info/discord-instructions.html</loc>
@@ -37,8 +45,12 @@
     <lastmod>2025-04-03T17:23:07.761Z</lastmod>
   </url>
   <url>
-    <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa1.html</loc>
-    <lastmod>2025-03-31T21:36:11.479Z</lastmod>
+    <loc>https://github.com/manncz/stat-331-s25/labs/lab3/lab3-dplyr.html</loc>
+    <lastmod>2025-04-09T22:04:01.787Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa2.html</loc>
+    <lastmod>2025-04-07T16:44:52.552Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/slides/week-1/w1-intro-r.html</loc>
@@ -46,6 +58,10 @@
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/slides/week-2/w2-graphics.html</loc>
-    <lastmod>2025-04-08T23:00:27.037Z</lastmod>
+    <lastmod>2025-04-09T21:33:03.743Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/manncz/stat-331-s25/slides/week-3/w3-dplyr.html</loc>
+    <lastmod>2025-04-14T17:20:31.816Z</lastmod>
   </url>
 </urlset>
