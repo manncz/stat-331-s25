@@ -12,6 +12,7 @@ editor: source
 #| message: false
 library(tidyverse)
 library(palmerpenguins)
+data(penguins)
 library(knitr)
 ```
 
@@ -34,6 +35,29 @@ Remember to download, save, and open up the [starter notes](../../student-versio
 :::
 
 
+## Questions from Week 2?
+
+
+![Stat departmnet joke of the week by Syliva Du. Image created with AI.](images/plotting.png)
+
+## Check-in 3.1 Question 8
+
+- While the following code *runs* it does not do what we want:
+
+
+```{r}
+#| echo: true
+#| warning: true
+
+penguins |> 
+  filter(species == "Adelie") |> 
+  select(body_mass_g) |> 
+  mean(na.rm = T)
+```
+
+- We will learn how to fix this code on Thursday
+
+- I will go back and fix grades. Either choosing "Line 4" or "No error" will be considered correct.
 
 ## Syle Note of the Day - [Spacing](https://style.tidyverse.org/syntax.html#spacing)
 

@@ -2133,5 +2133,19 @@
     "title": "Data Cleaning & Manipulation",
     "section": "How do we “group” and “summarize” in base R?",
     "text": "How do we “group” and “summarize” in base R?\nYou can use the aggregate() function.\n\ncereal |&gt; \n  aggregate(sugars ~ manuf, FUN = mean)\n\n\n\n\n\n\n\nmanuf\nsugars\n\n\n\n\nA\n3.000000\n\n\nG\n7.954546\n\n\nK\n7.565217\n\n\nN\n1.833333\n\n\nP\n8.777778\n\n\nQ\n5.250000\n\n\nR\n6.125000"
+  },
+  {
+    "objectID": "slides/week-3/w3-dplyr.html#questions-from-week-2",
+    "href": "slides/week-3/w3-dplyr.html#questions-from-week-2",
+    "title": "Data Cleaning & Manipulation",
+    "section": "Questions from Week 2?",
+    "text": "Questions from Week 2?\n\nStat departmnet joke of the week by Syliva Du. Image created with AI."
+  },
+  {
+    "objectID": "slides/week-3/w3-dplyr.html#check-in-3.1-question-8",
+    "href": "slides/week-3/w3-dplyr.html#check-in-3.1-question-8",
+    "title": "Data Cleaning & Manipulation",
+    "section": "Check-in 3.1 Question 8",
+    "text": "Check-in 3.1 Question 8\n\nWhile the following code runs it does not do what we want:\n\n\npenguins |&gt; \n  filter(species == \"Adelie\") |&gt; \n  select(body_mass_g) |&gt; \n  mean(na.rm = T)\n\nWarning in mean.default(select(filter(penguins, species == \"Adelie\"),\nbody_mass_g), : argument is not numeric or logical: returning NA\n\n\n[1] NA\n\n\n\nWe will learn how to fix this code on Thursday\nI will go back and fix grades. Either choosing “Line 4” or “No error” will be considered correct."
   }
 ]
