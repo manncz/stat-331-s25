@@ -215,14 +215,14 @@ How many rows and columns will each of these data frames have? (Try to figure th
 ```{r}
 cereal |> 
   group_by(manuf) |> 
-  mutate(fiber_carb_rat = fiber / carbo)
+  mutate(fiber_carb_rat = mean(fiber / carbo))
 ```
 
 
 ```{r}
 cereal |> 
   group_by(manuf) |> 
-  summarize(fiber_carb_rat = fiber / carbo)
+  summarize(fiber_carb_rat = mean(fiber / carbo))
 ```
 
 
@@ -231,7 +231,7 @@ cereal |>
 ```{r}
 cereal |> 
   group_by(manuf) |> 
-  summarize(fiber_carb_rat = fiber / carbo) |> 
+  summarize(fiber_carb_rat = mean(fiber / carbo)) |> 
   ungroup()
 ```
 

@@ -12364,13 +12364,13 @@ You can also pipe manipulated data or summaries directly into your `ggplot2` cod
 <div class="cell">
 <div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a>cereal <span class="sc">|&gt;</span> </span>
 <span id="cb44-2"><a></a>  <span class="fu">group_by</span>(manuf) <span class="sc">|&gt;</span> </span>
-<span id="cb44-3"><a></a>  <span class="fu">mutate</span>(<span class="at">fiber_carb_rat =</span> fiber <span class="sc">/</span> carbo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb44-3"><a></a>  <span class="fu">mutate</span>(<span class="at">fiber_carb_rat =</span> <span class="fu">mean</span>(fiber <span class="sc">/</span> carbo))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a>cereal <span class="sc">|&gt;</span> </span>
 <span id="cb45-2"><a></a>  <span class="fu">group_by</span>(manuf) <span class="sc">|&gt;</span> </span>
-<span id="cb45-3"><a></a>  <span class="fu">summarize</span>(<span class="at">fiber_carb_rat =</span> fiber <span class="sc">/</span> carbo)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb45-3"><a></a>  <span class="fu">summarize</span>(<span class="at">fiber_carb_rat =</span> <span class="fu">mean</span>(fiber <span class="sc">/</span> carbo))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><br></p>
 <div class="callout callout-tip callout-titled callout-style-default">

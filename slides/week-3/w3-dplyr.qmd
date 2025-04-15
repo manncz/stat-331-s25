@@ -969,7 +969,7 @@ How many **rows** and **columns** will each of these data frames have?
 
 cereal |> 
   group_by(manuf) |> 
-  mutate(fiber_carb_rat = fiber / carbo)
+  mutate(fiber_carb_rat = mean(fiber / carbo))
 ```
 
 <br>
@@ -980,7 +980,7 @@ cereal |>
 
 cereal |> 
   group_by(manuf) |> 
-  summarize(fiber_carb_rat = fiber / carbo)
+  summarize(fiber_carb_rat = mean(fiber / carbo))
 ```
 
 <br>

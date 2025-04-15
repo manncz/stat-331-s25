@@ -2048,7 +2048,7 @@
     "href": "slides/week-3/w3-dplyr.html#quick-check",
     "title": "Data Cleaning & Manipulation",
     "section": "Quick check",
-    "text": "Quick check\nHow many rows and columns will each of these data frames have?\n\ncereal |&gt; \n  group_by(manuf) |&gt; \n  mutate(fiber_carb_rat = fiber / carbo)\n\n\n\ncereal |&gt; \n  group_by(manuf) |&gt; \n  summarize(fiber_carb_rat = fiber / carbo)\n\n\n\n\n\n\n\n\nTip\n\n\nThe cereal data starts with 77 rows and 16 columns. There are 7 manufacturers in the data."
+    "text": "Quick check\nHow many rows and columns will each of these data frames have?\n\ncereal |&gt; \n  group_by(manuf) |&gt; \n  mutate(fiber_carb_rat = mean(fiber / carbo))\n\n\n\ncereal |&gt; \n  group_by(manuf) |&gt; \n  summarize(fiber_carb_rat = mean(fiber / carbo))\n\n\n\n\n\n\n\n\nTip\n\n\nThe cereal data starts with 77 rows and 16 columns. There are 7 manufacturers in the data."
   },
   {
     "objectID": "slides/week-3/w3-dplyr.html#ungroup",
