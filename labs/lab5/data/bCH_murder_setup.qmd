@@ -26,6 +26,20 @@ purrr::walk(table_names, function(x) {
 rm(table_names)
 ```
 
+
+To add some extra practice with regular expressions, I am going to edit the `person` data.
+
+```{r}
+person <- person |> 
+  mutate(address = str_c(address_number, 
+                         address_street_name,
+                         sep = " "),
+         .before = address_number) |> 
+  select(-address_number,
+         -address_street_name)
+```
+
+
 ```{r}
 # save all data frames in global environment to an .Rdata file
 # when loaded, will open up all data frames
