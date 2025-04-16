@@ -1,0 +1,125 @@
+---
+title: "Week 4 Starter Notes"
+format: html
+editor: source
+embed-resources: true
+execute: 
+  echo: true
+  message: false
+  warning: false
+---
+
+
+```{r setup}
+#| include: false
+#| message: false
+library(tidyverse)
+library(readxl)
+```
+
+Download [.qmd](W4_starter_notes.qmd)
+
+::: callout-warning
+Download the data that we will be using this week at the followings links and add them to a `data/` directory
+
+[IMDb data](data/imdb_data.Rdata)
+
+[Rainfall data](data/2023-rainfall-slo.xlsx)
+
+[Eras Tour data](data/TS_data.xlsx)
+:::
+
+
+
+## Data Joins
+
+
+::: {.callout-tip collapse="true"}
+## .Rdata Files
+
+Once in `R`, data frames can be saves as `.Rdata` files using the syntax:
+
+`save(data_frame1, data_frame2, ..., file = "path/file-name.Rdata")`
+
+and then *loaded* into `R` using the syntax:
+
+`load("path/file-name.Rdata")`
+
+This can be preferable when saving intermediate datasets in an analysis because `.Rdata` files are much smaller and more memory efficient than `.csv` files. Additionally, you can save and load multiple data frames at once!
+
+You can see that this is useful here, where we have 7 related data frames saved in `imdb_data.Rdata`, which are then loaded in one line below.
+::: 
+
+We will use 7 datasets that describe movies from [IMDb](https://www.imdb.com/). 
+
+```{r}
+#| echo: false
+#| fig-cap: "Relationship between data sets in IMDb movie data."
+#| out-width: 90%
+knitr::include_graphics("https://github.com/manncz/stat-331/blob/main/lecture_slides/W4_joins/images/imdb_relational.png?raw=true")
+```
+
+
+```{r}
+load(file = "data/imdb_data.Rdata")
+```
+
+
+
+
+
+On Wednesday will also look at joining datasets created from the Lab 2 Rodent data. **Note that you will need to change the file path to be appropriate for your directory strucure!**
+
+```{r, rodent-data}
+rodent <- read_csv("../../lab_assignments/lab2/surveys.csv")
+species <- rodent |> 
+  select(genus:taxa, species_id) |> 
+  distinct()
+
+measurements <- rodent |> 
+  select(genus, species, sex:weight) |> 
+  rename(genus_name = genus)
+```
+
+
+## Data Pivots
+
+Example data includes the `cereal` dataset from the `liver` package (which we saw last week)...
+
+```{r}
+library(liver)
+data(cereal)
+```
+
+```{r}
+mean_protein <- cereal |> 
+  group_by(manuf, shelf) |> 
+  summarize(mean_protein = mean(protein))
+
+
+mean_protein |> 
+  pivot_wider(id_cols = manuf,
+              names_from = shelf,
+              values_from = mean_protein)
+```
+
+
+... and daily rainfall observed in SLO in January 2023. 
+[Data source](cesanluisobispo.ucanr.edu)
+
+
+```{r}
+slo_rainfall <- read_excel("data/2023-rainfall-slo.xlsx")
+
+slo_rainfall <- slo_rainfall |> 
+  mutate(across(Sunday:Saturday, as.numeric))
+```
+
+
+## Factors with `forcats`
+
+To practice working with factor variables, we will use data on songs that Taylor Swift included in the Era's Tour.
+
+```{r}
+full_eras <- read_excel("data/TS_data.xlsx", sheet = "full")
+```
