@@ -374,6 +374,31 @@ cereal |>
                    .fns = ~ mean(.x, na.rm = T)))
 ```
 
+
+## `if_any()` / `if_all()`
+
+```{r}
+colleges <- read_csv("https://www.dropbox.com/s/bt5hvctdevhbq6j/colleges.csv?dl=1")
+
+colleges_clean <- colleges |> 
+    select(INSTNM, CITY, STABBR, ZIP,
+         ADM_RATE, SAT_AVG, UGDS,
+         TUITIONFEE_IN, TUITIONFEE_OUT,
+         CONTROL, REGION) |> 
+  filter(CONTROL == 1 | CONTROL == 2)
+```
+
+```{r}
+colleges_clean |> 
+  filter(if_any(.cols = ADM_RATE:TUITIONFEE_OUT, 
+                 .fns = ~ .x == "NULL")) 
+```
+
+```{r}
+colleges <- read_csv("https://www.dropbox.com/s/bt5hvctdevhbq6j/colleges.csv?dl=1",
+                     na = c("", "NA"))
+```
+
 ## Practice!
 
 How would you make this plot from the diamonds dataset in ggplot2?
