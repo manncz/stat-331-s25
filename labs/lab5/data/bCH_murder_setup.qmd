@@ -1,0 +1,34 @@
+---
+title: "Setup Up Murder Data for Lab 5"
+---
+
+```{r}
+# clear global environment
+
+rm(list = ls())
+```
+
+```{r}
+table_names <- c("crime_scene_report","drivers_license",
+                 "facebook_event_checkin",
+                 "get_fit_now_check_in","get_fit_now_member",
+                 "income", "interview","person")
+
+# For each name, read in the table and store it as the name.
+purrr::walk(table_names, function(x) {
+  assign(x, readr::read_csv(paste0("../bCH_murder_data/", x, ".csv")), envir = .GlobalEnv)
+})
+```
+
+```{r}
+# remove vector from global environment
+
+rm(table_names)
+```
+
+```{r}
+# save all data frames in global environment to an .Rdata file
+# when loaded, will open up all data frames
+
+save.image(file = "bCH_murder_data.Rdata")
+```
