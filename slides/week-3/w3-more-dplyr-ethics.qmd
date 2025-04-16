@@ -413,6 +413,47 @@ summarize(across(.cols = calories:potass,
 
 :::
 
+## `across()`: Related Functions
+
+These functions are used with `filter()` to select rows based on a logical statement applied to multiple columns
+
+- `if_any()` -- returns a logical vector (one element for each row) that is `TRUE` if the logical statement is true for *any* column in the supplied columns
+- `if_all()` -- returns a logical vector (one element for each row) that is `TRUE` if the logical statement is true for *all* columns in the supplied columns
+
+## `if_any()` Example
+
+```{r}
+colleges <- read_csv("https://www.dropbox.com/s/bt5hvctdevhbq6j/colleges.csv?dl=1")
+
+colleges_clean <- colleges |> 
+    select(INSTNM, CITY, STABBR, ZIP,
+         ADM_RATE, SAT_AVG, UGDS,
+         TUITIONFEE_IN, TUITIONFEE_OUT,
+         CONTROL, REGION) |> 
+  filter(CONTROL == 1 | CONTROL == 2)
+```
+
+Remember, you got warnings in PA3 when converting some columns to numeric? If you look at the original data, you can see this is because missing values were indicated with the string `"NULL"`.
+
+```{r}
+colleges_clean |> 
+  slice_head(n = 3) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "175px") |> 
+  kableExtra::kable_styling(font_size = 20)
+```
+. . .
+
+We could drop these rows before converting the columns to numeric if desired, using `if_any()`:
+
+```{r}
+#| echo: true
+
+colleges_clean <- colleges_clean |> 
+  filter(!if_any(.cols = ADM_RATE:TUITIONFEE_OUT, 
+                 .fns = ~ .x == "NULL")) 
+```
+
 ## Piping into `ggplot()`
 
 Plot the `mean` `protein` per `cup` for each `manuf`.
@@ -621,21 +662,22 @@ cereal |>
 
 ## ASA Ethical Guidelines
 
--   The American Statistical Association’s Ethical Guidelines for Statistical Practice are intended to help statistics practitioners make decisions ethically.
+-   The [American Statistical Association’s Ethical Guidelines](https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice) for Statistical Practice are intended to help statistics practitioners make decisions ethically.
 -   They aim to promote accountability by informing those who rely on statistics of the standards they should expect.
 
-. . .
+## The Numbers Don't Speak for Themselves
 
-:::callout-note
-# Visit [Ethical Guidelines for Statistical Practice](https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice) and discuss one of the guidelines with your neighbor.
+With the people next to you discuss:
 
- -   What surprises you? What did you learn?
- -   In what scenario might this come into play?
-:::
+- What was the main take-away for you?
+- What points stood out to you?
+- What was something that suprised you?
+- Is there anything you didn't agree with?
+- What questions do you have after reading?
 
 ## Additional Resources
 
--   [Data Feminism](https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3?readingCollection=0cd867ef)
+-   [Data Feminism](https://data-feminism.mitpress.mit.edu)
 -   Critical Quantitative Research
     -   [Resource 1](https://arxiv.org/pdf/2110.12871)
     -   [Resource 2](https://journals.sagepub.com/doi/10.1177/23328584241228223)
