@@ -404,7 +404,7 @@ Note
 <pre><code>Error in TUITION_DIFF: The pipe operator requires a function call as RHS (&lt;input&gt;:2:5)</code></pre>
 </div>
 </div>
-<p><strong>Step 6:</strong> Create a new variable called <code>TOTAL_IN</code> which contains the total amount of money made from tuition per year.</p>
+<p><strong>Step 6:</strong> Create a new variable called <code>TOTAL_IN</code> which contains the total amount of money made from tuition per year. (Note, this is just an approximation by mutliplying the number of undergrads by the in-state tuition)</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>colleges_clean <span class="ot">&lt;-</span> colleges_clean <span class="sc">|&gt;</span> </span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="fu">select</span>(<span class="at">TOTAL_IN =</span> UGDS x TUITIONFEE_IN)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -470,7 +470,7 @@ Tip
 <li><p>This college’s admission rate is above the median rate for the region.</p></li>
 <li><p>This college charges <em>more</em> for out-of-state tuition than in-state tuition.</p></li>
 <li><p>More than 10,000 undergraduates attend this college.</p></li>
-<li><p>The total amount of money made from tuition per year for this college is at least $200 million.</p></li>
+<li><p>The total amount of money made from tuition per year for this college is at least $200 million. (Use the <code>TOTAL_IN</code> variable you created)</p></li>
 <li><p>The average SAT score of this college is an odd number.</p></li>
 <li><p>Out of the two remaining colleges, this college has the <strong>least expensive</strong> tuition. While you could just glance at the result to find this, practice using a dplyr verb to get down to one college.</p></li>
 </ol>
@@ -1251,7 +1251,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-154"><a href="#cb21-154" aria-hidden="true" tabindex="-1"></a><span class="in">    TUITION_DIFF = TUITIONFEE_OUT - TUITIONFEE_IN</span></span>
 <span id="cb21-155"><a href="#cb21-155" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb21-156"><a href="#cb21-156" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-157"><a href="#cb21-157" aria-hidden="true" tabindex="-1"></a>**Step 6:** Create a new variable called <span class="in">`TOTAL_IN`</span> which contains the total amount of money made from tuition per year.</span>
+<span id="cb21-157"><a href="#cb21-157" aria-hidden="true" tabindex="-1"></a>**Step 6:** Create a new variable called <span class="in">`TOTAL_IN`</span> which contains the total amount of money made from tuition per year. (Note, this is just an approximation by mutliplying the number of undergrads by the in-state tuition)</span>
 <span id="cb21-158"><a href="#cb21-158" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-159"><a href="#cb21-159" aria-hidden="true" tabindex="-1"></a><span class="in">```{r mutate-total}</span></span>
 <span id="cb21-160"><a href="#cb21-160" aria-hidden="true" tabindex="-1"></a><span class="in">colleges_clean &lt;- colleges_clean |&gt; </span></span>
@@ -1305,7 +1305,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb21-208"><a href="#cb21-208" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-209"><a href="#cb21-209" aria-hidden="true" tabindex="-1"></a><span class="ss">4.  </span>More than 10,000 undergraduates attend this college.</span>
 <span id="cb21-210"><a href="#cb21-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb21-211"><a href="#cb21-211" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>The total amount of money made from tuition per year for this college is at least $200 million.</span>
+<span id="cb21-211"><a href="#cb21-211" aria-hidden="true" tabindex="-1"></a><span class="ss">5.  </span>The total amount of money made from tuition per year for this college is at least $200 million. (Use the <span class="in">`TOTAL_IN`</span> variable you created)</span>
 <span id="cb21-212"><a href="#cb21-212" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb21-213"><a href="#cb21-213" aria-hidden="true" tabindex="-1"></a><span class="ss">6.  </span>The average SAT score of this college is an odd number.</span>
 <span id="cb21-214"><a href="#cb21-214" aria-hidden="true" tabindex="-1"></a></span>

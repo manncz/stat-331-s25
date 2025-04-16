@@ -152,7 +152,7 @@ colleges_clean |>
     TUITION_DIFF = TUITIONFEE_OUT - TUITIONFEE_IN
 ```
 
-**Step 6:** Create a new variable called `TOTAL_IN` which contains the total amount of money made from tuition per year.
+**Step 6:** Create a new variable called `TOTAL_IN` which contains the total amount of money made from tuition per year. (Note, this is just an approximation by mutliplying the number of undergrads by the in-state tuition)
 
 ```{r mutate-total}
 colleges_clean <- colleges_clean |> 
@@ -206,7 +206,7 @@ You should use the **cleaned version** of the data (`colleges_clean`) and these 
 
 4.  More than 10,000 undergraduates attend this college.
 
-5.  The total amount of money made from tuition per year for this college is at least $200 million.
+5.  The total amount of money made from tuition per year for this college is at least $200 million. (Use the `TOTAL_IN` variable you created)
 
 6.  The average SAT score of this college is an odd number.
 
