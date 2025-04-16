@@ -18,7 +18,9 @@ notes.md
 *_old.qmd
 *_old.html
 *schedule_s25.xlsx
-
 solutions/*
 
 /.quarto/
+
+# Large files
+*.docx

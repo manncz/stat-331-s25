@@ -1,0 +1,99 @@
+---
+title: "Project Citations"
+subtitle: "STAT 331/531"
+bibliography: references.bib
+---
+
+
+## Citing small coding sources
+
+If you are just letting me know how you found any functions that we have not discussed in class - please include this as a **comment in your code chunk**. Remember, the text of your report should be discussing your analysis and findings, NOT your code.
+
+For example:
+
+```{r}
+# basenames() function found in stackoverflow discussion
+# https://stackoverflow.com/questions/29113973/get-filename-without-extension-in-r
+
+csv_files <- list.files(path = "../", pattern = ".csv", 
+                          full.names = TRUE)
+
+names <- basename(csv_files)
+```
+
+
+## Citing Data and Other Sources
+
+All other sources should be cited **both** in-text and in a "References" section at the end of your report.
+
+In-text citations should include the author name and year of publication (if relevant) like:
+
+> (Wilkinson 2005)
+
+> (Wilkinson, 2005)
+
+> Wilkinson (2005)
+
+If there is no author or year of publication (like for many websites) a [hyperlink](https://quarto.org/docs/authoring/citations.html) to the website is acceptable in-text and do your best to create a full citation in the References section citation.
+
+You may use any citation style for References as long as it is consistent.
+
+You can do all of this manually, but you may also want to use citation tools in Quarto, which I explain in the next section.
+
+## Citing Automatically in Quarto
+
+
+:::callout-tip
+## Optional but NICE!
+You are not required to do this for the project, but using automatic citations 
+is VERY nice and a good practice to start.
+:::
+
+:::callout-warning
+You will want to [download the .qmd](../student-versions/project/proj-citations.qmd) for this document to see exactly how everything works.
+:::
+
+:::callout-caution
+# Make sure bibtex is installed on your computer
+Just once, you will need to install the `bibtex` package if you don't already have bibtex installed on your computer.
+:::
+
+Quarto supports automatic citations using BibTex. You can find detailed information at [@quarto_cite], but I will also summarize some of the big points and give some tips.
+
+**Step 1**: Create a `.bib` document and save it in the same directory as your report .qmd. You can download the [references.bib](references.bib) file that I created for this example as a starting point.
+
+**Step 2:** Tell Quarto to that you have a references document. Include the following in your YAML (changin the name of the `.bib` document appropriately:
+
+`bibliography: references.bib`
+
+**Step 3:** Add citations to your `.bib`! BibTex has a special way that you need to include the citations. 
+
+- You can find some examples in the [references.bib](references.bib) file. 
+- There are many websites that you can find that help you generate a BibTex citation such as [this one](https://zbib.org/). 
+- Often journals also provide a way to download a BibTex citation for a given paper.
+
+Citations look something like this:
+
+```
+@book{wickham2016r,
+	title = {R for data science: {Import}, tidy, transform, visualize, and model data},
+	url = {https://books.google.com/books?id=vfi3DQAAQBAJ},
+	publisher = {O'Reilly Media},
+	author = {Wickham, H. and Grolemund, G.},
+	year = {2016},
+	note = {tex.lccn: 2017300238},
+}
+```
+
+The first entry `wickham2016r` gives a "nickname" for the citation that you can then use to reference it in your main document.
+
+
+**Step 4: Cite!**
+
+In Quarto you can include in text citations by refrencing that nickname with an `@` in front (e.g. `@wickham2016r`). You can chose one of two formats for in-text citation depending on the context: 
+
+- [@wickham2016r] or 
+- @wickham2016r 
+
+This will make a nicely formatted in-text citation as well as *automatically* creating a "References" section at the end of your document with the full citations like you can see here!
+
