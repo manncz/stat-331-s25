@@ -24,15 +24,15 @@ Today we will...
     -   Pivoting data with `tidyr`
 -   PA 4: Military Spending
 
-## Comments from Week 3
+<!-- ## Comments from Week 3 -->
 
--  Work on the lab early!
-    + Make sure images are rendering - ask for help in class or office hours on this!
-    + Get an idea of how long it may take and what any big challenges are
-  
-- Be thoughtful about use of color in plots
+<!-- -  Work on the lab early! -->
+<!--     + Make sure images are rendering - ask for help in class or office hours on this! -->
+<!--     + Get an idea of how long it may take and what any big challenges are -->
 
-- Avoid long lines of code - introduce line breaks
+<!-- - Be thoughtful about use of color in plots -->
+
+<!-- - Avoid long lines of code - introduce line breaks -->
 
 # Big Picture - Data Science Workflow
 
@@ -1145,5 +1145,5 @@ Today you will be tidying messy data to explore the relationship between countri
 ## To do...
 
 -   **PA 4: Military Spending**
-    -   Due Wednesday, 1/29 at 10:00am
+    -   Due Thursday, 4/24 before class
 

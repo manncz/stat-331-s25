@@ -179,7 +179,7 @@
     "href": "slides/week-3/w3-more-dplyr-ethics.html#additional-resources",
     "title": "Data Cleaning & Manipulation",
     "section": "Additional Resources",
-    "text": "Additional Resources\n\nData Feminism\nCritical Quantitative Research\n\nResource 1\nResource 2\n\n\n\nI would love to discuss these with you in office hours!"
+    "text": "Additional Resources\n\nMore Data Feminism\nCritical Quantitative Research\n\nResource 1\nResource 2\n\n\n\nI would love to discuss these with you in office hours!"
   },
   {
     "objectID": "slides/week-3/w3-more-dplyr-ethics.html#lab-3-teacher-evaluations",
@@ -2244,28 +2244,28 @@
     "href": "labs/lab4/lab4-childcare.html#the-data",
     "title": "Lab 4: Childcare Costs in California",
     "section": "The Data",
-    "text": "The Data\nIn this lab we’re going look at the median weekly cost of childcare in California. A detailed description of the data can be found here. You will need to use this data dictionary to complete the lab!\nThe data come to us from TidyTuesday.\n0. Load the appropriate libraries and the data.\n\n# load libraries\n\n\n# load data\nchildcare_costs &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')\n\nError in read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv\"): could not find function \"read_csv\"\n\ncounties &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')\n\nError in read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv\"): could not find function \"read_csv\"\n\n\n1. Briefly describe the data (~ 4 sentences). What information does it contain?"
+    "text": "The Data\nIn this lab we’re going look at the median weekly cost of childcare in California. The data come to us from TidyTuesday. A detailed description of the data can be found here. You will need to use this data dictionary to complete the lab!\nWe also have information from the California State Controller on tax revenue for california counties from 2005 - 2018. I compiled the data from this website for you. Note that there is no data for San Franscisco County. The variables included in the ca_tax_revenue.csv data file (loaded below) include:\n\nentity_name: County name\nyear: fiscal year\ntotal_property_taxes: total revenue in $ from property taxes\nsales_and_use_taxes: total revenue in $ from sales and use taxes\n\n0. Load the appropriate libraries and the data.\n\n# load libraries\n\n\n# load data\nchildcare_costs &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')\n\nError in read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv\"): could not find function \"read_csv\"\n\ncounties &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')\n\nError in read_csv(\"https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv\"): could not find function \"read_csv\"\n\ntax_rev &lt;- read_csv('https://raw.githubusercontent.com/manncz/stat-331-s25/main/labs/lab4/data/ca_tax_revenue.csv')\n\nError in read_csv(\"https://raw.githubusercontent.com/manncz/stat-331-s25/main/labs/lab4/data/ca_tax_revenue.csv\"): could not find function \"read_csv\"\n\n\n1. Briefly describe the data (~ 4 sentences). What information does it contain?"
   },
   {
     "objectID": "labs/lab4/lab4-childcare.html#california-childcare-costs",
     "href": "labs/lab4/lab4-childcare.html#california-childcare-costs",
     "title": "Lab 4: Childcare Costs in California",
     "section": "California Childcare Costs",
-    "text": "California Childcare Costs\n2. Let’s focus only on California. Create a ca_childcare dataset containing (1) county information and (2) all information from the childcare_costs dataset.\na. Sketch a game plan for completing this task. You should do all of this within one pipeline\n\nb. Implement/code your game plan to create the dataset of childcare costs in California. Checkpoint: There are 58 counties in CA and 11 years in the dataset. Therefore, your new dataset should have 638 observations.\n\n# code for Q2\n\n3. Using a function from the forcats package, complete the code below to create a new variable where each county is categorized into one of the 10 Census regions in California. Use the Region description (from the plot), not the Region number. The code below will help you get started.\n\n\nCode\n# defining 10 census regions\n\nsuperior_counties &lt;- c(\"Butte\",\"Colusa\",\"El Dorado\",\n                       \"Glenn\",\"Lassen\",\"Modoc\",\n                       \"Nevada\",\"Placer\",\"Plumas\",\n                       \"Sacramento\",\"Shasta\",\"Sierra\",\"Siskiyou\",\n                       \"Sutter\",\"Tehama\",\"Yolo\",\"Yuba\")\n\nnorth_coast_counties &lt;- c(\"Del Norte\",\"Humboldt\",\"Lake\",\n                          \"Mendocino\",\"Napa\",\"Sonoma\",\"Trinity\")\n\nsan_fran_counties &lt;- c(\"Alameda\",\"Contra Costa\",\"Marin\",\n                       \"San Francisco\",\"San Mateo\",\"Santa Clara\",\n                       \"Solano\")\n\nn_san_joaquin_counties &lt;- c(\"Alpine\",\"Amador\",\"Calaveras\",\"Madera\",\n                            \"Mariposa\",\"Merced\",\"Mono\",\"San Joaquin\",\n                            \"Stanislaus\",\"Tuolumne\")\n\ncentral_coast_counties &lt;- c(\"Monterey\",\"San Benito\",\"San Luis Obispo\",\n                            \"Santa Barbara\",\"Santa Cruz\",\"Ventura\")\n\ns_san_joaquin_counties &lt;- c(\"Fresno\",\"Inyo\",\"Kern\",\"Kings\",\"Tulare\")\n\ninland_counties &lt;- c(\"Riverside\",\"San Bernardino\")\n\nla_county &lt;- \"Los Angeles\"\n\norange_county  &lt;- \"Orange\"\n\nsan_diego_imperial_counties &lt;- c(\"Imperial\",\"San Diego\")\n\n\n\n# finish this code for Q3\n\nca_childcare &lt;- ca_childcare |&gt; \n  mutate(county_name = str_remove(county_name, \" County\"))\n\nError in mutate(ca_childcare, county_name = str_remove(county_name, \" County\")): could not find function \"mutate\"\n\n\n\n\n\n\n\n\nTip\n\n\n\nI have provided you with code that eliminates the word “County” from each of the county names in your ca_childcare dataset. You should keep this line of code and pipe into the rest of your data manipulations.\nYou will learn about the str_remove() function from the stringr package next week!\n\n\n4. Let’s consider the median household income of each region, and how that income has changed over time. Create a table with ten rows, one for each region, and two columns, one for 2008 and one for 2018 (plus a column for region). The cells should contain the median() of the median household income (expressed in 2018 dollars) of the region and the study_year. Order the rows by 2018 values from highest income to lowest income.\n\n\n\n\n\n\nTip\n\n\n\nThis will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions.\n\n\n\n# code for Q4\n\n5. Which California region had the lowest median full-time median weekly price for center-based childcare for infants in 2018? Does this region correspond to the region with the lowest median income in 2018 that you found in Q4?\n\n\n\n\n\n\nWarning\n\n\n\nThe code for the first question should give me the EXACT answer. This means having the code output the exact row(s) and variable(s) necessary for providing the solution. To answer the second question, compare this output with the output from Q4.\n\n\n\n# code for Q5\n\n6. The following plot shows, for all ten regions, the change over time of the full-time median price for center-based childcare for infants, toddlers, and preschoolers. Recreate the plot. You do not have to replicate the exact colors or theme, but your plot should have the same content, including the order of the facets and legend, reader-friendly labels, axes breaks, and a loess smoother.\n\n\n\n\n\n\nHints\n\n\n\nThis will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions.\nA point on the plot represents one county and year.\nYou should use a forcats function to reorder the legend automatically\nTry setting aspect.ratio = 1 in theme() if your plot is squished\nAgain, your plot does not need to look exactly like this one!!\nRemember to avoid “object junk” in your environment!\n\n\n\n\n\nPlot to recreate\n\n\n\n# code for Q6"
+    "text": "California Childcare Costs\n2. Let’s focus only on California. Create a ca_childcare dataset containing (1) county information and (2) all information from the childcare_costs dataset.\na. Sketch a game plan for completing this task. You should do all of this within one pipeline\n\nb. Implement/code your game plan to create the dataset of childcare costs in California. Checkpoint: There are 58 counties in CA and 11 years in the dataset. Therefore, your new dataset should have 638 observations.\n\n# code for Q2\n\n3. Now, lets add the tax revenue information to the ca_childcare dataset. Add the data from tax_rev for the counties and years that are already in the ca_childcare data. Overwrite the old ca_childcare data with this dataset. Checkpoint: you are just adding columns here, so your new dataset should still have 638 observations\n\n# code for Q3\n\n4. Using a function from the forcats package, complete the code below to create a new variable where each county is categorized into one of the 10 Census regions in California. Use the Region description (from the plot), not the Region number. The code below will help you get started.\n\n\nCode\n# defining 10 census regions\n\nsuperior_counties &lt;- c(\"Butte\",\"Colusa\",\"El Dorado\",\n                       \"Glenn\",\"Lassen\",\"Modoc\",\n                       \"Nevada\",\"Placer\",\"Plumas\",\n                       \"Sacramento\",\"Shasta\",\"Sierra\",\"Siskiyou\",\n                       \"Sutter\",\"Tehama\",\"Yolo\",\"Yuba\")\n\nnorth_coast_counties &lt;- c(\"Del Norte\",\"Humboldt\",\"Lake\",\n                          \"Mendocino\",\"Napa\",\"Sonoma\",\"Trinity\")\n\nsan_fran_counties &lt;- c(\"Alameda\",\"Contra Costa\",\"Marin\",\n                       \"San Francisco\",\"San Mateo\",\"Santa Clara\",\n                       \"Solano\")\n\nn_san_joaquin_counties &lt;- c(\"Alpine\",\"Amador\",\"Calaveras\",\"Madera\",\n                            \"Mariposa\",\"Merced\",\"Mono\",\"San Joaquin\",\n                            \"Stanislaus\",\"Tuolumne\")\n\ncentral_coast_counties &lt;- c(\"Monterey\",\"San Benito\",\"San Luis Obispo\",\n                            \"Santa Barbara\",\"Santa Cruz\",\"Ventura\")\n\ns_san_joaquin_counties &lt;- c(\"Fresno\",\"Inyo\",\"Kern\",\"Kings\",\"Tulare\")\n\ninland_counties &lt;- c(\"Riverside\",\"San Bernardino\")\n\nla_county &lt;- \"Los Angeles\"\n\norange_county  &lt;- \"Orange\"\n\nsan_diego_imperial_counties &lt;- c(\"Imperial\",\"San Diego\")\n\n\n\n# finish this code for Q4\n\nca_childcare &lt;- ca_childcare |&gt; \n  mutate(county_name = str_remove(county_name, \" County\"))\n\nError in mutate(ca_childcare, county_name = str_remove(county_name, \" County\")): could not find function \"mutate\"\n\n\n\n\n\n\n\n\nTip\n\n\n\nI have provided you with code that eliminates the word “County” from each of the county names in your ca_childcare dataset. You should keep this line of code and pipe into the rest of your data manipulations.\nYou will learn about the str_remove() function from the stringr package next week!\n\n\n5. Let’s consider the median household income of each region, and how that income has changed over time. Create a table with ten rows, one for each region, and two columns, one for 2008 and one for 2018 (plus a column for region). The cells should contain the median() of the median household income (expressed in 2018 dollars) of the region and the study_year. Order the rows by 2018 values from highest income to lowest income.\n\n\n\n\n\n\nTip\n\n\n\nThis will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions.\n\n\n\n# code for Q5\n\n6. Which California region had the lowest median full-time median weekly price for center-based childcare for infants in 2018? Does this region correspond to the region with the lowest median income in 2018 that you found in Q4?\n\n\n\n\n\n\nWarning\n\n\n\nThe code for the first question should give me the EXACT answer. This means having the code output the exact row(s) and variable(s) necessary for providing the solution. To answer the second question, compare this output with the output from Q4.\n\n\n\n# code for Q6\n\n7. The following plot shows, for all ten regions, the change over time of the full-time median price for center-based childcare for infants, toddlers, and preschoolers. Recreate the plot. You do not have to replicate the exact colors or theme, but your plot should have the same content, including the order of the facets and legend, reader-friendly labels, axes breaks, and a loess smoother.\n\n\n\n\n\n\nHints\n\n\n\nThis will require transforming your data! Sketch out what you want the data to look like before you begin to code. You should be starting with your California dataset that contains the regions.\nA point on the plot represents one county and year.\nYou should use a forcats function to reorder the legend automatically\nTry setting aspect.ratio = 1 in theme() if your plot is squished\nAgain, your plot does not need to look exactly like this one!!\nRemember to avoid “object junk” in your environment!\n\n\n\n\n\nPlot to recreate\n\n\n\n# code for Q7"
   },
   {
     "objectID": "labs/lab4/lab4-childcare.html#median-household-income-vs.-childcare-costs-for-infants",
     "href": "labs/lab4/lab4-childcare.html#median-household-income-vs.-childcare-costs-for-infants",
     "title": "Lab 4: Childcare Costs in California",
     "section": "Median Household Income vs. Childcare Costs for Infants",
-    "text": "Median Household Income vs. Childcare Costs for Infants\n\n\n\n\n\n\nRefresher on Linear Regression\n\n\n\nWhile a second course in statistics is a pre-requisite for this class, here is a refresher on simple linear regression with a single predictor.\n\n\n7. Create a scatterplot showing the relationship between median household income (expressed in 2018 dollars) and the full-time median weekly price charged for center-based childcare for an infant in California. Overlay a linear regression line (lm) to show the trend.\n\n# plot for scatterplot\n\n8. Look up the documentation for lm() and fit a linear regression model to the relationship shown in your plot above (recall: \\(y = mx+b\\)). Identify the coefficient estimates from the model.\n\n# complete the code provided\nreg_mod1 &lt;- lm()\n\nError in terms.formula(formula, data = data): argument is not a valid model\n\nsummary(reg_mod1)\n\nError: object 'reg_mod1' not found\n\n\n9. Do you have evidence to conclude there is a relationship between the median household income and the median weekly cost of center-based childcare for infants in California? Cite values from your output for support."
+    "text": "Median Household Income vs. Childcare Costs for Infants\n\n\n\n\n\n\nRefresher on Linear Regression\n\n\n\nWhile a second course in statistics is a pre-requisite for this class, here is a refresher on simple linear regression with a single predictor.\n\n\n8. Create a scatterplot showing the relationship between median household income (expressed in 2018 dollars) and the full-time median weekly price charged for center-based childcare for an infant in California. Overlay a linear regression line (lm) to show the trend.\n\n# plot for scatterplot\n\n9. Look up the documentation for lm() and fit a linear regression model to the relationship shown in your plot above (recall: \\(y = mx+b\\)). Identify the coefficient estimates from the model.\n\n# complete the code provided\nreg_mod1 &lt;- lm()\n\nError in terms.formula(formula, data = data): argument is not a valid model\n\nsummary(reg_mod1)\n\nError: object 'reg_mod1' not found\n\n\n10. Do you have evidence to conclude there is a relationship between the median household income and the median weekly cost of center-based childcare for infants in California? Cite values from your output for support."
   },
   {
     "objectID": "labs/lab4/lab4-childcare.html#open-ended-analysis",
     "href": "labs/lab4/lab4-childcare.html#open-ended-analysis",
     "title": "Lab 4: Childcare Costs in California",
     "section": "Open-Ended Analysis",
-    "text": "Open-Ended Analysis\nLet’s give you a taste of what to expect for the take-home portion of the midterm exam.\n10. Investigate the full-time median price for childcare in a center-based setting versus the full-time median price for childcare in a family (in-home) setting in California. Posit a research question. This could include any other variables in the dataset as well. Present one table of summary statistics and one plot that helps to address your research question.\nThis write-up should include:\n\nA description of the data you are using\nYour research question\nOne well-designed table of summary statistics\n\nNote, this should not be inference (results from a statistical test)\nThis should be a summary table of the data itself, like Q4\n\nOne well-designed plot\nDescriptions of the table and plot that both:\n\nExplain what the table/plot is literally showing (e.g. the median cost by year)\nAnalyze what you learn from the table/plot about your research question\n\n\nThe table and plot should not show reduntant information, they should be used to gain more insight on your question.\nDr. C will be reading through these and providing some feedback!"
+    "text": "Open-Ended Analysis\nLet’s give you a taste of what to expect for the take-home portion of the midterm exam.\n11. Investigate the full-time median price for childcare in a center-based setting versus the full-time median price for childcare in a family (in-home) setting in California. Posit a research question. This could include any other variables in the dataset as well. Present one table of summary statistics and one plot that helps to address your research question.\nThis write-up should include:\n\nA description of the data you are using\nYour research question\nOne well-designed table of summary statistics\n\nNote, this should not be inference (results from a statistical test)\nThis should be a summary table of the data itself, like Q5\n\nOne well-designed plot\nDescriptions of the table and plot that both:\n\nExplain what the table/plot is literally showing (e.g. the median cost by year)\nAnalyze what you learn from the table/plot about your research question\n\n\nThe table and plot should not show reduntant information, they should be used to gain more insight on your question.\nDr. C will be reading through these and providing some feedback!"
   },
   {
     "objectID": "slides/week-3/w3-more-dplyr-ethics.html#across-related-functions",
@@ -2286,6 +2286,678 @@
     "href": "slides/week-3/w3-more-dplyr-ethics.html#the-numbers-dont-speak-for-themselves",
     "title": "Data Cleaning & Manipulation",
     "section": "The Numbers Don’t Speak for Themselves",
-    "text": "The Numbers Don’t Speak for Themselves\nWith the people next to you discuss:\n\nWhat was the main take-away for you?\nWhat points stood out to you?\nWhat was something that suprised you?\nIs there anything you didn’t agree with?\nWhat questions do you have after reading?"
+    "text": "The Numbers Don’t Speak for Themselves\nWith the people next to you discuss:\n\nWhat was the main take-away for you?\nWhat points stood out to you?\nWhat was something that suprised you?\nIs there anything you didn’t agree with?\nWhat questions do you have after reading?\n\n\nSource: Data Feminism by by Catherine D’Ignazio and Lauren Klein (2020)"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#tuesday-april-22",
+    "href": "slides/week-4/w4-joins-pivots.html#tuesday-april-22",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Tuesday, April 22",
+    "text": "Tuesday, April 22\nToday we will…\n\nComments from Week 3\nNew Material\n\nJoining data with dplyr\nPivoting data with tidyr\n\nPA 4: Military Spending"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#comments-from-week-3",
+    "href": "slides/week-4/w4-joins-pivots.html#comments-from-week-3",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Comments from Week 3",
+    "text": "Comments from Week 3\n\nWork on the lab early!\n\nMake sure images are rendering - ask for help in class or office hours on this!\nGet an idea of how long it may take and what any big challenges are\n\nBe thoughtful about use of color in plots\nAvoid long lines of code - introduce line breaks"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#data-science-process",
+    "href": "slides/week-4/w4-joins-pivots.html#data-science-process",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Data Science Process",
+    "text": "Data Science Process\n\nAdapted from r4ds"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#we-have-covered",
+    "href": "slides/week-4/w4-joins-pivots.html#we-have-covered",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "We have covered…",
+    "text": "We have covered…"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#today",
+    "href": "slides/week-4/w4-joins-pivots.html#today",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Today",
+    "text": "Today"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#getting-data",
+    "href": "slides/week-4/w4-joins-pivots.html#getting-data",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Getting Data",
+    "text": "Getting Data\n\nSo far, we have simply needed to import one nice rectangular data set in a typical file type\nReal life often gets a bit more complicated!!"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#motivating-real-example1",
+    "href": "slides/week-4/w4-joins-pivots.html#motivating-real-example1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Motivating (Real) Example1",
+    "text": "Motivating (Real) Example1\n\n\nTexas Education Data (AEIS): K-12 student performance data provided by the Texas Education Agency\nProvides A LOT of information … in many separate files:\n\nby year\nfor State, Regions, Districts, or Schools\nfor different sets of variables\n\n\n\n\n🧐 need to get this #%$ together before we can analyze it\n\nI worked with this data for a project. See the paper and Github repo if you are interested!"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#relational-data",
+    "href": "slides/week-4/w4-joins-pivots.html#relational-data",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Relational Data",
+    "text": "Relational Data\n\n\nMultiple, interconnected tables of data are called relational.\nIndividual datsets may not provide exactly what we need - but we can use the relation between datasets to get the information we want.\n\n\n\n\n\n\nIMDb movie relational data"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#example---imdb-movie-data",
+    "href": "slides/week-4/w4-joins-pivots.html#example---imdb-movie-data",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Example - IMDb Movie Data",
+    "text": "Example - IMDb Movie Data\n\n\n\n\n\n\nDiscussion\n\n\nWhat if we want to know which actor has worked with the most directors in the dataset?\nWhat analytical dataset would we need to answer this question? What are the rows, and variables needed?"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#example---imdb-movie-data-1",
+    "href": "slides/week-4/w4-joins-pivots.html#example---imdb-movie-data-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Example - IMDb Movie Data",
+    "text": "Example - IMDb Movie Data\n\n\n\n\n\n\nDiscussion\n\n\nWhat if we want to know which actor has worked with the most directors in the dataset?\nWhat analytical dataset would we need to answer this question? What are the rows, and variables needed?\n\n\n\n\n\n💡 In order to answer our question, we need to combine some of the individual datasets into one big dataset\nJoins!"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#data-joins-1",
+    "href": "slides/week-4/w4-joins-pivots.html#data-joins-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Data Joins",
+    "text": "Data Joins\nWe can combine (join) data tables based on their relations.\n\n\nMutating joins\nAdd variables from a new dataframe to observations in an existing dataframe.\nfull_join(), left_join(), right_join(), inner_join()\n\nFiltering Joins\nFilter observations based on values in new dataframe.\nsemi_join(), anti_join()"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#keys",
+    "href": "slides/week-4/w4-joins-pivots.html#keys",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Keys",
+    "text": "Keys\nSome combination of variables (should) uniquely identify an observation in a data set.\n\nTo combine (join) two datasets, a key needs to be present in both."
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#general-structure-of-a-join",
+    "href": "slides/week-4/w4-joins-pivots.html#general-structure-of-a-join",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "General Structure of a Join",
+    "text": "General Structure of a Join\n\n\n\n\nChoose a left and a right dataset\nAdd or remove rows based on the type of join and the structure of the left vs. right data\nAdd columns (or not) based on the type of join and the and the structure of the left vs. right data"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#inner_join",
+    "href": "slides/week-4/w4-joins-pivots.html#inner_join",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "inner_join()",
+    "text": "inner_join()\nKeeps observations when their keys are present in both datasets.\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion\n\n\nWhen would you want to use inner_join()?"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#inner_join-imdb-example",
+    "href": "slides/week-4/w4-joins-pivots.html#inner_join-imdb-example",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "inner_join(): IMDb Example",
+    "text": "inner_join(): IMDb Example\n\n\n\ndirectors_genres\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\n\n\nmovies_directors\n\n\n\n\n\n\n\ndirector_id\nmovie_id\n\n\n\n\n429\n300229\n\n\n9247\n124110\n\n\n11652\n10920\n\n\n11652\n333856\n\n\n14927\n192017\n\n\n15092\n109093\n\n\n15092\n237431\n\n\n\n\n\n\n\n\n\nID: 429, 2931, 11652, 14927, 15092       ID: 429, 9247, 11652, 14927, 15092\n\n\n\ninner_join(directors_genres, movies_directors, \n           by = \"director_id\")\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\nmovie_id\n\n\n\n\n429\nAdventure\n0.750000\n300229\n\n\n429\nFantasy\n0.750000\n300229\n\n\n11652\nSci-Fi\n0.500000\n10920\n\n\n11652\nSci-Fi\n0.500000\n333856\n\n\n11652\nAction\n0.500000\n10920\n\n\n11652\nAction\n0.500000\n333856\n\n\n14927\nAnimation\n1.000000\n192017\n\n\n14927\nFamily\n1.000000\n192017\n\n\n15092\nComedy\n0.545455\n109093\n\n\n15092\nComedy\n0.545455\n237431\n\n\n15092\nCrime\n0.545455\n109093\n\n\n15092\nCrime\n0.545455\n237431\n\n\n\n\n\n\n\n\nID: 429, 2931, 9247, 11652, 14927, 15092"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#inner_join-imdb-example-1",
+    "href": "slides/week-4/w4-joins-pivots.html#inner_join-imdb-example-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "inner_join(): IMDb Example",
+    "text": "inner_join(): IMDb Example\nWhat if our key does not have the same name?\n\n\n\ndirectors_genres\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\n\n\ndirectors\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\n\n\n\n\n429\nAndrew\nAdamson\n\n\n9247\nZach\nBraff\n\n\n11652\nJames (I)\nCameron\n\n\n14927\nRon\nClements\n\n\n15092\nEthan\nCoen\n\n\n\n\n\n\n\n\n\n\ninner_join(directors_genres, \n           directors, \n           by = join_by(director_id == id))\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\ngenre\nprob\n\n\n\n\n429\nAndrew\nAdamson\nAdventure\n0.750000\n\n\n429\nAndrew\nAdamson\nFantasy\n0.750000\n\n\n11652\nJames (I)\nCameron\nSci-Fi\n0.500000\n\n\n11652\nJames (I)\nCameron\nAction\n0.500000\n\n\n14927\nRon\nClements\nAnimation\n1.000000\n\n\n14927\nRon\nClements\nFamily\n1.000000\n\n\n15092\nEthan\nCoen\nComedy\n0.545455\n\n\n15092\nEthan\nCoen\nCrime\n0.545455\n\n\n\n\n\n\n\n Join by different variables on dataX and dataY: join_by(a == b) will match dataX$a to dataY$b."
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#piping-joins",
+    "href": "slides/week-4/w4-joins-pivots.html#piping-joins",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Piping Joins",
+    "text": "Piping Joins\nRemember: the dataset you pipe in becomes the first argument of the function you are piping into!\n\nIf you are using a pipe,\n\nthe piped in data is the left dataset\nspecify the right dataset inside the join function.\n\n\n\n\ninner_join(directors_genres, movies_directors)\n\n…is equivalent to…\n\ndirectors_genres |&gt; \n  inner_join(movies_directors, by = \"director_id\")"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#more-mutating-joins",
+    "href": "slides/week-4/w4-joins-pivots.html#more-mutating-joins",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "More Mutating Joins",
+    "text": "More Mutating Joins\n\nleft_join() – keep only (and all) observations present in the left data set\nright_join() – keep only (and all) observations present in the right data set\nfull_join() – keep only (and all) observations present in both data sets"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#why-use-a-certain-mutating-join",
+    "href": "slides/week-4/w4-joins-pivots.html#why-use-a-certain-mutating-join",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Why Use a Certain Mutating Join?",
+    "text": "Why Use a Certain Mutating Join?\n\n\n\ninner_join()\n\nYou want all of the columns from both left and right data and only to include the observations that have information in both\n\nleft_join()\n\nThe left dataset is your “main” data and you just want to add information (columns) from the right dataset\n\nright_join()\n\nThe right data is your “main data” and you just want to add columns from the left dataset\n\nfull_join()\n\nYou want all of the columns from both left and right data for all of the observations possible"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#which-join",
+    "href": "slides/week-4/w4-joins-pivots.html#which-join",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Which Join?",
+    "text": "Which Join?\n\n\n\n\n\n\nDiscussion\n\n\nHow many movies are there in the data for each director (by name), including if any directors don’t have any movies in the data? Which join should I use??\n\n\n\ndirectors |&gt; \n  ??_join(movies_directors, \n          by = join_by(\"id\" == \"director_id\"))\n\n\n\n\ndirectors |&gt; \n  slice_head(n = 5)\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\n\n\n\n\n429\nAndrew\nAdamson\n\n\n2931\nDarren\nAronofsky\n\n\n9247\nZach\nBraff\n\n\n11652\nJames (I)\nCameron\n\n\n14927\nRon\nClements\n\n\n\n\n\n\n\n\n\nmovies_directors |&gt; \n  slice_head(n = 5)\n\n\n\n\n\n\n\ndirector_id\nmovie_id\n\n\n\n\n429\n300229\n\n\n2931\n254943\n\n\n9247\n124110\n\n\n11652\n10920\n\n\n11652\n333856"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#which-join-1",
+    "href": "slides/week-4/w4-joins-pivots.html#which-join-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Which Join?",
+    "text": "Which Join?\n\n\n\n\n\n\nDiscussion\n\n\nWhat is the complete set movies and actors included in the data? Which join should I use??\n\n\n\nroles |&gt; \n  ??_join(actors, \n          by = join_by(\"actor_id\" == \"id\"))\n\n\n\n\nroles |&gt; \n  slice_head(n = 5)\n\n\n\n\n\n\n\nactor_id\nmovie_id\nrole\n\n\n\n\n933\n333856\nLewis Bodine\n\n\n2547\n300229\nDuloc Mascot\n\n\n2700\n306032\nTyrone\n\n\n2898\n333856\nSlovakian three-year-old boy\n\n\n2925\n192017\nAdditional Voices\n\n\n\n\n\n\n\n\n\nactors |&gt; \n  slice_head(n = 5)\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\ngender\nfilm_count\n\n\n\n\n933\nLewis\nAbernathy\nM\n1\n\n\n2547\nAndrew\nAdamson\nM\n1\n\n\n2700\nWilliam\nAddy\nM\n1\n\n\n2898\nSeth (I)\nAdkins\nM\n1\n\n\n2925\nCharles (I)\nAdler\nM\n1"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#filtering-joins-semi_join",
+    "href": "slides/week-4/w4-joins-pivots.html#filtering-joins-semi_join",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Filtering Joins: semi_join()",
+    "text": "Filtering Joins: semi_join()\nKeeps observations when their keys are present in both datasets, but only keeps variables from the left dataset.\n\n\n\n\n\n\n→"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#imdb-data-example",
+    "href": "slides/week-4/w4-joins-pivots.html#imdb-data-example",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "IMDb Data Example",
+    "text": "IMDb Data Example\n\n\n\ndirectors_genres |&gt; \n  distinct(director_id)\n\n\n\n\n\n\n\ndirector_id\n\n\n\n\n429\n\n\n2931\n\n\n11652\n\n\n14927\n\n\n15092\n\n\n\n\n\n\n\n\n\nmovies_directors |&gt; \n  distinct(director_id)\n\n\n\n\n\n\n\ndirector_id\n\n\n\n\n429\n\n\n9247\n\n\n11652\n\n\n14927\n\n\n15092"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#filtering-joins-semi_join-1",
+    "href": "slides/week-4/w4-joins-pivots.html#filtering-joins-semi_join-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Filtering Joins: semi_join()",
+    "text": "Filtering Joins: semi_join()\n\nsemi_join()Connection to filter()\n\n\n\ndirectors_genres |&gt; \n  semi_join(movies_directors)\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\nMovie Directors: 429, 2931, 11652, 14927, 15092\n\n\n\ndirectors_genres |&gt;\n  filter(director_id %in% movies_directors$director_id)\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#filtering-joins-anti_join",
+    "href": "slides/week-4/w4-joins-pivots.html#filtering-joins-anti_join",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Filtering Joins: anti_join()",
+    "text": "Filtering Joins: anti_join()\nRemoves observations when their keys are present in both datasets, and only keeps variables from the left dataset.\n\n\n\n\n\n\n→"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#filtering-joins-anti_join-1",
+    "href": "slides/week-4/w4-joins-pivots.html#filtering-joins-anti_join-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Filtering Joins: anti_join()",
+    "text": "Filtering Joins: anti_join()\n\nanti_join()Connection to filter()\n\n\n\ndirectors_genres |&gt; \n  anti_join(movies_directors)\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n\n\n\n\n\nMovie Directors: 429, 2931, 11652, 14927, 15092\n\n\n\ndirectors_genres |&gt;\n  filter(!director_id %in% movies_directors$director_id)\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#building-an-analytical-dataset-1",
+    "href": "slides/week-4/w4-joins-pivots.html#building-an-analytical-dataset-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Building an Analytical Dataset",
+    "text": "Building an Analytical Dataset\nNow we have tools to:\n\nCombine multiple data sets (xx_join())\nSubset to certain observations (filter() and xx_join())\nCreate new variables (mutate())\nSelect columns of interest (select())\n\n\nWe are well on our way to building and cleaning up a nice dataset! 🥳"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#transform-and-tidy",
+    "href": "slides/week-4/w4-joins-pivots.html#transform-and-tidy",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Transform and Tidy",
+    "text": "Transform and Tidy\nWhat’s next?"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#transform-and-tidy-1",
+    "href": "slides/week-4/w4-joins-pivots.html#transform-and-tidy-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Transform and Tidy",
+    "text": "Transform and Tidy\nWhat’s next?\nWe may need to transform our data to turn it into the version of tidy that is best for a task at hand.\n\nAllison Horst"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#creating-tidy-data",
+    "href": "slides/week-4/w4-joins-pivots.html#creating-tidy-data",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Creating Tidy Data",
+    "text": "Creating Tidy Data\nLet’s say we want to look at mean cereal nutrients based on shelf.\n\n\nThe data are in a wide format – a separate column for each nutrient.\n\n\nlibrary(liver)\ndata(cereal)\nhead(cereal)\n\n\n\n\n\n\n\nname\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\n100% Bran\nN\ncold\n70\n4\n1\n130\n10.0\n5.0\n6\n280\n25\n3\n1\n0.33\n68.40297\n\n\n100% Natural Bran\nQ\ncold\n120\n3\n5\n15\n2.0\n8.0\n8\n135\n0\n3\n1\n1.00\n33.98368\n\n\nAll-Bran\nK\ncold\n70\n4\n1\n260\n9.0\n7.0\n5\n320\n25\n3\n1\n0.33\n59.42551\n\n\nAll-Bran with Extra Fiber\nK\ncold\n50\n4\n0\n140\n14.0\n8.0\n0\n330\n25\n3\n1\n0.50\n93.70491\n\n\nAlmond Delight\nR\ncold\n110\n2\n2\n200\n1.0\n14.0\n8\n-1\n25\n3\n1\n0.75\n34.38484\n\n\nApple Cinnamon Cheerios\nG\ncold\n110\n2\n2\n180\n1.5\n10.5\n10\n70\n25\n1\n1\n0.75\n29.50954"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#creating-tidy-data-1",
+    "href": "slides/week-4/w4-joins-pivots.html#creating-tidy-data-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Creating Tidy Data",
+    "text": "Creating Tidy Data\n\n\n\n\n\n\nDiscussion\n\n\nHow would we plot the mean cereal nutrients by shelf (as shown below) with the wide data using ggplot2?\n\n\n\n\n\nTransforming the data will make plotting much easier"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#creating-tidy-data-2",
+    "href": "slides/week-4/w4-joins-pivots.html#creating-tidy-data-2",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Creating Tidy Data",
+    "text": "Creating Tidy Data\n\nWideWide PlotLongLong Plot\n\n\n\n\nCode\ncereal_wide &lt;- cereal |&gt; \n  group_by(shelf) |&gt; \n  summarise(across(calories:vitamins, mean))\n\n\n\n\n\n\n\n\nshelf\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\n\n\n\n\n1\n102.5000\n2.650000\n0.60\n176.2500\n1.6850000\n15.80000\n4.800000\n75.50000\n20.00000\n\n\n2\n109.5238\n1.904762\n1.00\n145.7143\n0.9047619\n13.61905\n9.619048\n57.80952\n23.80952\n\n\n3\n107.7778\n2.861111\n1.25\n158.6111\n3.1388889\n14.50000\n6.527778\n129.83333\n35.41667\n\n\n\n\n\n\n\n\n\n\n\nCode\nmy_colors &lt;- c(\"calories_col\" = \"steelblue\", \"sugars_col\" = \"orange3\")\n\ncereal_wide |&gt; \n  ggplot() +\n  geom_point(aes(x = shelf, y = calories, color = \"calories_col\")) +\n  geom_line(aes(x = shelf, y = calories, color = \"calories_col\")) + \n  geom_point(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  geom_line(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  scale_color_manual(values = my_colors, labels = names(my_colors)) +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\", color = \"Nutrient\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long&lt;- cereal |&gt; \n  pivot_longer(cols = calories:vitamins,\n               names_to = \"Nutrient\",\n               values_to = \"Amount\") |&gt; \n  group_by(shelf, Nutrient) |&gt; \n  summarise(mean_amount = mean(Amount))\n\n\n\n\n\n\n\n\nshelf\nNutrient\nmean_amount\n\n\n\n\n1\ncalories\n102.5000000\n\n\n1\ncarbo\n15.8000000\n\n\n1\nfat\n0.6000000\n\n\n1\nfiber\n1.6850000\n\n\n1\npotass\n75.5000000\n\n\n1\nprotein\n2.6500000\n\n\n1\nsodium\n176.2500000\n\n\n1\nsugars\n4.8000000\n\n\n1\nvitamins\n20.0000000\n\n\n2\ncalories\n109.5238095\n\n\n2\ncarbo\n13.6190476\n\n\n2\nfat\n1.0000000\n\n\n2\nfiber\n0.9047619\n\n\n2\npotass\n57.8095238\n\n\n2\nprotein\n1.9047619\n\n\n2\nsodium\n145.7142857\n\n\n2\nsugars\n9.6190476\n\n\n2\nvitamins\n23.8095238\n\n\n3\ncalories\n107.7777778\n\n\n3\ncarbo\n14.5000000\n\n\n3\nfat\n1.2500000\n\n\n3\nfiber\n3.1388889\n\n\n3\npotass\n129.8333333\n\n\n3\nprotein\n2.8611111\n\n\n3\nsodium\n158.6111111\n\n\n3\nsugars\n6.5277778\n\n\n3\nvitamins\n35.4166667\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long |&gt; \n  ggplot(aes(x = shelf, \n             y = mean_amount, \n             color = Nutrient)) +\n  geom_point() +\n  geom_line() +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\")"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#data-layouts",
+    "href": "slides/week-4/w4-joins-pivots.html#data-layouts",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Data Layouts",
+    "text": "Data Layouts\n\nKelsey Gonzalez"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#manual-method",
+    "href": "slides/week-4/w4-joins-pivots.html#manual-method",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Manual Method",
+    "text": "Manual Method\nConsider daily rainfall observed in SLO in January 2023.\n\nThe data is in a human-friendly form (like a calendar).\nEach week has a row, and each day has a column.\n\n\nData source\n\n\n\n\n\nDiscussion\n\n\nHow would you manually convert this to long format?"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#manual-method-steps",
+    "href": "slides/week-4/w4-joins-pivots.html#manual-method-steps",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Manual Method: Steps",
+    "text": "Manual Method: Steps\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over.\nDuplicate Week 1-5 and copy Monday values over.\n\n\n\n\n\nRepeat …"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#computational-approach",
+    "href": "slides/week-4/w4-joins-pivots.html#computational-approach",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Computational Approach",
+    "text": "Computational Approach\n\nWe can use pivot_longer() to turn a wide dataset into a long(er) dataset."
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#pivot_longer",
+    "href": "slides/week-4/w4-joins-pivots.html#pivot_longer",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "pivot_longer()",
+    "text": "pivot_longer()\nTake a wide dataset and turn it into a long dataset.\n\ncols – specify the columns that should be pivoted.\n\nDo not include the names of ID columns (columns to not be pivoted).\n\nnames_to – the name of the new column containing the old column names.\nvalues_to – the name of the new column containing the old column values."
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#pivot_longer-1",
+    "href": "slides/week-4/w4-joins-pivots.html#pivot_longer-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "pivot_longer()",
+    "text": "pivot_longer()\n\nslo_rainfall |&gt; \n  pivot_longer(cols      = Sunday:Saturday,\n               names_to  = \"Day_of_Week\",\n               values_to = \"Daily_Rainfall\")\n\n\n\n\n\n\n\nWeek\nDay_of_Week\nDaily_Rainfall\n\n\n\n\n1\nSunday\n0.00\n\n\n1\nMonday\n0.12\n\n\n1\nTuesday\n0.00\n\n\n1\nWednesday\n1.58\n\n\n1\nThursday\n0.91\n\n\n1\nFriday\n0.00\n\n\n1\nSaturday\n0.05\n\n\n2\nSunday\n0.27\n\n\n2\nMonday\n4.26\n\n\n2\nTuesday\n0.43\n\n\n2\nWednesday\n0.00\n\n\n2\nThursday\n0.00\n\n\n2\nFriday\n0.16\n\n\n2\nSaturday\n1.41\n\n\n3\nSunday\n0.34\n\n\n3\nMonday\n0.33\n\n\n3\nTuesday\n0.00\n\n\n3\nWednesday\n0.00\n\n\n3\nThursday\n0.13\n\n\n3\nFriday\n0.00\n\n\n3\nSaturday\n0.00\n\n\n4\nSunday\n0.00\n\n\n4\nMonday\n0.00\n\n\n4\nTuesday\n0.00\n\n\n4\nWednesday\n0.00\n\n\n4\nThursday\n0.00\n\n\n4\nFriday\n0.00\n\n\n4\nSaturday\nNA\n\n\n5\nSunday\nNA\n\n\n5\nMonday\nNA\n\n\n5\nTuesday\nNA\n\n\n5\nWednesday\nNA\n\n\n5\nThursday\nNA\n\n\n5\nFriday\nNA\n\n\n5\nSaturday\nNA"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#long-to-wide",
+    "href": "slides/week-4/w4-joins-pivots.html#long-to-wide",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Long to Wide",
+    "text": "Long to Wide\nWhat are the mean amount of protein for cereals on each shelf and for each manuf?\n\nmean_protein &lt;- cereal |&gt; \n  group_by(manuf, shelf) |&gt; \n  summarize(mean_protein = mean(protein))\n\n\n\n\n\n\n\nmanuf\nshelf\nmean_protein\n\n\n\n\nA\n2\n4.000000\n\n\nG\n1\n3.000000\n\n\nG\n2\n1.285714\n\n\nG\n3\n2.666667\n\n\nK\n1\n2.750000\n\n\nK\n2\n2.142857\n\n\nK\n3\n2.916667\n\n\nN\n1\n2.666667\n\n\nN\n2\n2.500000\n\n\nN\n3\n4.000000\n\n\nP\n1\n1.500000\n\n\nP\n2\n1.000000\n\n\nP\n3\n3.000000\n\n\nQ\n1\n5.000000\n\n\nQ\n2\n2.000000\n\n\nQ\n3\n2.500000\n\n\nR\n1\n2.000000\n\n\nR\n3\n3.000000\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion\n\n\nWhat could we do to make this table easier to understand?"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#pivot_wider",
+    "href": "slides/week-4/w4-joins-pivots.html#pivot_wider",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "pivot_wider()",
+    "text": "pivot_wider()\nTake a long dataset and turn it into a wide dataset.\n\nid_cols – specify the column(s) that contain the ID for unique rows in the wide dataset.\nnames_from – the name of the column containing the new column names.\nvalues_from – the name of the column containing the new column values."
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#pivot_wider-1",
+    "href": "slides/week-4/w4-joins-pivots.html#pivot_wider-1",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "pivot_wider()",
+    "text": "pivot_wider()\nMuch easier to read!\n\nmean_protein |&gt; \n  arrange(shelf) |&gt; \n  pivot_wider(id_cols = manuf,\n              names_from = shelf,\n              values_from = mean_protein)\n\n\n\n\n\n\n\nmanuf\n1\n2\n3\n\n\n\n\nG\n3.000000\n1.285714\n2.666667\n\n\nK\n2.750000\n2.142857\n2.916667\n\n\nN\n2.666667\n2.500000\n4.000000\n\n\nP\n1.500000\n1.000000\n3.000000\n\n\nQ\n5.000000\n2.000000\n2.500000\n\n\nR\n2.000000\nNA\n3.000000\n\n\nA\nNA\n4.000000\nNA"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#better-names-in-pivot_wider",
+    "href": "slides/week-4/w4-joins-pivots.html#better-names-in-pivot_wider",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Better names in pivot_wider()",
+    "text": "Better names in pivot_wider()\nEven better!\n\nmean_protein |&gt; \n  arrange(shelf) |&gt; \n  pivot_wider(id_cols = manuf,\n              names_from = shelf,\n              values_from = mean_protein,\n              names_prefix = \"Shelf_\")\n\n\n\n\n\n\n\nmanuf\nShelf_1\nShelf_2\nShelf_3\n\n\n\n\nG\n3.000000\n1.285714\n2.666667\n\n\nK\n2.750000\n2.142857\n2.916667\n\n\nN\n2.666667\n2.500000\n4.000000\n\n\nP\n1.500000\n1.000000\n3.000000\n\n\nQ\n5.000000\n2.000000\n2.500000\n\n\nR\n2.000000\nNA\n3.000000\n\n\nA\nNA\n4.000000\nNA"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#pa-4-military-spending",
+    "href": "slides/week-4/w4-joins-pivots.html#pa-4-military-spending",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "PA 4: Military Spending",
+    "text": "PA 4: Military Spending\nToday you will be tidying messy data to explore the relationship between countries of the world and military spending."
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#resources---use-them-all",
+    "href": "slides/week-4/w4-joins-pivots.html#resources---use-them-all",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Resources - use them all!",
+    "text": "Resources - use them all!\n\n\n\ndplyr and tidyr cheatsheets\nslides and textbook\nhelp files\n\n\n\n⭐️️ each other⭐️\nand me 😎\n\n\n\nDon’t struggle individually for too long!"
+  },
+  {
+    "objectID": "slides/week-4/w4-joins-pivots.html#to-do",
+    "href": "slides/week-4/w4-joins-pivots.html#to-do",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "To do…",
+    "text": "To do…\n\nPA 4: Military Spending\n\nDue Thursday, 4/24 before class"
+  },
+  {
+    "objectID": "labs/lab5/lab5-murder.html",
+    "href": "labs/lab5/lab5-murder.html",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "",
+    "text": "Download starter .qmd file\nFor this lab, you will be joining and filtering related datasets to solve a murder mystery!"
+  },
+  {
+    "objectID": "labs/lab5/lab5-murder.html#instructions",
+    "href": "labs/lab5/lab5-murder.html#instructions",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "Instructions",
+    "text": "Instructions\nNorthwestern University’s Knight Lab wanted to help sharpen users’ database skills, so they created a murder mystery. Can you solve this crime in SQL City??\nThe relational data you will be working with contains tables with different pieces of information pertinent to the crime - people, social media check-ins, driver’s licenses, crime scene reports, police interviews, and more!\n\n\n\nDatabase schema"
+  },
+  {
+    "objectID": "labs/lab5/lab5-murder.html#access-the-data",
+    "href": "labs/lab5/lab5-murder.html#access-the-data",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "Access the Data",
+    "text": "Access the Data\nThis code chunk will read in all of the tables of data for you. Don’t modify or remove this!\n\nlibrary(tidyverse)\n\nurl(\"https://raw.githubusercontent.com/manncz/stat-331-s25/main/labs/lab5/data/bCH_murder_data.Rdata\") |&gt; \n  load()\n\n\n\n\n\n\n\nTip\n\n\n\nIf the code above does not work for you for some reason, you can download the special data file here and use the load() function to read it in."
+  },
+  {
+    "objectID": "labs/lab5/lab5-murder.html#solve-the-crime",
+    "href": "labs/lab5/lab5-murder.html#solve-the-crime",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "Solve the Crime",
+    "text": "Solve the Crime\n\nCrime Scene Report\nDetective Wickham reaches out to you…\n\nA crime has taken place and I need your help! There was a murder in SQL City sometime on Jan.15, 2018. Could you retrieve the crime scene report from the police department’s database and follow the clues to find the person responsible for the murder?!\n\nSolve the murder mystery, showing all of your work in this document. Your document and code must be well organized, easy to follow, and reproducible.\n\nUse headers and written descriptions to indicate what you are doing.\nYou must use dplyr verbs and join functions rather than just looking through the tables manually.\nYou should never filter on a specific person id – rather use join functions\nUse good code formatting practices.\nComment your code.\nCite any external sources you use to solve the mystery.\n\n\n\n\n\n\n\nTip\n\n\n\nYou may find the pull() function handy for displaying each clue as you go along.\n\n\nFollow the evidence to the person responsible for the murder, building a report as you go.\n\n# code for looking at the relevant crime scene report.\n\n# you will want to use multiple chunks!\n\n\n\n\n\n\n\nCaution\n\n\n\nMake sure you check for interviews with any suspects and anyone mentioned!\nThe murderer will have no interview - don’t stop until you find them!\n\n\n\n\n\n\n\n\nAnd the final suspect is…\n\n\n\nput the name of the person responsible for the murder here."
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#thursday-april-24",
+    "href": "slides/week-4/w4-factors.html#thursday-april-24",
+    "title": "Extending Data Joins + Factors",
+    "section": "Thursday, April 24",
+    "text": "Thursday, April 24\nToday we will…\n\nNotes on Lab 3\nNew Material\n\nExtensions to Data Joins\nFactors with forcats\nClean Variable Names\nLifecycle Stages\n\nLab 4: Childcare Costs in California"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#notes-on-lab-3",
+    "href": "slides/week-4/w4-factors.html#notes-on-lab-3",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Notes on Lab 3",
+    "text": "Notes on Lab 3\n\n\nOnly include output that (exactly) answers a specific question\n\nIf you find yourself outputting a datatable with more than 20 rows, think again!\n\nBe mindful of “environment junk”\nIf we have cleaned up a dataset, you can assume that will be used for the remainder of the lab, unless otherwise specified\nPlease look at the solutions for efficient code and statistical interpretations"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#where-is-my-file",
+    "href": "slides/week-4/w4-factors.html#where-is-my-file",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Where is my file?",
+    "text": "Where is my file?\n\nRemember: I will smash 💥 your computer if you:\n\nSet a working directory in a Quarto file setwd() OR\nUse an aboslute file path that would only work on your computer\n\n\n\n\nUSE RELATIVE FILE PATHS I BEG OF YOU"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#lab-3-question-11",
+    "href": "slides/week-4/w4-factors.html#lab-3-question-11",
+    "title": "Data Joins + Pivots + Factors",
+    "section": "Lab 3 Question 11",
+    "text": "Lab 3 Question 11\n Which instructor(s) with either a doctorate or professor degree had the highest and lowest average percent of students responding to the evaluation across all their courses? Include how many years the professor had worked (seniority) and their sex in your output \n\nThe trick: group_by() instructor_id, seniority, and sex\n\nteacher_evals_clean |&gt; \n  filter(academic_degree %in% c(\"dr\", \"prof\")) |&gt; \n  group_by(teacher_id, seniority, sex) |&gt; \n  summarize(avg_response = mean(resp_share)) |&gt; \n  ungroup() |&gt; \n  slice_max(order_by = avg_response) |&gt; \n  kable()\n\n\nIf you find yourself using mutate() and then distinct(), you should probably be using summarize()"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#relational-data-reminder---keys",
+    "href": "slides/week-4/w4-factors.html#relational-data-reminder---keys",
+    "title": "Extending Data Joins + Factors",
+    "section": "Relational Data Reminder - Keys",
+    "text": "Relational Data Reminder - Keys\nWhen we work with relational data, we rely on keys.\n\nA key uniquely identifies an observation in a dataset.\nA key allows us to relate datasets to each other"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#imdb-movies-data",
+    "href": "slides/week-4/w4-factors.html#imdb-movies-data",
+    "title": "Extending Data Joins + Factors",
+    "section": "IMDb Movies Data",
+    "text": "IMDb Movies Data\n\nWhat were the active years of each director?\n\n\n\n\n\n\nDiscussion\n\n\nWhich datasets do we need to use to answer this question?"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#joining-multiple-data-sets",
+    "href": "slides/week-4/w4-factors.html#joining-multiple-data-sets",
+    "title": "Extending Data Joins + Factors",
+    "section": "Joining Multiple Data Sets",
+    "text": "Joining Multiple Data Sets\n\nDataSketch1st + 2nd+ 3rdAnalysis\n\n\n\n\n\nmovies_directors |&gt; \n  slice_head(n = 4)\n\n\n\n\n\n\n\ndirector_id\nmovie_id\n\n\n\n\n429\n300229\n\n\n2931\n254943\n\n\n9247\n124110\n\n\n11652\n10920\n\n\n\n\n\n\n\n\n\ndirectors |&gt; \n  slice_head(n = 4)\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\n\n\n\n\n429\nAndrew\nAdamson\n\n\n2931\nDarren\nAronofsky\n\n\n9247\nZach\nBraff\n\n\n11652\nJames (I)\nCameron\n\n\n\n\n\n\n\n\n\n\n\n\n\nmovies |&gt; \n  slice_head(n = 4)\n\n\n\n\n\n\n\nid\nname\nyear\nrank\n\n\n\n\n10920\nAliens\n1986\n8.2\n\n\n17173\nAnimal House\n1978\n7.5\n\n\n18979\nApollo 13\n1995\n7.5\n\n\n30959\nBatman Begins\n2005\nNA\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nmovies_directors |&gt; \n  inner_join(directors, \n             join_by(director_id == id))\n\n\n\n\n\n\n\ndirector_id\nmovie_id\nfirst_name\nlast_name\n\n\n\n\n429\n300229\nAndrew\nAdamson\n\n\n2931\n254943\nDarren\nAronofsky\n\n\n9247\n124110\nZach\nBraff\n\n\n11652\n10920\nJames (I)\nCameron\n\n\n11652\n333856\nJames (I)\nCameron\n\n\n14927\n192017\nRon\nClements\n\n\n15092\n109093\nEthan\nCoen\n\n\n15092\n237431\nEthan\nCoen\n\n\n15093\n109093\nJoel\nCoen\n\n\n15093\n237431\nJoel\nCoen\n\n\n15901\n130128\nFrancis Ford\nCoppola\n\n\n15906\n194874\nSofia\nCoppola\n\n\n16816\n350424\nCameron\nCrowe\n\n\n17810\n297838\nFrank\nDarabont\n\n\n22104\n224842\nClint\nEastwood\n\n\n24758\n112290\nDavid\nFincher\n\n\n28395\n46169\nMel (I)\nGibson\n\n\n35573\n18979\nRon\nHoward\n\n\n35838\n257264\nJohn (I)\nHughes\n\n\n37872\n300229\nVicky\nJenson\n\n\n38746\n238695\nMike (I)\nJudge\n\n\n41975\n314965\nDavid\nKoepp\n\n\n44291\n17173\nJohn (I)\nLandis\n\n\n46315\n344203\nJay\nLevey\n\n\n48115\n313459\nGeorge\nLucas\n\n\n56332\n192017\nJohn\nMusker\n\n\n58201\n30959\nChristopher\nNolan\n\n\n58201\n210511\nChristopher\nNolan\n\n\n65940\n111813\nRob\nReiner\n\n\n66849\n306032\nGuy\nRitchie\n\n\n68161\n116907\nHerbert (I)\nRoss\n\n\n74758\n238072\nSteven\nSoderbergh\n\n\n76524\n167324\nOliver (I)\nStone\n\n\n78273\n176711\nQuentin\nTarantino\n\n\n78273\n176712\nQuentin\nTarantino\n\n\n78273\n267038\nQuentin\nTarantino\n\n\n78273\n276217\nQuentin\nTarantino\n\n\n82525\n147603\nPaul (I)\nVerhoeven\n\n\n83616\n207992\nAndy\nWachowski\n\n\n83617\n207992\nLarry\nWachowski\n\n\n88802\n256630\nUnknown\nDirector\n\n\n\n\n\n\n\n\n\n\nmovies_directors |&gt; \n  inner_join(directors, \n             join_by(director_id == id)) |&gt; \n  inner_join(movies,\n             join_by(movie_id == id))\n\n\n\n\n\n\n\ndirector_id\nmovie_id\nfirst_name\nlast_name\nname\nyear\nrank\n\n\n\n\n429\n300229\nAndrew\nAdamson\nShrek\n2001\n8.1\n\n\n2931\n254943\nDarren\nAronofsky\nPi\n1998\n7.5\n\n\n9247\n124110\nZach\nBraff\nGarden State\n2004\n8.3\n\n\n11652\n10920\nJames (I)\nCameron\nAliens\n1986\n8.2\n\n\n11652\n333856\nJames (I)\nCameron\nTitanic\n1997\n6.9\n\n\n14927\n192017\nRon\nClements\nLittle Mermaid, The\n1989\n7.3\n\n\n15092\n109093\nEthan\nCoen\nFargo\n1996\n8.2\n\n\n15092\n237431\nEthan\nCoen\nO Brother, Where Art Thou?\n2000\n7.8\n\n\n15093\n109093\nJoel\nCoen\nFargo\n1996\n8.2\n\n\n15093\n237431\nJoel\nCoen\nO Brother, Where Art Thou?\n2000\n7.8\n\n\n15901\n130128\nFrancis Ford\nCoppola\nGodfather, The\n1972\n9.0\n\n\n15906\n194874\nSofia\nCoppola\nLost in Translation\n2003\n8.0\n\n\n16816\n350424\nCameron\nCrowe\nVanilla Sky\n2001\n6.9\n\n\n17810\n297838\nFrank\nDarabont\nShawshank Redemption, The\n1994\n9.0\n\n\n22104\n224842\nClint\nEastwood\nMystic River\n2003\n8.1\n\n\n24758\n112290\nDavid\nFincher\nFight Club\n1999\n8.5\n\n\n28395\n46169\nMel (I)\nGibson\nBraveheart\n1995\n8.3\n\n\n35573\n18979\nRon\nHoward\nApollo 13\n1995\n7.5\n\n\n35838\n257264\nJohn (I)\nHughes\nPlanes, Trains & Automobiles\n1987\n7.2\n\n\n37872\n300229\nVicky\nJenson\nShrek\n2001\n8.1\n\n\n38746\n238695\nMike (I)\nJudge\nOffice Space\n1999\n7.6\n\n\n41975\n314965\nDavid\nKoepp\nStir of Echoes\n1999\n7.0\n\n\n44291\n17173\nJohn (I)\nLandis\nAnimal House\n1978\n7.5\n\n\n46315\n344203\nJay\nLevey\nUHF\n1989\n6.6\n\n\n48115\n313459\nGeorge\nLucas\nStar Wars\n1977\n8.8\n\n\n56332\n192017\nJohn\nMusker\nLittle Mermaid, The\n1989\n7.3\n\n\n58201\n30959\nChristopher\nNolan\nBatman Begins\n2005\nNA\n\n\n58201\n210511\nChristopher\nNolan\nMemento\n2000\n8.7\n\n\n65940\n111813\nRob\nReiner\nFew Good Men, A\n1992\n7.5\n\n\n66849\n306032\nGuy\nRitchie\nSnatch.\n2000\n7.9\n\n\n68161\n116907\nHerbert (I)\nRoss\nFootloose\n1984\n5.8\n\n\n74758\n238072\nSteven\nSoderbergh\nOcean's Eleven\n2001\n7.5\n\n\n76524\n167324\nOliver (I)\nStone\nJFK\n1991\n7.8\n\n\n78273\n176711\nQuentin\nTarantino\nKill Bill: Vol. 1\n2003\n8.4\n\n\n78273\n176712\nQuentin\nTarantino\nKill Bill: Vol. 2\n2004\n8.2\n\n\n78273\n267038\nQuentin\nTarantino\nPulp Fiction\n1994\n8.7\n\n\n78273\n276217\nQuentin\nTarantino\nReservoir Dogs\n1992\n8.3\n\n\n82525\n147603\nPaul (I)\nVerhoeven\nHollow Man\n2000\n5.3\n\n\n83616\n207992\nAndy\nWachowski\nMatrix, The\n1999\n8.5\n\n\n83617\n207992\nLarry\nWachowski\nMatrix, The\n1999\n8.5\n\n\n88802\n256630\nUnknown\nDirector\nPirates of the Caribbean\n2003\nNA\n\n\n\n\n\n\n\n\n\n\nmovies_directors |&gt; \n  inner_join(directors, \n             join_by(director_id == id)) |&gt; \n  inner_join(movies,\n             join_by(movie_id == id)) |&gt; \n  group_by(first_name, last_name) |&gt;\n  summarize(start_year = min(year),\n            end_year = max(year)) |&gt; \n  mutate(n_years_active = end_year - start_year) |&gt; \n  arrange(desc(n_years_active))\n\n\n\n\n\n\n\nfirst_name\nlast_name\nstart_year\nend_year\nn_years_active\n\n\n\n\nQuentin\nTarantino\n1992\n2004\n12\n\n\nJames (I)\nCameron\n1986\n1997\n11\n\n\nChristopher\nNolan\n2000\n2005\n5\n\n\nEthan\nCoen\n1996\n2000\n4\n\n\nJoel\nCoen\n1996\n2000\n4\n\n\nAndrew\nAdamson\n2001\n2001\n0\n\n\nAndy\nWachowski\n1999\n1999\n0\n\n\nCameron\nCrowe\n2001\n2001\n0\n\n\nClint\nEastwood\n2003\n2003\n0\n\n\nDarren\nAronofsky\n1998\n1998\n0\n\n\nDavid\nFincher\n1999\n1999\n0\n\n\nDavid\nKoepp\n1999\n1999\n0\n\n\nFrancis Ford\nCoppola\n1972\n1972\n0\n\n\nFrank\nDarabont\n1994\n1994\n0\n\n\nGeorge\nLucas\n1977\n1977\n0\n\n\nGuy\nRitchie\n2000\n2000\n0\n\n\nHerbert (I)\nRoss\n1984\n1984\n0\n\n\nJay\nLevey\n1989\n1989\n0\n\n\nJohn\nMusker\n1989\n1989\n0\n\n\nJohn (I)\nHughes\n1987\n1987\n0\n\n\nJohn (I)\nLandis\n1978\n1978\n0\n\n\nLarry\nWachowski\n1999\n1999\n0\n\n\nMel (I)\nGibson\n1995\n1995\n0\n\n\nMike (I)\nJudge\n1999\n1999\n0\n\n\nOliver (I)\nStone\n1991\n1991\n0\n\n\nPaul (I)\nVerhoeven\n2000\n2000\n0\n\n\nRob\nReiner\n1992\n1992\n0\n\n\nRon\nClements\n1989\n1989\n0\n\n\nRon\nHoward\n1995\n1995\n0\n\n\nSofia\nCoppola\n2003\n2003\n0\n\n\nSteven\nSoderbergh\n2001\n2001\n0\n\n\nUnknown\nDirector\n2003\n2003\n0\n\n\nVicky\nJenson\n2001\n2001\n0\n\n\nZach\nBraff\n2004\n2004\n0"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#know-your-unique-observations",
+    "href": "slides/week-4/w4-factors.html#know-your-unique-observations",
+    "title": "Extending Data Joins + Factors",
+    "section": "Know Your Unique Observations!",
+    "text": "Know Your Unique Observations!\n\n\n\n\n\n\nDiscussion\n\n\nWhat is the observational unit after joining the directors and movies_directors by the director_id key? What happens for directors that have multiple movies in the movies_directors data?\n\n\n\n\n\ndirectors |&gt; \n  inner_join(movies_directors, \n             join_by(id == director_id))\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\nmovie_id\n\n\n\n\n429\nAndrew\nAdamson\n300229\n\n\n2931\nDarren\nAronofsky\n254943\n\n\n9247\nZach\nBraff\n124110\n\n\n11652\nJames (I)\nCameron\n10920\n\n\n11652\nJames (I)\nCameron\n333856\n\n\n14927\nRon\nClements\n192017\n\n\n15092\nEthan\nCoen\n109093\n\n\n15092\nEthan\nCoen\n237431\n\n\n15093\nJoel\nCoen\n109093\n\n\n15093\nJoel\nCoen\n237431\n\n\n15901\nFrancis Ford\nCoppola\n130128\n\n\n15906\nSofia\nCoppola\n194874\n\n\n16816\nCameron\nCrowe\n350424\n\n\n17810\nFrank\nDarabont\n297838\n\n\n22104\nClint\nEastwood\n224842\n\n\n24758\nDavid\nFincher\n112290\n\n\n28395\nMel (I)\nGibson\n46169\n\n\n35573\nRon\nHoward\n18979\n\n\n35838\nJohn (I)\nHughes\n257264\n\n\n37872\nVicky\nJenson\n300229\n\n\n38746\nMike (I)\nJudge\n238695\n\n\n41975\nDavid\nKoepp\n314965\n\n\n44291\nJohn (I)\nLandis\n17173\n\n\n46315\nJay\nLevey\n344203\n\n\n48115\nGeorge\nLucas\n313459\n\n\n56332\nJohn\nMusker\n192017\n\n\n58201\nChristopher\nNolan\n30959\n\n\n58201\nChristopher\nNolan\n210511\n\n\n65940\nRob\nReiner\n111813\n\n\n66849\nGuy\nRitchie\n306032\n\n\n68161\nHerbert (I)\nRoss\n116907\n\n\n74758\nSteven\nSoderbergh\n238072\n\n\n76524\nOliver (I)\nStone\n167324\n\n\n78273\nQuentin\nTarantino\n176711\n\n\n78273\nQuentin\nTarantino\n176712\n\n\n78273\nQuentin\nTarantino\n267038\n\n\n78273\nQuentin\nTarantino\n276217\n\n\n82525\nPaul (I)\nVerhoeven\n147603\n\n\n83616\nAndy\nWachowski\n207992\n\n\n83617\nLarry\nWachowski\n207992\n\n\n88802\nUnknown\nDirector\n256630"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#know-your-unique-observations-1",
+    "href": "slides/week-4/w4-factors.html#know-your-unique-observations-1",
+    "title": "Extending Data Joins + Factors",
+    "section": "Know Your Unique Observations!",
+    "text": "Know Your Unique Observations!\nRemember the rodent data from Lab 2. Say we had separate datsets for measurements and species information:\n\nSpeciesMeasurements\n\n\n\nspecies\n\n\n\n\n\n\n\ngenus\nspecies\ntaxa\nspecies_id\n\n\n\n\nDipodomys\nmerriami\nRodent\nDM\n\n\nDipodomys\nordii\nRodent\nDO\n\n\nPerognathus\nflavus\nRodent\nPF\n\n\nChaetodipus\npenicillatus\nRodent\nPP\n\n\nPeromyscus\neremicus\nRodent\nPE\n\n\nOnychomys\nleucogaster\nRodent\nOL\n\n\nReithrodontomys\nmegalotis\nRodent\nRM\n\n\nDipodomys\nspectabilis\nRodent\nDS\n\n\nOnychomys\ntorridus\nRodent\nOT\n\n\nNeotoma\nalbigula\nRodent\nNL\n\n\nPeromyscus\nmaniculatus\nRodent\nPM\n\n\nSigmodon\nhispidus\nRodent\nSH\n\n\nReithrodontomys\nfulvescens\nRodent\nRF\n\n\nChaetodipus\nbaileyi\nRodent\nPB\n\n\n\n\n\n\n\n\n\n\nmeasurements\n\n\n\n\n\n\n\ngenus_name\nspecies\nsex\nhindfoot_length\nweight\n\n\n\n\nDipodomys\nmerriami\nM\n35\n40\n\n\nDipodomys\nmerriami\nM\n37\n48\n\n\nDipodomys\nmerriami\nF\n34\n29\n\n\nDipodomys\nmerriami\nF\n35\n46\n\n\nDipodomys\nmerriami\nM\n35\n36\n\n\nDipodomys\nordii\nF\n32\n52\n\n\nPerognathus\nflavus\nM\n15\n8\n\n\nDipodomys\nmerriami\nF\n36\n35\n\n\nPerognathus\nflavus\nM\n12\n7\n\n\nDipodomys\nmerriami\nF\n32\n22\n\n\nPerognathus\nflavus\nM\n16\n9\n\n\nDipodomys\nmerriami\nF\n34\n42\n\n\nPerognathus\nflavus\nF\n14\n8\n\n\nDipodomys\nmerriami\nF\n35\n41\n\n\nDipodomys\nmerriami\nF\n37\n37\n\n\nDipodomys\nmerriami\nF\n35\n43\n\n\nDipodomys\nmerriami\nF\n35\n41\n\n\nDipodomys\nmerriami\nF\n33\n40\n\n\nPerognathus\nflavus\nF\n11\n9\n\n\nDipodomys\nmerriami\nF\n35\n45\n\n\nChaetodipus\npenicillatus\nF\n20\n15\n\n\nDipodomys\nmerriami\nM\n35\n29\n\n\nDipodomys\nmerriami\nM\n35\n39\n\n\nDipodomys\nmerriami\nF\n36\n43\n\n\nDipodomys\nmerriami\nM\n38\n46\n\n\nDipodomys\nmerriami\nM\n36\n41\n\n\nDipodomys\nmerriami\nM\n36\n41\n\n\nDipodomys\nmerriami\nM\n38\n40\n\n\nDipodomys\nmerriami\nM\n37\n45\n\n\nDipodomys\nmerriami\nF\n35\n46\n\n\nDipodomys\nmerriami\nF\n35\n40\n\n\nDipodomys\nmerriami\nF\n35\n30\n\n\nDipodomys\nmerriami\nM\n35\n39\n\n\nDipodomys\nmerriami\nM\n35\n34\n\n\nDipodomys\nmerriami\nF\n37\n42\n\n\nDipodomys\nmerriami\nM\n37\n42\n\n\nPerognathus\nflavus\nF\n13\n8\n\n\nDipodomys\nmerriami\nF\n37\n31\n\n\nDipodomys\nmerriami\nF\n36\n40\n\n\nDipodomys\nmerriami\nM\n36\n37\n\n\nDipodomys\nmerriami\nM\n36\n48\n\n\nDipodomys\nmerriami\nM\n37\n42\n\n\nDipodomys\nmerriami\nF\n39\n45\n\n\nChaetodipus\npenicillatus\nF\n21\n16\n\n\nDipodomys\nmerriami\nF\n36\n36\n\n\nDipodomys\nmerriami\nM\n36\n42\n\n\nDipodomys\nmerriami\nM\n36\n44\n\n\nDipodomys\nmerriami\nF\n36\n41\n\n\nDipodomys\nmerriami\nF\n36\n40\n\n\nDipodomys\nmerriami\nM\n37\n34\n\n\nDipodomys\nmerriami\nM\n33\n40\n\n\nDipodomys\nmerriami\nM\n33\n44\n\n\nDipodomys\nmerriami\nM\n37\n44\n\n\nDipodomys\nmerriami\nM\n34\n36\n\n\nDipodomys\nmerriami\nM\n35\n33\n\n\nDipodomys\nmerriami\nF\n37\n46\n\n\nDipodomys\nmerriami\nF\n34\n35\n\n\nDipodomys\nmerriami\nM\n36\n46\n\n\nDipodomys\nmerriami\nF\n33\n37\n\n\nDipodomys\nmerriami\nM\n36\n34\n\n\nDipodomys\nmerriami\nF\n36\n45\n\n\nPerognathus\nflavus\nF\n15\n7\n\n\nDipodomys\nmerriami\nM\n37\n51\n\n\nDipodomys\nmerriami\nM\n35\n39\n\n\nDipodomys\nmerriami\nM\n36\n29\n\n\nDipodomys\nmerriami\nF\n32\n48\n\n\nDipodomys\nmerriami\nM\n38\n46\n\n\nDipodomys\nmerriami\nF\n37\n41\n\n\nDipodomys\nmerriami\nM\n37\n45\n\n\nDipodomys\nmerriami\nF\n35\n42\n\n\nDipodomys\nmerriami\nF\n36\n53\n\n\nDipodomys\nmerriami\nF\n35\n49\n\n\nDipodomys\nmerriami\nF\n36\n46\n\n\nPerognathus\nflavus\nF\n13\n9\n\n\nChaetodipus\npenicillatus\nF\n19\n15\n\n\nPerognathus\nflavus\nM\n13\n4\n\n\nDipodomys\nmerriami\nM\n36\n48\n\n\nDipodomys\nmerriami\nM\n37\n51\n\n\nDipodomys\nmerriami\nM\n38\n50\n\n\nDipodomys\nmerriami\nM\n35\n44\n\n\nDipodomys\nmerriami\nM\n25\n44\n\n\nDipodomys\nmerriami\nM\n35\n45\n\n\nDipodomys\nmerriami\nF\n37\n45\n\n\nPeromyscus\neremicus\nM\n20\n19\n\n\nDipodomys\nmerriami\nF\n38\n44\n\n\nDipodomys\nmerriami\nF\n36\n42\n\n\nDipodomys\nmerriami\nM\n37\n39\n\n\nDipodomys\nmerriami\nM\n37\n47\n\n\nDipodomys\nmerriami\nM\n36\n42\n\n\nDipodomys\nmerriami\nM\n36\n49\n\n\nDipodomys\nmerriami\nM\n38\n39\n\n\nDipodomys\nmerriami\nF\n36\n43\n\n\nDipodomys\nmerriami\nM\n35\n50\n\n\nDipodomys\nmerriami\nM\n36\n41\n\n\nDipodomys\nmerriami\nM\n37\n47\n\n\nDipodomys\nmerriami\nF\n36\n37\n\n\nDipodomys\nmerriami\nM\n36\n41\n\n\nDipodomys\nmerriami\nF\n36\n36\n\n\nDipodomys\nmerriami\nM\n36\n45\n\n\nPeromyscus\neremicus\nM\n19\n20"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#know-your-unique-observations-2",
+    "href": "slides/week-4/w4-factors.html#know-your-unique-observations-2",
+    "title": "Extending Data Joins + Factors",
+    "section": "Know Your Unique Observations!",
+    "text": "Know Your Unique Observations!\n\n\n\n\n\n\nDiscussion\n\n\nWhat happens if we join species and measurements by the genus only?\n\n\n\n\nmeasurements |&gt; \n  inner_join(species, \n             by = join_by(genus_name == genus))\n\n\n\n\n\n\n\ngenus_name\nspecies.x\nsex\nhindfoot_length\nweight\nspecies.y\ntaxa\nspecies_id\n\n\n\n\nDipodomys\nmerriami\nM\n35\n40\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n35\n40\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n35\n40\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n37\n48\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n37\n48\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n37\n48\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n34\n29\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n34\n29\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n34\n29\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n35\n46\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n35\n46\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n35\n46\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n35\n36\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n35\n36\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n35\n36\nspectabilis\nRodent\nDS\n\n\nDipodomys\nordii\nF\n32\n52\nmerriami\nRodent\nDM\n\n\nDipodomys\nordii\nF\n32\n52\nordii\nRodent\nDO\n\n\nDipodomys\nordii\nF\n32\n52\nspectabilis\nRodent\nDS\n\n\nPerognathus\nflavus\nM\n15\n8\nflavus\nRodent\nPF\n\n\nDipodomys\nmerriami\nF\n36\n35\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n36\n35\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n36\n35\nspectabilis\nRodent\nDS\n\n\nPerognathus\nflavus\nM\n12\n7\nflavus\nRodent\nPF\n\n\nDipodomys\nmerriami\nF\n32\n22\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n32\n22\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n32\n22\nspectabilis\nRodent\nDS\n\n\nPerognathus\nflavus\nM\n16\n9\nflavus\nRodent\nPF\n\n\nDipodomys\nmerriami\nF\n34\n42\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n34\n42\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n34\n42\nspectabilis\nRodent\nDS\n\n\nPerognathus\nflavus\nF\n14\n8\nflavus\nRodent\nPF\n\n\nDipodomys\nmerriami\nF\n35\n41\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n35\n41\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n35\n41\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n37\n37\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n37\n37\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n37\n37\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n35\n43\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n35\n43\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n35\n43\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n35\n41\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n35\n41\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n35\n41\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n33\n40\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n33\n40\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n33\n40\nspectabilis\nRodent\nDS\n\n\nPerognathus\nflavus\nF\n11\n9\nflavus\nRodent\nPF\n\n\nDipodomys\nmerriami\nF\n35\n45\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n35\n45\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n35\n45\nspectabilis\nRodent\nDS\n\n\nChaetodipus\npenicillatus\nF\n20\n15\npenicillatus\nRodent\nPP\n\n\nChaetodipus\npenicillatus\nF\n20\n15\nbaileyi\nRodent\nPB\n\n\nDipodomys\nmerriami\nM\n35\n29\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n35\n29\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n35\n29\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n35\n39\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n35\n39\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n35\n39\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n36\n43\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n36\n43\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n36\n43\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n38\n46\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n38\n46\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n38\n46\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n36\n41\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n36\n41\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n36\n41\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n36\n41\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n36\n41\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n36\n41\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n38\n40\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n38\n40\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n38\n40\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n37\n45\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n37\n45\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n37\n45\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n35\n46\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n35\n46\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n35\n46\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n35\n40\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n35\n40\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n35\n40\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n35\n30\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n35\n30\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n35\n30\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n35\n39\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n35\n39\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n35\n39\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n35\n34\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n35\n34\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n35\n34\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nF\n37\n42\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n37\n42\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nF\n37\n42\nspectabilis\nRodent\nDS\n\n\nDipodomys\nmerriami\nM\n37\n42\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nM\n37\n42\nordii\nRodent\nDO\n\n\nDipodomys\nmerriami\nM\n37\n42\nspectabilis\nRodent\nDS\n\n\nPerognathus\nflavus\nF\n13\n8\nflavus\nRodent\nPF\n\n\nDipodomys\nmerriami\nF\n37\n31\nmerriami\nRodent\nDM\n\n\nDipodomys\nmerriami\nF\n37\n31\nordii\nRodent\nDO\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nDANGER : MANY-TO-MANY JOIN!\n\n\nOur observations exploded and the species_id isn’t even right for some observations! We also now have a species.x and species.y variable since the variable was present in both the left and right data."
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#joining-on-multiple-variables",
+    "href": "slides/week-4/w4-factors.html#joining-on-multiple-variables",
+    "title": "Extending Data Joins + Factors",
+    "section": "Joining on Multiple Variables",
+    "text": "Joining on Multiple Variables\nTo fix this, we need to join on multiple variables (a compound key):\n\nspecies |&gt; \n  full_join(measurements,\n            join_by(species == species, \n                    genus == genus_name))\n\n\n\n\n\n\n\ngenus\nspecies\ntaxa\nspecies_id\nsex\nhindfoot_length\nweight\n\n\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n40\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n48\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n34\n29\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n46\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n36\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n35\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n32\n22\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n34\n42\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n37\n37\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n43\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n33\n40\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n45\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n29\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n39\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n43\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n38\n46\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n38\n40\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n45\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n46\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n40\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n30\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n39\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n34\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n37\n42\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n42\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n37\n31\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n40\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n37\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n48\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n42\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n39\n45\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n36\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n42\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n44\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n40\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n34\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n33\n40\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n33\n44\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n44\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n34\n36\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n33\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n37\n46\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n34\n35\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n46\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n33\n37\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n34\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n45\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n51\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n39\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n29\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n32\n48\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n38\n46\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n37\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n45\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n42\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n53\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n35\n49\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n46\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n48\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n51\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n38\n50\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n44\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n25\n44\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n45\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n37\n45\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n38\n44\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n42\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n39\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n47\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n42\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n49\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n38\n39\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n43\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n35\n50\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n47\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n37\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n36\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n45\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n40\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n38\n49\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n55\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n46\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n38\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n44\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n46\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n34\n36\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n44\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n36\n53\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n38\n41\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n37\n48\n\n\nDipodomys\nmerriami\nRodent\nDM\nM\n38\n47\n\n\nDipodomys\nmerriami\nRodent\nDM\nF\n36\n42"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#what-is-a-factor-variable",
+    "href": "slides/week-4/w4-factors.html#what-is-a-factor-variable",
+    "title": "Extending Data Joins + Factors",
+    "section": "What is a factor variable?",
+    "text": "What is a factor variable?\nFactors are used for\n\ncategorical variables with a fixed and known set of possible values.\n\n\nE.g., day_born = Sunday, Monday, Tuesday, …, Saturday\n\n\ndisplaying character vectors in non-alphabetical order.\n\n\nuseful for nice tables and plots!"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#eras-tour",
+    "href": "slides/week-4/w4-factors.html#eras-tour",
+    "title": "Extending Data Joins + Factors",
+    "section": "Eras Tour",
+    "text": "Eras Tour\nLet’s consider songs that Taylor Swift played on her Eras Tour.\nI have randomly selected 25 songs (and their albums) to demonstrate.\n\neras_data |&gt; \n  slice_head(n = 10)\n\n\n\n\n\n\n\nSong\nAlbum\n\n\n\n\n22\nRed\n\n\n...Ready for It?\nReputation\n\n\nThe Archer\nLover\n\n\nBejeweled\nMidnights\n\n\nStyle\n1989\n\n\nYou Belong With Me\nFearless\n\n\nDon't Blame Me\nReputation\n\n\nillicit affairs\nFolklore\n\n\nLavender Haze\nMidnights\n\n\nmarjorie\nEvermore"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#creating-a-factor-base-r",
+    "href": "slides/week-4/w4-factors.html#creating-a-factor-base-r",
+    "title": "Extending Data Joins + Factors",
+    "section": "Creating a Factor – Base R",
+    "text": "Creating a Factor – Base R\nA character vector:\n\neras_data |&gt; \n  pull(Album)\n\n [1] \"Red\"        \"Reputation\" \"Lover\"      \"Midnights\"  \"1989\"      \n [6] \"Fearless\"   \"Reputation\" \"Folklore\"   \"Midnights\"  \"Evermore\"  \n[11] \"Evermore\"   \"Lover\"      \"Lover\"      \"Red\"        \"Reputation\"\n[16] \"Reputation\" \"Speak Now\"  \"Red\"        \"Midnights\"  \"Fearless\"  \n[21] \"1989\"       \"Midnights\"  \"Fearless\"   \"Folklore\"   \"Lover\"     \n\n\n\nA factor vector:\n\neras_data |&gt; \n  pull(Album) |&gt; \n  factor()\n\n [1] Red        Reputation Lover      Midnights  1989       Fearless  \n [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     \n[13] Lover      Red        Reputation Reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   Folklore  \n[25] Lover     \n9 Levels: 1989 Evermore Fearless Folklore Lover Midnights Red ... Speak Now"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#creating-a-factor-base-r-1",
+    "href": "slides/week-4/w4-factors.html#creating-a-factor-base-r-1",
+    "title": "Extending Data Joins + Factors",
+    "section": "Creating a Factor – Base R",
+    "text": "Creating a Factor – Base R\nWhen you create a factor variable from a vector…\n\nEvery unique element in the vector becomes a level.\nThe levels are ordered alphabetically.\nThe elements are no longer displayed in quotes."
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#creating-a-factor-base-r-2",
+    "href": "slides/week-4/w4-factors.html#creating-a-factor-base-r-2",
+    "title": "Extending Data Joins + Factors",
+    "section": "Creating a Factor – Base R",
+    "text": "Creating a Factor – Base R\nYou can specify the order of the levels with the level argument.\n\neras_data |&gt; \n  pull(Album) |&gt; \n  factor(levels = c(\"Fearless\",\"Speak Now\",\"Red\",\"1989\",\n                    \"Reputation\",\"Lover\",\"Folklore\",\n                    \"Evermore\",\"Midnights\"))\n\n [1] Red        Reputation Lover      Midnights  1989       Fearless  \n [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     \n[13] Lover      Red        Reputation Reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   Folklore  \n[25] Lover     \n9 Levels: Fearless Speak Now Red 1989 Reputation Lover Folklore ... Midnights"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#forcats",
+    "href": "slides/week-4/w4-factors.html#forcats",
+    "title": "Extending Data Joins + Factors",
+    "section": "forcats",
+    "text": "forcats\n\n\nWe use this package to…\n\nturn character variables into factors.\nmake factors by discretizing numeric variables.\nrename or reorder the levels of an existing factor.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nThe packages forcats (“for categoricals”) helps wrangle categorical variables.\n\nforcats loads with tidyverse!"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#creating-a-factor-fct",
+    "href": "slides/week-4/w4-factors.html#creating-a-factor-fct",
+    "title": "Extending Data Joins + Factors",
+    "section": "Creating a Factor – fct",
+    "text": "Creating a Factor – fct\nWith fct(), the levels are automatically ordered in the order of first appearance.\n\neras_data |&gt; \n  mutate(Album = fct(Album)) |&gt; \n  pull(Album)\n\n [1] Red        Reputation Lover      Midnights  1989       Fearless  \n [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     \n[13] Lover      Red        Reputation Reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   Folklore  \n[25] Lover     \n9 Levels: Red Reputation Lover Midnights 1989 Fearless Folklore ... Speak Now"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#creating-a-factor-fct-1",
+    "href": "slides/week-4/w4-factors.html#creating-a-factor-fct-1",
+    "title": "Extending Data Joins + Factors",
+    "section": "Creating a Factor – fct",
+    "text": "Creating a Factor – fct\nYou can still specify the order of the levels with level.\n\neras_data |&gt; \n  mutate(Album = fct(Album,\n                     levels = c(\"Fearless\",\"Speak Now\",\"Red\",\n                                \"1989\", \"Reputation\",\"Lover\",\n                                \"Folklore\", \"Evermore\",\"Midnights\"))) |&gt; \n  pull(Album) \n\n [1] Red        Reputation Lover      Midnights  1989       Fearless  \n [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     \n[13] Lover      Red        Reputation Reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   Folklore  \n[25] Lover     \n9 Levels: Fearless Speak Now Red 1989 Reputation Lover Folklore ... Midnights"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#creating-a-factor-fct-2",
+    "href": "slides/week-4/w4-factors.html#creating-a-factor-fct-2",
+    "title": "Extending Data Joins + Factors",
+    "section": "Creating a Factor – fct",
+    "text": "Creating a Factor – fct\nYou can also specify non-present levels.\n\neras_data |&gt; \n  mutate(Album = fct(Album, \n                     levels = c(\"Taylor Swift\",\n                                \"Fearless\",\"Speak Now\",\"Red\",\n                                \"1989\", \"Reputation\",\"Lover\",\n                                \"Folklore\", \"Evermore\",\"Midnights\",\n                                \"The Tortured Poets Department\"))) |&gt; \n  pull(Album) \n\n [1] Red        Reputation Lover      Midnights  1989       Fearless  \n [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     \n[13] Lover      Red        Reputation Reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   Folklore  \n[25] Lover     \n11 Levels: Taylor Swift Fearless Speak Now Red 1989 Reputation ... The Tortured Poets Department"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#re-coding-a-factor-fct_recode",
+    "href": "slides/week-4/w4-factors.html#re-coding-a-factor-fct_recode",
+    "title": "Extending Data Joins + Factors",
+    "section": "Re-coding a Factor – fct_recode",
+    "text": "Re-coding a Factor – fct_recode\nOops, we have a typo in some of our levels! We change existing levels with the syntax &lt;new level&gt; = &lt;old level&gt;.\n\n\neras_data |&gt;\n  mutate(Album = fct_recode(.f = Album,\n                            \"folklore\" = \"Folklore\",\n                            \"evermore\" = \"Evermore\",\n                            \"reputation\" = \"Reputation\")) |&gt;\n  pull(Album) \n\n [1] Red        reputation Lover      Midnights  1989       Fearless  \n [7] reputation folklore   Midnights  evermore   evermore   Lover     \n[13] Lover      Red        reputation reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   folklore  \n[25] Lover     \n11 Levels: Taylor Swift Fearless Speak Now Red 1989 reputation ... The Tortured Poets Department\n\n\n\n\nNon-specified levels are not re-coded."
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#re-coding-a-factor-case_when",
+    "href": "slides/week-4/w4-factors.html#re-coding-a-factor-case_when",
+    "title": "Extending Data Joins + Factors",
+    "section": "Re-coding a Factor – case_when",
+    "text": "Re-coding a Factor – case_when\nWe have similar functionality with the case_when() function…\n\n\neras_data |&gt;\n  mutate(Album = case_when(Album == \"Folklore\" ~ \"folklore\",\n                           Album == \"Evermore\" ~ \"evermore\",\n                           Album == \"Reputation\" ~ \"reputation\",\n                           .default = Album),\n         Album = fct(Album)) |&gt; \n  pull(Album)\n\n [1] Red        reputation Lover      Midnights  1989       Fearless  \n [7] reputation folklore   Midnights  evermore   evermore   Lover     \n[13] Lover      Red        reputation reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   folklore  \n[25] Lover     \n9 Levels: Red reputation Lover Midnights 1989 Fearless folklore ... Speak Now"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#collapsing-a-factor-fct_collapse",
+    "href": "slides/week-4/w4-factors.html#collapsing-a-factor-fct_collapse",
+    "title": "Extending Data Joins + Factors",
+    "section": "Collapsing a Factor –fct_collapse",
+    "text": "Collapsing a Factor –fct_collapse\nCollapse multiple existing levels of a factor with the syntax &lt;new level&gt; = c(&lt;old levels&gt;).\n\n\neras_data |&gt; \n  mutate(Genre = fct_collapse(.f= Album,\n                       \"country pop\" = c(\"Taylor Swift\", \"Fearless\"),\n                       \"pop rock\" = c(\"Speak Now\",\"Red\"),\n                       \"electropop\" = c(\"1989\",\"reputation\",\"Lover\"),\n                       \"folk pop\" = c(\"folklore\",\"evermore\"),\n                       \"alt-pop\" = \"Midnights\")) |&gt; \n  slice_sample(n = 6)\n\n\n\n\n\n\n\nSong\nAlbum\nGenre\n\n\n\n\nwillow\nevermore\nfolk pop\n\n\nYou Belong With Me\nFearless\ncountry pop\n\n\nLavender Haze\nMidnights\nalt-pop\n\n\nWe Are Never Ever Getting Back Together\nRed\npop rock\n\n\nillicit affairs\nfolklore\nfolk pop\n\n\nLook What You Made Me Do\nreputation\nelectropop"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#re-leveling-a-factor-fct_relevel",
+    "href": "slides/week-4/w4-factors.html#re-leveling-a-factor-fct_relevel",
+    "title": "Extending Data Joins + Factors",
+    "section": "Re-leveling a Factor –fct_relevel",
+    "text": "Re-leveling a Factor –fct_relevel\nChange the order of the levels of an existing factor.\n\nOriginalOrdered by Copies Sold\n\n\n\neras_data |&gt;\n  pull(Album) |&gt; \n  levels()\n\n [1] \"Taylor Swift\"                  \"Fearless\"                     \n [3] \"Speak Now\"                     \"Red\"                          \n [5] \"1989\"                          \"reputation\"                   \n [7] \"Lover\"                         \"folklore\"                     \n [9] \"evermore\"                      \"Midnights\"                    \n[11] \"The Tortured Poets Department\"\n\n\n\n\n\neras_data |&gt; \n  mutate(Album = fct_relevel(.f = Album, \n                             c(\"Fearless\",\"1989\",\"Taylor Swift\",\n                               \"Speak Now\",\"Red\",\"Midnights\",\"reputation\",\n                               \"folklore\",\"Lover\",\"evermore\"))) |&gt;\n  pull(Album) |&gt;\n  levels()\n\n [1] \"Fearless\"                      \"1989\"                         \n [3] \"Taylor Swift\"                  \"Speak Now\"                    \n [5] \"Red\"                           \"Midnights\"                    \n [7] \"reputation\"                    \"folklore\"                     \n [9] \"Lover\"                         \"evermore\"                     \n[11] \"The Tortured Poets Department\"\n\n\nUnspecified levels remain in the same order at the end."
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#re-ordering-factors-in-ggplot2",
+    "href": "slides/week-4/w4-factors.html#re-ordering-factors-in-ggplot2",
+    "title": "Extending Data Joins + Factors",
+    "section": "Re-ordering Factors in ggplot2",
+    "text": "Re-ordering Factors in ggplot2\n\nOriginalPlotSpecify LevelsPlot\n\n\nThe bars follow the default factor levels.\n\nfull_eras |&gt; \n  mutate(Album = fct(Album)) |&gt; \n  ggplot() +\n  geom_bar(aes(y = Album), fill = \"#A5C9A5\") +\n  theme_minimal() +\n  labs(x = \"Number of Songs\",\n       y = \"\",\n       subtitle = \"Album\",\n       title = \"Songs Played on the Eras Tour\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe can order factor levels to order the bar plot.\n\nfull_eras |&gt; \n  mutate(Album = fct(Album,\n                     levels = c(\"Fearless\",\"Speak Now\",\"Red\",\n                                \"1989\",\"Reputation\",\"Lover\",\n                                \"Folklore\",\"Evermore\",\n                                \"Midnights\"))) |&gt; \n  ggplot() +\n  geom_bar(aes(y = Album), fill = \"#A5C9A5\") +\n  theme_minimal() +\n  labs(x = \"Number of Songs\",\n       y = \"\",\n       subtitle = \"Album\",\n       title = \"Songs Played on the Eras Tour\")"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#re-ordering-factors-in-ggplot2-1",
+    "href": "slides/week-4/w4-factors.html#re-ordering-factors-in-ggplot2-1",
+    "title": "Extending Data Joins + Factors",
+    "section": "Re-ordering Factors in ggplot2",
+    "text": "Re-ordering Factors in ggplot2\n\nOriginalPlotReorder by ValuePlot\n\n\nThe bars follow the default factor levels.\n\nfull_eras |&gt; \n  mutate(Album = fct(Album)) |&gt; \n  ggplot() +\n  geom_bar(aes(y = Album), fill = \"#A5C9A5\") +\n  theme_minimal() +\n  labs(x = \"Number of Songs\",\n       y = \"\",\n       subtitle = \"Album\",\n       title = \"Songs Played on the Eras Tour\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nWe can order factor levels to order the bar plot by the count using fct_infreq()\n\nfull_eras |&gt; \n  ggplot() +\n  geom_bar(aes(y = fct_infreq(Album)), \n           fill = \"#A5C9A5\") +\n  theme_minimal() +\n  labs(x = \"Number of Songs\",\n       y = \"\",\n       subtitle = \"Album\",\n       title = \"Songs Played on the Eras Tour\")"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#re-ordering-factors-in-ggplot2-2",
+    "href": "slides/week-4/w4-factors.html#re-ordering-factors-in-ggplot2-2",
+    "title": "Extending Data Joins + Factors",
+    "section": "Re-ordering Factors in ggplot2",
+    "text": "Re-ordering Factors in ggplot2\n\nOriginalPlotfct_reorder()Plot\n\n\nThe ridge plots follow the order of the factor levels.\n\nfull_eras |&gt; \n  ggplot(aes(x = Length, \n             y = Album, \n             fill = Album)) +\n  geom_density_ridges() +\n  theme_minimal() +\n  theme(legend.position = \"none\")+\n  labs(x = \"Song Length (mins)\",\n       y = \"\",\n       subtitle = \"Album\",\n       title = \"Songs Played on the Eras Tour\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInside ggplot(), we can order factor levels by a summary value.\n\nfull_eras |&gt; \n  ggplot(aes(x = Length, \n             y = fct_reorder(.f = Album,\n                             .x = Length,\n                             .fun = mean), \n             fill = Album)) +\n  geom_density_ridges() +\n  theme_minimal() +\n  theme(legend.position = \"none\")+\n  labs(x = \"Song Length (mins)\",\n       y = \"\",\n       subtitle = \"Album\",\n       title = \"Songs Played on the Eras Tour\")"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#re-ordering-factors-in-ggplot2-3",
+    "href": "slides/week-4/w4-factors.html#re-ordering-factors-in-ggplot2-3",
+    "title": "Extending Data Joins + Factors",
+    "section": "Re-ordering Factors in ggplot2",
+    "text": "Re-ordering Factors in ggplot2\n\nOriginalPlotfct_reorder2()Plot\n\n\nRemember the miliary data from the practice activity?\nThe legend follows the order of the factor levels.\n\nmilitary_long |&gt; \n  filter(Country %in% central.asia,\n         !is.na(spending)) |&gt; \n  ggplot(aes(x = year,\n             y = spending,\n             color = Country)) +\n  geom_line() +\n  labs(x = \"Year\",\n       y = \"\",\n       subtitle = \"Spending (as % of Government Spending)\",\n       title = \"Military Expenditures in Central Asia\") +\n  scale_color_manual(values = brewer.pal(3, \"Dark2\")) +\n  scale_y_continuous(labels = scales::percent) +\n  scale_x_continuous(breaks = seq(1990, 2023, 5)) +\n  theme_bw() +\n  theme(panel.grid.minor.x = element_blank())\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInside ggplot(), we can order factor levels by the \\(y\\) values associated with the largest \\(x\\) values.\n\nmilitary_long |&gt; \n  filter(Country %in% central.asia,\n         !is.na(spending)) |&gt; \n  ggplot(aes(x = year,\n             y = spending,\n             color = fct_reorder2(.x = year,\n                                  .y = spending,\n                                  .f = Country))) +\n  geom_line() +\n  labs(x = \"Year\",\n       y = \"\",\n       color = \"Country\",\n       subtitle = \"Spending (as % of Government Spending)\",\n       title = \"Military Expenditures in Central Asia\") +\n  scale_color_manual(values = brewer.pal(3, \"Dark2\")) +\n  scale_y_continuous(labels = scales::percent) +\n  scale_x_continuous(breaks = seq(1990, 2023, 5)) +\n  theme_bw() +\n  theme(panel.grid.minor.x = element_blank())"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#why-mess-with-factors",
+    "href": "slides/week-4/w4-factors.html#why-mess-with-factors",
+    "title": "Extending Data Joins + Factors",
+    "section": "Why Mess with Factors?",
+    "text": "Why Mess with Factors?\n\n\n\n\n\n\nDiscussion\n\n\nWhat are some of the benefits to re-ordering or re-leveling factors variables?"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#variable-names-in-r",
+    "href": "slides/week-4/w4-factors.html#variable-names-in-r",
+    "title": "Extending Data Joins + Factors",
+    "section": "Variable Names in R",
+    "text": "Variable Names in R\nData from external sources likely has variable names not ideally formatted for R.\nNames may…\n\ncontain spaces.\nstart with numbers.\nstart with a mix of capital and lower case letters.\n\n\n\nnames(military)[1:12]\n\n [1] \"Country\"        \"Notes\"          \"Reporting year\" \"1988.0\"        \n [5] \"1989.0\"         \"1990.0\"         \"1991.0\"         \"1992.0\"        \n [9] \"1993.0\"         \"1994.0\"         \"1995.0\"         \"1996.0\""
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#messy-variable-names-are-a-pain",
+    "href": "slides/week-4/w4-factors.html#messy-variable-names-are-a-pain",
+    "title": "Extending Data Joins + Factors",
+    "section": "Messy Variable Names are a Pain",
+    "text": "Messy Variable Names are a Pain\n\nYou should have noticed this in Practice Activity 4 working with the SIPRI data\nYou have to use back tick marks around variables that start with numbers or have spaces:\n\n\nmilitary |&gt; \n  select(`Reporting year`,\n          `1988.0`)\n\n\nI personally find capitilization in variable names is very annoying and slows me down"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#janitor-to-the-rescue",
+    "href": "slides/week-4/w4-factors.html#janitor-to-the-rescue",
+    "title": "Extending Data Joins + Factors",
+    "section": "janitor to the rescue!",
+    "text": "janitor to the rescue!\n\nMr. Johnson from Abbot Elementary (https://giphy.com/abcnetwork)"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#clean-variable-names-with-janitor",
+    "href": "slides/week-4/w4-factors.html#clean-variable-names-with-janitor",
+    "title": "Extending Data Joins + Factors",
+    "section": "Clean Variable Names with janitor",
+    "text": "Clean Variable Names with janitor\nThe janitor package converts all variable names in a dataset to snake_case.\n\nNames will…\n\nstart with a lower case letter.\nhave spaces and special characters filled in with _.\n\n\nlibrary(janitor)\nmilitary_clean_names &lt;- military |&gt; \n  clean_names()\n\nnames(military_clean_names)[1:12]\n\n [1] \"country\"        \"notes\"          \"reporting_year\" \"x1988_0\"       \n [5] \"x1989_0\"        \"x1990_0\"        \"x1991_0\"        \"x1992_0\"       \n [9] \"x1993_0\"        \"x1994_0\"        \"x1995_0\"        \"x1996_0\""
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#r-is-always-evolving",
+    "href": "slides/week-4/w4-factors.html#r-is-always-evolving",
+    "title": "Extending Data Joins + Factors",
+    "section": "R Is Always Evolving",
+    "text": "R Is Always Evolving\n\nRemember: R is open source so folks are always adding and updating packages and functions\n\n\n\n\n\n\n\nDiscussion\n\n\nWhat benefits and drawbacks of R’s ever-evolving nature have you noticed?\n\n\n\n\n\nthe good 🥳the annoying\n\n\n\nalways (aiming) to get better!\nresponsive to user input\nnew functionality for new statistical methods\n\n\n\n\ncode may no longer run after an update 😭\nneed to learn new syntax\nhave to keep track of it all 🫠"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#lifceycle-stages",
+    "href": "slides/week-4/w4-factors.html#lifceycle-stages",
+    "title": "Extending Data Joins + Factors",
+    "section": "Lifceycle Stages",
+    "text": "Lifceycle Stages\nAs packages get updated, the functions and function arguments included in those packages will change.\n\nThe accepted syntax for a function may change.\nA function/functionality may disappear.\n\n\nLearn more about lifecycle stages of packages, functions, function arguments in R."
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#lifceycle-stages-1",
+    "href": "slides/week-4/w4-factors.html#lifceycle-stages-1",
+    "title": "Extending Data Joins + Factors",
+    "section": "Lifceycle Stages",
+    "text": "Lifceycle Stages"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#deprecated-functions",
+    "href": "slides/week-4/w4-factors.html#deprecated-functions",
+    "title": "Extending Data Joins + Factors",
+    "section": "Deprecated Functions",
+    "text": "Deprecated Functions\nA deprecated functionality has a better alternative available and is scheduled for removal.\n\nYou get a warning telling you what to use instead.\n\n\n\nmilitary_clean |&gt; \n  filter(across(!Country, is.na)) |&gt; \n  slice_head(n = 3) |&gt; \n  select(1:8)\n\nWarning: Using `across()` in `filter()` was deprecated in dplyr 1.0.8.\nℹ Please use `if_any()` or `if_all()` instead.\n\n\n# A tibble: 3 × 8\n  Country         `1988.0` `1989.0` `1990.0` `1991.0` `1992.0` `1993.0` `1994.0`\n  &lt;chr&gt;           &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   \n1 Africa          &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;    \n2 North Africa    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;    \n3 sub-Saharan Af… &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#deprecated-functions-1",
+    "href": "slides/week-4/w4-factors.html#deprecated-functions-1",
+    "title": "Extending Data Joins + Factors",
+    "section": "Deprecated Functions",
+    "text": "Deprecated Functions\nYou should not use deprecated functions!\nInstead, we use…\n\nmilitary_clean |&gt;\n  filter(if_all(!Country, ~ is.na(.x))) |&gt; \n  slice_head(n = 3) |&gt; \n  select(1:8)\n\n# A tibble: 3 × 8\n  Country         `1988.0` `1989.0` `1990.0` `1991.0` `1992.0` `1993.0` `1994.0`\n  &lt;chr&gt;           &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;    &lt;chr&gt;   \n1 Africa          &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;    \n2 North Africa    &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;    \n3 sub-Saharan Af… &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#superceded-functions",
+    "href": "slides/week-4/w4-factors.html#superceded-functions",
+    "title": "Extending Data Joins + Factors",
+    "section": "Superceded Functions",
+    "text": "Superceded Functions\nA superseded functionality has a better alternative, but is not going away.\n\nThis is a softer alternative to deprecation.\nA superseded function will not give a warning (since there’s no risk if you keep using it), but the documentation will give you a recommendation."
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#lab-4-childcare-costs-in-california",
+    "href": "slides/week-4/w4-factors.html#lab-4-childcare-costs-in-california",
+    "title": "Extending Data Joins + Factors",
+    "section": "Lab 4: Childcare Costs in California",
+    "text": "Lab 4: Childcare Costs in California"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#to-do",
+    "href": "slides/week-4/w4-factors.html#to-do",
+    "title": "Extending Data Joins + Factors",
+    "section": "To do…",
+    "text": "To do…\n\nLab 4: Childcare Costs in California\n\nDue Monday 4/28 at 11:59pm\n\nRead Chapter 5: Strings + Dates\n\nCheck-in 5.1 - 5.2 due Tuesday (4/29) before class"
+  },
+  {
+    "objectID": "labs/lab5/lab5-murder.html#combine-the-data",
+    "href": "labs/lab5/lab5-murder.html#combine-the-data",
+    "title": "Lab 5: Murder in SQL City",
+    "section": "Combine the Data",
+    "text": "Combine the Data\nLet’s set ourselves up to solve this crime lickity-split!\nCreate two new datasets:\n\nget_fit_now_full\n\nevery row represents one visit to the “Get Fit” gym.\nall member information is included (e.g. check in times, names, and membership information)\nshould have 2,703 rows and 8 columns\n\nsuspects_all\n\neach row represents one person\nincludes their address, driver’s licence information, income, and interview with the police, if they have one\nshould have 10,011 rows and 16 columns\n\n\n\n\n\n\n\n\nTip\n\n\n\nDon’t worry about missing values! We are just gathering all of the information that we have about everyone.\n\n\n\n# code to create get_fit_now_full\n\n\n# code to create suspects_all"
+  },
+  {
+    "objectID": "labs/lab4/data/prepare-data.html",
+    "href": "labs/lab4/data/prepare-data.html",
+    "title": "Prepare County Data Lab 4",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(readxl)\nlibrary(janitor)"
+  },
+  {
+    "objectID": "labs/lab4/data/prepare-data.html#county-revenue-data",
+    "href": "labs/lab4/data/prepare-data.html#county-revenue-data",
+    "title": "Prepare County Data Lab 4",
+    "section": "County Revenue Data",
+    "text": "County Revenue Data\nData collected from the California State Controller. San Franscisco County is excluded.\n\n2003 - 2016 data\n\ndat_03_16 &lt;- read_excel(\"CountiesRawData_20180613.xlsx\",\n                        sheet = \"CO_REV_PROP_OTHR_TAXES\") |&gt; \n  clean_names() |&gt; \n  select(entity_name, year = fiscal_year,\n         total_property_taxes, sales_and_use_taxes)\n\n\n\n2017 data\n\ndat_17 &lt;- read_excel(\"CountiesRawData_20181228.xlsx\",\n                        sheet = \"CO_REV_PROP_OTHR_TAX\",\n                     na = c(\"\", \"NULL\")) |&gt; \n  clean_names() |&gt; \n  select(entity_name, year = fiscal_year,\n         sales_and_use_taxes = sales_and_use_taxes_total_governmental_funds_taxes_other,\n         total_property_taxes = total_property_taxes_total_governmental_funds_property_taxes) \n\n\n\n2018 data\n\ndat_18 &lt;- read_excel(\"CountiesRawData_FY2018-2020_20210926_V4.xlsx\",\n                        sheet = \"CO_REV_PROP_OTHR_TAXES\") |&gt; \n  clean_names() |&gt; \n  select(entity_name, year = fiscal_year,\n         sales_and_use_taxes = sales_and_use_taxes_total_governmental_funds_taxes_other,\n         total_property_taxes = total_property_taxes_total_governmental_funds)\n\n\n\nAppend and clean\n\ntax_dat &lt;- dat_03_16 |&gt; \n  rows_append(dat_17) |&gt; \n  rows_append(dat_18) |&gt; \n  arrange(entity_name, year) |&gt; \n  filter(year %in% 2005:2018) |&gt; \n  mutate(entity_name = str_c(entity_name, \" County\"))"
+  },
+  {
+    "objectID": "labs/lab4/data/prepare-data.html#check-that-county-names-align-with-other-lab-data",
+    "href": "labs/lab4/data/prepare-data.html#check-that-county-names-align-with-other-lab-data",
+    "title": "Prepare County Data Lab 4",
+    "section": "Check that county names align with other lab data",
+    "text": "Check that county names align with other lab data\n\ncounties &lt;- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')\n\n\ntax_counties &lt;- tax_dat |&gt; \n  group_by(entity_name) |&gt; \n  summarize(mean_tax = mean(total_property_taxes))\n\n\nca_counties &lt;- counties |&gt; \n  filter(state_abbreviation == \"CA\") |&gt; \n  left_join(tax_counties, by = join_by(county_name == entity_name))"
+  },
+  {
+    "objectID": "labs/lab4/data/prepare-data.html#save-data",
+    "href": "labs/lab4/data/prepare-data.html#save-data",
+    "title": "Prepare County Data Lab 4",
+    "section": "Save data",
+    "text": "Save data\n\nwrite_csv(tax_dat, \n          file = \"ca_tax_revenue.csv\")"
+  },
+  {
+    "objectID": "slides/week-3/w3-more-dplyr-ethics.html#data-biography",
+    "href": "slides/week-3/w3-more-dplyr-ethics.html#data-biography",
+    "title": "Data Cleaning & Manipulation",
+    "section": "Data Biography",
+    "text": "Data Biography\nHeather Kraus suggests asking 5 questions of your data:\n\nWhere did it come from?\nWho collected it?\nWhen?\nHow was it collected?\nWhy was it collected?"
   }
 ]

@@ -1,10 +1,9 @@
 ---
-title: "Data Joins + Pivots + Factors"
+title: "Extending Data Joins + Factors"
 format: 
   revealjs:
     theme: [default, ../slide_custom.scss]
 editor: source
-embed-resources: true
 ---
 
 ```{r setup}
@@ -1202,9 +1201,9 @@ As packages get updated, the functions and function arguments included in those 
 
 ## Lifceycle Stages
 
-<center>![](images/lifecycle-facet1.png){width="70%"}</center>
+<center>![](images/lifecycle-facet1.png){width="50%"}</center>
 
-<center>![](images/lifecycle-facet2.png){width="70%"}</center>
+<center>![](images/lifecycle-facet2.png){width="50%"}</center>
 
 ## Deprecated Functions
 

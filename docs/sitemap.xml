@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://github.com/manncz/stat-331-s25/slides/week-3/w3-more-dplyr-ethics.html</loc>
-    <lastmod>2025-04-16T16:30:45.446Z</lastmod>
+    <lastmod>2025-04-17T14:53:59.107Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/slides/week-2/w2-import-ggplot.html</loc>
@@ -14,7 +14,7 @@
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa3.html</loc>
-    <lastmod>2025-04-15T20:39:11.832Z</lastmod>
+    <lastmod>2025-04-16T20:26:05.635Z</lastmod>
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/practice-activities/pa1.html</loc>
@@ -74,6 +74,22 @@
   </url>
   <url>
     <loc>https://github.com/manncz/stat-331-s25/labs/lab4/lab4-childcare.html</loc>
-    <lastmod>2025-04-16T17:27:22.144Z</lastmod>
+    <lastmod>2025-04-16T21:45:07.584Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/manncz/stat-331-s25/slides/week-4/w4-joins-pivots.html</loc>
+    <lastmod>2025-04-17T21:48:59.457Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/manncz/stat-331-s25/labs/lab5/lab5-murder.html</loc>
+    <lastmod>2025-04-16T18:47:37.465Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/manncz/stat-331-s25/slides/week-4/w4-factors.html</loc>
+    <lastmod>2025-04-17T21:56:01.973Z</lastmod>
+  </url>
+  <url>
+    <loc>https://github.com/manncz/stat-331-s25/labs/lab4/data/prepare-data.html</loc>
+    <lastmod>2025-04-16T21:12:29.305Z</lastmod>
   </url>
 </urlset>
