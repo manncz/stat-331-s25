@@ -665,7 +665,7 @@ cereal |>
 -   The [American Statistical Association’s Ethical Guidelines](https://www.amstat.org/your-career/ethical-guidelines-for-statistical-practice) for Statistical Practice are intended to help statistics practitioners make decisions ethically.
 -   They aim to promote accountability by informing those who rely on statistics of the standards they should expect.
 
-## The Numbers Don't Speak for Themselves
+## [The Numbers Don't Speak for Themselves](https://data-feminism.mitpress.mit.edu/pub/czq9dfs5/release/3?readingCollection=0cd867ef)
 
 With the people next to you discuss:
 
@@ -675,9 +675,25 @@ With the people next to you discuss:
 - Is there anything you didn't agree with?
 - What questions do you have after reading?
 
+
+> Source: *Data Feminism* by by Catherine D'Ignazio and Lauren Klein (2020)
+
+
+## [Data Biography](https://data-feminism.mitpress.mit.edu/pub/czq9dfs5#netnhf02oh7)
+
+Heather Kraus suggests asking 5 questions of your data:
+
+1. Where did it come from? 
+2. Who collected it? 
+3. When? 
+4. How was it collected? 
+5. Why was it collected?
+
+
+
 ## Additional Resources
 
--   [Data Feminism](https://data-feminism.mitpress.mit.edu)
+-   More [Data Feminism](https://data-feminism.mitpress.mit.edu/pub/frfa9szd/release/6)
 -   Critical Quantitative Research
     -   [Resource 1](https://arxiv.org/pdf/2110.12871)
     -   [Resource 2](https://journals.sagepub.com/doi/10.1177/23328584241228223)
