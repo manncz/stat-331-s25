@@ -3,6 +3,10 @@ title: "Setup Up Murder Data for Lab 5"
 ---
 
 ```{r}
+library(tidyverse)
+```
+
+```{r}
 # clear global environment
 
 rm(list = ls())
