@@ -3070,7 +3070,7 @@
     "href": "slides/week-5/week-5-strings.html#tuesday-april-29",
     "title": "Using stringr to Work with Strings",
     "section": "Tuesday, April 29",
-    "text": "Tuesday, April 29\nToday we will…\n\nDifferent schedule this week\nWhat you can expect in Week 6\nNew material\n\nString variables\nFunctions for working with strings\nRegular expressions\n\nPA 5.1: Scrambled Message"
+    "text": "Tuesday, April 29\nToday we will…\n\nDifferent schedule this week & next\nNew material\n\nString variables\nFunctions for working with strings\nRegular expressions\n\nPA 5.1: Scrambled Message\n\n\n\n\n\n\n\nFollow along\n\n\nRemember to download, save, and open up the starter notes for this week!"
   },
   {
     "objectID": "slides/week-5/week-5-strings.html#week-5-layout",
@@ -3370,8 +3370,8 @@
     "objectID": "slides/week-5/week-5-dates.html#wednesday-febrary-5",
     "href": "slides/week-5/week-5-dates.html#wednesday-febrary-5",
     "title": "Using lubridate to Work with Dates",
-    "section": "",
-    "text": "Today we will…\n\nLab 4 Tips\nMidterm Exam - What to expect\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
+    "section": "Wednesday, Febrary 5",
+    "text": "Wednesday, Febrary 5\nToday we will…\n\nLab 4 Tips\nMidterm Exam - What to expect\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#midterm-exam---wed-212",
@@ -3406,7 +3406,7 @@
     "href": "slides/week-5/week-5-dates.html#lubridate",
     "title": "Using lubridate to Work with Dates",
     "section": "lubridate",
-    "text": "lubridate\n\n\n\nConvert a date-like variable (“May 8, 1995”) to a date or date-time object.\nFind the weekday, month, year, etc from a date-time object.\nConvert between time zones.\n\n\n\nknitr::include_graphics(\"https://github.com/rstudio/hex-stickers/blob/main/thumbs/lubridate.png?raw=true\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe lubridate package installs and loads with the tidyverse."
+    "text": "lubridate\n\n\n\nConvert a date-like variable (“May 8, 1995”) to a date or date-time object.\nFind the weekday, month, year, etc from a date-time object.\nConvert between time zones.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nThe lubridate package installs and loads with the tidyverse."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#why-are-dates-and-times-tricky",
@@ -3427,14 +3427,14 @@
     "href": "slides/week-5/week-5-dates.html#creating-date-time-objects",
     "title": "Using lubridate to Work with Dates",
     "section": "Creating date-time Objects",
-    "text": "Creating date-time Objects\n\n\n\n\n\n\nBig Picture\n\n\n\nThere are a lot of diferent ways to create date-time objects!\n\n\n. . .\nCreate a date from individual components:\n\nmake_date(year = 1995, month = 05, day = 08)\n\n[1] \"1995-05-08\""
+    "text": "Creating date-time Objects\n\n\n\n\n\n\nBig Picture\n\n\nThere are a lot of diferent ways to create date-time objects!\n\n\n\n\nCreate a date from individual components:\n\nmake_date(year = 1995, month = 05, day = 08)\n\n[1] \"1995-05-08\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#create-a-date-time-object-from-a-string",
     "href": "slides/week-5/week-5-dates.html#create-a-date-time-object-from-a-string",
     "title": "Using lubridate to Work with Dates",
     "section": "Create a date-time Object from a String",
-    "text": "Create a date-time Object from a String\n\n\nmdy(\"August 29, 1991\")\n\n[1] \"1991-08-29\"\n\n\n\n. . .\n\n\ndmy(\"29-August-1991\", \n    tz = \"America/Denver\")\n\n[1] \"1991-08-29 MDT\"\n\n\n\n. . .\n\n\ndmy_hms(\"29-August-1991 9:32:12\", \n        tz = \"America/Denver\")\n\n[1] \"1991-08-29 09:32:12 MDT\"\n\n\n\n. . .\n\n\nas_datetime(\"91-08-29\", \n            format = \"%y-%m-%d\")\n\n[1] \"1991-08-29 UTC\"\n\n\n\n. . .\n\n\nparse_datetime(\"8/29/1991\", \n               format = \"%m/%d/%Y\")\n\n[1] \"1991-08-29 UTC\""
+    "text": "Create a date-time Object from a String\n\n\nmdy(\"August 29, 1991\")\n\n[1] \"1991-08-29\"\n\n\n\n\n\n\ndmy(\"29-August-1991\", \n    tz = \"America/Denver\")\n\n[1] \"1991-08-29 MDT\"\n\n\n\n\n\n\n\ndmy_hms(\"29-August-1991 9:32:12\", \n        tz = \"America/Denver\")\n\n[1] \"1991-08-29 09:32:12 MDT\"\n\n\n\n\n\n\n\nas_datetime(\"91-08-29\", \n            format = \"%y-%m-%d\")\n\n[1] \"1991-08-29 UTC\"\n\n\n\n\n\n\n\nparse_datetime(\"8/29/1991\", \n               format = \"%m/%d/%Y\")\n\n[1] \"1991-08-29 UTC\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#creating-date-time-objects-1",
@@ -3448,28 +3448,28 @@
     "href": "slides/week-5/week-5-dates.html#common-mistake-with-dates",
     "title": "Using lubridate to Work with Dates",
     "section": "Common Mistake with Dates",
-    "text": "Common Mistake with Dates\n\n\n\nas_datetime(2023-02-6)\n\n[1] \"1970-01-01 00:33:35 UTC\"\n\n\n\n\n\n\nmy_date &lt;- 2023-02-6\nmy_date\n\n[1] 2015\n\n\n\n\n\n\nWhat’s wrong here?\n\n\n. . .\nMake sure you use quotes!\n\n2,015 seconds \\(\\approx\\) 33.5 minutes"
+    "text": "Common Mistake with Dates\n\n\n\nas_datetime(2023-02-6)\n\n[1] \"1970-01-01 00:33:35 UTC\"\n\n\n\n\n\n\nmy_date &lt;- 2023-02-6\nmy_date\n\n[1] 2015\n\n\n\n\n\nWhat’s wrong here?\n\n\n\nMake sure you use quotes!\n\n2,015 seconds \\(\\approx\\) 33.5 minutes"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#extracting-date-time-components",
     "href": "slides/week-5/week-5-dates.html#extracting-date-time-components",
     "title": "Using lubridate to Work with Dates",
     "section": "Extracting date-time Components",
-    "text": "Extracting date-time Components\n\nbday &lt;- ymd_hms(\"1995-02-27 07:03:12\", \n                tz = \"America/Chicago\")\nbday\n\n[1] \"1995-02-27 07:03:12 CST\"\n\n\n. . .\n\n\n\n\n\nyear(bday)\n\n[1] 1995\n\nmonth(bday)\n\n[1] 2\n\nday(bday)\n\n[1] 27\n\n\n\n\n\n\n\nwday(bday)\n\n[1] 2\n\nwday(bday, \n     label = TRUE, \n     abbr = FALSE)\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+    "text": "Extracting date-time Components\n\nbday &lt;- ymd_hms(\"1995-02-27 07:03:12\", \n                tz = \"America/Chicago\")\nbday\n\n[1] \"1995-02-27 07:03:12 CST\"\n\n\n\n\n\n\n\n\nyear(bday)\n\n[1] 1995\n\nmonth(bday)\n\n[1] 2\n\nday(bday)\n\n[1] 27\n\n\n\n\n\n\n\nwday(bday)\n\n[1] 2\n\nwday(bday, \n     label = TRUE, \n     abbr = FALSE)\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#subtraction-with-date-time-objects",
     "href": "slides/week-5/week-5-dates.html#subtraction-with-date-time-objects",
     "title": "Using lubridate to Work with Dates",
     "section": "Subtraction with date-time Objects",
-    "text": "Subtraction with date-time Objects\nDoing subtraction gives you a difftime object.\ndifftime objects do not always have the same units – it depends on the scale of the objects you are working with.\n. . .\nHow old am I?\n\ntoday() - mdy(\"02-27-1995\")\n\nTime difference of 11012 days\n\n\n. . .\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
+    "text": "Subtraction with date-time Objects\nDoing subtraction gives you a difftime object.\ndifftime objects do not always have the same units – it depends on the scale of the objects you are working with.\n\nHow old am I?\n\ntoday() - mdy(\"02-27-1995\")\n\nTime difference of 11013 days\n\n\n\n\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods",
     "href": "slides/week-5/week-5-dates.html#durations-and-periods",
     "title": "Using lubridate to Work with Dates",
     "section": "Durations and Periods",
-    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(\"02-27-1995\")\n            )\n\n[1] \"951436800s (~30.15 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(\"02-27-1995\")\n  )\n\n[1] \"11012d 0H 0M 0S\""
+    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(\"02-27-1995\")\n            )\n\n[1] \"951523200s (~30.15 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(\"02-27-1995\")\n  )\n\n[1] \"11013d 0H 0M 0S\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#durations-and-periods-1",
@@ -3483,21 +3483,21 @@
     "href": "slides/week-5/week-5-dates.html#time-zones",
     "title": "Using lubridate to Work with Dates",
     "section": "Time Zones…",
-    "text": "Time Zones…\n…are complicated!\n\nSpecify time zones in the form:\n\n{continent}/{city} – “America/Denver”, “Africa/Nairobi”\n{ocean}/{city} – “Pacific/Auckland”\n\n. . .\nWhat time zone does R think I’m in?\n\nSys.timezone()\n\n[1] \"America/Los_Angeles\""
+    "text": "Time Zones…\n…are complicated!\n\nSpecify time zones in the form:\n\n{continent}/{city} – “America/Denver”, “Africa/Nairobi”\n{ocean}/{city} – “Pacific/Auckland”\n\n\nWhat time zone does R think I’m in?\n\nSys.timezone()\n\n[1] \"America/Los_Angeles\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#time-zones-1",
     "href": "slides/week-5/week-5-dates.html#time-zones-1",
     "title": "Using lubridate to Work with Dates",
     "section": "Time Zones",
-    "text": "Time Zones\nYou can change the time zone of a date in two ways:\n\nx &lt;- ymd_hms(\"2024-10-24 18:00:00\", \n             tz = \"Europe/Copenhagen\")\n\n. . .\n\n\nwith_tz()\n\nKeeps the instant in time the same, but changes the visual representation.\n\nx |&gt; \n  with_tz()\n\n[1] \"2024-10-24 09:00:00 PDT\"\n\nx |&gt; \n  with_tz(tzone = \"Asia/Kolkata\")\n\n[1] \"2024-10-24 21:30:00 IST\"\n\n\n\n\n\n\n\nforce_tz()\n\nChanges the instant in time by forcing a time zone change.\n\nx |&gt; \n  force_tz()\n\n[1] \"2024-10-24 18:00:00 PDT\"\n\nx |&gt; \n  force_tz(tzone = \"Asia/Kolkata\")\n\n[1] \"2024-10-24 18:00:00 IST\""
+    "text": "Time Zones\nYou can change the time zone of a date in two ways:\n\nx &lt;- ymd_hms(\"2024-10-24 18:00:00\", \n             tz = \"Europe/Copenhagen\")\n\n\n\n\nwith_tz()\n\nKeeps the instant in time the same, but changes the visual representation.\n\nx |&gt; \n  with_tz()\n\n[1] \"2024-10-24 09:00:00 PDT\"\n\nx |&gt; \n  with_tz(tzone = \"Asia/Kolkata\")\n\n[1] \"2024-10-24 21:30:00 IST\"\n\n\n\n\n\n\n\nforce_tz()\n\nChanges the instant in time by forcing a time zone change.\n\nx |&gt; \n  force_tz()\n\n[1] \"2024-10-24 18:00:00 PDT\"\n\nx |&gt; \n  force_tz(tzone = \"Asia/Kolkata\")\n\n[1] \"2024-10-24 18:00:00 IST\""
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#common-mistake-with-dates-1",
     "href": "slides/week-5/week-5-dates.html#common-mistake-with-dates-1",
     "title": "Using lubridate to Work with Dates",
     "section": "Common Mistake with Dates",
-    "text": "Common Mistake with Dates\nWhen you read data in or create a new date-time object, the default time zone (if not specified) is UTC (Universal Time Coordinated)*.\n. . .\nSo, make sure you specify your desired time zone!\n\nx &lt;- mdy(\"11/20/1993\")\ntz(x)\n\n[1] \"UTC\"\n\n\n\nx &lt;- mdy(\"11/20/1993\", \n         tz = \"America/Los_Angeles\")\ntz(x)\n\n[1] \"America/Los_Angeles\"\n\n\n\n*UTC is the same as GMT (Greenwich Mean Time)"
+    "text": "Common Mistake with Dates\nWhen you read data in or create a new date-time object, the default time zone (if not specified) is UTC (Universal Time Coordinated)*.\n\nSo, make sure you specify your desired time zone!\n\nx &lt;- mdy(\"11/20/1993\")\ntz(x)\n\n[1] \"UTC\"\n\n\n\nx &lt;- mdy(\"11/20/1993\", \n         tz = \"America/Los_Angeles\")\ntz(x)\n\n[1] \"America/Los_Angeles\"\n\n\n\n*UTC is the same as GMT (Greenwich Mean Time)"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#tips-for-working-with-dates",
@@ -3525,7 +3525,7 @@
     "href": "slides/week-5/week-5-dates.html#to-do",
     "title": "Using lubridate to Work with Dates",
     "section": "To do…",
-    "text": "To do…\n\nPA 5.2: Jewel Heist\n\ndue Friday (2/7) at 10:00am\n\nLab 5: Murder in SQL City\n\ndue Saturday (2/8) at 11:59pm\n\nRead Chapter 6: Version Control\n\nCheck-in 6.1 - 6.2 due Monday (2/10) at 10:00am\n\nProject Checkpoint 1: Group Formation Survey\n\ndue Monday (2/10) at 11:59pm"
+    "text": "To do…\n\nPA 5.2: Jewel Heist\n\ndue Friday (5/2) at 11:59pm\n\nLab 5: Murder in SQL City\n\ndue Monday (5/5) at 11:59pm\n\nRead Chapter 6: Version Control\n\nCheck-in 6.1 - 6.2 due Tuesday (5/6) before class\n\nProject Checkpoint 1: Group Formation Survey\n\ndue Tuesday (5/6) at 11:59pm"
   },
   {
     "objectID": "slides/week-5/week-5-dates.html#midterm-exam---thu-58",
@@ -3539,7 +3539,7 @@
     "href": "slides/week-5/week-5-dates.html#midterm-exam---thu-58-1",
     "title": "Using lubridate to Work with Dates",
     "section": "Midterm Exam - Thu 5/8",
-    "text": "Midterm Exam - Thu 5/8\n\n\nReview the “What to Expect” document thoroughly as it includes\n\ndetailed expectations\nthe dataset you will be working with\n\nSet yourself up with a dedicated directory that has the data in it\nMake sure to bring to the exam:\n\nsomething to write with (black/blue pen or pencils)\nyour laptop (& a charging chord)\n\n\n\n. . .\n\n\n\n\n\n\nCaution\n\n\n\nWhile the coding tasks are open-resource, you will likely run out of time if you have to look everything up. Know what functions you might need and where to find documentation for implementing these functions."
+    "text": "Midterm Exam - Thu 5/8\n\n\nReview the “What to Expect” document thoroughly as it includes\n\ndetailed expectations\nthe dataset you will be working with\n\nSet yourself up with a dedicated directory that has the data in it\nMake sure to bring to the exam:\n\nsomething to write with (black/blue pen or pencils)\nyour laptop (& a charging chord)\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\nWhile the coding tasks are open-resource, you will likely run out of time if you have to look everything up. Know what functions you might need and where to find documentation for implementing these functions."
   },
   {
     "objectID": "slides/week-5/week-5-dates.html",

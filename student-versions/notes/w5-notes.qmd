@@ -1,0 +1,488 @@
+---
+title: "Week 5 Starter Notes"
+format: 
+  html:  
+    embed-resources: true
+    code-tools: true
+    toc: true
+editor: source
+execute: 
+  echo: true
+  warning: false
+  message: false
+  error: true
+---
+
+```{r setup}
+library(tidyverse)
+library(liver)
+library(knitr)
+
+data(cereal)
+```
+
+
+## `stringr` Functions
+
+```{r}
+my_vector <- c("Hello,",
+               "my name is",
+               "Bond",
+               "James Bond")
+```
+
+- `str_detect()`
+
+```{r}
+str_detect(my_vector, pattern = "Bond")
+```
+
+- `str_match()`
+
+```{r}
+str_match(my_vector, pattern = "Bond")
+```
+
+
+- `str_extract`
+
+```{r}
+str_extract(my_vector, pattern = "Bond")
+```
+
+```{r}
+alt_vector <- c("Hello,", 
+               "my name is", 
+               "Bond, James Bond")
+               
+str_extract(alt_vector, 
+            pattern = "Bond")
+
+
+str_extract_all(alt_vector, 
+                pattern = "Bond")
+```
+
+- `str_locate`
+
+```{r}
+str_locate(my_vector, pattern = "Bond")
+```
+
+- `str_subset`
+
+```{r}
+str_subset(my_vector, pattern = "Bond")
+```
+
+
+### Try it out!
+
+::: callout-note
+For each of these functions, write down:
+
++ the **object structure** of the output.
++ the **data type** of the output.
++ a brief explanation of what they do.
+::::
+
+```{r}
+my_vector <- c("I scream,",
+               "you scream",
+               "we all",
+               "scream",
+               "for",
+               "ice cream")
+
+str_detect(my_vector, pattern = "cream")
+str_locate(my_vector, pattern = "cream")
+str_match(my_vector, pattern = "cream")
+str_extract(my_vector, pattern = "cream")
+str_subset(my_vector, pattern = "cream")
+```
+
+- Replace / Remove Patterns
+
+```{r}
+str_replace(my_vector, 
+            pattern = "Bond", 
+            replace = "Franco")
+```
+
+
+```{r}
+str_remove(my_vector, 
+           pattern = "Bond")
+```
+
+- Edit string cases
+
+```{r}
+str_to_lower(my_vector)
+
+str_to_upper(my_vector)
+
+str_to_title(my_vector)
+```
+
+- Combining Strings
+
+```{r}
+prompt <- "Hello, my name is"
+first  <- "James"
+last   <- "Bond"
+str_c(prompt, last, ",", first, last, sep = " ")
+```
+
+
+```{r}
+str_flatten(my_vector, collapse = " ")
+```
+
+
+```{r}
+first <- "James"
+last <- "Bond"
+str_glue("My name is {last}, {first} {last}")
+```
+
+- Creating new variables
+
+```{r}
+cereal |>
+  mutate(is_bran = str_detect(name, "Bran"),
+         .after = name) |> 
+  slice_head(n = 5) |> 
+  kable()
+```
+
+
+## Regular Expressions
+
+- wild card `.`
+
+```{r}
+x <- c("She", 
+       "sells", 
+       "seashells", 
+       "by", 
+       "the", 
+       "seashore!")
+
+str_subset(x, pattern = ".ells")
+
+str_extract(x, pattern = ".ells")
+```
+
+- anchors 
+
+```{r}
+str_subset(x, pattern = "^s")
+
+str_subset(x, pattern = "s$")
+```
+
+- repeated characters
+
+```{r}
+x <- c("shes", 
+       "shels", 
+       "shells", 
+       "shellls", 
+       "shelllls")
+
+str_subset(x, pattern = "shel?s")
+str_subset(x, pattern = "shel+s")
+str_subset(x, pattern = "shel*s")
+
+
+str_subset(x, pattern = "shel{2}s")
+str_subset(x, pattern = "shel{2,}s")
+str_subset(x, pattern = "shel{1,3}s")
+```
+
+- character groups `()`
+
+```{r}
+x <- c("Peter", 
+       "Piper", 
+       "picked", 
+       "a", 
+       "peck",
+       "of", 
+       "pickled",
+       "peppers!")
+
+str_subset(x, pattern = "p(e|i)ck")
+```
+
+```{r}
+x <- c("hannah", 
+       "had", 
+       "a", 
+       "ball", 
+       "on",
+       "a", 
+       "race car")
+
+str_subset(x, pattern = "^(.).*\\1$")
+```
+
+```{r}
+shopping_list <- c("apples x4", 
+                   "bag of flour", 
+                   "bag of sugar", 
+                   "milk x2")
+
+str_extract(shopping_list, "([a-z]+) x([1-9])")
+
+str_extract(shopping_list, "([a-z]+) x([1-9])", group = 1)
+
+str_extract(shopping_list, "([a-z]+) x([1-9])", group = 2)
+```
+
+- character classes `[]`
+- anti-match `[^]`
+
+```{r}
+x <- c("Peter", 
+       "Piper", 
+       "picked", 
+       "a",
+       "peck",
+       "of",
+       "pickled",
+       "peppers!")
+
+str_subset(x, pattern = "p[ei]ck")
+
+str_subset(x, pattern = "p[^i]ck")
+
+str_subset(x, pattern = "^p")
+
+str_subset(x, pattern = "^[^p]")
+
+str_subset(x, pattern = "p[ei]ck[a-z]")
+```
+
+- shortcuts 
+
+```{r}
+x <- "phone number: 1234567899"
+
+str_extract(x, pattern = "\\d+")
+str_extract_all(x, pattern = "\\S+")
+```
+
+### Try it out!
+
+```{r}
+x <- c("zebra", 
+       "xray", 
+       "apple", 
+       "yellow",
+       "color", 
+       "patt3rn",
+       "g2g",
+       "summarise")
+```
+
+What regular expressions would match words that...
++ end with a vowel?
++ start with x, y, or z?
++ contains at least one digit?
++ contains two of the same letters in a row?
+
+```{r}
+# code
+```
+
+- escape characters `\\`
+
+```{r}
+x <- c("How",
+       "much", 
+       "wood",
+       "could",
+       "a",
+       "woodchuck",
+       "chuck",
+       "if",
+       "a",
+       "woodchuck",
+       "could",
+       "chuck",
+       "wood?")
+
+str_subset(x, pattern = "?")
+
+str_subset(x, pattern = "\\?")
+
+str_subset(x, pattern = "[?]")
+```
+
+- testing regular expressions
+
+```{r}
+str_view(c("shes", "shels", "shells", "shellls", "shelllls"), "l+")
+```
+
+### More practice 1
+
+```{r}
+county_pop <- data.frame(county = c("STORY", "BOONE", "MARSHALL", "POLK"),
+                         pop = c(100000, 40000, 120000, 500000))
+
+county_loc <- data.frame(county = c("Story", "Boone", "Marshall", "Polk"),
+                         region = c("Central", "Central", "East", "Central"))
+```
+
+Join the `county_pop` and `county_loc` by `county`
+
+```{r}
+# code
+```
+
+### More practice 2
+
+```{r}
+phone_numbers <- c("(515)242-1958", "(507)598-1395", "(805)938-7639")
+```
+
+Pull out only the area code in a phone number.
+
+```{r}
+# code
+```
+
+
+### More practice 3
+
+```{r}
+awards_dat <- data.frame(awards = c("Beyonce: 35G,  0A, 0E",
+                                    "Kendrick Lamar: 22G, 0A, 1E",
+                                    "Charli XCX: 2G, 0A, 0E",
+                                    "Cynthia Erivo: 1G, 0A, 1E",
+                                    "Viola Davis: 1G, 1A, 1E",
+                                    "Elton John: 6G, 2A, 1E"))
+```
+
+Create a variable with just the artist name and a variable with the number of Grammys won.
+
+```{r}
+# code
+```
+
+## Dates 
+
+### Creating Dates
+
+```{r}
+make_date(year = 1995, month = 05, day = 08)
+```
+
+```{r}
+mdy("August 29, 1991")
+
+dmy("29-August-1991", 
+    tz = "America/Denver")
+
+dmy_hms("29-August-1991 9:32:12", 
+        tz = "America/Denver")
+
+as_datetime("91-08-29", 
+            format = "%y-%m-%d")
+
+parse_datetime("8/29/1991", 
+               format = "%m/%d/%Y")
+```
+
+```{r}
+as_datetime(2023-02-06)
+```
+
+
+### Extracting Info From Date/Time Objects
+
+```{r}
+bday <- mdy("ADD YOUR BIRTHDAY")
+bday
+```
+
+```{r}
+year(bday)
+month(bday)
+day(bday)
+
+wday(bday)
+wday(bday, 
+     label = TRUE, 
+     abbr = FALSE)
+```
+### Periods + Durations
+
+```{r}
+as.duration(today() - bday)
+```
+
+```{r}
+as.period(today() - bday)
+```
+
+```{r}
+bday + years(99)
+```
+
+```{r}
+bday + dyears(99)
+```
+
+### Time Zones
+
+```{r}
+Sys.timezone()
+```
+
+```{r}
+x <- ymd_hms("2024-10-24 18:00:00", 
+             tz = "Europe/Copenhagen")
+```
+
+
+```{r}
+x |> 
+  with_tz()
+```
+
+
+```{r}
+x |> 
+  with_tz(tzone = "Asia/Kolkata")
+```
+
+```{r}
+x |> 
+  force_tz()
+```
+
+
+```{r}
+x |> 
+  force_tz(tzone = "Asia/Kolkata")
+```
+
+`with_tz()` and `force_tz()` automatically use what timezone?
+
+BUT when you read data in or create a new date-time object, the default time zone (if not specified) is UTC (Universal Time Coordinated).
+
+```{r}
+x <- mdy("11/20/1993")
+tz(x)
+```
+
+```{r}
+x <- mdy("11/20/1993", 
+         tz = "America/Los_Angeles")
+tz(x)
+```
+
