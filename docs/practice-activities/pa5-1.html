@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Setup Up Murder Data for Lab 5 – Introduction to Statistical Computing in R</title>
+<title>PA 5.1: Scrambled Message – Introduction to Statistical Computing in R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -57,23 +57,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </style>
 
 
-<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
-<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
-<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="../../../">
-<script src="../../../site_libs/quarto-html/quarto.js"></script>
-<script src="../../../site_libs/quarto-html/popper.min.js"></script>
-<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
-<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../../site_libs/bootstrap/bootstrap-43b9c4459d8eb8b985b4dac2a7dcdf36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../../site_libs/bootstrap/bootstrap-dark-f65e35411853cb03cb95e2a63a013de7.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark-8ea72dc5fed832574809a9c94082fbbb.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-43b9c4459d8eb8b985b4dac2a7dcdf36.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark-f65e35411853cb03cb95e2a63a013de7.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -131,7 +131,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
     <div class="pt-lg-2 mt-2 text-center sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="../../../">Introduction to Statistical Computing in R</a> 
+      <a href="../">Introduction to Statistical Computing in R</a> 
         <div class="sidebar-tools-main tools-wide">
     <a href="https://github.com/manncz/stat-331-s25" title="GitHub organization" class="quarto-navigation-tool px-1" aria-label="GitHub organization"><i class="bi bi-github"></i></a>
     <a href="https://canvas.calpoly.edu" title="Cal Poly Canvas" class="quarto-navigation-tool px-1" aria-label="Cal Poly Canvas"><i class="bi bi-person-fill"></i></a>
@@ -157,19 +157,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course-info/syllabus-w25.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-info/syllabus-w25.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Syllabus</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../index.html" class="sidebar-item-text sidebar-link">
+  <a href="../index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Schedule</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../../course-info/course-resources.html" class="sidebar-item-text sidebar-link">
+  <a href="../course-info/course-resources.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">R Resources</span></a>
   </div>
 </li>
@@ -180,15 +180,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#pick-your-poison" id="toc-pick-your-poison" class="nav-link active" data-scroll-target="#pick-your-poison">Pick your poison!</a></li>
+  <li><a href="#warm-up-exercises" id="toc-warm-up-exercises" class="nav-link" data-scroll-target="#warm-up-exercises">Warm-up exercises</a></li>
+  <li><a href="#decode-the-message" id="toc-decode-the-message" class="nav-link" data-scroll-target="#decode-the-message">Decode the Message</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/manncz/stat-331-s25/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Setup Up Murder Data for Lab 5</h1>
+<h1 class="title">PA 5.1: Scrambled Message</h1>
+<p class="subtitle lead"><code>stringr</code> + Regular Expressions</p>
 </div>
 
 
@@ -205,125 +214,99 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p><a href="../student-versions/pas/pa5-1.qmd">Download starter qmd file</a></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.2     ✔ tibble    3.2.1
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.0.4     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
 </div>
-</div>
+<section id="pick-your-poison" class="level2">
+<h2 class="anchored" data-anchor-id="pick-your-poison">Pick your poison!</h2>
+<p>You may choose to work through Q1 - Q6 using a data.frame <code>message_data</code> and follow the <code>dplyr</code> pipeline syntax…</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># clear global environment</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(<span class="at">list =</span> <span class="fu">ls</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>message_data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"https://github.com/earobinson95/stat331-calpoly/raw/master/practice-activities/data/scrambled_message.txt"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(message_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "spec_tbl_df" "tbl_df"      "tbl"         "data.frame" </code></pre>
 </div>
+</div>
+<p>…or you might prefer to work with the character vector <code>message</code> and use indexing – e.g.&nbsp;<code>message[1]</code> gives you the first element.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>table_names <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"crime_scene_report"</span>,<span class="st">"drivers_license"</span>,</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"facebook_event_checkin"</span>,</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"get_fit_now_check_in"</span>,<span class="st">"get_fit_now_member"</span>,</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                 <span class="st">"income"</span>, <span class="st">"interview"</span>,<span class="st">"person"</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># For each name, read in the table and store it as the name.</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>purrr<span class="sc">::</span><span class="fu">walk</span>(table_names, <span class="cf">function</span>(x) {</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">assign</span>(x, readr<span class="sc">::</span><span class="fu">read_csv</span>(<span class="fu">paste0</span>(<span class="st">"../bCH_murder_data/"</span>, x, <span class="st">".csv"</span>)), <span class="at">envir =</span> .GlobalEnv)</span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Rows: 1228 Columns: 4
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (3): type, description, city
-dbl (1): date
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 10007 Columns: 9
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (6): eye_color, hair_color, gender, plate_number, car_make, car_model
-dbl (3): id, age, height
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 20011 Columns: 4
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): event_name
-dbl (3): person_id, event_id, date
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 2703 Columns: 4
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): membership_id
-dbl (3): check_in_date, check_in_time, check_out_time
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 184 Columns: 5
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (3): id, name, membership_status
-dbl (2): person_id, membership_start_date
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 7514 Columns: 2
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-dbl (2): ssn, annual_income
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 4991 Columns: 2
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (1): transcript
-dbl (1): person_id
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
-Rows: 10011 Columns: 6
-── Column specification ────────────────────────────────────────────────────────
-Delimiter: ","
-chr (2): name, address_street_name
-dbl (4): id, license_id, address_number, ssn
-
-ℹ Use `spec()` to retrieve the full column specification for this data.
-ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>message <span class="ot">&lt;-</span> message_data <span class="sc">|&gt;</span> </span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pull</span>(Word)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(message)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "character"</code></pre>
 </div>
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># remove vector from global environment</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">rm</span>(table_names)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
 </div>
-<p>To add some extra practice with regular expressions, I am going to edit the <code>person</code> data.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>person <span class="ot">&lt;-</span> person <span class="sc">|&gt;</span> </span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">address =</span> <span class="fu">str_c</span>(address_number, </span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>                         address_street_name,</span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>                         <span class="at">sep =</span> <span class="st">" "</span>),</span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>         <span class="at">.before =</span> address_number) <span class="sc">|&gt;</span> </span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>address_number,</span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>         <span class="sc">-</span>address_street_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout-title-container flex-fill">
+Tip
 </div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># save all data frames in global environment to an .Rdata file</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># when loaded, will open up all data frames</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">save.image</span>(<span class="at">file =</span> <span class="st">"bCH_murder_data.Rdata"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="callout-body-container callout-body">
+<p>In this activity, a “word” is a set of characters with no white space. That is, even though many of elements of the scrambled mess vector are nonsense, and some have punctuation, you can consider each element to be a “word”.</p>
+</div>
+</div>
+</section>
+<section id="warm-up-exercises" class="level2">
+<h2 class="anchored" data-anchor-id="warm-up-exercises">Warm-up exercises</h2>
+<ol type="1">
+<li><p>How many characters are in the scrambled message?</p></li>
+<li><p>How many words are in the scrambled message?</p></li>
+<li><p>Print out every word in the scrambled message that <em>starts</em> with the letter “m”.</p></li>
+<li><p>Print out every word in the scrambled message that <em>ends</em> with a punctuation mark.</p></li>
+<li><p>Print out the longest word in the scrambled message.</p></li>
+<li><p>Print out the punctuation symbols that are present in the scrambled message. (This one is the trickiest! You will need to use a number of steps and <code>stringr</code> functions.)</p></li>
+</ol>
+</section>
+<section id="decode-the-message" class="level2">
+<h2 class="anchored" data-anchor-id="decode-the-message">Decode the Message</h2>
+<div class="callout callout-style-default callout-caution callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Caution
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You likely want to work with the <code>message</code> character vector for decoding. You should still use piping to chain the steps together!</p>
+</div>
+</div>
+<p>Complete the following steps to decode the message.</p>
+<ol type="1">
+<li><p>Remove any spaces before or after each word.</p></li>
+<li><p>No word should be longer than 16 characters. Drop all extra characters off the end of each word.</p></li>
+<li><p>Every time you see the word “ugh”, with any number of h’s, followed by a punctuation mark, delete this.</p></li>
+<li><p>Replace <strong>all</strong> instances of exactly 2 a’s with exactly 2 e’s.</p></li>
+<li><p>Replace <strong>all</strong> z’s with t’s.</p></li>
+<li><p>Every word that ends in b, change that to a y.</p></li>
+<li><p>Every word that starts with k (or K), change that to a v.</p></li>
+<li><p>Recombine all your words into a message with a stringr function.</p></li>
+<li><p>Find the movie this quote is from.</p></li>
+</ol>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Canvas Quiz Submission
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What is the name of the movie the quote is from?</p>
+</div>
 </div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -895,7 +878,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/manncz/stat-331-s25/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/manncz/stat-331-s25/issues/new" class="toc-action"><i class="bi bi-github"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>This page is built with ❤️️ and <a href="https://quarto.org/">Quarto</a>.</p>
 </div>
