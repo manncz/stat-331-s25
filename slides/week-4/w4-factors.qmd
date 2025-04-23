@@ -23,6 +23,7 @@ load("data/imdb_data.Rdata")
 Today we will...
 
 -   Notes on Lab 3
+-   Project Info
 -   New Material
     -   Extensions to Data Joins
     -   Factors with `forcats`
@@ -79,6 +80,20 @@ teacher_evals_clean |>
 - If you find yourself using `mutate()` and then `distinct()`, you should probably be using `summarize()`
 
 -->
+
+## Project 
+
+:::{.incremental}
+
+- Detailed information about the project is posted on Canvas
+- You will complete the project in groups of 4
+- The project is scaffolded into 5 "Checkpoints"
+  - The bulk of the work will be in Weeks 8-10
+- **First Checkpoint due 6th Tuesday (5/6) at 11:59pm**
+  + Fill out a survey to form groups 
+  + You can specify if there are people you want to work with or have me place you in a group
+
+:::
 
 # Extensions to Relational Data
 
