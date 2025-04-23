@@ -809,7 +809,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDay\nTopic / Reading\nSlides\nStarter Notes\nPractice Activity\nLab\n\n\n\n\n1\nTue, 4/1\n1: Introduction\nSyllabus & Intro to R\nWeek 1\nPA 1\n\n\n\n\nThu, 4/3\n\nIntro to Quarto\n\n\nLab 1\n\n\n2\nTue, 4/8\n2: Basics of Graphics\nImporting Data + Graphics with ggplot2\nWeek 2\nPA 2\n\n\n\n\nThu, 4/10\n\nMore Graphics!\n\n\nLab 2\n\n\n3\nTue, 4/15\n3: Data Cleaning + Manipulation\nData Cleaning with dplyr\nWeek 3\nPA 3\n\n\n\n\nThu, 4/17\nData Feminism: The Numbers Don’t Speak for Themselves\nExtending dplyr + Data Ethics\n\n\nLab 3\n\n\n4\nTue, 4/22\n4: Data Joins + Transformations\nData Joins + Pivots\n\nPA 4\n\n\n\n\nThu, 4/24\n\nFactor Variables\n\n\nLab 4\n\n\n5\nTue, 4/29\n5: Special Data Types\nStrings\n\n\n\n\n\n\nThu, 5/1\n\nDates + TBD\n\n\n\n\n\n6\nTue, 5/6\n6: Version Control\nVersion Control\n\n\n\n\n\n\nThu, 5/8\n\nMidterm Exam",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDay\nTopic / Reading\nSlides\nStarter Notes\nPractice Activity\nLab\n\n\n\n\n1\nTue, 4/1\n1: Introduction\nSyllabus & Intro to R\nWeek 1\nPA 1\n\n\n\n\nThu, 4/3\n\nIntro to Quarto\n\n\nLab 1\n\n\n2\nTue, 4/8\n2: Basics of Graphics\nImporting Data + Graphics with ggplot2\nWeek 2\nPA 2\n\n\n\n\nThu, 4/10\n\nMore Graphics!\n\n\nLab 2\n\n\n3\nTue, 4/15\n3: Data Cleaning + Manipulation\nData Cleaning with dplyr\nWeek 3\nPA 3\n\n\n\n\nThu, 4/17\nData Feminism: The Numbers Don’t Speak for Themselves\nExtending dplyr + Data Ethics\n\n\nLab 3\n\n\n4\nTue, 4/22\n4: Data Joins + Transformations\nData Joins + Pivots\nWeek 4\nPA 4\n\n\n\n\nThu, 4/24\n\nFactor Variables\n\n\nLab 4\n\n\n5\nTue, 4/29\n5: Special Data Types\nStrings\n\nPA 5.1\n\n\n\n\nThu, 5/1\n\nDates\n\nPA 5.2\nLab 5\n\n\n6\nTue, 5/6\n6: Version Control\nVersion Control\n\nPA 6\n\n\n\n\nThu, 5/8\n\nMidterm Exam\n\n\n\n\n\n7\nTue, 5/13\n7: Writing Functions\nFunctions\n\nPA 7\n\n\n\n\nThu, 5/15\n\nMore Functions\n\n\nLab 7\n\n\n8\nTue, 5/20\n8: Iteration and Simulation\nIteration\n\nPA 8.1\n\n\n\n\nThu, 5/22\n\nSimulation + Tables\n\nPA 8.2\nLab 8\n\n\n9\nTue, 5/27\n\nNO CLASS\n\n\n\n\n\n\nThu, 5/29\n9: Linear Regression\nLinear Regression\n\nPA 9\nLab 9\n\n\n10\nTue, 6/3\nTBD\nSimulation Extensions\n\nPA 10\n\n\n\n\nThu, 6/5\n\nWrap-Up",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -2291,315 +2291,315 @@
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#tuesday-april-22",
     "href": "slides/week-4/w4-joins-pivots.html#tuesday-april-22",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Tuesday, April 22",
-    "text": "Tuesday, April 22\nToday we will…\n\nComments from Week 3\nNew Material\n\nJoining data with dplyr\nPivoting data with tidyr\n\nPA 4: Military Spending"
+    "text": "Tuesday, April 22\nToday we will…\n\nBig Picture\nNew Material\n\nJoining data with dplyr\nPivoting data with tidyr\n\nPA 4: Military Spending\n\n\n\n\n\n\n\nFollow along\n\n\nRemember to download, save, and open up the starter notes for this week! This week you need to download and save some data as well."
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#comments-from-week-3",
     "href": "slides/week-4/w4-joins-pivots.html#comments-from-week-3",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Comments from Week 3",
-    "text": "Comments from Week 3\n\nWork on the lab early!\n\nMake sure images are rendering - ask for help in class or office hours on this!\nGet an idea of how long it may take and what any big challenges are\n\nBe thoughtful about use of color in plots\nAvoid long lines of code - introduce line breaks"
+    "text": "Comments from Week 3\n\nVery nice work overall!!\nWork on the lab early!\n\nGet an idea of how long it may take and what any big challenges are\n\nBe thoughtful about use of color in plots\nOnly save variables / intermediate objects when needed\nAvoid long lines of code"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#data-science-process",
     "href": "slides/week-4/w4-joins-pivots.html#data-science-process",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Data Science Process",
     "text": "Data Science Process\n\nAdapted from r4ds"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#we-have-covered",
     "href": "slides/week-4/w4-joins-pivots.html#we-have-covered",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "We have covered…",
     "text": "We have covered…"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#today",
     "href": "slides/week-4/w4-joins-pivots.html#today",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Today",
     "text": "Today"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#getting-data",
     "href": "slides/week-4/w4-joins-pivots.html#getting-data",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Getting Data",
     "text": "Getting Data\n\nSo far, we have simply needed to import one nice rectangular data set in a typical file type\nReal life often gets a bit more complicated!!"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#motivating-real-example1",
     "href": "slides/week-4/w4-joins-pivots.html#motivating-real-example1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Motivating (Real) Example1",
     "text": "Motivating (Real) Example1\n\n\nTexas Education Data (AEIS): K-12 student performance data provided by the Texas Education Agency\nProvides A LOT of information … in many separate files:\n\nby year\nfor State, Regions, Districts, or Schools\nfor different sets of variables\n\n\n\n\n🧐 need to get this #%$ together before we can analyze it\n\nI worked with this data for a project. See the paper and Github repo if you are interested!"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#relational-data",
     "href": "slides/week-4/w4-joins-pivots.html#relational-data",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Relational Data",
     "text": "Relational Data\n\n\nMultiple, interconnected tables of data are called relational.\nIndividual datsets may not provide exactly what we need - but we can use the relation between datasets to get the information we want.\n\n\n\n\n\n\nIMDb movie relational data"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#example---imdb-movie-data",
     "href": "slides/week-4/w4-joins-pivots.html#example---imdb-movie-data",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Example - IMDb Movie Data",
     "text": "Example - IMDb Movie Data\n\n\n\n\n\n\nDiscussion\n\n\nWhat if we want to know which actor has worked with the most directors in the dataset?\nWhat analytical dataset would we need to answer this question? What are the rows, and variables needed?"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#example---imdb-movie-data-1",
     "href": "slides/week-4/w4-joins-pivots.html#example---imdb-movie-data-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Example - IMDb Movie Data",
     "text": "Example - IMDb Movie Data\n\n\n\n\n\n\nDiscussion\n\n\nWhat if we want to know which actor has worked with the most directors in the dataset?\nWhat analytical dataset would we need to answer this question? What are the rows, and variables needed?\n\n\n\n\n\n💡 In order to answer our question, we need to combine some of the individual datasets into one big dataset\nJoins!"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#data-joins-1",
     "href": "slides/week-4/w4-joins-pivots.html#data-joins-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Data Joins",
     "text": "Data Joins\nWe can combine (join) data tables based on their relations.\n\n\nMutating joins\nAdd variables from a new dataframe to observations in an existing dataframe.\nfull_join(), left_join(), right_join(), inner_join()\n\nFiltering Joins\nFilter observations based on values in new dataframe.\nsemi_join(), anti_join()"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#keys",
     "href": "slides/week-4/w4-joins-pivots.html#keys",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Keys",
     "text": "Keys\nSome combination of variables (should) uniquely identify an observation in a data set.\n\nTo combine (join) two datasets, a key needs to be present in both."
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#general-structure-of-a-join",
     "href": "slides/week-4/w4-joins-pivots.html#general-structure-of-a-join",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "General Structure of a Join",
     "text": "General Structure of a Join\n\n\n\n\nChoose a left and a right dataset\nAdd or remove rows based on the type of join and the structure of the left vs. right data\nAdd columns (or not) based on the type of join and the and the structure of the left vs. right data"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#inner_join",
     "href": "slides/week-4/w4-joins-pivots.html#inner_join",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "inner_join()",
     "text": "inner_join()\nKeeps observations when their keys are present in both datasets.\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion\n\n\nWhen would you want to use inner_join()?"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#inner_join-imdb-example",
     "href": "slides/week-4/w4-joins-pivots.html#inner_join-imdb-example",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "inner_join(): IMDb Example",
     "text": "inner_join(): IMDb Example\n\n\n\ndirectors_genres\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\n\n\nmovies_directors\n\n\n\n\n\n\n\ndirector_id\nmovie_id\n\n\n\n\n429\n300229\n\n\n9247\n124110\n\n\n11652\n10920\n\n\n11652\n333856\n\n\n14927\n192017\n\n\n15092\n109093\n\n\n15092\n237431\n\n\n\n\n\n\n\n\n\nID: 429, 2931, 11652, 14927, 15092       ID: 429, 9247, 11652, 14927, 15092\n\n\n\ninner_join(directors_genres, movies_directors, \n           by = \"director_id\")\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\nmovie_id\n\n\n\n\n429\nAdventure\n0.750000\n300229\n\n\n429\nFantasy\n0.750000\n300229\n\n\n11652\nSci-Fi\n0.500000\n10920\n\n\n11652\nSci-Fi\n0.500000\n333856\n\n\n11652\nAction\n0.500000\n10920\n\n\n11652\nAction\n0.500000\n333856\n\n\n14927\nAnimation\n1.000000\n192017\n\n\n14927\nFamily\n1.000000\n192017\n\n\n15092\nComedy\n0.545455\n109093\n\n\n15092\nComedy\n0.545455\n237431\n\n\n15092\nCrime\n0.545455\n109093\n\n\n15092\nCrime\n0.545455\n237431\n\n\n\n\n\n\n\n\nID: 429, 2931, 9247, 11652, 14927, 15092"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#inner_join-imdb-example-1",
     "href": "slides/week-4/w4-joins-pivots.html#inner_join-imdb-example-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "inner_join(): IMDb Example",
     "text": "inner_join(): IMDb Example\nWhat if our key does not have the same name?\n\n\n\ndirectors_genres\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\n\n\ndirectors\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\n\n\n\n\n429\nAndrew\nAdamson\n\n\n9247\nZach\nBraff\n\n\n11652\nJames (I)\nCameron\n\n\n14927\nRon\nClements\n\n\n15092\nEthan\nCoen\n\n\n\n\n\n\n\n\n\n\ninner_join(directors_genres, \n           directors, \n           by = join_by(director_id == id))\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\ngenre\nprob\n\n\n\n\n429\nAndrew\nAdamson\nAdventure\n0.750000\n\n\n429\nAndrew\nAdamson\nFantasy\n0.750000\n\n\n11652\nJames (I)\nCameron\nSci-Fi\n0.500000\n\n\n11652\nJames (I)\nCameron\nAction\n0.500000\n\n\n14927\nRon\nClements\nAnimation\n1.000000\n\n\n14927\nRon\nClements\nFamily\n1.000000\n\n\n15092\nEthan\nCoen\nComedy\n0.545455\n\n\n15092\nEthan\nCoen\nCrime\n0.545455\n\n\n\n\n\n\n\n Join by different variables on dataX and dataY: join_by(a == b) will match dataX$a to dataY$b."
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#piping-joins",
     "href": "slides/week-4/w4-joins-pivots.html#piping-joins",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Piping Joins",
     "text": "Piping Joins\nRemember: the dataset you pipe in becomes the first argument of the function you are piping into!\n\nIf you are using a pipe,\n\nthe piped in data is the left dataset\nspecify the right dataset inside the join function.\n\n\n\n\ninner_join(directors_genres, movies_directors)\n\n…is equivalent to…\n\ndirectors_genres |&gt; \n  inner_join(movies_directors, by = \"director_id\")"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#more-mutating-joins",
     "href": "slides/week-4/w4-joins-pivots.html#more-mutating-joins",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "More Mutating Joins",
     "text": "More Mutating Joins\n\nleft_join() – keep only (and all) observations present in the left data set\nright_join() – keep only (and all) observations present in the right data set\nfull_join() – keep only (and all) observations present in both data sets"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#why-use-a-certain-mutating-join",
     "href": "slides/week-4/w4-joins-pivots.html#why-use-a-certain-mutating-join",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Why Use a Certain Mutating Join?",
     "text": "Why Use a Certain Mutating Join?\n\n\n\ninner_join()\n\nYou want all of the columns from both left and right data and only to include the observations that have information in both\n\nleft_join()\n\nThe left dataset is your “main” data and you just want to add information (columns) from the right dataset\n\nright_join()\n\nThe right data is your “main data” and you just want to add columns from the left dataset\n\nfull_join()\n\nYou want all of the columns from both left and right data for all of the observations possible"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#which-join",
     "href": "slides/week-4/w4-joins-pivots.html#which-join",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Which Join?",
     "text": "Which Join?\n\n\n\n\n\n\nDiscussion\n\n\nHow many movies are there in the data for each director (by name), including if any directors don’t have any movies in the data? Which join should I use??\n\n\n\ndirectors |&gt; \n  ??_join(movies_directors, \n          by = join_by(\"id\" == \"director_id\"))\n\n\n\n\ndirectors |&gt; \n  slice_head(n = 5)\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\n\n\n\n\n429\nAndrew\nAdamson\n\n\n2931\nDarren\nAronofsky\n\n\n9247\nZach\nBraff\n\n\n11652\nJames (I)\nCameron\n\n\n14927\nRon\nClements\n\n\n\n\n\n\n\n\n\nmovies_directors |&gt; \n  slice_head(n = 5)\n\n\n\n\n\n\n\ndirector_id\nmovie_id\n\n\n\n\n429\n300229\n\n\n2931\n254943\n\n\n9247\n124110\n\n\n11652\n10920\n\n\n11652\n333856"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#which-join-1",
     "href": "slides/week-4/w4-joins-pivots.html#which-join-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Which Join?",
     "text": "Which Join?\n\n\n\n\n\n\nDiscussion\n\n\nWhat is the complete set movies and actors included in the data? Which join should I use??\n\n\n\nroles |&gt; \n  ??_join(actors, \n          by = join_by(\"actor_id\" == \"id\"))\n\n\n\n\nroles |&gt; \n  slice_head(n = 5)\n\n\n\n\n\n\n\nactor_id\nmovie_id\nrole\n\n\n\n\n933\n333856\nLewis Bodine\n\n\n2547\n300229\nDuloc Mascot\n\n\n2700\n306032\nTyrone\n\n\n2898\n333856\nSlovakian three-year-old boy\n\n\n2925\n192017\nAdditional Voices\n\n\n\n\n\n\n\n\n\nactors |&gt; \n  slice_head(n = 5)\n\n\n\n\n\n\n\nid\nfirst_name\nlast_name\ngender\nfilm_count\n\n\n\n\n933\nLewis\nAbernathy\nM\n1\n\n\n2547\nAndrew\nAdamson\nM\n1\n\n\n2700\nWilliam\nAddy\nM\n1\n\n\n2898\nSeth (I)\nAdkins\nM\n1\n\n\n2925\nCharles (I)\nAdler\nM\n1"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#filtering-joins-semi_join",
     "href": "slides/week-4/w4-joins-pivots.html#filtering-joins-semi_join",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Filtering Joins: semi_join()",
     "text": "Filtering Joins: semi_join()\nKeeps observations when their keys are present in both datasets, but only keeps variables from the left dataset.\n\n\n\n\n\n\n→"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#imdb-data-example",
     "href": "slides/week-4/w4-joins-pivots.html#imdb-data-example",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "IMDb Data Example",
     "text": "IMDb Data Example\n\n\n\ndirectors_genres |&gt; \n  distinct(director_id)\n\n\n\n\n\n\n\ndirector_id\n\n\n\n\n429\n\n\n2931\n\n\n11652\n\n\n14927\n\n\n15092\n\n\n\n\n\n\n\n\n\nmovies_directors |&gt; \n  distinct(director_id)\n\n\n\n\n\n\n\ndirector_id\n\n\n\n\n429\n\n\n9247\n\n\n11652\n\n\n14927\n\n\n15092"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#filtering-joins-semi_join-1",
     "href": "slides/week-4/w4-joins-pivots.html#filtering-joins-semi_join-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Filtering Joins: semi_join()",
     "text": "Filtering Joins: semi_join()\n\nsemi_join()Connection to filter()\n\n\n\ndirectors_genres |&gt; \n  semi_join(movies_directors)\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455\n\n\n\n\n\n\n\nMovie Directors: 429, 2931, 11652, 14927, 15092\n\n\n\ndirectors_genres |&gt;\n  filter(director_id %in% movies_directors$director_id)\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n429\nAdventure\n0.750000\n\n\n429\nFantasy\n0.750000\n\n\n11652\nSci-Fi\n0.500000\n\n\n11652\nAction\n0.500000\n\n\n14927\nAnimation\n1.000000\n\n\n14927\nFamily\n1.000000\n\n\n15092\nComedy\n0.545455\n\n\n15092\nCrime\n0.545455"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#filtering-joins-anti_join",
     "href": "slides/week-4/w4-joins-pivots.html#filtering-joins-anti_join",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Filtering Joins: anti_join()",
     "text": "Filtering Joins: anti_join()\nRemoves observations when their keys are present in both datasets, and only keeps variables from the left dataset.\n\n\n\n\n\n\n→"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#filtering-joins-anti_join-1",
     "href": "slides/week-4/w4-joins-pivots.html#filtering-joins-anti_join-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Filtering Joins: anti_join()",
     "text": "Filtering Joins: anti_join()\n\nanti_join()Connection to filter()\n\n\n\ndirectors_genres |&gt; \n  anti_join(movies_directors)\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571\n\n\n\n\n\n\n\nMovie Directors: 429, 2931, 11652, 14927, 15092\n\n\n\ndirectors_genres |&gt;\n  filter(!director_id %in% movies_directors$director_id)\n\n\n\n\n\n\n\ndirector_id\ngenre\nprob\n\n\n\n\n2931\nDrama\n0.714286\n\n\n2931\nAction\n0.428571"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#building-an-analytical-dataset-1",
     "href": "slides/week-4/w4-joins-pivots.html#building-an-analytical-dataset-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Building an Analytical Dataset",
     "text": "Building an Analytical Dataset\nNow we have tools to:\n\nCombine multiple data sets (xx_join())\nSubset to certain observations (filter() and xx_join())\nCreate new variables (mutate())\nSelect columns of interest (select())\n\n\nWe are well on our way to building and cleaning up a nice dataset! 🥳"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#transform-and-tidy",
     "href": "slides/week-4/w4-joins-pivots.html#transform-and-tidy",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Transform and Tidy",
     "text": "Transform and Tidy\nWhat’s next?"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#transform-and-tidy-1",
     "href": "slides/week-4/w4-joins-pivots.html#transform-and-tidy-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Transform and Tidy",
     "text": "Transform and Tidy\nWhat’s next?\nWe may need to transform our data to turn it into the version of tidy that is best for a task at hand.\n\nAllison Horst"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#creating-tidy-data",
     "href": "slides/week-4/w4-joins-pivots.html#creating-tidy-data",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Creating Tidy Data",
     "text": "Creating Tidy Data\nLet’s say we want to look at mean cereal nutrients based on shelf.\n\n\nThe data are in a wide format – a separate column for each nutrient.\n\n\nlibrary(liver)\ndata(cereal)\nhead(cereal)\n\n\n\n\n\n\n\nname\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\n100% Bran\nN\ncold\n70\n4\n1\n130\n10.0\n5.0\n6\n280\n25\n3\n1\n0.33\n68.40297\n\n\n100% Natural Bran\nQ\ncold\n120\n3\n5\n15\n2.0\n8.0\n8\n135\n0\n3\n1\n1.00\n33.98368\n\n\nAll-Bran\nK\ncold\n70\n4\n1\n260\n9.0\n7.0\n5\n320\n25\n3\n1\n0.33\n59.42551\n\n\nAll-Bran with Extra Fiber\nK\ncold\n50\n4\n0\n140\n14.0\n8.0\n0\n330\n25\n3\n1\n0.50\n93.70491\n\n\nAlmond Delight\nR\ncold\n110\n2\n2\n200\n1.0\n14.0\n8\n-1\n25\n3\n1\n0.75\n34.38484\n\n\nApple Cinnamon Cheerios\nG\ncold\n110\n2\n2\n180\n1.5\n10.5\n10\n70\n25\n1\n1\n0.75\n29.50954"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#creating-tidy-data-1",
     "href": "slides/week-4/w4-joins-pivots.html#creating-tidy-data-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Creating Tidy Data",
     "text": "Creating Tidy Data\n\n\n\n\n\n\nDiscussion\n\n\nHow would we plot the mean cereal nutrients by shelf (as shown below) with the wide data using ggplot2?\n\n\n\n\n\nTransforming the data will make plotting much easier"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#creating-tidy-data-2",
     "href": "slides/week-4/w4-joins-pivots.html#creating-tidy-data-2",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Creating Tidy Data",
     "text": "Creating Tidy Data\n\nWideWide PlotLongLong Plot\n\n\n\n\nCode\ncereal_wide &lt;- cereal |&gt; \n  group_by(shelf) |&gt; \n  summarise(across(calories:vitamins, mean))\n\n\n\n\n\n\n\n\nshelf\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\n\n\n\n\n1\n102.5000\n2.650000\n0.60\n176.2500\n1.6850000\n15.80000\n4.800000\n75.50000\n20.00000\n\n\n2\n109.5238\n1.904762\n1.00\n145.7143\n0.9047619\n13.61905\n9.619048\n57.80952\n23.80952\n\n\n3\n107.7778\n2.861111\n1.25\n158.6111\n3.1388889\n14.50000\n6.527778\n129.83333\n35.41667\n\n\n\n\n\n\n\n\n\n\n\nCode\nmy_colors &lt;- c(\"calories_col\" = \"steelblue\", \"sugars_col\" = \"orange3\")\n\ncereal_wide |&gt; \n  ggplot() +\n  geom_point(aes(x = shelf, y = calories, color = \"calories_col\")) +\n  geom_line(aes(x = shelf, y = calories, color = \"calories_col\")) + \n  geom_point(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  geom_line(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  scale_color_manual(values = my_colors, labels = names(my_colors)) +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\", color = \"Nutrient\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long&lt;- cereal |&gt; \n  pivot_longer(cols = calories:vitamins,\n               names_to = \"Nutrient\",\n               values_to = \"Amount\") |&gt; \n  group_by(shelf, Nutrient) |&gt; \n  summarise(mean_amount = mean(Amount))\n\n\n\n\n\n\n\n\nshelf\nNutrient\nmean_amount\n\n\n\n\n1\ncalories\n102.5000000\n\n\n1\ncarbo\n15.8000000\n\n\n1\nfat\n0.6000000\n\n\n1\nfiber\n1.6850000\n\n\n1\npotass\n75.5000000\n\n\n1\nprotein\n2.6500000\n\n\n1\nsodium\n176.2500000\n\n\n1\nsugars\n4.8000000\n\n\n1\nvitamins\n20.0000000\n\n\n2\ncalories\n109.5238095\n\n\n2\ncarbo\n13.6190476\n\n\n2\nfat\n1.0000000\n\n\n2\nfiber\n0.9047619\n\n\n2\npotass\n57.8095238\n\n\n2\nprotein\n1.9047619\n\n\n2\nsodium\n145.7142857\n\n\n2\nsugars\n9.6190476\n\n\n2\nvitamins\n23.8095238\n\n\n3\ncalories\n107.7777778\n\n\n3\ncarbo\n14.5000000\n\n\n3\nfat\n1.2500000\n\n\n3\nfiber\n3.1388889\n\n\n3\npotass\n129.8333333\n\n\n3\nprotein\n2.8611111\n\n\n3\nsodium\n158.6111111\n\n\n3\nsugars\n6.5277778\n\n\n3\nvitamins\n35.4166667\n\n\n\n\n\n\n\n\n\n\n\nCode\ncereal_long |&gt; \n  ggplot(aes(x = shelf, \n             y = mean_amount, \n             color = Nutrient)) +\n  geom_point() +\n  geom_line() +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\")"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#data-layouts",
     "href": "slides/week-4/w4-joins-pivots.html#data-layouts",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Data Layouts",
     "text": "Data Layouts\n\nKelsey Gonzalez"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#manual-method",
     "href": "slides/week-4/w4-joins-pivots.html#manual-method",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Manual Method",
     "text": "Manual Method\nConsider daily rainfall observed in SLO in January 2023.\n\nThe data is in a human-friendly form (like a calendar).\nEach week has a row, and each day has a column.\n\n\nData source\n\n\n\n\n\nDiscussion\n\n\nHow would you manually convert this to long format?"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#manual-method-steps",
     "href": "slides/week-4/w4-joins-pivots.html#manual-method-steps",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Manual Method: Steps",
     "text": "Manual Method: Steps\n\nKeep the column Week.\nCreate a new column Day_of_Week.\nCreate a new column Rainfall (hold daily rainfall values).\nNow we have three columns – move Sunday values over.\nDuplicate Week 1-5 and copy Monday values over.\n\n\n\n\n\nRepeat …"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#computational-approach",
     "href": "slides/week-4/w4-joins-pivots.html#computational-approach",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Computational Approach",
     "text": "Computational Approach\n\nWe can use pivot_longer() to turn a wide dataset into a long(er) dataset."
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#pivot_longer",
     "href": "slides/week-4/w4-joins-pivots.html#pivot_longer",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "pivot_longer()",
     "text": "pivot_longer()\nTake a wide dataset and turn it into a long dataset.\n\ncols – specify the columns that should be pivoted.\n\nDo not include the names of ID columns (columns to not be pivoted).\n\nnames_to – the name of the new column containing the old column names.\nvalues_to – the name of the new column containing the old column values."
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#pivot_longer-1",
     "href": "slides/week-4/w4-joins-pivots.html#pivot_longer-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "pivot_longer()",
     "text": "pivot_longer()\n\nslo_rainfall |&gt; \n  pivot_longer(cols      = Sunday:Saturday,\n               names_to  = \"Day_of_Week\",\n               values_to = \"Daily_Rainfall\")\n\n\n\n\n\n\n\nWeek\nDay_of_Week\nDaily_Rainfall\n\n\n\n\n1\nSunday\n0.00\n\n\n1\nMonday\n0.12\n\n\n1\nTuesday\n0.00\n\n\n1\nWednesday\n1.58\n\n\n1\nThursday\n0.91\n\n\n1\nFriday\n0.00\n\n\n1\nSaturday\n0.05\n\n\n2\nSunday\n0.27\n\n\n2\nMonday\n4.26\n\n\n2\nTuesday\n0.43\n\n\n2\nWednesday\n0.00\n\n\n2\nThursday\n0.00\n\n\n2\nFriday\n0.16\n\n\n2\nSaturday\n1.41\n\n\n3\nSunday\n0.34\n\n\n3\nMonday\n0.33\n\n\n3\nTuesday\n0.00\n\n\n3\nWednesday\n0.00\n\n\n3\nThursday\n0.13\n\n\n3\nFriday\n0.00\n\n\n3\nSaturday\n0.00\n\n\n4\nSunday\n0.00\n\n\n4\nMonday\n0.00\n\n\n4\nTuesday\n0.00\n\n\n4\nWednesday\n0.00\n\n\n4\nThursday\n0.00\n\n\n4\nFriday\n0.00\n\n\n4\nSaturday\nNA\n\n\n5\nSunday\nNA\n\n\n5\nMonday\nNA\n\n\n5\nTuesday\nNA\n\n\n5\nWednesday\nNA\n\n\n5\nThursday\nNA\n\n\n5\nFriday\nNA\n\n\n5\nSaturday\nNA"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#long-to-wide",
     "href": "slides/week-4/w4-joins-pivots.html#long-to-wide",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Long to Wide",
     "text": "Long to Wide\nWhat are the mean amount of protein for cereals on each shelf and for each manuf?\n\nmean_protein &lt;- cereal |&gt; \n  group_by(manuf, shelf) |&gt; \n  summarize(mean_protein = mean(protein))\n\n\n\n\n\n\n\nmanuf\nshelf\nmean_protein\n\n\n\n\nA\n2\n4.000000\n\n\nG\n1\n3.000000\n\n\nG\n2\n1.285714\n\n\nG\n3\n2.666667\n\n\nK\n1\n2.750000\n\n\nK\n2\n2.142857\n\n\nK\n3\n2.916667\n\n\nN\n1\n2.666667\n\n\nN\n2\n2.500000\n\n\nN\n3\n4.000000\n\n\nP\n1\n1.500000\n\n\nP\n2\n1.000000\n\n\nP\n3\n3.000000\n\n\nQ\n1\n5.000000\n\n\nQ\n2\n2.000000\n\n\nQ\n3\n2.500000\n\n\nR\n1\n2.000000\n\n\nR\n3\n3.000000\n\n\n\n\n\n\n\n\n\n\n\n\n\nDiscussion\n\n\nWhat could we do to make this table easier to understand?"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#pivot_wider",
     "href": "slides/week-4/w4-joins-pivots.html#pivot_wider",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "pivot_wider()",
     "text": "pivot_wider()\nTake a long dataset and turn it into a wide dataset.\n\nid_cols – specify the column(s) that contain the ID for unique rows in the wide dataset.\nnames_from – the name of the column containing the new column names.\nvalues_from – the name of the column containing the new column values."
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#pivot_wider-1",
     "href": "slides/week-4/w4-joins-pivots.html#pivot_wider-1",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "pivot_wider()",
     "text": "pivot_wider()\nMuch easier to read!\n\nmean_protein |&gt; \n  arrange(shelf) |&gt; \n  pivot_wider(id_cols = manuf,\n              names_from = shelf,\n              values_from = mean_protein)\n\n\n\n\n\n\n\nmanuf\n1\n2\n3\n\n\n\n\nG\n3.000000\n1.285714\n2.666667\n\n\nK\n2.750000\n2.142857\n2.916667\n\n\nN\n2.666667\n2.500000\n4.000000\n\n\nP\n1.500000\n1.000000\n3.000000\n\n\nQ\n5.000000\n2.000000\n2.500000\n\n\nR\n2.000000\nNA\n3.000000\n\n\nA\nNA\n4.000000\nNA"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#better-names-in-pivot_wider",
     "href": "slides/week-4/w4-joins-pivots.html#better-names-in-pivot_wider",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Better names in pivot_wider()",
     "text": "Better names in pivot_wider()\nEven better!\n\nmean_protein |&gt; \n  arrange(shelf) |&gt; \n  pivot_wider(id_cols = manuf,\n              names_from = shelf,\n              values_from = mean_protein,\n              names_prefix = \"Shelf_\")\n\n\n\n\n\n\n\nmanuf\nShelf_1\nShelf_2\nShelf_3\n\n\n\n\nG\n3.000000\n1.285714\n2.666667\n\n\nK\n2.750000\n2.142857\n2.916667\n\n\nN\n2.666667\n2.500000\n4.000000\n\n\nP\n1.500000\n1.000000\n3.000000\n\n\nQ\n5.000000\n2.000000\n2.500000\n\n\nR\n2.000000\nNA\n3.000000\n\n\nA\nNA\n4.000000\nNA"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#pa-4-military-spending",
     "href": "slides/week-4/w4-joins-pivots.html#pa-4-military-spending",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "PA 4: Military Spending",
     "text": "PA 4: Military Spending\nToday you will be tidying messy data to explore the relationship between countries of the world and military spending."
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#resources---use-them-all",
     "href": "slides/week-4/w4-joins-pivots.html#resources---use-them-all",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "Resources - use them all!",
     "text": "Resources - use them all!\n\n\n\ndplyr and tidyr cheatsheets\nslides and textbook\nhelp files\n\n\n\n⭐️️ each other⭐️\nand me 😎\n\n\n\nDon’t struggle individually for too long!"
   },
   {
     "objectID": "slides/week-4/w4-joins-pivots.html#to-do",
     "href": "slides/week-4/w4-joins-pivots.html#to-do",
-    "title": "Data Joins + Pivots + Factors",
+    "title": "Data Joins + Pivots",
     "section": "To do…",
     "text": "To do…\n\nPA 4: Military Spending\n\nDue Thursday, 4/24 before class"
   },
@@ -2629,14 +2629,14 @@
     "href": "labs/lab5/lab5-murder.html#solve-the-crime",
     "title": "Lab 5: Murder in SQL City",
     "section": "Solve the Crime",
-    "text": "Solve the Crime\n\nCrime Scene Report\nDetective Wickham reaches out to you…\n\nA crime has taken place and I need your help! There was a murder in SQL City sometime on Jan.15, 2018. Could you retrieve the crime scene report from the police department’s database and follow the clues to find the person responsible for the murder?!\n\nSolve the murder mystery, showing all of your work in this document. Your document and code must be well organized, easy to follow, and reproducible.\n\nUse headers and written descriptions to indicate what you are doing.\nYou must use dplyr verbs and join functions rather than just looking through the tables manually.\nYou should never filter on a specific person id – rather use join functions\nUse good code formatting practices.\nComment your code.\nCite any external sources you use to solve the mystery.\n\n\n\n\n\n\n\nTip\n\n\n\nYou may find the pull() function handy for displaying each clue as you go along.\n\n\nFollow the evidence to the person responsible for the murder, building a report as you go.\n\n# code for looking at the relevant crime scene report.\n\n# you will want to use multiple chunks!\n\n\n\n\n\n\n\nCaution\n\n\n\nMake sure you check for interviews with any suspects and anyone mentioned!\nThe murderer will have no interview - don’t stop until you find them!\n\n\n\n\n\n\n\n\nAnd the final suspect is…\n\n\n\nput the name of the person responsible for the murder here."
+    "text": "Solve the Crime\n\nCrime Scene Report\nDetective Wickham reaches out to you…\n\nA crime has taken place and I need your help! There was a murder in SQL City sometime on Jan.15, 2018. Could you retrieve the crime scene report from the police department’s database and follow the clues to find the person responsible for the murder?!\n\nSolve the murder mystery, showing all of your work in this document. Your document and code must be well organized, easy to follow, and reproducible.\n\nUse headers and written descriptions to indicate what you are doing.\nYou must use dplyr verbs and join functions rather than just looking through the tables manually.\nYou should never filter on a specific person id – rather use join functions\nUse the data frames you just created when helpful!\nUse good code formatting practices.\nComment your code.\nCite any external sources you use to solve the mystery.\n\n\n\n\n\n\n\nTip\n\n\n\nYou may find the pull() function handy for displaying each clue as you go along.\n\n\nFollow the evidence to the person responsible for the murder, building a report as you go.\n\n# code for looking at the relevant crime scene report.\n\n# you will want to use multiple chunks!\n\n\n\n\n\n\n\nCaution\n\n\n\nMake sure you check for interviews with any suspects and anyone mentioned!\nThe murderer will have no interview - don’t stop until you find them!\n\n\n\n\n\n\n\n\nAnd the final suspect is…\n\n\n\nput the name of the person responsible for the murder here."
   },
   {
     "objectID": "slides/week-4/w4-factors.html#thursday-april-24",
     "href": "slides/week-4/w4-factors.html#thursday-april-24",
     "title": "Extending Data Joins + Factors",
     "section": "Thursday, April 24",
-    "text": "Thursday, April 24\nToday we will…\n\nNotes on Lab 3\nNew Material\n\nExtensions to Data Joins\nFactors with forcats\nClean Variable Names\nLifecycle Stages\n\nLab 4: Childcare Costs in California"
+    "text": "Thursday, April 24\nToday we will…\n\nNotes on Lab 3\nProject Info\nNew Material\n\nExtensions to Data Joins\nFactors with forcats\nClean Variable Names\nLifecycle Stages\n\nLab 4: Childcare Costs in California"
   },
   {
     "objectID": "slides/week-4/w4-factors.html#notes-on-lab-3",
@@ -2965,6 +2965,643 @@
     "href": "labs/lab5/data/bCH_murder_setup.html",
     "title": "Setup Up Murder Data for Lab 5",
     "section": "",
-    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n# clear global environment\n\nrm(list = ls())\n\n\ntable_names &lt;- c(\"crime_scene_report\",\"drivers_license\",\n                 \"facebook_event_checkin\",\n                 \"get_fit_now_check_in\",\"get_fit_now_member\",\n                 \"income\", \"interview\",\"person\")\n\n# For each name, read in the table and store it as the name.\npurrr::walk(table_names, function(x) {\n  assign(x, readr::read_csv(paste0(\"../bCH_murder_data/\", x, \".csv\")), envir = .GlobalEnv)\n})\n\nRows: 1228 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): type, description, city\ndbl (1): date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 10007 Columns: 9\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (6): eye_color, hair_color, gender, plate_number, car_make, car_model\ndbl (3): id, age, height\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 20011 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): event_name\ndbl (3): person_id, event_id, date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 2703 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): membership_id\ndbl (3): check_in_date, check_in_time, check_out_time\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 184 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): id, name, membership_status\ndbl (2): person_id, membership_start_date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 7514 Columns: 2\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\ndbl (2): ssn, annual_income\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 4991 Columns: 2\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): transcript\ndbl (1): person_id\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 10011 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): name, address_street_name\ndbl (4): id, license_id, address_number, ssn\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n# remove vector from global environment\n\nrm(table_names)\n\nTo add some extra practice with regular expressions, I am going to edit the person data.\n\nperson &lt;- person |&gt; \n  mutate(address = str_c(address_number, \n                         address_street_name,\n                         sep = \" \"),\n         .before = address_number) |&gt; \n  select(-address_number,\n         -address_street_name)\n\n\n# save all data frames in global environment to an .Rdata file\n# when loaded, will open up all data frames\n\nsave.image(file = \"bCH_murder_data.Rdata\")"
+    "text": "library(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\n\n# clear global environment\n\nrm(list = ls())\n\n\ntable_names &lt;- c(\"crime_scene_report\",\"drivers_license\",\n                 \"facebook_event_checkin\",\n                 \"get_fit_now_check_in\",\"get_fit_now_member\",\n                 \"income\", \"interview\",\"person\")\n\n# For each name, read in the table and store it as the name.\npurrr::walk(table_names, function(x) {\n  assign(x, readr::read_csv(paste0(\"../bCH_murder_data/\", x, \".csv\")), envir = .GlobalEnv)\n})\n\nRows: 1228 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): type, description, city\ndbl (1): date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 10007 Columns: 9\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (6): eye_color, hair_color, gender, plate_number, car_make, car_model\ndbl (3): id, age, height\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 20011 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): event_name\ndbl (3): person_id, event_id, date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 2703 Columns: 4\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): membership_id\ndbl (3): check_in_date, check_in_time, check_out_time\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 184 Columns: 5\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (3): id, name, membership_status\ndbl (2): person_id, membership_start_date\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 7514 Columns: 2\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\ndbl (2): ssn, annual_income\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 4991 Columns: 2\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (1): transcript\ndbl (1): person_id\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\nRows: 10011 Columns: 6\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (2): name, address_street_name\ndbl (4): id, license_id, address_number, ssn\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n# remove vector from global environment\n\nrm(table_names)\n\nTo add some extra practice with regular expressions, I am going to edit the person data.\n\nperson &lt;- person |&gt; \n  mutate(address = str_c(address_number, \n                         address_street_name,\n                         sep = \" \"),\n         .before = address_number) |&gt; \n  select(-address_number,\n         -address_street_name)\n\n\n# save all data frames in global environment to an .Rdata file\n# when loaded, will open up all data frames\n\nsave.image(file = \"bCH_murder_data.Rdata\")"
+  },
+  {
+    "objectID": "slides/week-4/w4-notes.html",
+    "href": "slides/week-4/w4-notes.html",
+    "title": "Week 4 Starter Notes",
+    "section": "",
+    "text": "Download .qmd\n\n\n\n\n\n\nWarning\n\n\n\nDownload the data that we will be using this week at the followings links and add them to a data/ directory\nIMDb data\nRainfall data\nEras Tour data\n\n\n\nData\n\n\n\n\n\n\n.Rdata Files\n\n\n\n\n\nOnce in R, data frames can be saves as .Rdata files using the syntax:\nsave(data_frame1, data_frame2, ..., file = \"path/file-name.Rdata\")\nand then loaded into R using the syntax:\nload(\"path/file-name.Rdata\")\nThis can be preferable when saving intermediate datasets in an analysis because .Rdata files are much smaller and more memory efficient than .csv files. Additionally, you can save and load multiple data frames at once!\nYou can see that this is useful here, where we have 7 related data frames saved in imdb_data.Rdata, which are then loaded in one line below.\n\n\n\nWe will use 7 datasets that describe movies from IMDb.\n\n\n\n\n\nRelationship between data sets in IMDb movie data.\n\n\n\n\n\nload(file = \"data/imdb_data.Rdata\")\n\nOn Thursday will also look at joining datasets created from the Lab 2 Rodent data. Note that you will need to change the file path to be appropriate for your directory strucure!\n\nrodent &lt;- read_csv(\"../../labs/lab2/surveys.csv\")\n\nspecies &lt;- rodent |&gt; \n  select(genus:taxa, species_id) |&gt; \n  distinct()\n\nmeasurements &lt;- rodent |&gt; \n  select(genus, species, sex:weight) |&gt; \n  rename(genus_name = genus)\n\n… and daily rainfall observed in SLO in January 2023. Data source\n\nslo_rainfall &lt;- read_excel(\"data/2023-rainfall-slo.xlsx\")\n\nslo_rainfall &lt;- slo_rainfall |&gt; \n  mutate(across(Sunday:Saturday, as.numeric))"
+  },
+  {
+    "objectID": "slides/week-4/w4-notes.html#data-joins",
+    "href": "slides/week-4/w4-notes.html#data-joins",
+    "title": "Week 4 Starter Notes",
+    "section": "Data Joins",
+    "text": "Data Joins\n\ninner_join(directors_genres, \n           movies_directors, \n           by = \"director_id\")\n\n# A tibble: 344 × 4\n   director_id genre      prob movie_id\n         &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1         429 Adventure 0.75    300229\n 2         429 Music     0.25    300229\n 3         429 Fantasy   0.75    300229\n 4         429 Romance   0.5     300229\n 5         429 Family    0.75    300229\n 6         429 Comedy    0.75    300229\n 7         429 Short     0.25    300229\n 8         429 Animation 0.75    300229\n 9        2931 Action    0.429   254943\n10        2931 Horror    0.143   254943\n# ℹ 334 more rows\n\n\n\ninner_join(directors_genres, \n           directors, \n           by = join_by(director_id == id))\n\n# A tibble: 285 × 5\n   director_id genre      prob first_name last_name\n         &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;    \n 1         429 Adventure 0.75  Andrew     Adamson  \n 2         429 Music     0.25  Andrew     Adamson  \n 3         429 Fantasy   0.75  Andrew     Adamson  \n 4         429 Romance   0.5   Andrew     Adamson  \n 5         429 Family    0.75  Andrew     Adamson  \n 6         429 Comedy    0.75  Andrew     Adamson  \n 7         429 Short     0.25  Andrew     Adamson  \n 8         429 Animation 0.75  Andrew     Adamson  \n 9        2931 Action    0.429 Darren     Aronofsky\n10        2931 Horror    0.143 Darren     Aronofsky\n# ℹ 275 more rows\n\n\n\ndirectors_genres |&gt; \n  inner_join(movies_directors, \n             by = \"director_id\")\n\n# A tibble: 344 × 4\n   director_id genre      prob movie_id\n         &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;    &lt;dbl&gt;\n 1         429 Adventure 0.75    300229\n 2         429 Music     0.25    300229\n 3         429 Fantasy   0.75    300229\n 4         429 Romance   0.5     300229\n 5         429 Family    0.75    300229\n 6         429 Comedy    0.75    300229\n 7         429 Short     0.25    300229\n 8         429 Animation 0.75    300229\n 9        2931 Action    0.429   254943\n10        2931 Horror    0.143   254943\n# ℹ 334 more rows"
+  },
+  {
+    "objectID": "slides/week-4/w4-notes.html#which-join",
+    "href": "slides/week-4/w4-notes.html#which-join",
+    "title": "Week 4 Starter Notes",
+    "section": "Which Join?",
+    "text": "Which Join?\nHow many movies are there in the data for each director (by name), including if any directors don’t have any movies in the data?\n\ndirectors |&gt; \n  ??_join(movies_directors, \n          by = join_by(id == director_id))\n\nWhat is the complete set of movies and actors included in the data?\n\nroles |&gt; \n  ??_join(actors, \n          by = join_by(actor_id == id))"
+  },
+  {
+    "objectID": "slides/week-4/w4-notes.html#filtering-joins",
+    "href": "slides/week-4/w4-notes.html#filtering-joins",
+    "title": "Week 4 Starter Notes",
+    "section": "Filtering Joins",
+    "text": "Filtering Joins\n\ndirectors_genres |&gt; \n  semi_join(movies_directors)\n\n# A tibble: 285 × 3\n   director_id genre      prob\n         &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;\n 1         429 Adventure 0.75 \n 2         429 Music     0.25 \n 3         429 Fantasy   0.75 \n 4         429 Romance   0.5  \n 5         429 Family    0.75 \n 6         429 Comedy    0.75 \n 7         429 Short     0.25 \n 8         429 Animation 0.75 \n 9        2931 Action    0.429\n10        2931 Horror    0.143\n# ℹ 275 more rows\n\n\n\ndirectors_genres |&gt;\n  filter(director_id %in% movies_directors$director_id)\n\n# A tibble: 285 × 3\n   director_id genre      prob\n         &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt;\n 1         429 Adventure 0.75 \n 2         429 Music     0.25 \n 3         429 Fantasy   0.75 \n 4         429 Romance   0.5  \n 5         429 Family    0.75 \n 6         429 Comedy    0.75 \n 7         429 Short     0.25 \n 8         429 Animation 0.75 \n 9        2931 Action    0.429\n10        2931 Horror    0.143\n# ℹ 275 more rows\n\n\n\ndirectors_genres |&gt; \n  anti_join(movies_directors)\n\n# A tibble: 0 × 3\n# ℹ 3 variables: director_id &lt;dbl&gt;, genre &lt;chr&gt;, prob &lt;dbl&gt;\n\n\n\ndirectors_genres |&gt;\n  filter(!director_id %in% movies_directors$director_id)\n\n# A tibble: 0 × 3\n# ℹ 3 variables: director_id &lt;dbl&gt;, genre &lt;chr&gt;, prob &lt;dbl&gt;"
+  },
+  {
+    "objectID": "slides/week-4/w4-notes.html#data-pivots",
+    "href": "slides/week-4/w4-notes.html#data-pivots",
+    "title": "Week 4 Starter Notes",
+    "section": "Data Pivots",
+    "text": "Data Pivots\nExample data includes the cereal dataset from the liver package (which we saw last week)…\n\ndata(cereal)\n\nHow would we plot the mean cereal nutrients by shelf (as shown below) with the wide data?\n\nmy_colors &lt;- c(\"calories_col\" = \"steelblue\", \"sugars_col\" = \"orange3\")\n\ncereal |&gt; \n  group_by(shelf) |&gt; \n  summarise(across(calories:vitamins, mean)) |&gt; \n  ggplot() +\n  geom_point(aes(x = shelf, y = calories, color = \"calories_col\")) +\n  geom_line(aes(x = shelf, y = calories, color = \"calories_col\")) + \n  geom_point(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  geom_line(aes(x = shelf, y = sugars, color = \"sugars_col\")) +\n  scale_color_manual(values = my_colors, labels = names(my_colors)) +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\", color = \"Nutrient\")\n\n\n\n\n\n\n\n\n\ncereal_long &lt;- cereal |&gt; \n  pivot_longer(cols = calories:vitamins,\n               names_to = \"Nutrient\",\n               values_to = \"Amount\") |&gt; \n  group_by(shelf, Nutrient) |&gt; \n  summarise(mean_amount = mean(Amount))\n\n\ncereal_long |&gt; \n  ggplot(aes(x = shelf, \n             y = mean_amount, \n             color = Nutrient)) +\n  geom_point() +\n  geom_line() +\n  labs(x = \"Shelf\", y = \"\", subtitle = \"Mean Amount\")\n\n\n\n\n\n\n\n\n\nslo_rainfall |&gt; \n  pivot_longer(cols      = Sunday:Saturday,\n               names_to  = \"Day_of_Week\",\n               values_to = \"Daily_Rainfall\")\n\n# A tibble: 35 × 3\n    Week Day_of_Week Daily_Rainfall\n   &lt;dbl&gt; &lt;chr&gt;                &lt;dbl&gt;\n 1     1 Sunday                0   \n 2     1 Monday                0.12\n 3     1 Tuesday               0   \n 4     1 Wednesday             1.58\n 5     1 Thursday              0.91\n 6     1 Friday                0   \n 7     1 Saturday              0.05\n 8     2 Sunday                0.27\n 9     2 Monday                4.26\n10     2 Tuesday               0.43\n# ℹ 25 more rows\n\n\n\nmean_protein &lt;- cereal |&gt; \n  group_by(manuf, shelf) |&gt; \n  summarize(mean_protein = mean(protein))\n\n\nmean_protein |&gt; \n  pivot_wider(id_cols = manuf,\n              names_from = shelf,\n              values_from = mean_protein)\n\n# A tibble: 7 × 4\n# Groups:   manuf [7]\n  manuf   `2`   `1`   `3`\n  &lt;fct&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;\n1 A      4    NA    NA   \n2 G      1.29  3     2.67\n3 K      2.14  2.75  2.92\n4 N      2.5   2.67  4   \n5 P      1     1.5   3   \n6 Q      2     5     2.5 \n7 R     NA     2     3"
+  },
+  {
+    "objectID": "slides/week-4/w4-notes.html#extending-joins",
+    "href": "slides/week-4/w4-notes.html#extending-joins",
+    "title": "Week 4 Starter Notes",
+    "section": "Extending Joins",
+    "text": "Extending Joins\n\nmovies_directors |&gt; \n  inner_join(directors, \n             join_by(director_id == id)) |&gt; \n  inner_join(movies,\n             join_by(movie_id == id)) |&gt; \n  group_by(first_name, last_name) |&gt;\n  summarize(start_year = min(year),\n            end_year = max(year)) |&gt; \n  mutate(n_years_active = end_year - start_year) |&gt; \n  arrange(desc(n_years_active))\n\n# A tibble: 34 × 5\n# Groups:   first_name [31]\n   first_name  last_name start_year end_year n_years_active\n   &lt;chr&gt;       &lt;chr&gt;          &lt;dbl&gt;    &lt;dbl&gt;          &lt;dbl&gt;\n 1 Quentin     Tarantino       1992     2004             12\n 2 James (I)   Cameron         1986     1997             11\n 3 Christopher Nolan           2000     2005              5\n 4 Ethan       Coen            1996     2000              4\n 5 Joel        Coen            1996     2000              4\n 6 Andrew      Adamson         2001     2001              0\n 7 Andy        Wachowski       1999     1999              0\n 8 Cameron     Crowe           2001     2001              0\n 9 Clint       Eastwood        2003     2003              0\n10 Darren      Aronofsky       1998     1998              0\n# ℹ 24 more rows\n\n\n\ndirectors |&gt; \n  inner_join(movies_directors, \n             join_by(id == director_id))\n\n# A tibble: 41 × 4\n      id first_name last_name movie_id\n   &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt;        &lt;dbl&gt;\n 1   429 Andrew     Adamson     300229\n 2  2931 Darren     Aronofsky   254943\n 3  9247 Zach       Braff       124110\n 4 11652 James (I)  Cameron      10920\n 5 11652 James (I)  Cameron     333856\n 6 14927 Ron        Clements    192017\n 7 15092 Ethan      Coen        109093\n 8 15092 Ethan      Coen        237431\n 9 15093 Joel       Coen        109093\n10 15093 Joel       Coen        237431\n# ℹ 31 more rows\n\n\n\nhead(species)\n\n# A tibble: 6 × 4\n  genus       species      taxa   species_id\n  &lt;chr&gt;       &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;     \n1 Dipodomys   merriami     Rodent DM        \n2 Dipodomys   ordii        Rodent DO        \n3 Perognathus flavus       Rodent PF        \n4 Chaetodipus penicillatus Rodent PP        \n5 Peromyscus  eremicus     Rodent PE        \n6 Onychomys   leucogaster  Rodent OL        \n\nhead(measurements)\n\n# A tibble: 6 × 5\n  genus_name species  sex   hindfoot_length weight\n  &lt;chr&gt;      &lt;chr&gt;    &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt;\n1 Dipodomys  merriami M                  35     40\n2 Dipodomys  merriami M                  37     48\n3 Dipodomys  merriami F                  34     29\n4 Dipodomys  merriami F                  35     46\n5 Dipodomys  merriami M                  35     36\n6 Dipodomys  ordii    F                  32     52\n\n\n\nmeasurements |&gt; \n  inner_join(species, \n             by = join_by(genus_name == genus))\n\nWarning in inner_join(measurements, species, by = join_by(genus_name == : Detected an unexpected many-to-many relationship between `x` and `y`.\nℹ Row 1 of `x` matches multiple rows in `y`.\nℹ Row 1 of `y` matches multiple rows in `x`.\nℹ If a many-to-many relationship is expected, set `relationship =\n  \"many-to-many\"` to silence this warning.\n\n\n# A tibble: 72,824 × 8\n   genus_name species.x sex   hindfoot_length weight species.y  taxa  species_id\n   &lt;chr&gt;      &lt;chr&gt;     &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt; &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;     \n 1 Dipodomys  merriami  M                  35     40 merriami   Rode… DM        \n 2 Dipodomys  merriami  M                  35     40 ordii      Rode… DO        \n 3 Dipodomys  merriami  M                  35     40 spectabil… Rode… DS        \n 4 Dipodomys  merriami  M                  37     48 merriami   Rode… DM        \n 5 Dipodomys  merriami  M                  37     48 ordii      Rode… DO        \n 6 Dipodomys  merriami  M                  37     48 spectabil… Rode… DS        \n 7 Dipodomys  merriami  F                  34     29 merriami   Rode… DM        \n 8 Dipodomys  merriami  F                  34     29 ordii      Rode… DO        \n 9 Dipodomys  merriami  F                  34     29 spectabil… Rode… DS        \n10 Dipodomys  merriami  F                  35     46 merriami   Rode… DM        \n# ℹ 72,814 more rows\n\n\n\nspecies |&gt; \n  full_join(measurements,\n            join_by(species == species, \n                    genus == genus_name))\n\n# A tibble: 30,463 × 7\n   genus     species  taxa   species_id sex   hindfoot_length weight\n   &lt;chr&gt;     &lt;chr&gt;    &lt;chr&gt;  &lt;chr&gt;      &lt;chr&gt;           &lt;dbl&gt;  &lt;dbl&gt;\n 1 Dipodomys merriami Rodent DM         M                  35     40\n 2 Dipodomys merriami Rodent DM         M                  37     48\n 3 Dipodomys merriami Rodent DM         F                  34     29\n 4 Dipodomys merriami Rodent DM         F                  35     46\n 5 Dipodomys merriami Rodent DM         M                  35     36\n 6 Dipodomys merriami Rodent DM         F                  36     35\n 7 Dipodomys merriami Rodent DM         F                  32     22\n 8 Dipodomys merriami Rodent DM         F                  34     42\n 9 Dipodomys merriami Rodent DM         F                  35     41\n10 Dipodomys merriami Rodent DM         F                  37     37\n# ℹ 30,453 more rows"
+  },
+  {
+    "objectID": "slides/week-4/w4-notes.html#factors-with-forcats",
+    "href": "slides/week-4/w4-notes.html#factors-with-forcats",
+    "title": "Week 4 Starter Notes",
+    "section": "Factors with forcats",
+    "text": "Factors with forcats\nTo practice working with factor variables, we will use data on songs that Taylor Swift included in the Era’s Tour.\n\nfull_eras &lt;- read_excel(\"data/TS_data.xlsx\", sheet = \"full\")\n\nset.seed(2)\neras_data &lt;- full_eras |&gt; \n  slice_sample(n = 25) |&gt; \n  select(Song, Album)\n\n\neras_data |&gt; \n  mutate(Album = fct(Album)) |&gt; \n  pull(Album)\n\n [1] Red        Reputation Lover      Midnights  1989       Fearless  \n [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     \n[13] Lover      Red        Reputation Reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   Folklore  \n[25] Lover     \n9 Levels: Red Reputation Lover Midnights 1989 Fearless Folklore ... Speak Now\n\n\n\neras_data |&gt; \n  mutate(Album = fct(Album,\n                     levels = c(\"Fearless\",\"Speak Now\",\"Red\",\n                                \"1989\", \"Reputation\",\"Lover\",\n                                \"Folklore\", \"Evermore\",\"Midnights\"))) |&gt; \n  pull(Album) \n\n [1] Red        Reputation Lover      Midnights  1989       Fearless  \n [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     \n[13] Lover      Red        Reputation Reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   Folklore  \n[25] Lover     \n9 Levels: Fearless Speak Now Red 1989 Reputation Lover Folklore ... Midnights\n\n\n\neras_data |&gt; \n  mutate(Album = fct(Album, \n                     levels = c(\"Taylor Swift\",\n                                \"Fearless\",\"Speak Now\",\"Red\",\n                                \"1989\", \"Reputation\",\"Lover\",\n                                \"Folklore\", \"Evermore\",\"Midnights\",\n                                \"The Tortured Poets Department\"))) |&gt; \n  pull(Album) \n\n [1] Red        Reputation Lover      Midnights  1989       Fearless  \n [7] Reputation Folklore   Midnights  Evermore   Evermore   Lover     \n[13] Lover      Red        Reputation Reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   Folklore  \n[25] Lover     \n11 Levels: Taylor Swift Fearless Speak Now Red 1989 Reputation ... The Tortured Poets Department\n\n\n\neras_data |&gt;\n  mutate(Album = fct_recode(.f = Album,\n                            \"folklore\" = \"Folklore\",\n                            \"evermore\" = \"Evermore\",\n                            \"reputation\" = \"Reputation\")) |&gt;\n  pull(Album) \n\n [1] Red        reputation Lover      Midnights  1989       Fearless  \n [7] reputation folklore   Midnights  evermore   evermore   Lover     \n[13] Lover      Red        reputation reputation Speak Now  Red       \n[19] Midnights  Fearless   1989       Midnights  Fearless   folklore  \n[25] Lover     \n9 Levels: 1989 evermore Fearless folklore Lover Midnights Red ... Speak Now\n\n\n\neras_data |&gt; \n  mutate(Genre = fct_collapse(.f= Album,\n                       \"country pop\" = c(\"Taylor Swift\", \"Fearless\"),\n                       \"pop rock\" = c(\"Speak Now\",\"Red\"),\n                       \"electropop\" = c(\"1989\",\"reputation\",\"Lover\"),\n                       \"folk pop\" = c(\"folklore\",\"evermore\"),\n                       \"alt-pop\" = \"Midnights\")) |&gt; \n  slice_sample(n = 6)\n\n# A tibble: 6 × 3\n  Song                                    Album      Genre      \n  &lt;chr&gt;                                   &lt;chr&gt;      &lt;fct&gt;      \n1 willow                                  Evermore   Evermore   \n2 You Belong With Me                      Fearless   country pop\n3 Lavender Haze                           Midnights  alt-pop    \n4 We Are Never Ever Getting Back Together Red        pop rock   \n5 illicit affairs                         Folklore   Folklore   \n6 Look What You Made Me Do                Reputation Reputation \n\n\n\neras_data |&gt; \n  mutate(Album = fct_relevel(.f = Album, \n                             c(\"Fearless\",\"1989\",\"Taylor Swift\",\n                               \"Speak Now\",\"Red\",\"Midnights\",\"reputation\",\n                               \"folklore\",\"Lover\",\"evermore\"))) |&gt;\n  pull(Album) |&gt;\n  levels()\n\n[1] \"Fearless\"   \"1989\"       \"Speak Now\"  \"Red\"        \"Midnights\" \n[6] \"Lover\"      \"Evermore\"   \"Folklore\"   \"Reputation\""
+  },
+  {
+    "objectID": "slides/week-4/w4-notes.html#re-order-factors-for-plots",
+    "href": "slides/week-4/w4-notes.html#re-order-factors-for-plots",
+    "title": "Week 4 Starter Notes",
+    "section": "Re-order Factors for Plots",
+    "text": "Re-order Factors for Plots\n\nfull_eras |&gt; \n  mutate(Album = fct(Album,\n                     levels = c(\"Fearless\",\"Speak Now\",\"Red\",\n                                \"1989\",\"Reputation\",\"Lover\",\n                                \"Folklore\",\"Evermore\",\n                                \"Midnights\"))) |&gt; \n  ggplot() +\n  geom_bar(aes(y = Album), fill = \"#A5C9A5\") +\n  theme_minimal() +\n  labs(x = \"Number of Songs\",\n       y = \"\",\n       subtitle = \"Album\",\n       title = \"Songs Played on the Eras Tour\")\n\n\n\n\n\n\n\n\n\nfull_eras |&gt; \n  ggplot() +\n  geom_bar(aes(y = fct_infreq(Album)), \n           fill = \"#A5C9A5\") +\n  theme_minimal() +\n  labs(x = \"Number of Songs\",\n       y = \"\",\n       subtitle = \"Album\",\n       title = \"Songs Played on the Eras Tour\")\n\n\n\n\n\n\n\n\n\nfull_eras |&gt; \n  ggplot(aes(x = Length, \n             y = fct_reorder(.f = Album,\n                             .x = Length,\n                             .fun = mean), \n             fill = Album)) +\n  geom_density_ridges() +\n  theme_minimal() +\n  theme(legend.position = \"none\")+\n  labs(x = \"Song Length (mins)\",\n       y = \"\",\n       subtitle = \"Album\",\n       title = \"Songs Played on the Eras Tour\")\n\n\n\n\n\n\n\n\n\ncereal_long |&gt; \n  ggplot(aes(x = shelf, \n             y = mean_amount, \n             color = fct_reorder2(.x = shelf,\n                                  .y = mean_amount,\n                                  .f = Nutrient))) +\n  geom_point() +\n  geom_line() +\n  labs(x = \"Shelf\", y = \"\", \n       subtitle = \"Mean Amount\",\n       color = \"Nutrient\")"
+  },
+  {
+    "objectID": "practice-activities/pa5-1.html",
+    "href": "practice-activities/pa5-1.html",
+    "title": "PA 5.1: Scrambled Message",
+    "section": "",
+    "text": "Download starter qmd file\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "practice-activities/pa5-1.html#pick-your-poison",
+    "href": "practice-activities/pa5-1.html#pick-your-poison",
+    "title": "PA 5.1: Scrambled Message",
+    "section": "Pick your poison!",
+    "text": "Pick your poison!\nYou may choose to work through Q1 - Q6 using a data.frame message_data and follow the dplyr pipeline syntax…\n\nmessage_data &lt;- read_csv(\"https://github.com/earobinson95/stat331-calpoly/raw/master/practice-activities/data/scrambled_message.txt\")\n\nclass(message_data)\n\n[1] \"spec_tbl_df\" \"tbl_df\"      \"tbl\"         \"data.frame\" \n\n\n…or you might prefer to work with the character vector message and use indexing – e.g. message[1] gives you the first element.\n\nmessage &lt;- message_data |&gt; \n  pull(Word)\n\nclass(message)\n\n[1] \"character\"\n\n\n\n\n\n\n\n\nTip\n\n\n\nIn this activity, a “word” is a set of characters with no white space. That is, even though many of elements of the scrambled mess vector are nonsense, and some have punctuation, you can consider each element to be a “word”."
+  },
+  {
+    "objectID": "practice-activities/pa5-1.html#warm-up-exercises",
+    "href": "practice-activities/pa5-1.html#warm-up-exercises",
+    "title": "PA 5.1: Scrambled Message",
+    "section": "Warm-up exercises",
+    "text": "Warm-up exercises\n\nHow many characters are in the scrambled message?\nHow many words are in the scrambled message?\nPrint out every word in the scrambled message that starts with the letter “m”.\nPrint out every word in the scrambled message that ends with a punctuation mark.\nPrint out the longest word in the scrambled message.\nPrint out the punctuation symbols that are present in the scrambled message. (This one is the trickiest! You will need to use a number of steps and stringr functions.)"
+  },
+  {
+    "objectID": "practice-activities/pa5-1.html#decode-the-message",
+    "href": "practice-activities/pa5-1.html#decode-the-message",
+    "title": "PA 5.1: Scrambled Message",
+    "section": "Decode the Message",
+    "text": "Decode the Message\n\n\n\n\n\n\nCaution\n\n\n\nYou likely want to work with the message character vector for decoding. You should still use piping to chain the steps together!\n\n\nComplete the following steps to decode the message.\n\nRemove any spaces before or after each word.\nNo word should be longer than 16 characters. Drop all extra characters off the end of each word.\nEvery time you see the word “ugh”, with any number of h’s, followed by a punctuation mark, delete this.\nReplace all instances of exactly 2 a’s with exactly 2 e’s.\nReplace all z’s with t’s.\nEvery word that ends in b, change that to a y.\nEvery word that starts with k (or K), change that to a v.\nRecombine all your words into a message with a stringr function.\nFind the movie this quote is from.\n\n\n\n\n\n\n\nCanvas Quiz Submission\n\n\n\nWhat is the name of the movie the quote is from?"
+  },
+  {
+    "objectID": "practice-activities/pa5-2.html",
+    "href": "practice-activities/pa5-2.html",
+    "title": "PA 5.2: Jewel Heist",
+    "section": "",
+    "text": "Download starter qmd file\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "practice-activities/pa5-2.html#solve-the-mystery",
+    "href": "practice-activities/pa5-2.html#solve-the-mystery",
+    "title": "PA 5.2: Jewel Heist",
+    "section": "Solve the Mystery",
+    "text": "Solve the Mystery\nJust down the road in Montecito, CA several rare jewels went missing. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues.\nA camera was located near the building where the jewels went missing, so the detectives have provided you with a list of people who may have entered the building. This list includes the date and time they were spotted on the camera, in Pacific Standard Time (PST).\nUnfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief’s identity.\n\n# 214 total suspects\nsuspects &lt;- read_csv(\"https://raw.githubusercontent.com/zoerehnberg/STAT331-S23/main/practice_activities/suspects.csv\")\n\n\n\n\n\n\n\nNote\n\n\n\nTime Zones will be very important to find the right suspect!\n\n\n\nWhen data is read into R, dates are automatically read in as the UTC time zone. The first thing that we need to do is tell R that the times listed are actually in PST. Fill in the code below to do this.\n\n\nsuspects &lt;- suspects |&gt; \n  mutate(Time.Spotted = )\n\nError in quo_as_label(quo): argument \"expr\" is missing, with no default\n\n\n\nBased on the cleaning schedule for the room where the jewels are held, the heist was not committed in the morning (i.e. at 12:00pm PCT or later).\n\n\n# end with 112 suspects left\n\n\nThe room where the heist was committed is closed on Tuesdays and Thursdays (and there were no signs of forced entry), so the heist did not happen on those days.\n\n\n# end with 78 suspects left\n\n\nIt is believed that the heist was committed within 5 weeks (35 days) of Thanksgiving 2022 (before or after).\n\n\n\n\n\n\n\nHints\n\n\n\nPay attention to time zones!\nYou will want to look up the date of Thanksgiving 2022.\nI would recommend using an interval\n\n\n\n# end with 11 suspects left\n\n\nThe detectives partially decoded a message from the thief to a notorious fence in Iceland. In it, the thief said the job would be done “after the sun sets for you, but before midnight.”\n\n\n\n\n\n\n\nHints\n\n\n\nIn November, the sun sets at 4:00pm in Iceland.\nPay attention to time zones!\n\n\n\n# end with 4 suspects left\n\n\nThe thief left behind a receipt at the scene of the crime. The receipt is smudged, but the day of the month is shown to be 22. It is thought that the heist took place no more than three days after the receipt was issued.\n\n\n# end with 2 suspects left\n\n\nThe thief is amused by your efforts and has sent you a cryptic clue:\n\n\n“The exact number of seconds between midnight on Jan 1, 1970 and the time I arrived on the scene is divisible by 6.”\n\n\n\n\n\n\n\nHint\n\n\n\nCheck out how date-time objects are stored on the lubridate cheatsheet.\n\n\n\n# end with 1 suspect left\n\n\n\n\n\n\n\nCanvas Quiz Submission\n\n\n\nWho is the thief? Only one name should remain. Remember that you can check with classmates and me about the answer!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#tuesday-april-29",
+    "href": "slides/week-5/week-5-strings.html#tuesday-april-29",
+    "title": "Using stringr to Work with Strings",
+    "section": "Tuesday, April 29",
+    "text": "Tuesday, April 29\nToday we will…\n\nDifferent schedule this week\nWhat you can expect in Week 6\nNew material\n\nString variables\nFunctions for working with strings\nRegular expressions\n\nPA 5.1: Scrambled Message"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#week-5-layout",
+    "href": "slides/week-5/week-5-strings.html#week-5-layout",
+    "title": "Using stringr to Work with Strings",
+    "section": "Week 5 Layout",
+    "text": "Week 5 Layout\n\nToday: Strings with stringr\n\nPractice Activity: Decoding a Message\n\n\n\n\nThursday: Dates with lubridate\n\nPractice Activity: Jewel Heist\nDiscuss midterm exam and project\n\n\n\n\n\nLab Assignment Solving a Murder Mystery\n\nUsing dplyr + stringr + ludridate\nDue (next) Monday\nMay only use 1 late day so that I can post solutions before the exam"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#week-6-layout",
+    "href": "slides/week-5/week-5-strings.html#week-6-layout",
+    "title": "Using stringr to Work with Strings",
+    "section": "Week 6 Layout",
+    "text": "Week 6 Layout\n\nTuesday: Version control with git\n\nPractice Activity - done in groups in class\nLast day to submit Lab 5\n\n\n\n\nThursday: Midterm Exam"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#what-is-a-string",
+    "href": "slides/week-5/week-5-strings.html#what-is-a-string",
+    "title": "Using stringr to Work with Strings",
+    "section": "What is a string?",
+    "text": "What is a string?\nA string is a bunch of characters.\n\nThere is a difference between…\n\n…a string (many characters, one object)…\nand\n…a character vector (vector of strings).\n\n\n\n\nmy_string &lt;- \"Hi, my name is Bond!\"\nmy_string\n\n[1] \"Hi, my name is Bond!\"\n\n\n\n\n\nmy_vector &lt;- c(\"Hi\", \"my\", \"name\", \"is\", \"Bond\")\nmy_vector\n\n[1] \"Hi\"   \"my\"   \"name\" \"is\"   \"Bond\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#stringr",
+    "href": "slides/week-5/week-5-strings.html#stringr",
+    "title": "Using stringr to Work with Strings",
+    "section": "stringr",
+    "text": "stringr\n\n\nCommon tasks\n\nIdentify strings containing a particular pattern.\nRemove or replace a pattern.\nEdit a string (e.g., make it lowercase).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe stringr package loads with tidyverse.\nAll functions are of the form str_xxx()."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#pattern",
+    "href": "slides/week-5/week-5-strings.html#pattern",
+    "title": "Using stringr to Work with Strings",
+    "section": "pattern =",
+    "text": "pattern =\nThe pattern argument appears in many stringr functions.\n\nThe pattern must be supplied inside quotes.\n\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_detect(my_vector, pattern = \"Bond\")\nstr_locate(my_vector, pattern = \"James Bond\")\nstr_match(my_vector, pattern = \"[bB]ond\")\nstr_extract(my_vector, pattern = \"[jJ]ames [bB]ond\")\n\n\n\n\nLet’s explore these functions!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_detect",
+    "href": "slides/week-5/week-5-strings.html#str_detect",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_detect()",
+    "text": "str_detect()\nReturns a logical vector indicating whether the pattern was found in each element of the supplied vector.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\nstr_detect(my_vector, pattern = \"Bond\")\n\n[1] FALSE FALSE  TRUE  TRUE\n\n\n\n\n\n\nPairs well with filter().\nWorks with summarise() + sum (to get total matches) or mean (to get proportion of matches).\n\n\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_which() returns the indexes of the strings that contain a match."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_match",
+    "href": "slides/week-5/week-5-strings.html#str_match",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_match()",
+    "text": "str_match()\nReturns a character matrix containing either NA or the pattern, depending on if the pattern was found.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_match(my_vector, pattern = \"Bond\")\n\n     [,1]  \n[1,] NA    \n[2,] NA    \n[3,] \"Bond\"\n[4,] \"Bond\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_extract",
+    "href": "slides/week-5/week-5-strings.html#str_extract",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_extract()",
+    "text": "str_extract()\nReturns a character vector with either NA or the pattern, depending on if the pattern was found.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_extract(my_vector, pattern = \"Bond\")\n\n[1] NA     NA     \"Bond\" \"Bond\"\n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nstr_extract() only returns the first pattern match.\nUse str_extract_all() to return every pattern match."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#what-do-you-mean-by-the-first-match",
+    "href": "slides/week-5/week-5-strings.html#what-do-you-mean-by-the-first-match",
+    "title": "Using stringr to Work with Strings",
+    "section": "What do you mean by the first match?",
+    "text": "What do you mean by the first match?\nSuppose we had a slightly different vector…\n\nalt_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond, James Bond\")\n\n\nIf we were to extract every instance of \"Bond\" from the vector…\n\n\n\n\nstr_extract(alt_vector, \n            pattern = \"Bond\")\n\n[1] NA     NA     \"Bond\"\n\n\n\n\n\n\n\n\n\nstr_extract_all(alt_vector, \n                pattern = \"Bond\")\n\n[[1]]\ncharacter(0)\n\n[[2]]\ncharacter(0)\n\n[[3]]\n[1] \"Bond\" \"Bond\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_locate",
+    "href": "slides/week-5/week-5-strings.html#str_locate",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_locate()",
+    "text": "str_locate()\nReturns a dateframe with two numeric variables – the starting and ending location of the pattern. The values are NA if the pattern is not found.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_locate(my_vector, pattern = \"Bond\")\n\n     start end\n[1,]    NA  NA\n[2,]    NA  NA\n[3,]     1   4\n[4,]     7  10\n\n\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_sub() extracts values based on a starting and ending location."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#str_subset",
+    "href": "slides/week-5/week-5-strings.html#str_subset",
+    "title": "Using stringr to Work with Strings",
+    "section": "str_subset()",
+    "text": "str_subset()\nReturns a character vector containing a subset of the original character vector consisting of the elements where the pattern was found anywhere in the element.\n\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_subset(my_vector, pattern = \"Bond\")\n\n[1] \"Bond\"       \"James Bond\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#try-it-out",
+    "href": "slides/week-5/week-5-strings.html#try-it-out",
+    "title": "Using stringr to Work with Strings",
+    "section": "Try it out!",
+    "text": "Try it out!\n\n\nmy_vector &lt;- c(\"I scream,\", \n               \"you scream\", \n               \"we all\",\n               \"scream\",\n               \"for\",\n               \"ice cream\")\n\nstr_detect(my_vector, pattern = \"cream\")\nstr_locate(my_vector, pattern = \"cream\")\nstr_match(my_vector, pattern = \"cream\")\nstr_extract(my_vector, pattern = \"cream\")\nstr_subset(my_vector, pattern = \"cream\")\n\n\n\n\n\n\n\nNote\n\n\nFor each of these functions, write down:\n\nthe object structure of the output.\nthe data type of the output.\na brief explanation of what they do."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#replace-remove-patterns",
+    "href": "slides/week-5/week-5-strings.html#replace-remove-patterns",
+    "title": "Using stringr to Work with Strings",
+    "section": "Replace / Remove Patterns",
+    "text": "Replace / Remove Patterns\n\nstr_replace()str_remove()\n\n\n\nReplace the first matched pattern in each string.\n\nPairs well with mutate().\n\n\nstr_replace(my_vector, \n            pattern = \"Bond\", \n            replace = \"Franco\")\n\n[1] \"Hello,\"       \"my name is\"   \"Franco\"       \"James Franco\"\n\n\n\n\n\n\n\n\n\n\n\nRelated Function\n\n\nstr_replace_all() replaces all matched patterns in each string.\n\n\n\n\n\n\n\nRemove the first matched pattern in each string.\n\nstr_remove(my_vector, \n           pattern = \"Bond\")\n\n[1] \"Hello,\"     \"my name is\" \"\"           \"James \"    \n\n\n\n\n\n\n\n\n\n\n\nRelated Functions\n\n\nThis is a special case of str_replace(x, pattern, replacement = \"\").\nstr_remove_all() removes all matched patterns in each string."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#edit-strings",
+    "href": "slides/week-5/week-5-strings.html#edit-strings",
+    "title": "Using stringr to Work with Strings",
+    "section": "Edit Strings",
+    "text": "Edit Strings\nConvert letters in a string to a specific capitalization format.\n\nlowerUPPERTitle\n\n\nstr_to_lower() converts all letters in a string to lowercase.\n\n\nstr_to_lower(my_vector)\n\n[1] \"hello,\"     \"my name is\" \"bond\"       \"james bond\"\n\n\n\n\nstr_to_upper() converts all letters in a string to uppercase.\n\n\nstr_to_upper(my_vector)\n\n[1] \"HELLO,\"     \"MY NAME IS\" \"BOND\"       \"JAMES BOND\"\n\n\n\n\nstr_to_title() converts the first letter of each word to uppercase.\n\n\nstr_to_title(my_vector)\n\n[1] \"Hello,\"     \"My Name Is\" \"Bond\"       \"James Bond\"\n\n\n\n\n\n\n\n\nThis is handy for axis labels!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#combine-strings",
+    "href": "slides/week-5/week-5-strings.html#combine-strings",
+    "title": "Using stringr to Work with Strings",
+    "section": "Combine Strings",
+    "text": "Combine Strings\n\nstr_c()str_flatten()str_glue()\n\n\nJoin multiple strings into a single character vector.\n\nprompt &lt;- \"Hello, my name is\"\nfirst  &lt;- \"James\"\nlast   &lt;- \"Bond\"\nstr_c(prompt, last, \",\", first, last, sep = \" \")\n\n[1] \"Hello, my name is Bond , James Bond\"\n\n\n\n\n\n\n\n\nNote\n\n\nSimilar to paste() and paste0().\n\n\n\n\n\nCombine a vector of strings into a single string.\n\nmy_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond\", \n               \"James Bond\")\n\nstr_flatten(my_vector, collapse = \" \")\n\n[1] \"Hello, my name is Bond James Bond\"\n\n\n\n\nUse variables in the environment to create a string based on {expressions}.\n\nfirst &lt;- \"James\"\nlast &lt;- \"Bond\"\nstr_glue(\"My name is {last}, {first} {last}\")\n\nMy name is Bond, James Bond\n\n\n\n\n\n\n\n\nTip\n\n\nFor more details, I would recommend looking up the glue R package!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#tips-for-string-success",
+    "href": "slides/week-5/week-5-strings.html#tips-for-string-success",
+    "title": "Using stringr to Work with Strings",
+    "section": "Tips for String Success",
+    "text": "Tips for String Success\n\nRefer to the stringr cheatsheet\nRemember that str_xxx functions need the first argument to be a vector of strings, not a dataset!\n\nYou will use these functions inside dplyr verbs like filter() or mutate().\n\n\n\ncereal |&gt; \n  mutate(is_bran = str_detect(name, \"Bran\"), \n         .after = name)\n\n\n\n\n\n\n\nname\nis_bran\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\n100% Bran\nTRUE\nN\ncold\n70\n4\n1\n130\n10.0\n5.0\n6\n280\n25\n3\n1.00\n0.33\n68.40297\n\n\n100% Natural Bran\nTRUE\nQ\ncold\n120\n3\n5\n15\n2.0\n8.0\n8\n135\n0\n3\n1.00\n1.00\n33.98368\n\n\nAll-Bran\nTRUE\nK\ncold\n70\n4\n1\n260\n9.0\n7.0\n5\n320\n25\n3\n1.00\n0.33\n59.42551\n\n\nAll-Bran with Extra Fiber\nTRUE\nK\ncold\n50\n4\n0\n140\n14.0\n8.0\n0\n330\n25\n3\n1.00\n0.50\n93.70491\n\n\nAlmond Delight\nFALSE\nR\ncold\n110\n2\n2\n200\n1.0\n14.0\n8\n-1\n25\n3\n1.00\n0.75\n34.38484\n\n\nApple Cinnamon Cheerios\nFALSE\nG\ncold\n110\n2\n2\n180\n1.5\n10.5\n10\n70\n25\n1\n1.00\n0.75\n29.50954\n\n\nApple Jacks\nFALSE\nK\ncold\n110\n2\n0\n125\n1.0\n11.0\n14\n30\n25\n2\n1.00\n1.00\n33.17409\n\n\nBasic 4\nFALSE\nG\ncold\n130\n3\n2\n210\n2.0\n18.0\n8\n100\n25\n3\n1.33\n0.75\n37.03856\n\n\nBran Chex\nTRUE\nR\ncold\n90\n2\n1\n200\n4.0\n15.0\n6\n125\n25\n1\n1.00\n0.67\n49.12025\n\n\nBran Flakes\nTRUE\nP\ncold\n90\n3\n0\n210\n5.0\n13.0\n5\n190\n25\n3\n1.00\n0.67\n53.31381\n\n\nCap'n'Crunch\nFALSE\nQ\ncold\n120\n1\n2\n220\n0.0\n12.0\n12\n35\n25\n2\n1.00\n0.75\n18.04285\n\n\nCheerios\nFALSE\nG\ncold\n110\n6\n2\n290\n2.0\n17.0\n1\n105\n25\n1\n1.00\n1.25\n50.76500\n\n\nCinnamon Toast Crunch\nFALSE\nG\ncold\n120\n1\n3\n210\n0.0\n13.0\n9\n45\n25\n2\n1.00\n0.75\n19.82357\n\n\nClusters\nFALSE\nG\ncold\n110\n3\n2\n140\n2.0\n13.0\n7\n105\n25\n3\n1.00\n0.50\n40.40021\n\n\nCocoa Puffs\nFALSE\nG\ncold\n110\n1\n1\n180\n0.0\n12.0\n13\n55\n25\n2\n1.00\n1.00\n22.73645\n\n\nCorn Chex\nFALSE\nR\ncold\n110\n2\n0\n280\n0.0\n22.0\n3\n25\n25\n1\n1.00\n1.00\n41.44502\n\n\nCorn Flakes\nFALSE\nK\ncold\n100\n2\n0\n290\n1.0\n21.0\n2\n35\n25\n1\n1.00\n1.00\n45.86332\n\n\nCorn Pops\nFALSE\nK\ncold\n110\n1\n0\n90\n1.0\n13.0\n12\n20\n25\n2\n1.00\n1.00\n35.78279\n\n\nCount Chocula\nFALSE\nG\ncold\n110\n1\n1\n180\n0.0\n12.0\n13\n65\n25\n2\n1.00\n1.00\n22.39651\n\n\nCracklin' Oat Bran\nTRUE\nK\ncold\n110\n3\n3\n140\n4.0\n10.0\n7\n160\n25\n3\n1.00\n0.50\n40.44877\n\n\nCream of Wheat (Quick)\nFALSE\nN\nhot\n100\n3\n0\n80\n1.0\n21.0\n0\n-1\n0\n2\n1.00\n1.00\n64.53382\n\n\nCrispix\nFALSE\nK\ncold\n110\n2\n0\n220\n1.0\n21.0\n3\n30\n25\n3\n1.00\n1.00\n46.89564\n\n\nCrispy Wheat & Raisins\nFALSE\nG\ncold\n100\n2\n1\n140\n2.0\n11.0\n10\n120\n25\n3\n1.00\n0.75\n36.17620\n\n\nDouble Chex\nFALSE\nR\ncold\n100\n2\n0\n190\n1.0\n18.0\n5\n80\n25\n3\n1.00\n0.75\n44.33086\n\n\nFroot Loops\nFALSE\nK\ncold\n110\n2\n1\n125\n1.0\n11.0\n13\n30\n25\n2\n1.00\n1.00\n32.20758\n\n\nFrosted Flakes\nFALSE\nK\ncold\n110\n1\n0\n200\n1.0\n14.0\n11\n25\n25\n1\n1.00\n0.75\n31.43597\n\n\nFrosted Mini-Wheats\nFALSE\nK\ncold\n100\n3\n0\n0\n3.0\n14.0\n7\n100\n25\n2\n1.00\n0.80\n58.34514\n\n\nFruit & Fibre Dates; Walnuts; and Oats\nFALSE\nP\ncold\n120\n3\n2\n160\n5.0\n12.0\n10\n200\n25\n3\n1.25\n0.67\n40.91705\n\n\nFruitful Bran\nTRUE\nK\ncold\n120\n3\n0\n240\n5.0\n14.0\n12\n190\n25\n3\n1.33\n0.67\n41.01549\n\n\nFruity Pebbles\nFALSE\nP\ncold\n110\n1\n1\n135\n0.0\n13.0\n12\n25\n25\n2\n1.00\n0.75\n28.02576\n\n\nGolden Crisp\nFALSE\nP\ncold\n100\n2\n0\n45\n0.0\n11.0\n15\n40\n25\n1\n1.00\n0.88\n35.25244\n\n\nGolden Grahams\nFALSE\nG\ncold\n110\n1\n1\n280\n0.0\n15.0\n9\n45\n25\n2\n1.00\n0.75\n23.80404\n\n\nGrape Nuts Flakes\nFALSE\nP\ncold\n100\n3\n1\n140\n3.0\n15.0\n5\n85\n25\n3\n1.00\n0.88\n52.07690\n\n\nGrape-Nuts\nFALSE\nP\ncold\n110\n3\n0\n170\n3.0\n17.0\n3\n90\n25\n3\n1.00\n0.25\n53.37101\n\n\nGreat Grains Pecan\nFALSE\nP\ncold\n120\n3\n3\n75\n3.0\n13.0\n4\n100\n25\n3\n1.00\n0.33\n45.81172\n\n\nHoney Graham Ohs\nFALSE\nQ\ncold\n120\n1\n2\n220\n1.0\n12.0\n11\n45\n25\n2\n1.00\n1.00\n21.87129\n\n\nHoney Nut Cheerios\nFALSE\nG\ncold\n110\n3\n1\n250\n1.5\n11.5\n10\n90\n25\n1\n1.00\n0.75\n31.07222\n\n\nHoney-comb\nFALSE\nP\ncold\n110\n1\n0\n180\n0.0\n14.0\n11\n35\n25\n1\n1.00\n1.33\n28.74241\n\n\nJust Right Crunchy Nuggets\nFALSE\nK\ncold\n110\n2\n1\n170\n1.0\n17.0\n6\n60\n100\n3\n1.00\n1.00\n36.52368\n\n\nJust Right Fruit & Nut\nFALSE\nK\ncold\n140\n3\n1\n170\n2.0\n20.0\n9\n95\n100\n3\n1.30\n0.75\n36.47151\n\n\nKix\nFALSE\nG\ncold\n110\n2\n1\n260\n0.0\n21.0\n3\n40\n25\n2\n1.00\n1.50\n39.24111\n\n\nLife\nFALSE\nQ\ncold\n100\n4\n2\n150\n2.0\n12.0\n6\n95\n25\n2\n1.00\n0.67\n45.32807\n\n\nLucky Charms\nFALSE\nG\ncold\n110\n2\n1\n180\n0.0\n12.0\n12\n55\n25\n2\n1.00\n1.00\n26.73451\n\n\nMaypo\nFALSE\nA\nhot\n100\n4\n1\n0\n0.0\n16.0\n3\n95\n25\n2\n1.00\n1.00\n54.85092\n\n\nMuesli Raisins; Dates; & Almonds\nFALSE\nR\ncold\n150\n4\n3\n95\n3.0\n16.0\n11\n170\n25\n3\n1.00\n1.00\n37.13686\n\n\nMuesli Raisins; Peaches; & Pecans\nFALSE\nR\ncold\n150\n4\n3\n150\n3.0\n16.0\n11\n170\n25\n3\n1.00\n1.00\n34.13976\n\n\nMueslix Crispy Blend\nFALSE\nK\ncold\n160\n3\n2\n150\n3.0\n17.0\n13\n160\n25\n3\n1.50\n0.67\n30.31335\n\n\nMulti-Grain Cheerios\nFALSE\nG\ncold\n100\n2\n1\n220\n2.0\n15.0\n6\n90\n25\n1\n1.00\n1.00\n40.10596\n\n\nNut&Honey Crunch\nFALSE\nK\ncold\n120\n2\n1\n190\n0.0\n15.0\n9\n40\n25\n2\n1.00\n0.67\n29.92429\n\n\nNutri-Grain Almond-Raisin\nFALSE\nK\ncold\n140\n3\n2\n220\n3.0\n21.0\n7\n130\n25\n3\n1.33\n0.67\n40.69232\n\n\nNutri-grain Wheat\nFALSE\nK\ncold\n90\n3\n0\n170\n3.0\n18.0\n2\n90\n25\n3\n1.00\n1.00\n59.64284\n\n\nOatmeal Raisin Crisp\nFALSE\nG\ncold\n130\n3\n2\n170\n1.5\n13.5\n10\n120\n25\n3\n1.25\n0.50\n30.45084\n\n\nPost Nat. Raisin Bran\nTRUE\nP\ncold\n120\n3\n1\n200\n6.0\n11.0\n14\n260\n25\n3\n1.33\n0.67\n37.84059\n\n\nProduct 19\nFALSE\nK\ncold\n100\n3\n0\n320\n1.0\n20.0\n3\n45\n100\n3\n1.00\n1.00\n41.50354\n\n\nPuffed Rice\nFALSE\nQ\ncold\n50\n1\n0\n0\n0.0\n13.0\n0\n15\n0\n3\n0.50\n1.00\n60.75611\n\n\nPuffed Wheat\nFALSE\nQ\ncold\n50\n2\n0\n0\n1.0\n10.0\n0\n50\n0\n3\n0.50\n1.00\n63.00565\n\n\nQuaker Oat Squares\nFALSE\nQ\ncold\n100\n4\n1\n135\n2.0\n14.0\n6\n110\n25\n3\n1.00\n0.50\n49.51187\n\n\nQuaker Oatmeal\nFALSE\nQ\nhot\n100\n5\n2\n0\n2.7\n-1.0\n-1\n110\n0\n1\n1.00\n0.67\n50.82839\n\n\nRaisin Bran\nTRUE\nK\ncold\n120\n3\n1\n210\n5.0\n14.0\n12\n240\n25\n2\n1.33\n0.75\n39.25920\n\n\nRaisin Nut Bran\nTRUE\nG\ncold\n100\n3\n2\n140\n2.5\n10.5\n8\n140\n25\n3\n1.00\n0.50\n39.70340\n\n\nRaisin Squares\nFALSE\nK\ncold\n90\n2\n0\n0\n2.0\n15.0\n6\n110\n25\n3\n1.00\n0.50\n55.33314\n\n\nRice Chex\nFALSE\nR\ncold\n110\n1\n0\n240\n0.0\n23.0\n2\n30\n25\n1\n1.00\n1.13\n41.99893\n\n\nRice Krispies\nFALSE\nK\ncold\n110\n2\n0\n290\n0.0\n22.0\n3\n35\n25\n1\n1.00\n1.00\n40.56016\n\n\nShredded Wheat\nFALSE\nN\ncold\n80\n2\n0\n0\n3.0\n16.0\n0\n95\n0\n1\n0.83\n1.00\n68.23588\n\n\nShredded Wheat 'n'Bran\nTRUE\nN\ncold\n90\n3\n0\n0\n4.0\n19.0\n0\n140\n0\n1\n1.00\n0.67\n74.47295\n\n\nShredded Wheat spoon size\nFALSE\nN\ncold\n90\n3\n0\n0\n3.0\n20.0\n0\n120\n0\n1\n1.00\n0.67\n72.80179\n\n\nSmacks\nFALSE\nK\ncold\n110\n2\n1\n70\n1.0\n9.0\n15\n40\n25\n2\n1.00\n0.75\n31.23005\n\n\nSpecial K\nFALSE\nK\ncold\n110\n6\n0\n230\n1.0\n16.0\n3\n55\n25\n1\n1.00\n1.00\n53.13132\n\n\nStrawberry Fruit Wheats\nFALSE\nN\ncold\n90\n2\n0\n15\n3.0\n15.0\n5\n90\n25\n2\n1.00\n1.00\n59.36399\n\n\nTotal Corn Flakes\nFALSE\nG\ncold\n110\n2\n1\n200\n0.0\n21.0\n3\n35\n100\n3\n1.00\n1.00\n38.83975\n\n\nTotal Raisin Bran\nTRUE\nG\ncold\n140\n3\n1\n190\n4.0\n15.0\n14\n230\n100\n3\n1.50\n1.00\n28.59278\n\n\nTotal Whole Grain\nFALSE\nG\ncold\n100\n3\n1\n200\n3.0\n16.0\n3\n110\n100\n3\n1.00\n1.00\n46.65884\n\n\nTriples\nFALSE\nG\ncold\n110\n2\n1\n250\n0.0\n21.0\n3\n60\n25\n3\n1.00\n0.75\n39.10617\n\n\nTrix\nFALSE\nG\ncold\n110\n1\n1\n140\n0.0\n13.0\n12\n25\n25\n2\n1.00\n1.00\n27.75330\n\n\nWheat Chex\nFALSE\nR\ncold\n100\n3\n1\n230\n3.0\n17.0\n3\n115\n25\n1\n1.00\n0.67\n49.78744\n\n\nWheaties\nFALSE\nG\ncold\n100\n3\n1\n200\n3.0\n17.0\n3\n110\n25\n1\n1.00\n1.00\n51.59219\n\n\nWheaties Honey Gold\nFALSE\nG\ncold\n110\n2\n1\n200\n1.0\n16.0\n8\n60\n25\n1\n1.00\n0.75\n36.18756"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#tips-for-string-success-1",
+    "href": "slides/week-5/week-5-strings.html#tips-for-string-success-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Tips for String Success",
+    "text": "Tips for String Success\nThe real power of these str_xxx functions comes when you specify the pattern using regular expressions!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#regular-expressions",
+    "href": "slides/week-5/week-5-strings.html#regular-expressions",
+    "title": "Using stringr to Work with Strings",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions\n\n“Regexps are a very terse language that allow you to describe patterns in strings.”\nR for Data Science\n\n\nUse str_xxx functions + regular expressions!\n\nstr_detect(string  = my_string_vector,\n           pattern = \"p[ei]ck[a-z]\")\n\n\n\n\n\n\n\n\n\nTip\n\n\nYou might encounter gsub(), grep(), etc. from Base R, but I would highly recommending using functions from the stringr package instead."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#regular-expressions-1",
+    "href": "slides/week-5/week-5-strings.html#regular-expressions-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions\n…are tricky!\n\nThere are lots of new symbols to keep straight.\nThere are a lot of cases to think through.\n\n\nThis web app for testing R regular expressions might be handy!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#special-characters",
+    "href": "slides/week-5/week-5-strings.html#special-characters",
+    "title": "Using stringr to Work with Strings",
+    "section": "Special Characters",
+    "text": "Special Characters\nThere is a set of characters that have a specific meaning when using regex.\n\nThe stringr package does not read these as normal characters.\nThese characters are:\n\n\n. ^ $ \\ | * + ? { } [ ] ( )"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#wild-card-character-.",
+    "href": "slides/week-5/week-5-strings.html#wild-card-character-.",
+    "title": "Using stringr to Work with Strings",
+    "section": "Wild Card Character: .",
+    "text": "Wild Card Character: .\nThis character can match any character.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \".ells\")\n\n[1] \"sells\"     \"seashells\"\n\n\n\n\n\nstr_extract(x, pattern = \".ells\")\n\n[1] NA      \"sells\" \"hells\" NA      NA      NA     \n\n\n\nThis matches strings that contain any character followed by “ells”."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#anchor-characters",
+    "href": "slides/week-5/week-5-strings.html#anchor-characters",
+    "title": "Using stringr to Work with Strings",
+    "section": "Anchor Characters: ^ $",
+    "text": "Anchor Characters: ^ $\n\n\n\n^ – looks at the beginning of a string.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \"^s\")\n\n[1] \"sells\"     \"seashells\" \"seashore!\"\n\n\nThis matches strings that start with “s”.\n\n\n\n\n\n\n$ – looks at the end of a string.\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \"s$\")\n\n[1] \"sells\"     \"seashells\"\n\n\nThis matches strings that end with “s”."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#quantifier-characters",
+    "href": "slides/week-5/week-5-strings.html#quantifier-characters",
+    "title": "Using stringr to Work with Strings",
+    "section": "Quantifier Characters: ? + *",
+    "text": "Quantifier Characters: ? + *\n\n? – matches when the preceding character occurs 0 or 1 times in a row.\n\nx &lt;- c(\"shes\", \n       \"shels\", \n       \"shells\", \n       \"shellls\", \n       \"shelllls\")\n\nstr_subset(x, pattern = \"shel?s\")\n\n[1] \"shes\"  \"shels\"\n\n\n\n\n\n+ – occurs 1 or more times in a row.\n\nstr_subset(x, pattern = \"shel+s\")\n\n[1] \"shels\"    \"shells\"   \"shellls\"  \"shelllls\"\n\n\n\n\n\n\n* – occurs 0 or more times in a row.\n\nstr_subset(x, pattern = \"shel*s\")\n\n[1] \"shes\"     \"shels\"    \"shells\"   \"shellls\"  \"shelllls\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#quantifier-characters-1",
+    "href": "slides/week-5/week-5-strings.html#quantifier-characters-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Quantifier Characters: {}",
+    "text": "Quantifier Characters: {}\n\n{n} – matches when the preceding character occurs exactly n times in a row.\n\nx &lt;- c(\"shes\", \n       \"shels\", \n       \"shells\", \n       \"shellls\", \n       \"shelllls\")\n\nstr_subset(x, pattern = \"shel{2}s\")\n\n[1] \"shells\"\n\n\n\n\n\n{n,} – occurs at least n times in a row.\n\nstr_subset(x, pattern = \"shel{2,}s\")\n\n[1] \"shells\"   \"shellls\"  \"shelllls\"\n\n\n\n\n\n\n{n,m} – occurs between n and m times in a row.\n\nstr_subset(x, pattern = \"shel{1,3}s\")\n\n[1] \"shels\"   \"shells\"  \"shellls\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#character-groups",
+    "href": "slides/week-5/week-5-strings.html#character-groups",
+    "title": "Using stringr to Work with Strings",
+    "section": "Character Groups: ()",
+    "text": "Character Groups: ()\n\nGroups are created with ( ).\n\nWe can specify “either” / “or” within a group using |.\n\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\", \n       \"peck\",\n       \"of\", \n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p(e|i)ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\n\n\nThis matches strings that contain either “peck” or “pick”."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#character-groups-1",
+    "href": "slides/week-5/week-5-strings.html#character-groups-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Character Groups: ()",
+    "text": "Character Groups: ()\n\nWe can then reference groups in order with escaped numbers (\\\\1) to specify that certain groupings repeat.\n\n\nx &lt;- c(\"hannah\", \n       \"had\", \n       \"a\", \n       \"ball\", \n       \"on\",\n       \"a\", \n       \"race car\")\n\nstr_subset(x, pattern = \"^(.).*\\\\1$\")\n\n[1] \"hannah\"   \"race car\"\n\n\n\n\nThis matches strings that start and end with the same character."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#character-groups-2",
+    "href": "slides/week-5/week-5-strings.html#character-groups-2",
+    "title": "Using stringr to Work with Strings",
+    "section": "Character Groups: ()",
+    "text": "Character Groups: ()\n\nGroups also let us be very precise with extracting strings!\n\n\nshopping_list &lt;- c(\"apples x4\", \n                   \"bag of flour\", \n                   \"bag of sugar\", \n                   \"milk x2\")\n\nstr_extract(shopping_list, \"([a-z]+) x([1-9])\")\n\n[1] \"apples x4\" NA          NA          \"milk x2\"  \n\n\n\n\n\nstr_extract(shopping_list, \"([a-z]+) x([1-9])\", group = 1)\n\n[1] \"apples\" NA       NA       \"milk\"  \n\n\n\n\nstr_extract(shopping_list, \"([a-z]+) x([1-9])\", group = 2)\n\n[1] \"4\" NA  NA  \"2\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#character-classes",
+    "href": "slides/week-5/week-5-strings.html#character-classes",
+    "title": "Using stringr to Work with Strings",
+    "section": "Character Classes: []",
+    "text": "Character Classes: []\n\nCharacter classes let you specify multiple possible characters to match on.\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\",\n       \"peck\",\n       \"of\",\n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p[ei]ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\n\n\n\n\n\n\n\nWhen to use [] or ()?\n\n\n() makes groups of characters, which you can then reference later, plus you can only use a | with ().\n[] is better for referencing multiple characters, plus you can only use a ^ to mean “not” with []…"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#matches-you-dont-want",
+    "href": "slides/week-5/week-5-strings.html#matches-you-dont-want",
+    "title": "Using stringr to Work with Strings",
+    "section": "Matches you don’t want",
+    "text": "Matches you don’t want\n[^ ] – specifies characters not to match on (think except)\n\nstr_subset(x, pattern = \"p[^i]ck\")\n\n[1] \"peck\"\n\n\n\n\nBut remember that ^ outside of brackets specifies the first charatcter in a string.\n\nstr_subset(x, pattern = \"^p\")\n\n[1] \"picked\"   \"peck\"     \"pickled\"  \"peppers!\"\n\n\n\n\n\n\nstr_subset(x, pattern = \"^[^p]\")\n\n[1] \"Peter\" \"Piper\" \"a\"     \"of\"   \n\n\n\n\n\n\n\n\n\n\nWarning\n\n\nWhy do “Peter” and “Piper” not match \"^[^p]\"?\nCapitilization matters!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#character-classes-1",
+    "href": "slides/week-5/week-5-strings.html#character-classes-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Character Classes: []",
+    "text": "Character Classes: []\n\n[ - ] – specifies a range of characters.\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\",\n       \"peck\",\n       \"of\",\n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p[ei]ck[a-z]\")\n\n[1] \"picked\"  \"pickled\"\n\n\n\n\n\n\n[A-Z] matches any capital letter.\n[a-z] matches any lowercase letter.\n[A-z] or [:alpha:] matches any letter\n[0-9] or [:digit:] matches any number"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#shortcuts",
+    "href": "slides/week-5/week-5-strings.html#shortcuts",
+    "title": "Using stringr to Work with Strings",
+    "section": "Shortcuts",
+    "text": "Shortcuts\n\n\n\\\\w – matches any “word” (\\\\W matches not “word”)\n\nA “word” contains any letters and numbers.\n\n\\\\d – matches any digit (\\\\D matches not digit)\n\\\\s – matches any whitespace (\\\\S matches not whitespace)\n\nWhitespace includes spaces, tabs, newlines, etc.\n\n\n\n\n\n\n\nx &lt;- \"phone number: 1234567899\"\n\nstr_extract(x, pattern = \"\\\\d+\")\n\n[1] \"1234567899\"\n\nstr_extract_all(x, pattern = \"\\\\S+\")\n\n[[1]]\n[1] \"phone\"      \"number:\"    \"1234567899\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#try-it-out-1",
+    "href": "slides/week-5/week-5-strings.html#try-it-out-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Try it out!",
+    "text": "Try it out!\nWhat regular expressions would match words that…\n\n\n\nend with a vowel?\nstart with x, y, or z?\ncontains at least one digit?\ncontains two of the same letters in a row?\n\n\n\n\n\nx &lt;- c(\"zebra\", \n       \"xray\", \n       \"apple\", \n       \"yellow\",\n       \"color\", \n       \"patt3rn\",\n       \"g2g\",\n       \"summarise\")"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#some-possible-solutions",
+    "href": "slides/week-5/week-5-strings.html#some-possible-solutions",
+    "title": "Using stringr to Work with Strings",
+    "section": "Some Possible Solutions…",
+    "text": "Some Possible Solutions…\n\nend with a vowel?\n\n\nstr_subset(x, \"[aeiouy]$\")\n\n\nstart with x, y, or z?\n\n\nstr_subset(x, \"^[xyz]\")\n\n\ncontain at least one digit?\n\n\nstr_subset(x, \"[:digit:]\")\n\n\ncontains two of the same letters in a row\n\n\nstr_subset(x, \"([:alpha:])\\\\1\")"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#escape",
+    "href": "slides/week-5/week-5-strings.html#escape",
+    "title": "Using stringr to Work with Strings",
+    "section": "Escape: \\\\",
+    "text": "Escape: \\\\\n\nTo match a special character, you need to escape it.\n\nx &lt;- c(\"How\",\n       \"much\", \n       \"wood\",\n       \"could\",\n       \"a\",\n       \"woodchuck\",\n       \"chuck\",\n       \"if\",\n       \"a\",\n       \"woodchuck\",\n       \"could\",\n       \"chuck\",\n       \"wood?\")\n\nstr_subset(x, pattern = \"?\")\n\nError in stri_subset_regex(string, pattern, omit_na = TRUE, negate = negate, : Syntax error in regex pattern. (U_REGEX_RULE_SYNTAX, context=`?`)"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#escape-1",
+    "href": "slides/week-5/week-5-strings.html#escape-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "Escape: \\\\",
+    "text": "Escape: \\\\\nUse \\\\ to escape the ? – it is now read as a normal character.\n\nstr_subset(x, pattern = \"\\\\?\")\n\n[1] \"wood?\"\n\n\n\n\n\n\n\n\n\n\nNote\n\n\nAlternatively, you could use []:\n\nstr_subset(x, pattern = \"[?]\")\n\n[1] \"wood?\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#when-in-doubt",
+    "href": "slides/week-5/week-5-strings.html#when-in-doubt",
+    "title": "Using stringr to Work with Strings",
+    "section": "When in Doubt",
+    "text": "When in Doubt\n\n\nUse the web app to test R regular expressions."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#tips-for-working-with-regex",
+    "href": "slides/week-5/week-5-strings.html#tips-for-working-with-regex",
+    "title": "Using stringr to Work with Strings",
+    "section": "Tips for working with regex",
+    "text": "Tips for working with regex\n\nRead the regular expressions out loud like a request.\n\n\n\nTest out your expressions on small examples first.\n\n\n\n\n\n\n\nstr_view()\n\n\n\nstr_view(c(\"shes\", \"shels\", \"shells\", \"shellls\", \"shelllls\"), \"l+\")\n\n[2] │ she&lt;l&gt;s\n[3] │ she&lt;ll&gt;s\n[4] │ she&lt;lll&gt;s\n[5] │ she&lt;llll&gt;s\n\n\n\n\n\n\n\n\nUse the stringr cheatsheet.\n\n\n\n\nBe kind to yourself!"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#more-practice",
+    "href": "slides/week-5/week-5-strings.html#more-practice",
+    "title": "Using stringr to Work with Strings",
+    "section": "More practice!",
+    "text": "More practice!\nI want to join two datasets that have a county variable:\n\n\n\ncounty_pop\n\n\n\n\n\n\ncounty\npop\n\n\n\n\nSTORY\n100000\n\n\nBOONE\n40000\n\n\nMARSHALL\n120000\n\n\nPOLK\n500000\n\n\n\n\n\n\n\ncounty_loc\n\n\n\n\n\n\ncounty\nregion\n\n\n\n\nStory\nCentral\n\n\nBoone\nCentral\n\n\nMarshall\nEast\n\n\nPolk\nCentral\n\n\n\n\n\n\n\n\n\n\n\n\n\nPractice\n\n\nWhat stringr function will help me join the county_pop and county_loc by county?"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#more-practice-1",
+    "href": "slides/week-5/week-5-strings.html#more-practice-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "More practice!",
+    "text": "More practice!\nWhat if I want to pull out only the area code in a phone number?\n\nphone_numbers &lt;- c(\"(515)242-1958\", \"(507)598-1395\", \"(805)938-7639\")\n\n\n\n\n\n\n\nPractice\n\n\nYou will need a stringr function and to use regular expressions!\n\n\n\n\n\nstr_extract(phone_numbers, \"\\\\(\\\\d{3}\\\\)\")\n\n[1] \"(515)\" \"(507)\" \"(805)\"\n\n\n\n\nWhat if I want just the numbers in the area code?\n\n\n\nstr_extract(phone_numbers, \"\\\\((\\\\d{3})\\\\)\", group = 1)\n\n[1] \"515\" \"507\" \"805\"\n\n\n\nphone_numbers |&gt; \n  str_extract(pattern = \"\\\\(\\\\d{3}\\\\)\") |&gt; \n  str_remove_all(pattern = \"[:punct:]\")\n\n[1] \"515\" \"507\" \"805\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#more-practice-last-one",
+    "href": "slides/week-5/week-5-strings.html#more-practice-last-one",
+    "title": "Using stringr to Work with Strings",
+    "section": "More practice! (last one)",
+    "text": "More practice! (last one)\n\n\n\nawards_dat\n\n\n\n\n\n\n\nawards\n\n\n\n\nBeyonce: 35G, 0A, 0E\n\n\nKendrick Lamar: 22G, 0A, 1E\n\n\nCharli XCX: 2G, 0A, 0E\n\n\nCynthia Erivo: 1G, 0A, 1E\n\n\nViola Davis: 1G, 1A, 1E\n\n\nElton John: 6G, 2A, 1E\n\n\n\n\n\n\n\n\n\n\n\n\n\nThat’s annoying…\n\n\nCreate a variable with just the artist name and a variable with the number of Grammys won."
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#more-practice-last-one-1",
+    "href": "slides/week-5/week-5-strings.html#more-practice-last-one-1",
+    "title": "Using stringr to Work with Strings",
+    "section": "More practice! (last one)",
+    "text": "More practice! (last one)\n\n\n\nawards_dat\n\n\n\n\n\n\n\nawards\n\n\n\n\nBeyonce: 35G, 0A, 0E\n\n\nKendrick Lamar: 22G, 0A, 1E\n\n\nCharli XCX: 2G, 0A, 0E\n\n\nCynthia Erivo: 1G, 0A, 1E\n\n\nViola Davis: 1G, 1A, 1E\n\n\nElton John: 6G, 2A, 1E\n\n\n\n\n\n\n\n\n\n\n\n\n\nThat’s annoying…\n\n\nCreate a variable with just the artist name and a variable with the number of Grammys won.\n\n\n\n\n\nawards_dat |&gt; \n  mutate(artist = str_extract(awards, \"([A-Za-z\\\\s]+)\\\\:\", \n                              group = 1),\n         grammies = str_extract(awards, \"([1-9]+)G\", \n                                group = 1)) |&gt; \n  select(artist, grammies)\n\n\n\n\n\n\n\nartist\ngrammies\n\n\n\n\nBeyonce\n35\n\n\nKendrick Lamar\n22\n\n\nCharli XCX\n2\n\n\nCynthia Erivo\n1\n\n\nViola Davis\n1\n\n\nElton John\n6"
+  },
+  {
+    "objectID": "slides/week-5/week-5-strings.html#to-do",
+    "href": "slides/week-5/week-5-strings.html#to-do",
+    "title": "Using stringr to Work with Strings",
+    "section": "To do…",
+    "text": "To do…\n\nPA 5.1: Scrambled Message\n\nDue Thursday before class\n\nLA 5: Murder in SQL City\n\nDue Monday at 11:59 pm\nYou can use maximum 1 late day on this lab!\n\nLook out for exam information posted on Canvas - we will discuss on Thursday"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#wednesday-febrary-5",
+    "href": "slides/week-5/week-5-dates.html#wednesday-febrary-5",
+    "title": "Using lubridate to Work with Dates",
+    "section": "",
+    "text": "Today we will…\n\nLab 4 Tips\nMidterm Exam - What to expect\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#midterm-exam---wed-212",
+    "href": "slides/week-5/week-5-dates.html#midterm-exam---wed-212",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Midterm Exam - Wed 2/12",
+    "text": "Midterm Exam - Wed 2/12\n\n\nThis is a three-part exam\nFirst two sections are completed in the one hour and 50 minute class period\n\nYou will first complete a General Questions section on paper and without your computer.\nAfter you turn that in, you will complete a Short Answer section with your computer.\n\nThird section is “takehome” and due 48 hours after the end of class.\n\nThe Open-Ended Analysis is completed out of class (should not take more than 3 hours)"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#midterm-exam---wed-212-1",
+    "href": "slides/week-5/week-5-dates.html#midterm-exam---wed-212-1",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Midterm Exam - Wed 2/12",
+    "text": "Midterm Exam - Wed 2/12\n\n\nReview the “What to Expect” document thoroughly as it includes\n\ndetailed expectations\nthe dataset you will be working with\n\nSet yourself up with a dedicated directory that has the data in it\nMake sure to bring to the exam:\n\nsomething to write with (black/blue pen or pencils)\nyour laptop (& a charging chord)\n\n\n\n\n\n\n\n\n\n\nCaution\n\n\nWhile the coding tasks are open-resource, you will likely run out of time if you have to look everything up. Know what functions you might need and where to find documentation for implementing these functions."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#midterm-preparation-suggestions",
+    "href": "slides/week-5/week-5-dates.html#midterm-preparation-suggestions",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Midterm Preparation Suggestions",
+    "text": "Midterm Preparation Suggestions\n\n\nReview course slides & Check-Ins\nQuiz each other on the uses of different functions\nTry to re-do parts of the PAs or LAs from scratch\nStart working with the data\n\nHAVE CODE SET UP THAT READS IN THE DATA\nAsk some questions about the data and try to answer them\n\nSave example code for things you find tricky in a place you can find it\nGet sleep and feed yourself! 🛌🥞🥙🍛"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#project",
+    "href": "slides/week-5/week-5-dates.html#project",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Project",
+    "text": "Project\n\n\nDetailed information about the project is posted on Canvas\nYou will complete the project in groups of 4\nThe project is scaffolded into 5 “Checkpoints”\n\nThe bulk of the work will be in Weeks 8-10\n\nFirst Checkpoint due Monday 2/10 at 11:59pm\n\nFill out a survey to form groups\nYou can specify if there are people you want to work with or have me place you in a group"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#lubridate",
+    "href": "slides/week-5/week-5-dates.html#lubridate",
+    "title": "Using lubridate to Work with Dates",
+    "section": "lubridate",
+    "text": "lubridate\n\n\n\nConvert a date-like variable (“May 8, 1995”) to a date or date-time object.\nFind the weekday, month, year, etc from a date-time object.\nConvert between time zones.\n\n\n\nknitr::include_graphics(\"https://github.com/rstudio/hex-stickers/blob/main/thumbs/lubridate.png?raw=true\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNote\n\n\n\nThe lubridate package installs and loads with the tidyverse."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#why-are-dates-and-times-tricky",
+    "href": "slides/week-5/week-5-dates.html#why-are-dates-and-times-tricky",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Why are dates and times tricky?",
+    "text": "Why are dates and times tricky?\n\n\nWhen parsing dates and times, we have to consider complicating factors like…\n\nDaylight Savings Time.\n\nOne day a year is 23 hours; one day a year is 25 hours.\nSome places use it, some don’t.\n\nLeap years – most years have 365 days, some have 366.\nTime zones."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#date-time-objects",
+    "href": "slides/week-5/week-5-dates.html#date-time-objects",
+    "title": "Using lubridate to Work with Dates",
+    "section": "date-time Objects",
+    "text": "date-time Objects\nThere are multiple data types for dates and times.\n\nA date:\n\ndate or Date\n\nA date and a time (identifies a unique instant in time):\n\ndtm\nPOSIXlt – stores date-times as the number of seconds since January 1, 1970 (“Unix Epoch”)\nPOSIXct – stores date-times as a list with elements for second, minute, hour, day, month, year, etc."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#creating-date-time-objects",
+    "href": "slides/week-5/week-5-dates.html#creating-date-time-objects",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Creating date-time Objects",
+    "text": "Creating date-time Objects\n\n\n\n\n\n\nBig Picture\n\n\n\nThere are a lot of diferent ways to create date-time objects!\n\n\n. . .\nCreate a date from individual components:\n\nmake_date(year = 1995, month = 05, day = 08)\n\n[1] \"1995-05-08\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#create-a-date-time-object-from-a-string",
+    "href": "slides/week-5/week-5-dates.html#create-a-date-time-object-from-a-string",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Create a date-time Object from a String",
+    "text": "Create a date-time Object from a String\n\n\nmdy(\"August 29, 1991\")\n\n[1] \"1991-08-29\"\n\n\n\n. . .\n\n\ndmy(\"29-August-1991\", \n    tz = \"America/Denver\")\n\n[1] \"1991-08-29 MDT\"\n\n\n\n. . .\n\n\ndmy_hms(\"29-August-1991 9:32:12\", \n        tz = \"America/Denver\")\n\n[1] \"1991-08-29 09:32:12 MDT\"\n\n\n\n. . .\n\n\nas_datetime(\"91-08-29\", \n            format = \"%y-%m-%d\")\n\n[1] \"1991-08-29 UTC\"\n\n\n\n. . .\n\n\nparse_datetime(\"8/29/1991\", \n               format = \"%m/%d/%Y\")\n\n[1] \"1991-08-29 UTC\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#creating-date-time-objects-1",
+    "href": "slides/week-5/week-5-dates.html#creating-date-time-objects-1",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Creating date-time Objects",
+    "text": "Creating date-time Objects"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#common-mistake-with-dates",
+    "href": "slides/week-5/week-5-dates.html#common-mistake-with-dates",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Common Mistake with Dates",
+    "text": "Common Mistake with Dates\n\n\n\nas_datetime(2023-02-6)\n\n[1] \"1970-01-01 00:33:35 UTC\"\n\n\n\n\n\n\nmy_date &lt;- 2023-02-6\nmy_date\n\n[1] 2015\n\n\n\n\n\n\nWhat’s wrong here?\n\n\n. . .\nMake sure you use quotes!\n\n2,015 seconds \\(\\approx\\) 33.5 minutes"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#extracting-date-time-components",
+    "href": "slides/week-5/week-5-dates.html#extracting-date-time-components",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Extracting date-time Components",
+    "text": "Extracting date-time Components\n\nbday &lt;- ymd_hms(\"1995-02-27 07:03:12\", \n                tz = \"America/Chicago\")\nbday\n\n[1] \"1995-02-27 07:03:12 CST\"\n\n\n. . .\n\n\n\n\n\nyear(bday)\n\n[1] 1995\n\nmonth(bday)\n\n[1] 2\n\nday(bday)\n\n[1] 27\n\n\n\n\n\n\n\nwday(bday)\n\n[1] 2\n\nwday(bday, \n     label = TRUE, \n     abbr = FALSE)\n\n[1] Monday\n7 Levels: Sunday &lt; Monday &lt; Tuesday &lt; Wednesday &lt; Thursday &lt; ... &lt; Saturday"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#subtraction-with-date-time-objects",
+    "href": "slides/week-5/week-5-dates.html#subtraction-with-date-time-objects",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Subtraction with date-time Objects",
+    "text": "Subtraction with date-time Objects\nDoing subtraction gives you a difftime object.\ndifftime objects do not always have the same units – it depends on the scale of the objects you are working with.\n. . .\nHow old am I?\n\ntoday() - mdy(\"02-27-1995\")\n\nTime difference of 11012 days\n\n\n. . .\n\nHow long did it take me to type this slide?\n\nbegin &lt;- mdy_hms(\"10/21/2024 20:40:34\")\nfinish &lt;- mdy_hms(\"10/21/2024 20:43:11\")\n\nfinish - begin\n\nTime difference of 2.616667 mins"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#durations-and-periods",
+    "href": "slides/week-5/week-5-dates.html#durations-and-periods",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Durations and Periods",
+    "text": "Durations and Periods\n\n\nDurations will always give the time span in an exact number of seconds.\n\nas.duration(\n  today() - mdy(\"02-27-1995\")\n            )\n\n[1] \"951436800s (~30.15 years)\"\n\n\n\n\n\n\nPeriods will give the time span in more approximate, but human readable times.\n\nas.period(\n  today() - mdy(\"02-27-1995\")\n  )\n\n[1] \"11012d 0H 0M 0S\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#durations-and-periods-1",
+    "href": "slides/week-5/week-5-dates.html#durations-and-periods-1",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Durations and Periods",
+    "text": "Durations and Periods\n\n\nWe can also add time to date-time objects:\n\ndays(), years(), etc. will add a period of time.\nddays(), dyears(), etc. will add a duration of time.\n\n\n\n\n\nBecause durations use the exact number of seconds to represent days and years, you might get unexpected results.\n\nWhen is is my 99th birthday?\n\nmdy(\"02/27/1995\") + years(99)\n\n[1] \"2094-02-27\"\n\n\n\nmdy(\"02/27/1995\") + dyears(99)\n\n[1] \"2094-02-26 18:00:00 UTC\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#time-zones",
+    "href": "slides/week-5/week-5-dates.html#time-zones",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Time Zones…",
+    "text": "Time Zones…\n…are complicated!\n\nSpecify time zones in the form:\n\n{continent}/{city} – “America/Denver”, “Africa/Nairobi”\n{ocean}/{city} – “Pacific/Auckland”\n\n. . .\nWhat time zone does R think I’m in?\n\nSys.timezone()\n\n[1] \"America/Los_Angeles\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#time-zones-1",
+    "href": "slides/week-5/week-5-dates.html#time-zones-1",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Time Zones",
+    "text": "Time Zones\nYou can change the time zone of a date in two ways:\n\nx &lt;- ymd_hms(\"2024-10-24 18:00:00\", \n             tz = \"Europe/Copenhagen\")\n\n. . .\n\n\nwith_tz()\n\nKeeps the instant in time the same, but changes the visual representation.\n\nx |&gt; \n  with_tz()\n\n[1] \"2024-10-24 09:00:00 PDT\"\n\nx |&gt; \n  with_tz(tzone = \"Asia/Kolkata\")\n\n[1] \"2024-10-24 21:30:00 IST\"\n\n\n\n\n\n\n\nforce_tz()\n\nChanges the instant in time by forcing a time zone change.\n\nx |&gt; \n  force_tz()\n\n[1] \"2024-10-24 18:00:00 PDT\"\n\nx |&gt; \n  force_tz(tzone = \"Asia/Kolkata\")\n\n[1] \"2024-10-24 18:00:00 IST\""
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#common-mistake-with-dates-1",
+    "href": "slides/week-5/week-5-dates.html#common-mistake-with-dates-1",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Common Mistake with Dates",
+    "text": "Common Mistake with Dates\nWhen you read data in or create a new date-time object, the default time zone (if not specified) is UTC (Universal Time Coordinated)*.\n. . .\nSo, make sure you specify your desired time zone!\n\nx &lt;- mdy(\"11/20/1993\")\ntz(x)\n\n[1] \"UTC\"\n\n\n\nx &lt;- mdy(\"11/20/1993\", \n         tz = \"America/Los_Angeles\")\ntz(x)\n\n[1] \"America/Los_Angeles\"\n\n\n\n*UTC is the same as GMT (Greenwich Mean Time)"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#tips-for-working-with-dates",
+    "href": "slides/week-5/week-5-dates.html#tips-for-working-with-dates",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Tips for Working with Dates",
+    "text": "Tips for Working with Dates\n\nAlways just check that you are getting results that you expect!\nPay attention to time zones\nUse the lubridate cheatsheet"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#pa-5.2-jewel-heist",
+    "href": "slides/week-5/week-5-dates.html#pa-5.2-jewel-heist",
+    "title": "Using lubridate to Work with Dates",
+    "section": "PA 5.2: Jewel Heist",
+    "text": "PA 5.2: Jewel Heist\n\n\n\n\nUse dates from clues to find the jewel thief!\nMake sure to pay attention to time zones ⏰"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#la-5-murder-in-sql-city",
+    "href": "slides/week-5/week-5-dates.html#la-5-murder-in-sql-city",
+    "title": "Using lubridate to Work with Dates",
+    "section": "LA 5: Murder in SQL City",
+    "text": "LA 5: Murder in SQL City\n\n\n\n\nThis lab looks different!\nYou will need a number of steps to follow the clues - it won’t be done in one pipeline\nRead the instructions carefully\nAt the end, try to delete any code or output that you don’t actually need\nCheck with others if you are stuck! You can see if they get the witness or clues answers at that step."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#to-do",
+    "href": "slides/week-5/week-5-dates.html#to-do",
+    "title": "Using lubridate to Work with Dates",
+    "section": "To do…",
+    "text": "To do…\n\nPA 5.2: Jewel Heist\n\ndue Friday (2/7) at 10:00am\n\nLab 5: Murder in SQL City\n\ndue Saturday (2/8) at 11:59pm\n\nRead Chapter 6: Version Control\n\nCheck-in 6.1 - 6.2 due Monday (2/10) at 10:00am\n\nProject Checkpoint 1: Group Formation Survey\n\ndue Monday (2/10) at 11:59pm"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#midterm-exam---thu-58",
+    "href": "slides/week-5/week-5-dates.html#midterm-exam---thu-58",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Midterm Exam - Thu 5/8",
+    "text": "Midterm Exam - Thu 5/8\n\n\nThis is a three-part exam\nFirst two sections are completed in the one hour and 50 minute class period\n\nYou will first complete a General Questions section on paper and without your computer.\nAfter you turn that in, you will complete a Short Answer section with your computer.\n\nThird section is “takehome” and due 48 hours after the end of class.\n\nThe Take-Home Analysis is completed out of class (should not take more than 3 hours)"
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html#midterm-exam---thu-58-1",
+    "href": "slides/week-5/week-5-dates.html#midterm-exam---thu-58-1",
+    "title": "Using lubridate to Work with Dates",
+    "section": "Midterm Exam - Thu 5/8",
+    "text": "Midterm Exam - Thu 5/8\n\n\nReview the “What to Expect” document thoroughly as it includes\n\ndetailed expectations\nthe dataset you will be working with\n\nSet yourself up with a dedicated directory that has the data in it\nMake sure to bring to the exam:\n\nsomething to write with (black/blue pen or pencils)\nyour laptop (& a charging chord)\n\n\n\n. . .\n\n\n\n\n\n\nCaution\n\n\n\nWhile the coding tasks are open-resource, you will likely run out of time if you have to look everything up. Know what functions you might need and where to find documentation for implementing these functions."
+  },
+  {
+    "objectID": "slides/week-5/week-5-dates.html",
+    "href": "slides/week-5/week-5-dates.html",
+    "title": "Using lubridate to Work with Dates",
+    "section": "",
+    "text": "Today we will…\n\nLab 4 Tips\nMidterm Exam - What to expect\nNew Material\n\nWorking with Date & Time Variables\n\nPA 5.2: Jewel Heist"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html",
+    "href": "slides/week-4/w4-factors.html",
+    "title": "Extending Data Joins + Factors",
+    "section": "",
+    "text": "Today we will…\n\nNotes on Lab 3\nProject Info\nNew Material\n\nExtensions to Data Joins\nFactors with forcats\nClean Variable Names\nLifecycle Stages\n\nLab 4: Childcare Costs in California"
+  },
+  {
+    "objectID": "slides/week-4/w4-factors.html#project",
+    "href": "slides/week-4/w4-factors.html#project",
+    "title": "Extending Data Joins + Factors",
+    "section": "Project",
+    "text": "Project\n\n\nDetailed information about the project is posted on Canvas\nYou will complete the project in groups of 4\nThe project is scaffolded into 5 “Checkpoints”\n\nThe bulk of the work will be in Weeks 8-10\n\nFirst Checkpoint due 6th Tuesday (5/6) at 11:59pm\n\nFill out a survey to form groups\nYou can specify if there are people you want to work with or have me place you in a group"
+  },
+  {
+    "objectID": "practice-activities/pa5-2-test.html",
+    "href": "practice-activities/pa5-2-test.html",
+    "title": "PA 5.2: Jewel Heist",
+    "section": "",
+    "text": "Download starter qmd file\nlibrary(tidyverse)"
+  },
+  {
+    "objectID": "practice-activities/pa5-2-test.html#solve-the-mystery",
+    "href": "practice-activities/pa5-2-test.html#solve-the-mystery",
+    "title": "PA 5.2: Jewel Heist",
+    "section": "Solve the Mystery",
+    "text": "Solve the Mystery\nJust down the road in Montecito, CA several rare jewels went missing. The jewels were stolen and replaced with fakes, but detectives have not been able to solve the case. They are now calling in a data scientist to help parse their clues.\nA camera was located near the building where the jewels went missing, so the detectives have provided you with a list of people who may have entered the building. This list includes the date and time they were spotted on the camera, in Pacific Standard Time (PST).\nUnfortunately, the date and time of the jewel heist is not known. You have been hired to crack the case. Use the clues below to discover the thief’s identity.\n\n# 214 total suspects\nsuspects &lt;- read_csv(\"https://raw.githubusercontent.com/zoerehnberg/STAT331-S23/main/practice_activities/suspects.csv\")\n\n\nWhen data is read into R dates are automatically read in as XX time zone. The first thing that we need to do is tell R that the times listed are in PST.\n\n\nsuspects |&gt; \n  mutate(Time.Spotted = force_tz(Time.Spotted)) |&gt; \n  slice_head() |&gt; \n  pull(Time.Spotted)\n\n[1] \"2022-01-29 12:41:00 PST\"\n\n\n\nsuspects &lt;- suspects |&gt; \n  mutate(Time.Spotted = force_tz(Time.Spotted))\n\n\nBased on the cleaning schedule for the room where the jewels are held, the heist was not committed in the morning (i.e. at 12:00pm or later).\n\n\nsuspects &lt;- suspects |&gt; \n  filter(pm(Time.Spotted) == TRUE)\n# end with 112 suspects left\n\n\nThe room where the heist was committed is closed on Tuesdays and Thursdays (and there were no signs of forced entry), so the heist did not happen on those days.\n\n\n# end with 78 suspects left\nsuspects &lt;- suspects |&gt; \n  mutate(weekday = wday(Time.Spotted, \n                        label = TRUE, \n                        abbr = TRUE)) |&gt; \n  filter(!weekday %in% c(\"Tue\", \"Thu\"))\n\n\nIt is believed that the heist was committed within 5 weeks (35 days) of Thanksgiving 2022 (before or after).\n\n\n\n\n\n\n\nHints\n\n\n\nPay attention to time zones!\nYou will want to look up the date of Thanksgiving 2022.\nI would recommend using an interval\n\n\n\n# thankgiving 2022 in PCT\ntg &lt;- mdy(\"11-24-2022\", tz = \"America/Los_Angeles\")\n\n# create interval of 35 days before / after\ntg_interval &lt;- (tg - days(35)) %--% (tg + days(35))\n\nsuspects &lt;- suspects |&gt; \n  filter(Time.Spotted %within% tg_interval)\n# end with 11 suspects left\n\n\nThe detectives partially decoded a message from the thief to a notorious fence in Iceland. In it, the thief said the job would be done “after the sun sets for you, but before midnight.” In November, the sun sets in Iceland at 4:00pm.\n\n\n\n\n\n\n\nHints\n\n\n\nPay attention to time zones!\n\n\n\n# end with 4 suspects left\n\nsuspects &lt;- suspects |&gt; \n  filter(hour(with_tz(Time.Spotted, tzone = \"UTC\")) &gt; 16) \n\n\nThe thief left behind a receipt at the scene of the crime. The receipt is smudged, but the day of the month is shown to be 22. It is thought that the heist took place no more than three days after the receipt was issued.\n\n\n# end with 2 suspects left\n\nsuspects &lt;- suspects |&gt; \n  filter(day(Time.Spotted) %in% 22:25)\n\n\nThe thief is amused by your efforts and has sent you a cryptic clue:\n\n\n“The exact number of seconds between midnight UTC on Jan 1, 1970 and the time I arrived on the scene is divisible by 6.”\n\n\n\n\n\n\n\nHint\n\n\n\nCheck out how date-time objects are stored on the lubridate cheatsheet.\n\n\n\n# end with 1 suspect left\n\nsuspects |&gt; \n  filter(as.numeric(Time.Spotted) %% 6 == 0)\n\n# A tibble: 1 × 4\n  Name        Occupation Time.Spotted        weekday\n  &lt;chr&gt;       &lt;chr&gt;      &lt;dttm&gt;              &lt;ord&gt;  \n1 Danny Ocean idea man   2022-11-25 12:20:30 Fri    \n\n\n\n\n\n\n\n\nCanvas Quiz Submission\n\n\n\nWho is the thief? Only one name should remain. Remember that you can check with classmates and me about the answer!"
+  },
+  {
+    "objectID": "slides/week-5/w5-notes.html",
+    "href": "slides/week-5/w5-notes.html",
+    "title": "Week 5 - Strings - Starter Notes",
+    "section": "",
+    "text": "library(tidyverse)\nlibrary(liver)\nlibrary(knitr)\n\ndata(cereal)"
+  },
+  {
+    "objectID": "slides/week-5/w5-notes.html#stringr-functions",
+    "href": "slides/week-5/w5-notes.html#stringr-functions",
+    "title": "Week 5 - Strings - Starter Notes",
+    "section": "stringr Functions",
+    "text": "stringr Functions\n\nmy_vector &lt;- c(\"Hello,\",\n               \"my name is\",\n               \"Bond\",\n               \"James Bond\")\n\nstr_\n\nError: object 'str_' not found\n\n\n\nstr_detect()\n\n\nstr_detect(my_vector, pattern = \"Bond\")\n\n[1] FALSE FALSE  TRUE  TRUE\n\n\n\nstr_match()\n\n\nstr_match(my_vector, pattern = \"Bond\")\n\n     [,1]  \n[1,] NA    \n[2,] NA    \n[3,] \"Bond\"\n[4,] \"Bond\"\n\n\n\nstr_extract\n\n\nstr_extract(my_vector, pattern = \"Bond\")\n\n[1] NA     NA     \"Bond\" \"Bond\"\n\n\n\nalt_vector &lt;- c(\"Hello,\", \n               \"my name is\", \n               \"Bond, James Bond\")\n               \nstr_extract(alt_vector, \n            pattern = \"Bond\")\n\n[1] NA     NA     \"Bond\"\n\nstr_extract_all(alt_vector, \n                pattern = \"Bond\")\n\n[[1]]\ncharacter(0)\n\n[[2]]\ncharacter(0)\n\n[[3]]\n[1] \"Bond\" \"Bond\"\n\n\n\nstr_locate\n\n\nstr_locate(my_vector, pattern = \"Bond\")\n\n     start end\n[1,]    NA  NA\n[2,]    NA  NA\n[3,]     1   4\n[4,]     7  10\n\n\n\nstr_subset\n\n\nstr_subset(my_vector, pattern = \"Bond\")\n\n[1] \"Bond\"       \"James Bond\"\n\n\n\nTry it out!\n\n\n\n\n\n\nNote\n\n\n\nFor each of these functions, write down:\n\nthe object structure of the output.\nthe data type of the output.\na brief explanation of what they do.\n\n\n\n\nmy_vector &lt;- c(\"I scream,\",\n               \"you scream\",\n               \"we all\",\n               \"scream\",\n               \"for\",\n               \"ice cream\")\n\nstr_detect(my_vector, pattern = \"cream\")\n\n[1]  TRUE  TRUE FALSE  TRUE FALSE  TRUE\n\nstr_locate(my_vector, pattern = \"cream\")\n\n     start end\n[1,]     4   8\n[2,]     6  10\n[3,]    NA  NA\n[4,]     2   6\n[5,]    NA  NA\n[6,]     5   9\n\nstr_match(my_vector, pattern = \"cream\")\n\n     [,1]   \n[1,] \"cream\"\n[2,] \"cream\"\n[3,] NA     \n[4,] \"cream\"\n[5,] NA     \n[6,] \"cream\"\n\nstr_extract(my_vector, pattern = \"cream\")\n\n[1] \"cream\" \"cream\" NA      \"cream\" NA      \"cream\"\n\nstr_subset(my_vector, pattern = \"cream\")\n\n[1] \"I scream,\"  \"you scream\" \"scream\"     \"ice cream\" \n\n\n\nReplace / Remove Patterns\n\n\nstr_replace(my_vector, \n            pattern = \"Bond\", \n            replace = \"Franco\")\n\n[1] \"I scream,\"  \"you scream\" \"we all\"     \"scream\"     \"for\"       \n[6] \"ice cream\" \n\n\n\nstr_remove(my_vector, \n           pattern = \"Bond\")\n\n[1] \"I scream,\"  \"you scream\" \"we all\"     \"scream\"     \"for\"       \n[6] \"ice cream\" \n\n\n\nEdit string cases\n\n\nstr_to_lower(my_vector)\n\n[1] \"i scream,\"  \"you scream\" \"we all\"     \"scream\"     \"for\"       \n[6] \"ice cream\" \n\nstr_to_upper(my_vector)\n\n[1] \"I SCREAM,\"  \"YOU SCREAM\" \"WE ALL\"     \"SCREAM\"     \"FOR\"       \n[6] \"ICE CREAM\" \n\nstr_to_title(my_vector)\n\n[1] \"I Scream,\"  \"You Scream\" \"We All\"     \"Scream\"     \"For\"       \n[6] \"Ice Cream\" \n\n\n\nCombining Strings\n\n\nprompt &lt;- \"Hello, my name is\"\nfirst  &lt;- \"James\"\nlast   &lt;- \"Bond\"\nstr_c(prompt, last, \",\", first, last, sep = \" \")\n\n[1] \"Hello, my name is Bond , James Bond\"\n\n\n\nstr_flatten(my_vector, collapse = \" \")\n\n[1] \"I scream, you scream we all scream for ice cream\"\n\n\n\nfirst &lt;- \"James\"\nlast &lt;- \"Bond\"\nstr_glue(\"My name is {last}, {first} {last}\")\n\nMy name is Bond, James Bond\n\n\n\nCreating new variables\n\n\ncereal |&gt;\n  mutate(is_bran = str_detect(name, \"Bran\"),\n         .after = name) |&gt; \n  slice_head(n = 5) |&gt; \n  kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nname\nis_bran\nmanuf\ntype\ncalories\nprotein\nfat\nsodium\nfiber\ncarbo\nsugars\npotass\nvitamins\nshelf\nweight\ncups\nrating\n\n\n\n\n100% Bran\nTRUE\nN\ncold\n70\n4\n1\n130\n10\n5\n6\n280\n25\n3\n1\n0.33\n68.40297\n\n\n100% Natural Bran\nTRUE\nQ\ncold\n120\n3\n5\n15\n2\n8\n8\n135\n0\n3\n1\n1.00\n33.98368\n\n\nAll-Bran\nTRUE\nK\ncold\n70\n4\n1\n260\n9\n7\n5\n320\n25\n3\n1\n0.33\n59.42551\n\n\nAll-Bran with Extra Fiber\nTRUE\nK\ncold\n50\n4\n0\n140\n14\n8\n0\n330\n25\n3\n1\n0.50\n93.70491\n\n\nAlmond Delight\nFALSE\nR\ncold\n110\n2\n2\n200\n1\n14\n8\n-1\n25\n3\n1\n0.75\n34.38484"
+  },
+  {
+    "objectID": "slides/week-5/w5-notes.html#regular-expressions",
+    "href": "slides/week-5/w5-notes.html#regular-expressions",
+    "title": "Week 5 - Strings - Starter Notes",
+    "section": "Regular Expressions",
+    "text": "Regular Expressions\n\nwild card .\n\n\nx &lt;- c(\"She\", \n       \"sells\", \n       \"seashells\", \n       \"by\", \n       \"the\", \n       \"seashore!\")\n\nstr_subset(x, pattern = \".ells\")\n\n[1] \"sells\"     \"seashells\"\n\nstr_extract(x, pattern = \".ells\")\n\n[1] NA      \"sells\" \"hells\" NA      NA      NA     \n\n\n\nanchors\n\n\nstr_subset(x, pattern = \"^s\")\n\n[1] \"sells\"     \"seashells\" \"seashore!\"\n\nstr_subset(x, pattern = \"s$\")\n\n[1] \"sells\"     \"seashells\"\n\n\n\nrepeated characters\n\n\nx &lt;- c(\"shes\", \n       \"shels\", \n       \"shells\", \n       \"shellls\", \n       \"shelllls\")\n\nstr_subset(x, pattern = \"shel?s\")\n\n[1] \"shes\"  \"shels\"\n\nstr_subset(x, pattern = \"shel+s\")\n\n[1] \"shels\"    \"shells\"   \"shellls\"  \"shelllls\"\n\nstr_subset(x, pattern = \"shel*s\")\n\n[1] \"shes\"     \"shels\"    \"shells\"   \"shellls\"  \"shelllls\"\n\nstr_subset(x, pattern = \"shel{2}s\")\n\n[1] \"shells\"\n\nstr_subset(x, pattern = \"shel{2,}s\")\n\n[1] \"shells\"   \"shellls\"  \"shelllls\"\n\nstr_subset(x, pattern = \"shel{1,3}s\")\n\n[1] \"shels\"   \"shells\"  \"shellls\"\n\n\n\ncharacter groups ()\n\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\", \n       \"peck\",\n       \"of\", \n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p(e|i)ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\n\n\nx &lt;- c(\"hannah\", \n       \"had\", \n       \"a\", \n       \"ball\", \n       \"on\",\n       \"a\", \n       \"race car\")\n\nstr_subset(x, pattern = \"^(.).*\\\\1$\")\n\n[1] \"hannah\"   \"race car\"\n\n\n\nshopping_list &lt;- c(\"apples x4\", \n                   \"bag of flour\", \n                   \"bag of sugar\", \n                   \"milk x2\")\n\nstr_extract(shopping_list, \"([a-z]+) x([1-9])\")\n\n[1] \"apples x4\" NA          NA          \"milk x2\"  \n\nstr_extract(shopping_list, \"([a-z]+) x([1-9])\", group = 1)\n\n[1] \"apples\" NA       NA       \"milk\"  \n\nstr_extract(shopping_list, \"([a-z]+) x([1-9])\", group = 2)\n\n[1] \"4\" NA  NA  \"2\"\n\n\n\ncharacter classes []\nanti-match [^]\n\n\nx &lt;- c(\"Peter\", \n       \"Piper\", \n       \"picked\", \n       \"a\",\n       \"peck\",\n       \"of\",\n       \"pickled\",\n       \"peppers!\")\n\nstr_subset(x, pattern = \"p[ei]ck\")\n\n[1] \"picked\"  \"peck\"    \"pickled\"\n\nstr_subset(x, pattern = \"p[^i]ck\")\n\n[1] \"peck\"\n\nstr_subset(x, pattern = \"^p\")\n\n[1] \"picked\"   \"peck\"     \"pickled\"  \"peppers!\"\n\nstr_subset(x, pattern = \"^[^p]\")\n\n[1] \"Peter\" \"Piper\" \"a\"     \"of\"   \n\nstr_subset(x, pattern = \"p[ei]ck[a-z]\")\n\n[1] \"picked\"  \"pickled\"\n\n\n\nshortcuts\n\n\nx &lt;- \"phone number: 1234567899\"\n\nstr_extract(x, pattern = \"\\\\d+\")\n\n[1] \"1234567899\"\n\nstr_extract_all(x, pattern = \"\\\\S+\")\n\n[[1]]\n[1] \"phone\"      \"number:\"    \"1234567899\"\n\n\n\nTry it out!\n\nx &lt;- c(\"zebra\", \n       \"xray\", \n       \"apple\", \n       \"yellow\",\n       \"color\", \n       \"colour\",\n       \"summarize\",\n       \"summarise\")\n\nWhat regular expressions would match words that… + end with a vowel? + start with x, y, or z? + contains two of the same letters in a row? + contain British spelling?\n\nstr_subset(x, pattern = \"[aeiou]$\")\n\n[1] \"zebra\"     \"apple\"     \"summarize\" \"summarise\"\n\nstr_subset(x, pattern = \"^[xyz]\")\n\n[1] \"zebra\"  \"xray\"   \"yellow\"\n\nstr_subset(x, pattern = \"(.)\\\\1\")\n\n[1] \"apple\"     \"yellow\"    \"summarize\" \"summarise\"\n\nstr_subset(x, pattern = \".{2}\")\n\n[1] \"zebra\"     \"xray\"      \"apple\"     \"yellow\"    \"color\"     \"colour\"   \n[7] \"summarize\" \"summarise\"\n\nstr_subset(x, pattern = \"our$|ise$\")\n\n[1] \"colour\"    \"summarise\"\n\nstr_subset(x, pattern = \"our|i[zs]e\")\n\n[1] \"colour\"    \"summarize\" \"summarise\"\n\n\n\nescape characters \\\\\n\n\nx &lt;- c(\"How\",\n       \"much\", \n       \"wood\",\n       \"could\",\n       \"a\",\n       \"woodchuck\",\n       \"chuck\",\n       \"if\",\n       \"a\",\n       \"woodchuck\",\n       \"could\",\n       \"chuck\",\n       \"wood?\")\n\nstr_subset(x, pattern = \"?\")\n\nError in stri_subset_regex(string, pattern, omit_na = TRUE, negate = negate, : Syntax error in regex pattern. (U_REGEX_RULE_SYNTAX, context=`?`)\n\nstr_subset(x, pattern = \"\\\\?\")\n\n[1] \"wood?\"\n\nstr_subset(x, pattern = \"[?]\")\n\n[1] \"wood?\"\n\n\n\ntesting regular expressions\n\n\nstr_view(c(\"shes\", \"shels\", \"shells\", \"shellls\", \"shelllls\"), \"l+\")\n\n[2] │ she&lt;l&gt;s\n[3] │ she&lt;ll&gt;s\n[4] │ she&lt;lll&gt;s\n[5] │ she&lt;llll&gt;s\n\n\n\n\nMore practice 1\n\ncounty_pop &lt;- data.frame(county = c(\"STORY\", \"BOONE\", \"MARSHALL\", \"POLK\"),\n                         pop = c(100000, 40000, 120000, 500000))\n\ncounty_loc &lt;- data.frame(county = c(\"Story\", \"Boone\", \"Marshall\", \"Polk\"),\n                         region = c(\"Central\", \"Central\", \"East\", \"Central\"))\n\nJoin the county_pop and county_loc by county\n\ncounty_pop |&gt; \n  mutate(county = str_to_title(county)) |&gt; \n  left_join(county_loc, by = \"county\")\n\n    county    pop  region\n1    Story 100000 Central\n2    Boone  40000 Central\n3 Marshall 120000    East\n4     Polk 500000 Central\n\n\n\n\nMore practice 2\n\nphone_numbers &lt;- c(\"(515)242-1958\", \"(507)598-1395\", \"(805)938-7639\")\n\nPull out only the area code in a phone number.\n\n# code\n\n\n\nMore practice 3\n\nawards_dat &lt;- data.frame(awards = c(\"Beyonce: 35G,  0A, 0E\",\n                                    \"Kendrick Lamar: 22G, 0A, 1E\",\n                                    \"Charli XCX: 2G, 0A, 0E\",\n                                    \"Cynthia Erivo: 1G, 0A, 1E\",\n                                    \"Viola Davis: 1G, 1A, 1E\",\n                                    \"Elton John: 6G, 2A, 1E\"))\n\nCreate a variable with just the artist name and a variable with the number of Grammys won.\n\nawards_dat |&gt; \n  mutate(artist = str_extract(awards, \".*:\"))\n\n                       awards          artist\n1       Beyonce: 35G,  0A, 0E        Beyonce:\n2 Kendrick Lamar: 22G, 0A, 1E Kendrick Lamar:\n3      Charli XCX: 2G, 0A, 0E     Charli XCX:\n4   Cynthia Erivo: 1G, 0A, 1E  Cynthia Erivo:\n5     Viola Davis: 1G, 1A, 1E    Viola Davis:\n6      Elton John: 6G, 2A, 1E     Elton John:"
+  },
+  {
+    "objectID": "slides/week-5/w5-notes.html#dates",
+    "href": "slides/week-5/w5-notes.html#dates",
+    "title": "Week 5 - Strings - Starter Notes",
+    "section": "Dates",
+    "text": "Dates\n\nload(\"ca-childcare.Rdata\")\n\nError in readChar(con, 5L, useBytes = TRUE): cannot open the connection"
   }
 ]
