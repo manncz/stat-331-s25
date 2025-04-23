@@ -1,10 +1,11 @@
 project:
   type: website
   output-dir: docs
-  render: 
+  render:
     - "*.qmd"
     - "!/student-versions/"
     - "!/solutions/"
+    - "!/exams/"
 
 website:
   page-navigation: true
@@ -45,7 +46,7 @@ website:
             text: Schedule
           - href: course-info/course-resources.qmd
             text: R Resources
-    
+
 format:
   html:
     theme:
