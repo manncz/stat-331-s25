@@ -187,7 +187,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#instructions" id="toc-instructions" class="nav-link active" data-scroll-target="#instructions">Instructions</a></li>
   <li><a href="#access-the-data" id="toc-access-the-data" class="nav-link" data-scroll-target="#access-the-data">Access the Data</a></li>
-  <li><a href="#combine-the-data" id="toc-combine-the-data" class="nav-link" data-scroll-target="#combine-the-data">Combine the Data</a></li>
+  <li><a href="#clean-and-combine-the-data" id="toc-clean-and-combine-the-data" class="nav-link" data-scroll-target="#clean-and-combine-the-data">Clean and Combine the Data</a></li>
   <li><a href="#solve-the-crime" id="toc-solve-the-crime" class="nav-link" data-scroll-target="#solve-the-crime">Solve the Crime</a>
   <ul class="collapse">
   <li><a href="#crime-scene-report" id="toc-crime-scene-report" class="nav-link" data-scroll-target="#crime-scene-report">Crime Scene Report</a></li>
@@ -254,14 +254,35 @@ Tip
 </div>
 </div>
 </section>
-<section id="combine-the-data" class="level2">
-<h2 class="anchored" data-anchor-id="combine-the-data">Combine the Data</h2>
+<section id="clean-and-combine-the-data" class="level2">
+<h2 class="anchored" data-anchor-id="clean-and-combine-the-data">Clean and Combine the Data</h2>
 <p>Let’s set ourselves up to solve this crime lickity-split!</p>
-<p>Create two new datasets:</p>
+<p><strong>0.1 Use a <code>stringr</code> function(s) and a regular expression(s) to create <code>address_number</code> and <code>address_street_name</code> columns in the <code>person</code> dataset. Convert the <code>address_number</code> variable to numeric.</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code for Q0.1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>0.2 Design and implement a check that you created the <code>address_number</code> and <code>address_street_name</code> columns correctly.</strong></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Hint
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For example, if you re-combine the <code>address_number</code> and <code>address_street_name</code> columns, you should get the same value as original <code>address</code> column exactly.</p>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code for Q0.2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p><strong>0.3 Create two new datasets:</strong></p>
 <ul>
 <li><code>get_fit_now_full</code>
 <ul>
-<li>every row represents one visit to the “Get Fit” gym.</li>
+<li>every row represents one visit to the “Get Fit Now” gym.</li>
 <li>all member information is included (e.g.&nbsp;check in times, names, and membership information)</li>
 <li>should have 2,703 rows and 8 columns</li>
 </ul></li>
@@ -269,6 +290,7 @@ Tip
 <ul>
 <li>each row represents one person</li>
 <li>includes their address, driver’s licence information, income, and interview with the police, if they have one</li>
+<li>drop the <code>address</code> column</li>
 <li>should have 10,011 rows and 16 columns</li>
 </ul></li>
 </ul>
@@ -286,10 +308,10 @@ Tip
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code to create get_fit_now_full</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code to create get_fit_now_full</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code to create suspects_all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code to create suspects_all</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="solve-the-crime" class="level2">
@@ -305,6 +327,7 @@ Tip
 <li>Use headers and written descriptions to indicate what you are doing.</li>
 <li>You <strong>must</strong> use <code>dplyr</code> verbs and <code>join</code> functions rather than just looking through the tables manually.</li>
 <li>You should never filter on a specific person id – rather use <code>join</code> functions</li>
+<li>You should have a final output that just includes the murder’s name as well as their interview transcript (which is missing!).</li>
 <li>Use the data frames you just created when helpful!</li>
 <li>Use good code formatting practices.</li>
 <li>Comment your code.</li>
@@ -320,14 +343,14 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>You may find the <code>pull()</code> function handy for displaying each clue as you go along.</p>
+<p>Use <code>kable()</code> to nicely output clues!</p>
 </div>
 </div>
 <p><strong>Follow the evidence to the person responsible for the murder, building a report as you go.</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code for looking at the relevant crime scene report.</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># you will want to use multiple chunks!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># code for looking at the relevant crime scene report.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># you will want to use multiple chunks!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">

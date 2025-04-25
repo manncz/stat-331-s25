@@ -44,20 +44,38 @@ url("https://raw.githubusercontent.com/manncz/stat-331-s25/main/labs/lab5/data/b
 If the code above does not work for you for some reason, you can download the special data file [here](data/bCH_murder_data.Rdata) and use the `load()` function to read it in.
 :::
 
-## Combine the Data
+## Clean and Combine the Data
 
 Let's set ourselves up to solve this crime lickity-split!
 
-Create two new datasets:
+**0.1 Use a `stringr` function(s) and a regular expression(s) to create `address_number` and `address_street_name` columns in the `person` dataset. Convert the `address_number` variable to numeric.**
+
+```{r}
+# code for Q0.1
+```
+
+**0.2 Design and implement a check that you created the `address_number` and `address_street_name` columns correctly.**
+
+:::callout-tip
+# Hint
+For example, if you re-combine the `address_number` and `address_street_name` columns, you should get the same value as original `address` column exactly.
+:::
+
+```{r}
+# code for Q0.2
+```
+
+**0.3 Create two new datasets:**
 
 - `get_fit_now_full`
-  - every row represents one visit to the "Get Fit" gym. 
+  - every row represents one visit to the "Get Fit Now" gym. 
   - all member information is included (e.g. check in times, names, and membership information)
   - should have 2,703 rows and 8 columns
 
 - `suspects_all`
   - each row represents one person
   - includes their address, driver's licence information, income, and interview with the police, if they have one
+  - drop the `address` column
   - should have 10,011 rows and 16 columns
 
 :::callout-tip
@@ -89,6 +107,7 @@ Solve the murder mystery, showing **all of your work in this document**. Your do
 + Use headers and written descriptions to indicate what you are doing.
 + You **must** use `dplyr` verbs and `join` functions rather than just looking through the tables manually.
 + You should never filter on a specific person id -- rather use `join` functions
++ You should have a final output that just includes the murder's name as well as their interview transcript (which is missing!).
 + Use the data frames you just created when helpful!
 + Use good code formatting practices.
 + Comment your code.
@@ -96,7 +115,7 @@ Solve the murder mystery, showing **all of your work in this document**. Your do
 
 ::: callout-tip
 
-You may find the `pull()` function handy for displaying each clue as you go along.
+Use `kable()` to nicely output clues!
 
 :::
 
