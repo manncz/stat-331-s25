@@ -852,91 +852,6 @@ str_subset(x, pattern = "shel{1,3}s")
 ```
 :::
 
-## Character Groups: `()`
-
-::: {.small}
-Groups are created with `( )`.
-
-+ We can specify "either" / "or" within a group using `|`.
-
-```{r}
-#| echo: true
-#| code-line-numbers: false
-
-x <- c("Peter", 
-       "Piper", 
-       "picked", 
-       "a", 
-       "peck",
-       "of", 
-       "pickled",
-       "peppers!")
-
-str_subset(x, pattern = "p(e|i)ck")
-```
-:::
-
-<br>
-
-::: {.small}
-This matches strings that contain **either** "peck"
- **or** "pick".
-:::
-
-## Character Groups: `()`
-
-+ We can then reference groups in order with escaped numbers (`\\1`) to specify that certain groupings repeat.
-
-```{r}
-#| echo: true
-#| code-line-numbers: false
-
-x <- c("hannah", 
-       "had", 
-       "a", 
-       "ball", 
-       "on",
-       "a", 
-       "race car")
-
-str_subset(x, pattern = "^(.).*\\1$")
-```
-
-
-<br>
-
-::: {.small}
-This matches strings that start and end with the same character.
-:::
-
-## Character Groups: `()`
-
-- Groups also let us be very precise with extracting strings!
-
-```{r}
-#| echo: true
-shopping_list <- c("apples x4", 
-                   "bag of flour", 
-                   "bag of sugar", 
-                   "milk x2")
-
-str_extract(shopping_list, "([a-z]+) x([1-9])")
-```
-
-. . .
-
-</br>
-
-```{r}
-#| echo: true
-str_extract(shopping_list, "([a-z]+) x([1-9])", group = 1)
-```
-</br>
-
-```{r}
-#| echo: true
-str_extract(shopping_list, "([a-z]+) x([1-9])", group = 2)
-```
 
 ## Character Classes: `[]`
 
@@ -960,15 +875,7 @@ str_subset(x, pattern = "p[ei]ck")
 ```
 :::
 
-. . .
 
-::: {.callout-tip}
-# When to use `[]` or `()`?
-
-`()` makes *groups* of characters, which you can then reference later, plus you can only use a `|` with `()`.  
-
-`[]` is better for referencing multiple characters, plus you can only use a `^` to mean "not" with `[]`...
-:::
 
 ## Matches you don't want
 
@@ -1075,6 +982,94 @@ str_extract(x, pattern = "\\d+")
 str_extract_all(x, pattern = "\\S+")
 ```
 :::
+
+
+## Character Groups: `()`
+
+::: {.small}
+Groups are created with `( )`.
+
++ We can specify "either" / "or" within a group using `|`.
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+x <- c("Peter", 
+       "Piper", 
+       "picked", 
+       "a", 
+       "peck",
+       "of", 
+       "pickled",
+       "peppers!")
+
+str_subset(x, pattern = "p(e|i)ck")
+```
+:::
+
+<br>
+
+::: {.small}
+This matches strings that contain **either** "peck"
+ **or** "pick".
+:::
+
+## Character Groups: `()`
+
++ We can then reference groups in order with escaped numbers (`\\1`) to specify that certain groupings repeat.
+
+```{r}
+#| echo: true
+#| code-line-numbers: false
+
+x <- c("hannah", 
+       "had", 
+       "a", 
+       "ball", 
+       "on",
+       "a", 
+       "race car")
+
+str_subset(x, pattern = "^(.).*\\1$")
+```
+
+
+<br>
+
+::: {.small}
+This matches strings that start and end with the same character.
+:::
+
+## Character Groups: `()`
+
+- Groups also let us be very precise with extracting strings!
+
+```{r}
+#| echo: true
+shopping_list <- c("apples x4", 
+                   "bag of flour", 
+                   "bag of sugar", 
+                   "milk x2")
+
+str_extract(shopping_list, "([a-z]+) x([1-9])")
+```
+
+. . .
+
+</br>
+
+```{r}
+#| echo: true
+str_extract(shopping_list, "([a-z]+) x([1-9])", group = 1)
+```
+</br>
+
+```{r}
+#| echo: true
+str_extract(shopping_list, "([a-z]+) x([1-9])", group = 2)
+```
+
 
 ## Try it out!
 
