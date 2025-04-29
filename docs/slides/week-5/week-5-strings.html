@@ -3236,11 +3236,10 @@ character(0)
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a></a>awards_dat <span class="sc">|&gt;</span> </span>
-<span id="cb108-2"><a></a>  <span class="fu">mutate</span>(<span class="at">artist =</span> <span class="fu">str_extract</span>(awards, <span class="st">"([A-Za-z</span><span class="sc">\\</span><span class="st">s]+)</span><span class="sc">\\</span><span class="st">:"</span>, </span>
-<span id="cb108-3"><a></a>                              <span class="at">group =</span> <span class="dv">1</span>),</span>
-<span id="cb108-4"><a></a>         <span class="at">grammies =</span> <span class="fu">str_extract</span>(awards, <span class="st">"([1-9]+)G"</span>, </span>
-<span id="cb108-5"><a></a>                                <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">|&gt;</span> </span>
-<span id="cb108-6"><a></a>  <span class="fu">select</span>(artist, grammies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb108-2"><a></a>  <span class="fu">mutate</span>(<span class="at">artist =</span> <span class="fu">str_extract</span>(awards, <span class="st">"[A-z</span><span class="sc">\\</span><span class="st">s]+"</span>),</span>
+<span id="cb108-3"><a></a>         <span class="at">grammies =</span> <span class="fu">str_extract</span>(awards, <span class="st">"([1-9]+)G"</span>, </span>
+<span id="cb108-4"><a></a>                                <span class="at">group =</span> <span class="dv">1</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb108-5"><a></a>  <span class="fu">select</span>(artist, grammies)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="cell">
 <div class="cell-output-display">

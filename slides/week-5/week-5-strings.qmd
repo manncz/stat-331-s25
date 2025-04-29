@@ -1510,8 +1510,7 @@ Create a variable with just the artist name and a variable with the number of Gr
 #| eval: false
 
 awards_dat |> 
-  mutate(artist = str_extract(awards, "([A-Za-z\\s]+)\\:", 
-                              group = 1),
+  mutate(artist = str_extract(awards, "[A-z\\s]+"),
          grammies = str_extract(awards, "([1-9]+)G", 
                                 group = 1)) |> 
   select(artist, grammies)
