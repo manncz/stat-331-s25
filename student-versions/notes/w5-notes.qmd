@@ -201,6 +201,41 @@ str_subset(x, pattern = "shel{2,}s")
 str_subset(x, pattern = "shel{1,3}s")
 ```
 
+
+
+- character classes `[]`
+- anti-match `[^]`
+
+```{r}
+x <- c("Peter", 
+       "Piper", 
+       "picked", 
+       "a",
+       "peck",
+       "of",
+       "pickled",
+       "peppers!")
+
+str_subset(x, pattern = "p[ei]ck")
+
+str_subset(x, pattern = "p[^i]ck")
+
+str_subset(x, pattern = "^p")
+
+str_subset(x, pattern = "^[^p]")
+
+str_subset(x, pattern = "p[ei]ck[a-z]")
+```
+
+- shortcuts 
+
+```{r}
+x <- "phone number: 1234567899"
+
+str_extract(x, pattern = "\\d+")
+str_extract_all(x, pattern = "\\S+")
+```
+
 - character groups `()`
 
 ```{r}
@@ -239,39 +274,6 @@ str_extract(shopping_list, "([a-z]+) x([1-9])")
 str_extract(shopping_list, "([a-z]+) x([1-9])", group = 1)
 
 str_extract(shopping_list, "([a-z]+) x([1-9])", group = 2)
-```
-
-- character classes `[]`
-- anti-match `[^]`
-
-```{r}
-x <- c("Peter", 
-       "Piper", 
-       "picked", 
-       "a",
-       "peck",
-       "of",
-       "pickled",
-       "peppers!")
-
-str_subset(x, pattern = "p[ei]ck")
-
-str_subset(x, pattern = "p[^i]ck")
-
-str_subset(x, pattern = "^p")
-
-str_subset(x, pattern = "^[^p]")
-
-str_subset(x, pattern = "p[ei]ck[a-z]")
-```
-
-- shortcuts 
-
-```{r}
-x <- "phone number: 1234567899"
-
-str_extract(x, pattern = "\\d+")
-str_extract_all(x, pattern = "\\S+")
 ```
 
 ### Try it out!
