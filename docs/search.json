@@ -3623,7 +3623,7 @@
     "href": "slides/week-6/w6-version-control.html#open-ended-analysis-from-lab-4",
     "title": "Version Control",
     "section": "Open-Ended Analysis from Lab 4",
-    "text": "Open-Ended Analysis from Lab 4\nWritten Description\n\n\nDescribe what your table / plot is showing before analyzing it\nDo not use variable names or R function names in your written text.\nBreaking up sections with headers can help with organization and flow.\nDo not print out the data!"
+    "text": "Open-Ended Analysis from Lab 4\nWritten Description\n\n\nDo not use variable names or R function names in your written text.\nDescribe what your table / plot is showing before analyzing it\nBreaking up sections with headers can help with organization and flow.\nDo not print out the data!"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#open-ended-analysis-from-week-5",
@@ -3637,7 +3637,7 @@
     "href": "slides/week-6/w6-version-control.html#open-ended-analysis-from-week-5-1",
     "title": "Version Control",
     "section": "Open-Ended Analysis from Week 5",
-    "text": "Open-Ended Analysis from Week 5\n\nTable Design\n\nThink about the number of rows/columns – is it readable?\nChange row/column names to be understandable.\n\nPlot Design\n\nWhat can I investigate with a plot that is difficult with a table?\nWhat type of plot will best display the data?\nWhat order of elements will best display the comparison you want to make?\nThink about: colors, order of categories, if a legend is needed, etc."
+    "text": "Open-Ended Analysis from Week 5\n\nTable Design\n\nThink about the number of rows/columns – is it readable?\nHow many decimal points are needed?\nChange row/column names to be understandable.\n\nPlot Design\n\nWhat can I investigate with a plot that is difficult with a table?\nWhat type of plot will best display the data?\nWhat order of elements will best display the comparison you want to make?\nThink about: colors, order of categories, if a legend is needed, etc."
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#what-is-version-control",
@@ -3651,14 +3651,14 @@
     "href": "slides/week-6/w6-version-control.html#git-vs-github",
     "title": "Version Control",
     "section": "Git vs GitHub",
-    "text": "Git vs GitHub\n\n\n\n\n\n\n\n\n\n\n\n\nA system for version control that manages a collection of files in a structured way.\nUses the command line or a GUI.\nGit is local."
+    "text": "Git vs GitHub\n\n\n\nknitr::include_graphics(\"https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-2Color.png\") \n\n\n\n\n\n\n\n\n\nA system for version control that manages a collection of files in a structured way.\nUses the command line or a GUI.\nGit is local."
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#git-vs-github-1",
     "href": "slides/week-6/w6-version-control.html#git-vs-github-1",
     "title": "Version Control",
     "section": "Git vs GitHub",
-    "text": "Git vs GitHub\n\n\n\n\n\n\n\n\n\n\n\n\nA system for version control that manages a collection of files in a structured way.\nUses the command line or a GUI.\nGit is local.\n\n\n\n\n\n\n\n\n\n\n\n\nA cloud-based service that lets you use git across many computers.\nBasic services are free, advanced services are paid (like RStudio!).\nGitHub is remote."
+    "text": "Git vs GitHub\n\n\n\nknitr::include_graphics(\"https://bornsql.ca/wp-content/uploads/2022/03/Git-Logo-2Color.png\") \n\n\n\n\n\n\n\n\n\nA system for version control that manages a collection of files in a structured way.\nUses the command line or a GUI.\nGit is local.\n\n\n\nknitr::include_graphics(\"https://pngimg.com/d/github_PNG65.png\") \n\n\n\n\n\n\n\n\n\nA cloud-based service that lets you use git across many computers.\nBasic services are free, advanced services are paid (like RStudio!).\nGitHub is remote."
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#why-learn-github",
@@ -3679,7 +3679,7 @@
     "href": "slides/week-6/w6-version-control.html#git-repositories",
     "title": "Version Control",
     "section": "Git Repositories",
-    "text": "Git Repositories\nGit is based on repositories.\n\n\n\nThink of a repository (repo) as a directory (folder) for a single project.\n\nThis directory will likely contain code, documentation, data, to do lists, etc. associated with the project.\nYou can link a local repo with a remote copy on GitHub.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nTo create a repository, you can start with your local computer or you can start with the remote copy."
+    "text": "Git Repositories\nGit is based on repositories.\n\n\n\nThink of a repository (repo) as a directory (folder) for a single project.\n\nThis directory will likely contain code, documentation, data, to do lists, etc. associated with the project.\nYou can link a local repo with a remote copy on GitHub.\n\n\n\n\nknitr::include_graphics(\"https://miro.medium.com/max/512/1*w07Er4gPg8H2Ew-P0HhxNA.png\")\n\n\n\n\n\n\n\n\n\n\n\nTo create a repository, you can start with your local computer or you can start with the remote copy."
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#git-repositories-1",
@@ -3707,21 +3707,21 @@
     "href": "slides/week-6/w6-version-control.html#gitignore-example",
     "title": "Version Control",
     "section": ".gitignore example",
-    "text": ".gitignore example\n\nDr. C’s .gitignore for her STAT 331 materials repo"
+    "text": ".gitignore example\n\n\n\nDr. C’s .gitignore for her STAT 331 materials repo"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#cloning-a-repo",
     "href": "slides/week-6/w6-version-control.html#cloning-a-repo",
     "title": "Version Control",
     "section": "Cloning a Repo",
-    "text": "Cloning a Repo\n\n\n\nCreate an exact copy of a remote repo on your local machine."
+    "text": "Cloning a Repo\n\n\n\nCreate an exact copy of a remote repo on your local machine.\n\n\nknitr::include_graphics(\"images/git_clone_diagram.png\")"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#committing-changes",
     "href": "slides/week-6/w6-version-control.html#committing-changes",
     "title": "Version Control",
     "section": "Committing Changes",
-    "text": "Committing Changes\nTell git you have made changes you want to add (save) to the repo.\n\nAlso provide a commit message – a short label describing what the changes are and why they exist.\n\n\n\nThe red line is a change we commit (add) to the repo.\n\n\n\n\n\n\n\n\n\n\n\n\nThe log of these changes (and the file history) is called your git commit history.\n\nYou can always go back to old copies!"
+    "text": "Committing Changes\nTell git you have made changes you want to add (save) to the repo.\n\nAlso provide a commit message – a short label describing what the changes are and why they exist.\n\n\n\nThe red line is a change we commit (add) to the repo.\n\n\nknitr::include_graphics(\"images/git-commit.png\")\n\n\n\n\n\n\n\n\n\n\n. . .\nThe log of these changes (and the file history) is called your git commit history.\n\nYou can always go back to old copies!"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#commit-tips",
@@ -3735,21 +3735,21 @@
     "href": "slides/week-6/w6-version-control.html#pushing-changes",
     "title": "Version Control",
     "section": "Pushing Changes",
-    "text": "Pushing Changes\n\n\n\nUpdate the copy of your repo on GitHub so it has the most recent changes you’ve made on your machine."
+    "text": "Pushing Changes\n\n\n\nUpdate the copy of your repo on GitHub so it has the most recent changes you’ve made on your machine.\n\n\nknitr::include_graphics(\"images/git_push_diagram.png\")"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#pulling-changes",
     "href": "slides/week-6/w6-version-control.html#pulling-changes",
     "title": "Version Control",
     "section": "Pulling Changes",
-    "text": "Pulling Changes\n\n\n\nUpdate the local copy of your repo (the copy on your computer) with the version on GitHub."
+    "text": "Pulling Changes\n\n\n\nUpdate the local copy of your repo (the copy on your computer) with the version on GitHub.\n\n\nknitr::include_graphics(\"images/git_pull_diagram.png\")"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#pushing-and-pulling",
     "href": "slides/week-6/w6-version-control.html#pushing-and-pulling",
     "title": "Version Control",
     "section": "Pushing and Pulling",
-    "text": "Pushing and Pulling"
+    "text": "Pushing and Pulling\n\nknitr::include_graphics(\"images/pushing-and-pulling.jpg\")"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#workflow",
@@ -3784,14 +3784,14 @@
     "href": "slides/week-6/w6-version-control.html#merge-conflicts-3",
     "title": "Version Control",
     "section": "Merge Conflicts",
-    "text": "Merge Conflicts\nWe will work on resolving merge conflicts today!\n\n\nBut when all else fails…\n\ndelete your local repo and clone again.\n\n\n\n\nArtwork by Allison Horst"
+    "text": "Merge Conflicts\nWe will work on resolving merge conflicts today!\n\n. . .\nBut when all else fails…\n\ndelete your local repo and clone again.\n\n\n\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#tips-for-avoiding-merge-conflicts",
     "href": "slides/week-6/w6-version-control.html#tips-for-avoiding-merge-conflicts",
     "title": "Version Control",
     "section": "Tips for Avoiding Merge Conflicts",
-    "text": "Tips for Avoiding Merge Conflicts\n\nAlways pull before you start working and always push after you are done working!\n\nIf you do this, you will only have problems if two people are making local changes to the same line in the same file at the same time.\n\n\n\n\nIf you are working with collaborators in real time, pull, commit, and push often.\n\n\n\n\nGit commits lines – lines of code, lines of text, etc.\n\nPractice good code format – no overly long lines!"
+    "text": "Tips for Avoiding Merge Conflicts\n\nAlways pull before you start working and always push after you are done working!\n\nIf you do this, you will only have problems if two people are making local changes to the same line in the same file at the same time.\n\n\n. . .\n\nIf you are working with collaborators in real time, pull, commit, and push often.\n\n. . .\n\nGit commits lines – lines of code, lines of text, etc.\n\nPractice good code format – no overly long lines!"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#install-load-r-packages",
@@ -3812,42 +3812,42 @@
     "href": "slides/week-6/w6-version-control.html#generate-your-personal-access-token",
     "title": "Version Control",
     "section": "Generate your Personal Access Token",
-    "text": "Generate your Personal Access Token\n\nGenerate a PAT.\n\n\ncreate_github_token()\n\n\nThis will open GitHub and ask you to log in.\nFill in a Note and an Expiration (AT LEAST 60 days from now).\nClick Generate Token."
+    "text": "Generate your Personal Access Token\n\nGenerate a PAT.\n\n\ncreate_github_token()\n\n\nThis will open GitHub and ask you to log in.\nFill in a Note and an Expiration (AT LEAST 60 days from now).\nClick Generate Token.\n\n\nknitr::include_graphics(\"images/pat-generate.png\")"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#store-your-pat",
     "href": "slides/week-6/w6-version-control.html#store-your-pat",
     "title": "Version Control",
     "section": "Store your PAT",
-    "text": "Store your PAT\n\nCopy your PAT.\n\n\n\nRun the following code.\n\n\ngitcreds_set()\n\nWhen prompted to Enter password or token:, paste your PAT."
+    "text": "Store your PAT\n\nCopy your PAT.\n\n\nknitr::include_graphics(\"images/pat-copy.jpg\")\n\n\n\n\n\n\n\n\n\nRun the following code.\n\n\ngitcreds_set()\n\nWhen prompted to Enter password or token:, paste your PAT."
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#verify-your-pat",
     "href": "slides/week-6/w6-version-control.html#verify-your-pat",
     "title": "Version Control",
     "section": "Verify your PAT",
-    "text": "Verify your PAT\n\nLet’s verify.\n\n\ngit_sitrep()"
+    "text": "Verify your PAT\n\nLet’s verify.\n\n\ngit_sitrep()\n\n\nknitr::include_graphics(\"images/pat-verify.png\")"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#pa-6-merge-conflicts",
     "href": "slides/week-6/w6-version-control.html#pa-6-merge-conflicts",
     "title": "Version Control",
     "section": "PA 6: Merge Conflicts",
-    "text": "PA 6: Merge Conflicts\nYou will be completing this activity in groups of 4.\n\n\n\n\n\n\nIMPORTANT\n\n\nThis activity will only work if you follow the directions in the exact order that I have specified them. Do not work ahead of your group members!\n\n\n\n\nArtwork by Allison Horst"
+    "text": "PA 6: Merge Conflicts\nYou will be completing this activity in groups of 4.\n\n\n\n\n\n\nIMPORTANT\n\n\n\nThis activity will only work if you follow the directions in the exact order that I have specified them. Do not work ahead of your group members!\n\n\n\n\n\nArtwork by Allison Horst"
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#to-do",
     "href": "slides/week-6/w6-version-control.html#to-do",
     "title": "Version Control",
     "section": "To do…",
-    "text": "To do…\n\nPA 6: Merge Conflicts\n\nDue Monday, 5/6 at 11:59pm – TODAY.\n\nMidterm Exam\n\nWednesday, 5/8 + 48 hours.\n\n\n\n\n\n\n\n\nOffice Hours\n\n\nWednesday from 9-10 am and 1-2 pm\nNone scheduled on Friday but available upon request."
+    "text": "To do…\n\nPA 6: Merge Conflicts\n\nDue Monday, 5/6 at 11:59pm – TODAY.\n\nMidterm Exam\n\nWednesday, 5/8 + 48 hours.\n\n\n\n\n\n\n\n\nOffice Hours\n\n\n\nWednesday from 9-10 am and 1-2 pm\nNone scheduled on Friday but available upon request."
   },
   {
     "objectID": "slides/week-6/w6-version-control.html#tuesday-may-6",
     "href": "slides/week-6/w6-version-control.html#tuesday-may-6",
     "title": "Version Control",
-    "section": "Tuesday, May 6",
-    "text": "Tuesday, May 6\nToday we will…\n\nOpen-Ended Analysis from Lab 4\nQuestions about Midterm?\nNew Material\n\ngit/GitHub\nConnect GitHub to RStudio\n\nPA 6: Merge Conflicts – Collaborating within a GitHub Repo"
+    "section": "",
+    "text": "Today we will…\n\nOpen-Ended Analysis from Lab 4\nQuestions about Midterm?\nNew Material\n\ngit/GitHub\nConnect GitHub to RStudio\n\nPA 6: Merge Conflicts – Collaborating within a GitHub Repo"
   },
   {
     "objectID": "practice-activities/pa6.html",
@@ -3918,5 +3918,110 @@
     "title": "Midterm Exam",
     "section": "Thursday, May 8 – Midterm Exam",
     "text": "Thursday, May 8 – Midterm Exam\nSection 1: General Questions\n\nCannot work on Section 2 until hand Section 1 to me.\n\nSection 2: Short Answer\n\nNow you can use anything you want except other people and AI.\nDownload the .qmd template from Canvas.\nSubmit .qmd and .html files on Canvas by the end of class.\nReturn the question sheet to me ehrn you finish.\n\nSection 3: Open-Ended Analysis – After Class"
+  },
+  {
+    "objectID": "labs/lab7/la7-functions.html",
+    "href": "labs/lab7/la7-functions.html",
+    "title": "Lab 7: Functions + Fish",
+    "section": "",
+    "text": "Download .qmd starter file\nDownload BlackfootFish.csv\nThe goal of this lab is learn more about exploring missing data and writing modular code.\nlibrary(tidyverse)\nfish &lt;- read.csv(\"BlackfootFish.csv\")"
+  },
+  {
+    "objectID": "labs/lab7/la7-functions.html#the-data",
+    "href": "labs/lab7/la7-functions.html#the-data",
+    "title": "Lab 7: Functions + Fish",
+    "section": "The Data",
+    "text": "The Data\nThis lab’s data concerns mark-recapture data on four species of trout from the Blackfoot River outside of Helena, Montana. These four species are rainbow trout (RBT), westslope cutthroat trout (WCT), bull trout, and brown trout.\n\nMark-recapture is a common method used by ecologists to estimate a population’s size when it is impossible to conduct a census (count every animal). This method works by tagging animals with a tracking device so that scientists can track their movement and presence."
+  },
+  {
+    "objectID": "labs/lab7/la7-functions.html#data-exploration",
+    "href": "labs/lab7/la7-functions.html#data-exploration",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Data Exploration",
+    "text": "Data Exploration\nThe measurements of each captured fish were taken by a biologist on a raft in the river. The lack of a laboratory setting opens the door to the possibility of measurement errors.\n1. Let’s look for missing values in the dataset. Output ONE table that answers BOTH of the following questions:\n\nHow many observations have missing values?\nWhat variable(s) have missing values present?\n\n\n\n\n\n\n\nTip\n\n\n\nHint: use across().\n\n\n\n# Code for Q1.\n\n2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips.\n\n# Code for Q2."
+  },
+  {
+    "objectID": "labs/lab7/la7-functions.html#rescaling-the-data",
+    "href": "labs/lab7/la7-functions.html#rescaling-the-data",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Rescaling the Data",
+    "text": "Rescaling the Data\nIf I wanted to rescale every quantitative variable in my dataset so that they only have values between 0 and 1, I could use this formula:\n\n\\[y_{scaled} = \\frac{y_i - min\\{y_1, y_2,..., y_n\\}}{max\\{y_1, y_2,..., y_n\\}\n- min\\{y_1, y_2,..., y_n\\}}\\]\n\nI might write the following R code to carry out the rescaling procedure for the length and weight columns of the BlackfootFish data:\n\nfish &lt;- fish |&gt; \n  mutate(length = (length - min(length, na.rm = TRUE)) / \n           (max(length, na.rm = TRUE) - min(length, na.rm = TRUE)), \n         weight = (weight - min(weight, na.rm = TRUE)) / \n           (max(weight, na.rm = TRUE) - min(length, na.rm = TRUE)))\n\nThis process of duplicating an action multiple times can make it difficult to understand the intent of the process. Additionally, it can make it very difficult to spot mistakes.\n3. What is the mistake I made in the above rescaling code?\nWhen you find yourself copy-pasting lines of code, it’s time to write a function, instead!\n4. Transform the repeated process above into a rescale_01() function. Your function should…\n\n… take a single vector as input.\n… return the rescaled vector.\n\n\n\n\n\n\n\nTip\n\n\n\nThink about the efficiency of your function. Are you calling the same function multiple times?\nLook into the function range().\n\n\n\n# Code for Q4 and Q5.\n\n5. Let’s incorporate some input validation into your function. Modify your previous code so that the function stops if …\n\n… the input vector is not numeric.\n… the length of the input vector is not greater than 1.\n\n\n\n\n\n\n\nTip\n\n\n\nDo not create a new code chunk here – simply add these stops to your function above!"
+  },
+  {
+    "objectID": "labs/lab7/la7-functions.html#test-your-function",
+    "href": "labs/lab7/la7-functions.html#test-your-function",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Test Your Function",
+    "text": "Test Your Function\n6. Run the code below to test your function. Verify that the maximum of your rescaled vector is 1 and the minimum is 0!\n\nx &lt;- c(1:25, NA)\n\nrescaled &lt;- rescale_01(x)\n\nError in rescale_01(x): could not find function \"rescale_01\"\n\nmin(rescaled, na.rm = TRUE)\n\nError: object 'rescaled' not found\n\nmax(rescaled, na.rm = TRUE)\n\nError: object 'rescaled' not found\n\n\nNext, let’s test the function on the length column of the BlackfootFish data.\n7. The code below makes a histogram of the original values of length. Add a plot of the rescaled values of length. Output your plots side-by-side, so the reader can confirm the only aspect that has changed is the scale.\n\n\n\n\n\n\nWarning\n\n\n\nThis will require you to call your rescale_01() function within a mutate() statement in order to create a length_scaled variable.\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nSet the y-axis limits for both plots to go from 0 to 4000 to allow for direct comparison across plots.\nPay attention to binwidth! Adjust it so that the plots are comparable (they may not look exactly the same).\nLook for a Quarto code-chunk option to put the plots side-by-side.\n\n\n\n\nfish |&gt;  \n  ggplot(aes(x = length)) + \n  geom_histogram(binwidth = 45) +\n  labs(x = \"Original Values of Fish Length (mm)\") +\n  scale_y_continuous(limits = c(0,4000))\n\n\n\n\n\n\n\n# Code for Q7 plot."
+  },
+  {
+    "objectID": "labs/lab7/la7-functions.html#use-variables-within-a-dataset",
+    "href": "labs/lab7/la7-functions.html#use-variables-within-a-dataset",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Use Variables within a Dataset",
+    "text": "Use Variables within a Dataset\nSuppose you would like for your rescale() function to perform operations on a variable within a dataset. Ideally, your function would take in a dataframe and a variable name as inputs and return a dataframe where the variable has been rescaled.\n8. Create a rescale_column() function that accepts two arguments: (1) a dataframe and (2) the name(s) of the variable(s) to be rescaled. The body of the function should call the original rescale_01() function you wrote previously. Your solution MUST use one of the rlang options from class.\n\n\n\n\n\n\nTip\n\n\n\nIf you are struggling with this task, I recommend looking here and at the slides from class on Wednesday!\n\n\n\n# Code for Q8.\n\n9. Use your rescale_column() function to rescale both the length and weight columns.\n\n\n\n\n\n\nWarning\n\n\n\nI expect that you carry out this process by calling the rescale_column() function only ONE time!\n\n\n\n# original values\nfish |&gt; \n select(length:weight) |&gt; \n head()\n\n  length weight\n1    288    175\n2    288    190\n3    285    245\n4    322    275\n5    312    300\n6    363    380\n\n# rescaled values\n\n# Code for Q9."
+  },
+  {
+    "objectID": "labs/lab7/la7-functions.html#condition-index",
+    "href": "labs/lab7/la7-functions.html#condition-index",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Condition Index",
+    "text": "Condition Index\nA frequently used measurement for fish health is a condition index (Wikipedia). The following equation can be used to calculate the approximate condition index of a fish:\n\\[\\text{condition index} = \\frac{weight}{length^3} \\times 100\\]\n10. When calculating the condition index, fish length must be in centimeters and fish weight must be in grams. The weight data for the Blackfoot River fish were collected in grams, but the length data were collected in millimeters. Transform the length column to the correct units.\n\n# Code for Q10.\n\n11. Collecting data of this sort can be very messy! Write a function that will replace unlikely length and weight measurements with NA. Your function should accept at least three inputs:\n\na vector of measurements,\nthe minimum reasonable value,\nthe maximum reasonable value.\n\n\n\n\n\n\n\nTip\n\n\n\nIf you are struggling with the structure of your function, I would suggest reading the Mutating Function from R4DS.\n\n\n\n# Code for Q11.\n\n12. After consulting the Montana Record Table for the 4 species of trout included in these data, I have conjectured that it is unlikely to have measurements for fish below 5 cm and above 80 cm in length or below 10 g and above 4,000 g in weight. Use your function to modify the length and weight columns of the fish dataset based on my cutoffs.\n\n# Code for Q12.\n\n13. Write a function to calculate the condition index of a fish, given inputs of weight and length. Show that it works on your modified fish dataset\n\n\n\n\n\n\nWarning\n\n\n\nConsider whether your function will accept vectors as inputs or if it will accept variable names as inputs!\nTo show that your function works, do not print a full dataset! Just apply the function to your data and then output a couple of rows.\n\n\n\n# Code for Q13."
+  },
+  {
+    "objectID": "slides/week-6/w6-version-control.html",
+    "href": "slides/week-6/w6-version-control.html",
+    "title": "Version Control",
+    "section": "",
+    "text": "Today we will…\n\nOpen-Ended Analysis from Lab 4\nQuestions about Midterm?\nNew Material\n\ngit/GitHub\nConnect GitHub to RStudio\n\nPA 6: Merge Conflicts – Collaborating within a GitHub Repo"
+  },
+  {
+    "objectID": "labs/lab7/lab7-functions.html",
+    "href": "labs/lab7/lab7-functions.html",
+    "title": "Lab 7: Functions + Fish",
+    "section": "",
+    "text": "Download .qmd starter file\nDownload BlackfootFish.csv\nThe goal of this lab is learn more about exploring missing data and writing modular code.\nlibrary(tidyverse)\nfish &lt;- read.csv(\"BlackfootFish.csv\")"
+  },
+  {
+    "objectID": "labs/lab7/lab7-functions.html#the-data",
+    "href": "labs/lab7/lab7-functions.html#the-data",
+    "title": "Lab 7: Functions + Fish",
+    "section": "The Data",
+    "text": "The Data\nThis lab’s data concerns mark-recapture data on four species of trout from the Blackfoot River outside of Helena, Montana. These four species are rainbow trout (RBT), westslope cutthroat trout (WCT), bull trout, and brown trout.\n\nMark-recapture is a common method used by ecologists to estimate a population’s size when it is impossible to conduct a census (count every animal). This method works by tagging animals with a tracking device so that scientists can track their movement and presence."
+  },
+  {
+    "objectID": "labs/lab7/lab7-functions.html#data-exploration",
+    "href": "labs/lab7/lab7-functions.html#data-exploration",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Data Exploration",
+    "text": "Data Exploration\nThe measurements of each captured fish were taken by a biologist on a raft in the river. The lack of a laboratory setting opens the door to the possibility of measurement errors.\n1. Let’s look for missing values in the dataset. Output ONE table that answers BOTH of the following questions:\n\nHow many observations have missing values?\nWhat variable(s) have missing values present?\n\n\n\n\n\n\n\nTip\n\n\n\nHint: use across().\n\n\n\n# Code for Q1.\n\n2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips.\n\n# Code for Q2."
+  },
+  {
+    "objectID": "labs/lab7/lab7-functions.html#rescaling-the-data",
+    "href": "labs/lab7/lab7-functions.html#rescaling-the-data",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Rescaling the Data",
+    "text": "Rescaling the Data\nIf I wanted to rescale every quantitative variable in my dataset so that they only have values between 0 and 1, I could use this formula:\n\n\\[y_{scaled} = \\frac{y_i - min\\{y_1, y_2,..., y_n\\}}{max\\{y_1, y_2,..., y_n\\}\n- min\\{y_1, y_2,..., y_n\\}}\\]\n\nI might write the following R code to carry out the rescaling procedure for the length and weight columns of the BlackfootFish data:\n\nfish &lt;- fish |&gt; \n  mutate(length = (length - min(length, na.rm = TRUE)) / \n           (max(length, na.rm = TRUE) - min(length, na.rm = TRUE)), \n         weight = (weight - min(weight, na.rm = TRUE)) / \n           (max(weight, na.rm = TRUE) - min(length, na.rm = TRUE)))\n\nThis process of duplicating an action multiple times can make it difficult to understand the intent of the process. Additionally, it can make it very difficult to spot mistakes.\n3. What is the mistake I made in the above rescaling code?\nWhen you find yourself copy-pasting lines of code, it’s time to write a function, instead!\n4. Transform the repeated process above into a rescale_01() function. Your function should…\n\n… take a single vector as input.\n… return the rescaled vector.\n\n\n\n\n\n\n\nTip\n\n\n\nThink about the efficiency of your function. Are you calling the same function multiple times?\nLook into the function range().\n\n\n\n# Code for Q4 and Q5.\n\n5. Let’s incorporate some input validation into your function. Modify your previous code so that the function stops if …\n\n… the input vector is not numeric.\n… the length of the input vector is not greater than 1.\n\n\n\n\n\n\n\nTip\n\n\n\nDo not create a new code chunk here – simply add these stops to your function above!"
+  },
+  {
+    "objectID": "labs/lab7/lab7-functions.html#test-your-function",
+    "href": "labs/lab7/lab7-functions.html#test-your-function",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Test Your Function",
+    "text": "Test Your Function\n6. Run the code below to test your function. Verify that the maximum of your rescaled vector is 1 and the minimum is 0!\n\nx &lt;- c(1:25, NA)\n\nrescaled &lt;- rescale_01(x)\n\nError in rescale_01(x): could not find function \"rescale_01\"\n\nmin(rescaled, na.rm = TRUE)\n\nError: object 'rescaled' not found\n\nmax(rescaled, na.rm = TRUE)\n\nError: object 'rescaled' not found\n\n\nNext, let’s test the function on the length column of the BlackfootFish data.\n7. The code below makes a histogram of the original values of length. Add a plot of the rescaled values of length. Output your plots side-by-side, so the reader can confirm the only aspect that has changed is the scale.\n\n\n\n\n\n\nWarning\n\n\n\nThis will require you to call your rescale_01() function within a mutate() statement in order to create a length_scaled variable.\n\n\n\n\n\n\n\n\nTip\n\n\n\n\nSet the y-axis limits for both plots to go from 0 to 4000 to allow for direct comparison across plots.\nPay attention to binwidth! Adjust it so that the plots are comparable (they may not look exactly the same).\nLook for a Quarto code-chunk option to put the plots side-by-side.\n\n\n\n\nfish |&gt;  \n  ggplot(aes(x = length)) + \n  geom_histogram(binwidth = 45) +\n  labs(x = \"Original Values of Fish Length (mm)\") +\n  scale_y_continuous(limits = c(0,4000))\n\n\n\n\n\n\n\n# Code for Q7 plot."
+  },
+  {
+    "objectID": "labs/lab7/lab7-functions.html#use-variables-within-a-dataset",
+    "href": "labs/lab7/lab7-functions.html#use-variables-within-a-dataset",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Use Variables within a Dataset",
+    "text": "Use Variables within a Dataset\nSuppose you would like for your rescale() function to perform operations on a variable within a dataset. Ideally, your function would take in a dataframe and a variable name as inputs and return a dataframe where the variable has been rescaled.\n8. Create a rescale_column() function that accepts two arguments: (1) a dataframe and (2) the name(s) of the variable(s) to be rescaled. The body of the function should call the original rescale_01() function you wrote previously. Your solution MUST use one of the rlang options from class.\n\n\n\n\n\n\nTip\n\n\n\nIf you are struggling with this task, I recommend looking here and at the slides from class on Wednesday!\n\n\n\n# Code for Q8.\n\n9. Use your rescale_column() function to rescale both the length and weight columns.\n\n\n\n\n\n\nWarning\n\n\n\nI expect that you carry out this process by calling the rescale_column() function only ONE time!\n\n\n\n# original values\nfish |&gt; \n select(length:weight) |&gt; \n head()\n\n  length weight\n1    288    175\n2    288    190\n3    285    245\n4    322    275\n5    312    300\n6    363    380\n\n# rescaled values\n\n# Code for Q9."
+  },
+  {
+    "objectID": "labs/lab7/lab7-functions.html#condition-index",
+    "href": "labs/lab7/lab7-functions.html#condition-index",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Condition Index",
+    "text": "Condition Index\nA frequently used measurement for fish health is a condition index (Wikipedia). The following equation can be used to calculate the approximate condition index of a fish:\n\\[\\text{condition index} = \\frac{weight}{length^3} \\times 100\\]\n10. When calculating the condition index, fish length must be in centimeters and fish weight must be in grams. The weight data for the Blackfoot River fish were collected in grams, but the length data were collected in millimeters. Transform the length column to the correct units.\n\n# Code for Q10.\n\n11. Collecting data of this sort can be very messy! Write a function that will replace unlikely length and weight measurements with NA. Your function should accept at least three inputs:\n\na vector of measurements,\nthe minimum reasonable value,\nthe maximum reasonable value.\n\n\n\n\n\n\n\nTip\n\n\n\nIf you are struggling with the structure of your function, I would suggest reading the Mutating Function from R4DS.\n\n\n\n# Code for Q11.\n\n12. After consulting the Montana Record Table for the 4 species of trout included in these data, I have conjectured that it is unlikely to have measurements for fish below 5 cm and above 80 cm in length or below 10 g and above 4,000 g in weight. Use your function to modify the length and weight columns of the fish dataset based on my cutoffs.\n\n# Code for Q12.\n\n13. Write a function to calculate the condition index of a fish, given inputs of weight and length. Show that it works on your modified fish dataset\n\n\n\n\n\n\nWarning\n\n\n\nConsider whether your function will accept vectors as inputs or if it will accept variable names as inputs!\nTo show that your function works, do not print a full dataset! Just apply the function to your data and then output a couple of rows.\n\n\n\n# Code for Q13."
   }
 ]
