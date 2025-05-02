@@ -17,11 +17,10 @@ library(palmerpenguins)
 ```
 
 
-## Wednesday, Febrary 5
+## Thursday, May 1
 
 Today we will...
 
--   Lab 4 Tips
 -   Midterm Exam - What to expect
 -   New Material
     -   Working with Date & Time Variables
