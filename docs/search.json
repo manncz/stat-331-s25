@@ -809,7 +809,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDay\nTopic / Reading\nSlides\nStarter Notes\nPractice Activity\nLab\n\n\n\n\n1\nTue, 4/1\n1: Introduction\nSyllabus & Intro to R\nWeek 1\nPA 1\n\n\n\n\nThu, 4/3\n\nIntro to Quarto\n\n\nLab 1\n\n\n2\nTue, 4/8\n2: Basics of Graphics\nImporting Data + Graphics with ggplot2\nWeek 2\nPA 2\n\n\n\n\nThu, 4/10\n\nMore Graphics!\n\n\nLab 2\n\n\n3\nTue, 4/15\n3: Data Cleaning + Manipulation\nData Cleaning with dplyr\nWeek 3\nPA 3\n\n\n\n\nThu, 4/17\nData Feminism: The Numbers Don’t Speak for Themselves\nExtending dplyr + Data Ethics\n\n\nLab 3\n\n\n4\nTue, 4/22\n4: Data Joins + Transformations\nData Joins + Pivots\nWeek 4\nPA 4\n\n\n\n\nThu, 4/24\n\nFactor Variables\n\n\nLab 4\n\n\n5\nTue, 4/29\n5: Special Data Types\nStrings\nWeek 5\nPA 5.1\n\n\n\n\nThu, 5/1\n\nDates\n\nPA 5.2\nLab 5\n\n\n6\nTue, 5/6\n6: Version Control\nVersion Control\n\nPA 6\n\n\n\n\nThu, 5/8\n\nMidterm Exam\n\n\n\n\n\n7\nTue, 5/13\n7: Writing Functions\nFunctions\n\nPA 7\n\n\n\n\nThu, 5/15\n\nMore Functions\n\n\nLab 7\n\n\n8\nTue, 5/20\n8: Iteration and Simulation\nIteration\n\nPA 8.1\n\n\n\n\nThu, 5/22\n\nSimulation + Tables\n\nPA 8.2\nLab 8\n\n\n9\nTue, 5/27\n\nNO CLASS\n\n\n\n\n\n\nThu, 5/29\n9: Linear Regression\nLinear Regression\n\nPA 9\nLab 9\n\n\n10\nTue, 6/3\nTBD\nSimulation Extensions\n\nPA 10\n\n\n\n\nThu, 6/5\n\nWrap-Up",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDay\nTopic / Reading\nSlides\nStarter Notes\nPractice Activity\nLab\n\n\n\n\n1\nTue, 4/1\n1: Introduction\nSyllabus & Intro to R\nWeek 1\nPA 1\n\n\n\n\nThu, 4/3\n\nIntro to Quarto\n\n\nLab 1\n\n\n2\nTue, 4/8\n2: Basics of Graphics\nImporting Data + Graphics with ggplot2\nWeek 2\nPA 2\n\n\n\n\nThu, 4/10\n\nMore Graphics!\n\n\nLab 2\n\n\n3\nTue, 4/15\n3: Data Cleaning + Manipulation\nData Cleaning with dplyr\nWeek 3\nPA 3\n\n\n\n\nThu, 4/17\nData Feminism: The Numbers Don’t Speak for Themselves\nExtending dplyr + Data Ethics\n\n\nLab 3\n\n\n4\nTue, 4/22\n4: Data Joins + Transformations\nData Joins + Pivots\nWeek 4\nPA 4\n\n\n\n\nThu, 4/24\n\nFactor Variables\n\n\nLab 4\n\n\n5\nTue, 4/29\n5: Special Data Types\nStrings\nWeek 5\nPA 5.1\n\n\n\n\nThu, 5/1\n\nDates\n\nPA 5.2\nLab 5\n\n\n6\nTue, 5/6\n6: Version Control\nVersion Control\n\nPA 6\n\n\n\n\nThu, 5/8\n\nMidterm Exam\n\n\n\n\n\n7\nTue, 5/13\n7: Writing Functions\nFunctions\nWeek 7\nPA 7\n\n\n\n\nThu, 5/15\n\nMore Functions\n\n\nLab 7\n\n\n8\nTue, 5/20\n8: Iteration and Simulation\nIteration\n\nPA 8.1\n\n\n\n\nThu, 5/22\n\nSimulation + Tables\n\nPA 8.2\nLab 8\n\n\n9\nTue, 5/27\n\nNO CLASS\n\n\n\n\n\n\nThu, 5/29\n9: Linear Regression\nLinear Regression\n\nPA 9\nLab 9\n\n\n10\nTue, 6/3\nTBD\nSimulation Extensions\n\nPA 10\n\n\n\n\nThu, 6/5\n\nWrap-Up",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -4036,7 +4036,7 @@
     "href": "slides/week-7/w7-functions.html#tuesday-may-13",
     "title": "Writing Functions",
     "section": "Tuesday, May 13",
-    "text": "Tuesday, May 13\nToday we will…\n\nHousekeeping\nLecture\n\nFunction Basics\nVariable Scope + Environment\nPA 7: Writing Functions throughout!"
+    "text": "Tuesday, May 13\nToday we will…\n\nLecture\n\nFunction Basics\nVariable Scope + Environment\nPA 7: Writing Functions throughout!\n\n\n\n\n\n\n\n\nFollow along\n\n\nRemember to download, save, and open up the starter notes for this week!"
   },
   {
     "objectID": "slides/week-7/w7-functions.html#why-write-functions",
@@ -4673,7 +4673,7 @@
     "href": "slides/week-7/w7-data-functions.html#to-do",
     "title": "Writing Functions",
     "section": "To do…",
-    "text": "To do…\n\nSubmit PA 7\n\nDue TODAY at 11:59pm.\n\nFinal Project Group Contract\n\nDue Friday, 2/21 at 11:59pm.\n\nLab 7: Functions + Fish\n\nDue Sunday, 2/23 at 11:59pm.\n\nRead Chapter 8: Functional Programming\n\nCheck-in 8.1 due Monday 2/24 at 12:00pm."
+    "text": "To do…\n\nFinal Project Group Contract\n\nDue Tomorrow Friday, 5/16 at 11:59pm.\n\nLab 7: Functions + Fish\n\nDue Monday 5/19 at 11:59pm.\n\nRead Chapter 8: Iteration and Simulation\n\nCheck-in 8.1 & 8.2 due Tuesday 5/20 before class."
   },
   {
     "objectID": "slides/week-7/w7-data-functions.html#thursday-may-15",
@@ -4758,5 +4758,12 @@
     "title": "Version Control",
     "section": "Example: Answering a Research Question",
     "text": "Example: Answering a Research Question"
+  },
+  {
+    "objectID": "slides/week-7/w7-functions.html",
+    "href": "slides/week-7/w7-functions.html",
+    "title": "Writing Functions",
+    "section": "",
+    "text": "Today we will…\n\nLecture\n\nFunction Basics\nVariable Scope + Environment\nPA 7: Writing Functions throughout!\n\n\n\n\n\n\n\n\nFollow along\n\n\n\nRemember to download, save, and open up the starter notes for this week!"
   }
 ]

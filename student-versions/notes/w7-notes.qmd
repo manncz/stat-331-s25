@@ -1,0 +1,212 @@
+---
+title: "Week 7 Starter Notes"
+format: 
+  html:  
+    embed-resources: true
+    code-tools: true
+    toc: true
+editor: source
+execute: 
+  echo: true
+  warning: false
+  message: false
+  error: true
+---
+
+```{r setup}
+library(tidyverse)
+library(palmerpenguins)
+```
+
+
+# Tuesday - Vector Functions
+
+```{r}
+add_two <- function(x){
+  x + 2
+}
+```
+
+### function output
+
+```{r}
+add_two <- function(x){
+  return(x + 2)
+}
+```
+
+
+```{r}
+min_max <- function(x){
+  lowest <- min(x)
+  highest <- max(x)
+  return(list("min" = lowest, 
+              "max" = highest))
+}
+
+vec <- c(346,547,865,346,6758,78,79,362)
+min_max(vec)
+```
+
+### optional arguments
+
+```{r}
+add_something <- function(x, something = 2){
+  return(x + something)
+}
+```
+
+### input validation
+
+```{r}
+add_something <- function(x, something){
+  stopifnot("x must be numeric" = is.numeric(x))
+  return(x + something)
+}
+
+add_something(x = "statistics", something = 5)
+```
+
+```{r}
+add_something <- function(x, something){
+  if(!is.numeric(x)){
+    stop("Please provide a numeric input for the x argument.")
+  }
+  return(x + something)
+}
+
+add_something(x = "statistics", something = 5)
+```
+
+
+### variable scope
+
+Bad - don't do this!!
+
+```{r}
+add_two <- function() {
+  return(x + 2)
+}
+
+add_two()
+```
+
+```{r}
+x <- 10
+
+add_two()
+```
+
+
+
+
+# Thursday - Functions with Data Sets
+
+```{r}
+data(penguins)
+penguins |> 
+  head()
+```
+
+
+### standardizing variables
+
+```{r}
+std_to_01 <- function(var) {
+  stopifnot(is.numeric(var))
+  
+  num <- var - min(var, na.rm = TRUE)
+  denom <- max(var, na.rm = TRUE) - min(var, na.rm = TRUE)
+  
+  return(num / denom)
+}
+```
+
+```{r}
+penguins |> 
+    mutate(bill_length_mm = std_to_01(bill_length_mm))
+```
+
+
+```{r}
+penguins |> 
+  mutate(across(.cols = bill_length_mm:body_mass_g,
+                .fns = ~ std_to_01(.x)))
+```
+
+### functions with data frames and variables
+
+```{r}
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+  
+  data <- data |> 
+    mutate(variable = std_to_01(variable))
+  return(data)
+}
+```
+
+
+
+#### tidy evaluation
+
+```{r}
+penguins |> 
+  pull(body_mass_g)
+
+penguins$body_mass_g
+```
+
+#### untidy evaluation
+
+```{r}
+penguins[, "body_mass_g"]
+
+penguins[["body_mass_g"]]
+```
+
+
+### solution wtih untidy evaluation
+
+REQUIRE VARIABLE NAMES TO BE STRINGS
+```{r}
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+  
+  data[[variable]] <- std_to_01(data[[variable]])
+  return(data)
+}
+
+
+std_column_01(penguins, "bill_length_mm")
+```
+
+
+### solution with tidy evaluation and `rlang`
+
+
+```{r}
+std_column_01 <- function(data, variable) {
+  stopifnot(is.data.frame(data))
+
+  data <- data |>
+    mutate({{variable}} := std_to_01({{variable}}))
+  return(data)
+}
+
+std_column_01(penguins, body_mass_g)
+```
+
+
+```{r}
+std_column_01 <- function(data, variables) {
+  stopifnot(is.data.frame(data))
+  
+  data <- data |> 
+    mutate(across(.cols = {{variables}},
+                  .fns = ~ std_to_01(.x)))
+  return(data)
+}
+
+std_column_01(penguins, bill_length_mm:body_mass_g)
+```
