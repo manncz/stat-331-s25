@@ -10,8 +10,7 @@ editor: source
 #| include: false
 #| message: false
 library(tidyverse)
-library(liver)
-data(cereal)
+library(knitr)
 ```
 
 ## Tuesday, May 6
@@ -28,16 +27,22 @@ Today we will...
 
 ## Open-Ended Analysis from Lab 4
 
+**Research Question**
+
+:::{.incremental}
++ Keep it general
++ We are doing an exploratory analysis - not statistical testing
+:::
+
 **Written Description**
 
 :::{.incremental}
-+ **Describe** what your table / plot is showing before **analyzing** it
 + **Do not use variable names or R function names in your written text.**
 + Breaking up sections with headers can help with organization and flow.
-+ Do not print out the data!
++ Do not print out the data!!!
 :::
 
-## Open-Ended Analysis from Week 5
+## Open-Ended Analysis from Lab 4
 
 **Discussing Data**
 
@@ -45,18 +50,19 @@ Today we will...
 + What would you need to tell something if they knew **nothing** about the data already?? Probably should include:
   - Data source
   - Observational unit / level (e.g. county and year)
-  - Overview of what is included (e.g. demographic incormation and weekly median childcare costs for each county and year)
+  - Overview of what is included (e.g. demographic information and weekly median childcare costs for each county and year)
   - Years or geographies included (e.g. 2008-2018, CA only)
-+ If you are taking a statistical summary you should be clear what the summary is taken *over*
-
 :::
 
-## Open-Ended Analysis from Week 5
+
+
+## Open-Ended Analysis from Lab 4
 :::{.incremental}
 
 **Table Design**
 
 + Think about the number of rows/columns -- is it readable?
++ How many decimal points are needed?
 + Change row/column names to be understandable.
 
 **Plot Design**
@@ -65,6 +71,203 @@ Today we will...
 + What type of plot will best display the data?
 + What order of elements will best display the comparison you want to make?
 + Think about: colors, order of categories, if a legend is needed, etc.
+:::
+
+## Example: Answering a Research Question
+
+```{r}
+#| echo: false
+
+childcare_costs <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/childcare_costs.csv')
+counties <- read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/master/data/2023/2023-05-09/counties.csv')
+tax_rev <- read_csv('https://raw.githubusercontent.com/manncz/stat-331-s25/main/labs/lab4/data/ca_tax_revenue.csv')
+
+ca_childcare <- counties |> 
+  filter(state_abbreviation == "CA") |> 
+  select(county_fips_code, county_name) |> 
+  left_join(childcare_costs, 
+            by = join_by(county_fips_code)) |> 
+  left_join(tax_rev,
+            by = join_by(county_name == entity_name,
+                         study_year == year))
+
+ca_childcare <- ca_childcare |> 
+  mutate(county_name = str_remove(county_name, " County"),
+         region = fct_collapse(.f = county_name,
+                               "Superior California"         = c("Butte","Colusa","El Dorado",
+                                                                 "Glenn","Lassen","Modoc",
+                                                                 "Nevada","Placer","Plumas",
+                                                                 "Sacramento","Shasta","Sierra","Siskiyou",
+                                                                 "Sutter","Tehama","Yolo","Yuba"),
+                               "North Coast"                 = c("Del Norte","Humboldt","Lake",
+                                                                 "Mendocino","Napa","Sonoma","Trinity"),
+                               "San Francisco Bay Area"      = c("Alameda","Contra Costa","Marin",
+                                                                 "San Francisco","San Mateo","Santa Clara",
+                                                                 "Solano"),
+                               "Northern San Joaquin Valley" = c("Alpine","Amador","Calaveras","Madera",
+                                                                 "Mariposa","Merced","Mono","San Joaquin",
+                                                                 "Stanislaus","Tuolumne"),
+                               "Central Coast"               = c("Monterey","San Benito","San Luis Obispo",
+                                                                 "Santa Barbara","Santa Cruz","Ventura"),
+                               "Southern San Joaquin Valley" = c("Fresno","Inyo","Kern","Kings","Tulare"),
+                               "Inland Empire"               = c("Riverside","San Bernardino"),
+                               "Los Angeles County"          = "Los Angeles",
+                               "Orange County"               = "Orange",
+                               "San Diego-Imperial"          = c("Imperial","San Diego")),
+         .after = county_name)
+```
+
+
+```{r}
+#| out-width: "100%"
+
+ca_childcare |> 
+  ggplot(aes(x = mfcc_infant, y = mc_infant)) +
+  geom_point(size = .5, alpha = .6) +
+  labs(x = "Family-Based Cost",
+       y = "Center-Based Cost",
+       subtitle = "Median Weekly Infant Childcare Cost ($)") 
+```
+
+
+## Example: Answering a Research Question
+
+```{r}
+#| out-width: "100%"
+
+ca_childcare |> 
+  ggplot(aes(x = mfcc_infant, y = mc_infant)) +
+  geom_point(size = .5, alpha = .6) +
+  geom_abline(intercept = 0, slope = 1,
+              size = .2, linetype = 2,
+              color = "red") +
+  xlim(100, 500) +
+  ylim(100, 500) +
+  labs(x = "Family-Based Cost",
+       y = "Center-Based Cost",
+       subtitle = "Median Weekly Infant Childcare Cost ($)") +
+  theme(aspect.ratio = 1)
+```
+
+
+
+## Describing Tables
+
+
+
+```{r}
+#| code-fold: true
+#| echo: true
+
+ca_childcare_long <- ca_childcare |> 
+  select(county_name, study_year, mc_infant:mfcc_preschool,
+         total_property_taxes, total_pop, me_2018) |>
+  pivot_longer(cols = starts_with("mc") | starts_with("mfcc"),
+               names_to = c("type", "age_group"),
+               names_sep = "_",
+               values_to = "med_cost") |> 
+  filter(!is.na(total_property_taxes)) |> 
+  mutate(tax_per_cap = total_property_taxes / total_pop,
+         wealth_level = case_when(tax_per_cap <= quantile(tax_per_cap, .25) ~ "Lower 1/4",
+                                  tax_per_cap <= quantile(tax_per_cap, .75) ~ "Middle Half",
+                                                                       TRUE ~ "Upper 1/4"))
+
+ca_childcare_long |> 
+  group_by(wealth_level, type, age_group) |> 
+  summarize(mean_cost = mean(med_cost)) |> 
+  pivot_wider(values_from = mean_cost,
+              names_from = type) |> 
+  filter(age_group != "preschool") |> 
+  mutate(age_group = str_to_title(age_group),
+         perc_dif = mc /mfcc) |> 
+  rename(price_center = mc,
+         price_family = mfcc) |> 
+  kable(digits = 2)
+```
+
+:::callout-tip
+# Can you tell??
+Without looking at the code, what does each cell in this table represent?
+:::
+
+## Describing Plots
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+ca_childcare_long |> 
+  filter(age_group != "preschool") |> 
+  mutate(age_group = str_to_title(age_group),
+         type = fct_recode(type,
+                           "Center-Based" = "mc",
+                           "Family-Based" = "mfcc")) |> 
+  group_by(wealth_level, age_group, type, study_year) |> 
+  summarize(upper_q = quantile(med_cost, .75),
+            lower_q = quantile(med_cost, .25),
+            med_cost = median(med_cost),
+            ) |> 
+  ggplot(aes(x = study_year, y = med_cost,
+             group = interaction(type, wealth_level))) +
+  geom_ribbon(aes(ymin = lower_q, ymax = upper_q, fill = type),
+                alpha = .15,
+                linetype = 0) +
+  geom_line(aes(color = type)) +
+  geom_point(aes(shape = fct_reorder2(wealth_level, 
+                                      .x = study_year,
+                                      .y = med_cost),
+                color = type)) +
+  facet_wrap(vars(age_group)) +
+  scale_color_manual(name = "Childcare Type",
+                     values = c("#045a8d","#fd8d3c")) +
+  scale_fill_manual(name = "Childcare Type",
+                     values = c("#045a8d","#fd8d3c")) +
+  labs(subtitle = "Median Weekly Cost ($)",
+       y = "",
+       x = "Year",
+       shape = "County Wealth") +
+  scale_x_continuous(breaks = c(2008, 2010, 2012, 2014, 2016, 2018))
+ 
+
+```
+
+## Describing Plots
+
+```{r}
+#| echo: true
+#| code-fold: true
+
+ca_childcare_long |> 
+  filter(age_group != "preschool") |> 
+  mutate(age_group = str_to_title(age_group),
+         type = fct_recode(type,
+                           "Center-Based" = "mc",
+                           "Family-Based" = "mfcc")) |> 
+  mutate(week_income = me_2018 / 52,
+         cost_income_rat = med_cost / week_income) |> 
+  filter(study_year == 2018) |> 
+  ggplot(aes(x = type,
+             y = cost_income_rat,
+             fill = wealth_level)) +
+  geom_boxplot() +
+  facet_wrap(vars(age_group)) +
+  labs(x = "Childcare Type",
+       subtitle = "Ratio of Median Weekly Childcare Cost to\nMedian Weekly Income",
+       y = "",
+       fill = "County Tax Income")
+```
+
+
+
+## Open-Ended Analysis from Lab 4
+
+:::{.incremental}
+
+**Discussing Figures**
+
++ **Describe / explain** what your table / plot is showing before **analyzing** it
++ If you are taking a statistical summary you should be clear what the summary is taken *over*
++ Make it clear what *one point* on your plot represents
 :::
 
 # Questions about Midterm Exam?

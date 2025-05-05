@@ -213,18 +213,24 @@
 </section>
 <section id="open-ended-analysis-from-lab-4" class="slide level2">
 <h2>Open-Ended Analysis from Lab 4</h2>
+<p><strong>Research Question</strong></p>
+<div>
+<ul>
+<li class="fragment">Keep it general</li>
+<li class="fragment">We are doing an exploratory analysis - not statistical testing</li>
+</ul>
+</div>
 <p><strong>Written Description</strong></p>
 <div>
 <ul>
-<li class="fragment"><strong>Describe</strong> what your table / plot is showing before <strong>analyzing</strong> it</li>
 <li class="fragment"><strong>Do not use variable names or R function names in your written text.</strong></li>
 <li class="fragment">Breaking up sections with headers can help with organization and flow.</li>
-<li class="fragment">Do not print out the data!</li>
+<li class="fragment">Do not print out the data!!!</li>
 </ul>
 </div>
 </section>
-<section id="open-ended-analysis-from-week-5" class="slide level2">
-<h2>Open-Ended Analysis from Week 5</h2>
+<section id="open-ended-analysis-from-lab-4-1" class="slide level2">
+<h2>Open-Ended Analysis from Lab 4</h2>
 <p><strong>Discussing Data</strong></p>
 <div>
 <ul>
@@ -232,19 +238,19 @@
 <ul>
 <li class="fragment">Data source</li>
 <li class="fragment">Observational unit / level (e.g.&nbsp;county and year)</li>
-<li class="fragment">Overview of what is included (e.g.&nbsp;demographic incormation and weekly median childcare costs for each county and year)</li>
+<li class="fragment">Overview of what is included (e.g.&nbsp;demographic information and weekly median childcare costs for each county and year)</li>
 <li class="fragment">Years or geographies included (e.g.&nbsp;2008-2018, CA only)</li>
 </ul></li>
-<li class="fragment">If you are taking a statistical summary you should be clear what the summary is taken <em>over</em></li>
 </ul>
 </div>
 </section>
-<section id="open-ended-analysis-from-week-5-1" class="slide level2">
-<h2>Open-Ended Analysis from Week 5</h2>
+<section id="open-ended-analysis-from-lab-4-2" class="slide level2">
+<h2>Open-Ended Analysis from Lab 4</h2>
 <div>
 <p><strong>Table Design</strong></p>
 <ul>
 <li class="fragment">Think about the number of rows/columns – is it readable?</li>
+<li class="fragment">How many decimal points are needed?</li>
 <li class="fragment">Change row/column names to be understandable.</li>
 </ul>
 <p><strong>Plot Design</strong></p>
@@ -253,6 +259,194 @@
 <li class="fragment">What type of plot will best display the data?</li>
 <li class="fragment">What order of elements will best display the comparison you want to make?</li>
 <li class="fragment">Think about: colors, order of categories, if a legend is needed, etc.</li>
+</ul>
+</div>
+</section>
+<section id="example-answering-a-research-question" class="slide level2">
+<h2>Example: Answering a Research Question</h2>
+
+<img data-src="w6-version-control_files/figure-revealjs/unnamed-chunk-2-1.png" style="width:100.0%" class="r-stretch"></section>
+<section id="example-answering-a-research-question-1" class="slide level2">
+<h2>Example: Answering a Research Question</h2>
+
+<img data-src="w6-version-control_files/figure-revealjs/unnamed-chunk-3-1.png" style="width:100.0%" class="r-stretch"></section>
+<section id="describing-tables" class="slide level2">
+<h2>Describing Tables</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a>ca_childcare_long <span class="ot">&lt;-</span> ca_childcare <span class="sc">|&gt;</span> </span>
+<span id="cb1-2"><a></a>  <span class="fu">select</span>(county_name, study_year, mc_infant<span class="sc">:</span>mfcc_preschool,</span>
+<span id="cb1-3"><a></a>         total_property_taxes, total_pop, me_2018) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">starts_with</span>(<span class="st">"mc"</span>) <span class="sc">|</span> <span class="fu">starts_with</span>(<span class="st">"mfcc"</span>),</span>
+<span id="cb1-5"><a></a>               <span class="at">names_to =</span> <span class="fu">c</span>(<span class="st">"type"</span>, <span class="st">"age_group"</span>),</span>
+<span id="cb1-6"><a></a>               <span class="at">names_sep =</span> <span class="st">"_"</span>,</span>
+<span id="cb1-7"><a></a>               <span class="at">values_to =</span> <span class="st">"med_cost"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-8"><a></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(total_property_taxes)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-9"><a></a>  <span class="fu">mutate</span>(<span class="at">tax_per_cap =</span> total_property_taxes <span class="sc">/</span> total_pop,</span>
+<span id="cb1-10"><a></a>         <span class="at">wealth_level =</span> <span class="fu">case_when</span>(tax_per_cap <span class="sc">&lt;=</span> <span class="fu">quantile</span>(tax_per_cap, .<span class="dv">25</span>) <span class="sc">~</span> <span class="st">"Lower 1/4"</span>,</span>
+<span id="cb1-11"><a></a>                                  tax_per_cap <span class="sc">&lt;=</span> <span class="fu">quantile</span>(tax_per_cap, .<span class="dv">75</span>) <span class="sc">~</span> <span class="st">"Middle Half"</span>,</span>
+<span id="cb1-12"><a></a>                                                                       <span class="cn">TRUE</span> <span class="sc">~</span> <span class="st">"Upper 1/4"</span>))</span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a>ca_childcare_long <span class="sc">|&gt;</span> </span>
+<span id="cb1-15"><a></a>  <span class="fu">group_by</span>(wealth_level, type, age_group) <span class="sc">|&gt;</span> </span>
+<span id="cb1-16"><a></a>  <span class="fu">summarize</span>(<span class="at">mean_cost =</span> <span class="fu">mean</span>(med_cost)) <span class="sc">|&gt;</span> </span>
+<span id="cb1-17"><a></a>  <span class="fu">pivot_wider</span>(<span class="at">values_from =</span> mean_cost,</span>
+<span id="cb1-18"><a></a>              <span class="at">names_from =</span> type) <span class="sc">|&gt;</span> </span>
+<span id="cb1-19"><a></a>  <span class="fu">filter</span>(age_group <span class="sc">!=</span> <span class="st">"preschool"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb1-20"><a></a>  <span class="fu">mutate</span>(<span class="at">age_group =</span> <span class="fu">str_to_title</span>(age_group),</span>
+<span id="cb1-21"><a></a>         <span class="at">perc_dif =</span> mc <span class="sc">/</span>mfcc) <span class="sc">|&gt;</span> </span>
+<span id="cb1-22"><a></a>  <span class="fu">rename</span>(<span class="at">price_center =</span> mc,</span>
+<span id="cb1-23"><a></a>         <span class="at">price_family =</span> mfcc) <span class="sc">|&gt;</span> </span>
+<span id="cb1-24"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">wealth_level</th>
+<th style="text-align: left;">age_group</th>
+<th style="text-align: right;">price_center</th>
+<th style="text-align: right;">price_family</th>
+<th style="text-align: right;">perc_dif</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Lower 1/4</td>
+<td style="text-align: left;">Infant</td>
+<td style="text-align: right;">254.67</td>
+<td style="text-align: right;">158.89</td>
+<td style="text-align: right;">1.60</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Lower 1/4</td>
+<td style="text-align: left;">Toddler</td>
+<td style="text-align: right;">184.26</td>
+<td style="text-align: right;">148.55</td>
+<td style="text-align: right;">1.24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Middle Half</td>
+<td style="text-align: left;">Infant</td>
+<td style="text-align: right;">272.55</td>
+<td style="text-align: right;">172.92</td>
+<td style="text-align: right;">1.58</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Middle Half</td>
+<td style="text-align: left;">Toddler</td>
+<td style="text-align: right;">194.56</td>
+<td style="text-align: right;">159.85</td>
+<td style="text-align: right;">1.22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Upper 1/4</td>
+<td style="text-align: left;">Infant</td>
+<td style="text-align: right;">276.37</td>
+<td style="text-align: right;">182.78</td>
+<td style="text-align: right;">1.51</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Upper 1/4</td>
+<td style="text-align: left;">Toddler</td>
+<td style="text-align: right;">196.26</td>
+<td style="text-align: right;">170.12</td>
+<td style="text-align: right;">1.15</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Can you tell??</strong></p>
+</div>
+<div class="callout-content">
+<p>Without looking at the code, what does each cell in this table represent?</p>
+</div>
+</div>
+</div>
+</section>
+<section id="describing-plots" class="slide level2">
+<h2>Describing Plots</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a>ca_childcare_long <span class="sc">|&gt;</span> </span>
+<span id="cb2-2"><a></a>  <span class="fu">filter</span>(age_group <span class="sc">!=</span> <span class="st">"preschool"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb2-3"><a></a>  <span class="fu">mutate</span>(<span class="at">age_group =</span> <span class="fu">str_to_title</span>(age_group),</span>
+<span id="cb2-4"><a></a>         <span class="at">type =</span> <span class="fu">fct_recode</span>(type,</span>
+<span id="cb2-5"><a></a>                           <span class="st">"Center-Based"</span> <span class="ot">=</span> <span class="st">"mc"</span>,</span>
+<span id="cb2-6"><a></a>                           <span class="st">"Family-Based"</span> <span class="ot">=</span> <span class="st">"mfcc"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb2-7"><a></a>  <span class="fu">group_by</span>(wealth_level, age_group, type, study_year) <span class="sc">|&gt;</span> </span>
+<span id="cb2-8"><a></a>  <span class="fu">summarize</span>(<span class="at">upper_q =</span> <span class="fu">quantile</span>(med_cost, .<span class="dv">75</span>),</span>
+<span id="cb2-9"><a></a>            <span class="at">lower_q =</span> <span class="fu">quantile</span>(med_cost, .<span class="dv">25</span>),</span>
+<span id="cb2-10"><a></a>            <span class="at">med_cost =</span> <span class="fu">median</span>(med_cost),</span>
+<span id="cb2-11"><a></a>            ) <span class="sc">|&gt;</span> </span>
+<span id="cb2-12"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> study_year, <span class="at">y =</span> med_cost,</span>
+<span id="cb2-13"><a></a>             <span class="at">group =</span> <span class="fu">interaction</span>(type, wealth_level))) <span class="sc">+</span></span>
+<span id="cb2-14"><a></a>  <span class="fu">geom_ribbon</span>(<span class="fu">aes</span>(<span class="at">ymin =</span> lower_q, <span class="at">ymax =</span> upper_q, <span class="at">fill =</span> type),</span>
+<span id="cb2-15"><a></a>                <span class="at">alpha =</span> .<span class="dv">15</span>,</span>
+<span id="cb2-16"><a></a>                <span class="at">linetype =</span> <span class="dv">0</span>) <span class="sc">+</span></span>
+<span id="cb2-17"><a></a>  <span class="fu">geom_line</span>(<span class="fu">aes</span>(<span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb2-18"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">shape =</span> <span class="fu">fct_reorder2</span>(wealth_level, </span>
+<span id="cb2-19"><a></a>                                      <span class="at">.x =</span> study_year,</span>
+<span id="cb2-20"><a></a>                                      <span class="at">.y =</span> med_cost),</span>
+<span id="cb2-21"><a></a>                <span class="at">color =</span> type)) <span class="sc">+</span></span>
+<span id="cb2-22"><a></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(age_group)) <span class="sc">+</span></span>
+<span id="cb2-23"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">name =</span> <span class="st">"Childcare Type"</span>,</span>
+<span id="cb2-24"><a></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#045a8d"</span>,<span class="st">"#fd8d3c"</span>)) <span class="sc">+</span></span>
+<span id="cb2-25"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">name =</span> <span class="st">"Childcare Type"</span>,</span>
+<span id="cb2-26"><a></a>                     <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#045a8d"</span>,<span class="st">"#fd8d3c"</span>)) <span class="sc">+</span></span>
+<span id="cb2-27"><a></a>  <span class="fu">labs</span>(<span class="at">subtitle =</span> <span class="st">"Median Weekly Cost ($)"</span>,</span>
+<span id="cb2-28"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb2-29"><a></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb2-30"><a></a>       <span class="at">shape =</span> <span class="st">"County Wealth"</span>) <span class="sc">+</span></span>
+<span id="cb2-31"><a></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">2008</span>, <span class="dv">2010</span>, <span class="dv">2012</span>, <span class="dv">2014</span>, <span class="dv">2016</span>, <span class="dv">2018</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="w6-version-control_files/figure-revealjs/unnamed-chunk-5-1.png" width="960" class="r-stretch"></section>
+<section id="describing-plots-1" class="slide level2">
+<h2>Describing Plots</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>ca_childcare_long <span class="sc">|&gt;</span> </span>
+<span id="cb3-2"><a></a>  <span class="fu">filter</span>(age_group <span class="sc">!=</span> <span class="st">"preschool"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-3"><a></a>  <span class="fu">mutate</span>(<span class="at">age_group =</span> <span class="fu">str_to_title</span>(age_group),</span>
+<span id="cb3-4"><a></a>         <span class="at">type =</span> <span class="fu">fct_recode</span>(type,</span>
+<span id="cb3-5"><a></a>                           <span class="st">"Center-Based"</span> <span class="ot">=</span> <span class="st">"mc"</span>,</span>
+<span id="cb3-6"><a></a>                           <span class="st">"Family-Based"</span> <span class="ot">=</span> <span class="st">"mfcc"</span>)) <span class="sc">|&gt;</span> </span>
+<span id="cb3-7"><a></a>  <span class="fu">mutate</span>(<span class="at">week_income =</span> me_2018 <span class="sc">/</span> <span class="dv">52</span>,</span>
+<span id="cb3-8"><a></a>         <span class="at">cost_income_rat =</span> med_cost <span class="sc">/</span> week_income) <span class="sc">|&gt;</span> </span>
+<span id="cb3-9"><a></a>  <span class="fu">filter</span>(study_year <span class="sc">==</span> <span class="dv">2018</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb3-10"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> type,</span>
+<span id="cb3-11"><a></a>             <span class="at">y =</span> cost_income_rat,</span>
+<span id="cb3-12"><a></a>             <span class="at">fill =</span> wealth_level)) <span class="sc">+</span></span>
+<span id="cb3-13"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb3-14"><a></a>  <span class="fu">facet_wrap</span>(<span class="fu">vars</span>(age_group)) <span class="sc">+</span></span>
+<span id="cb3-15"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Childcare Type"</span>,</span>
+<span id="cb3-16"><a></a>       <span class="at">subtitle =</span> <span class="st">"Ratio of Median Weekly Childcare Cost to</span><span class="sc">\n</span><span class="st">Median Weekly Income"</span>,</span>
+<span id="cb3-17"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb3-18"><a></a>       <span class="at">fill =</span> <span class="st">"County Tax Income"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+
+</div>
+<img data-src="w6-version-control_files/figure-revealjs/unnamed-chunk-6-1.png" width="960" class="r-stretch"></section>
+<section id="open-ended-analysis-from-lab-4-3" class="slide level2">
+<h2>Open-Ended Analysis from Lab 4</h2>
+<div>
+<p><strong>Discussing Figures</strong></p>
+<ul>
+<li class="fragment"><strong>Describe / explain</strong> what your table / plot is showing before <strong>analyzing</strong> it</li>
+<li class="fragment">If you are taking a statistical summary you should be clear what the summary is taken <em>over</em></li>
+<li class="fragment">Make it clear what <em>one point</em> on your plot represents</li>
 </ul>
 </div>
 </section>
@@ -627,15 +821,15 @@
 <li>Install and load the <code>usethis</code> package.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(usethis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">install.packages</span>(<span class="st">"usethis"</span>)</span>
+<span id="cb4-2"><a></a><span class="fu">library</span>(usethis)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ol start="2" type="1">
 <li>Install and load the <code>gitcreds</code> Package.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">install.packages</span>(<span class="st">"gitcreds"</span>)</span>
-<span id="cb2-2"><a></a><span class="fu">library</span>(gitcreds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">install.packages</span>(<span class="st">"gitcreds"</span>)</span>
+<span id="cb5-2"><a></a><span class="fu">library</span>(gitcreds)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="configure-git" class="slide level2">
@@ -644,7 +838,7 @@
 <li>Tell git your email and GitHub username.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"JaneDoe2"</span>, <span class="at">user.email =</span> <span class="st">"jane@example.org"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">use_git_config</span>(<span class="at">user.name =</span> <span class="st">"JaneDoe2"</span>, <span class="at">user.email =</span> <span class="st">"jane@example.org"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>(Nothing should happen.)</p>
 </section>
@@ -654,7 +848,7 @@
 <li>Generate a PAT.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">create_github_token</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">create_github_token</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>This will open GitHub and ask you to log in.</li>
@@ -673,7 +867,7 @@
 <li>Run the following code.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="fu">gitcreds_set</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>When prompted to <strong>Enter password or token:</strong>, paste your PAT.</p>
 </section>
@@ -683,7 +877,7 @@
 <li>Let’s verify.</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">git_sitrep</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <img data-src="images/pat-verify.png" style="width:90.0%" class="r-stretch"></section>
