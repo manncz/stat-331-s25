@@ -1,0 +1,812 @@
+---
+title: "Iteration"
+format: 
+  revealjs:
+    theme: [default, ../slide_custom.scss]
+    auto-stretch: false
+editor: source
+execute:
+  echo: true
+---
+
+```{r setup}
+#| include: false
+#| message: false
+library(tidyverse)
+library(palmerpenguins)
+library(glue)
+```
+
+
+## Tuesday, 5/20 
+Today we will...
+
++ Project Proposal + Data
++ New Material^[Material and images for today's lecture were modified from Dr. Theobold and [Hansjörg Neth's ds4psy text](https://bookdown.org/hneth/ds4psy/12.3-iter:functional-programming.html#iter:functional-programming)]
+  + Iteration aka Performing Repeated Tasks
+  + Vectorization
+  + Efficient Iteration: the `map()` family
++ PA 8.1: The Twelve Days of Christmas
++ Lab 8: Searching for Efficiency
+
+## Project Proposal + Data
+
+You must complete the *objectives* and write up the *written components* outlined under Section 1 on the Project Details page on Canvas.
+
+  + Choose variables that you think would feasibly be related (you have a hypothesis)
+  + You may want to check there isn't a huge amount of missing data
+  + Due on Canvas by 11:59pm on Friday, 5/23
+  + "Group" Canvas assignment, so only one person needs to submit it in your group
+
+
+# Performing Repeated Tasks
+
+
+## Repetition
+
+Type out the task over and over.
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| fig-cap: "https://bookdown.org/hneth/ds4psyl"
+#| out-width: 50%
+knitr::include_graphics("images/bart_board_iter.png")
+```
+
+. . .
+
+Do not do this.
+
+## Iteration
+
+Repeatedly execute the *same* operation over and over.
+
++ Loops (e.g., `for()` and `while()`) allow us to iterate.
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| echo: true
+for(i in 1:6){
+  print(i^2)
+}
+```
+
+:::
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| fig-align: center
+#| out-width: 80%
+#| fig-cap: "https://bookdown.org/hneth/ds4psyl"
+knitr::include_graphics("images/bart_board_for.png")
+```
+:::
+::::
+
+
+## Iteration
+
+Repeatedly execute the *same* operation over and over.
+
++ Loops (e.g., `for()` and `while()`) allow us to iterate.
+
+:::: {.columns}
+::: {.column width="40%"}
+```{r}
+#| echo: true
+for(i in 1:6){
+  print(i^2)
+}
+```
+
++ But loops tend to be **slow**!
+
+:::
+::: {.column width="60%"}
+```{r}
+#| echo: false
+#| fig-align: center
+#| out-width: 80%
+#| fig-cap: "https://bookdown.org/hneth/ds4psyl"
+knitr::include_graphics("images/bart_board_for.png")
+```
+:::
+::::
+
+
+## Vectorization
+
+Many operations in R are **vectorized**.
+
++ These functions operate on *vectors* of values rather than a *single* value.
++ We can iterate *without* writing a loop.
+
+. . .
+
+```{r}
+#| echo: true
+x <- seq(from = -4, to = 6)
+x
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+Loop:
+
+```{r}
+for(i in 1:length(x)){
+  x[i] <- abs(x[i])
+}
+x
+```
+:::
+::: {.column width="50%"}
+
+:::
+::::
+
+
+## Vectorization
+
+Many operations in R are **vectorized**.
+
++ These functions operate on *vectors* of values rather than a *single* value.
++ We can iterate *without* writing a loop.
+
+```{r}
+#| echo: true
+x <- seq(from = -4, to = 6)
+x
+```
+
+:::: {.columns}
+::: {.column width="50%"}
+Loop:
+
+```{r}
+for(i in 1:length(x)){
+  x[i] <- abs(x[i])
+}
+x
+```
+:::
+::: {.column width="50%"}
+Vectorized:
+
+```{r}
+#| echo: false
+x <- seq(from = -4, to = 6)
+```
+
+```{r}
+abs(x)
+```
+:::
+::::
+
+
+## Vectorization
+
+**Not every function is vectorized.**
+
++ E.g., a function using `if()` statements **cannot** operate on vectors.
+
+. . .
+
+:::: {.columns}
+::: {.column width="47%"}
+```{r}
+#| error: true
+pos_neg_zero <- function(x){
+  if(x > 0){
+    return("Greater than 0!")
+  } else if (x < 0){
+    return("Less than 0!")
+  } else {
+    return("Equal to 0!")
+  }
+}
+
+x <- seq(from = -4, to = 4)
+pos_neg_zero(x)
+```
+
+:::
+::: {.column width="53%"}
+
+The `if(x > 0)` statement can only be checked for something of length 1 (a single number, not a vector).
+
+:::
+::::
+
+
+## Vectorization
+
+**Not every function is vectorized.**
+
++ E.g., a function using `if()` statements **cannot** operate on vectors.
+
+:::: {.columns}
+::: {.column width="47%"}
+```{r}
+#| error: true
+pos_neg_zero <- function(x){
+  if(x > 0){
+    return("Greater than 0!")
+  } else if (x < 0){
+    return("Less than 0!")
+  } else {
+    return("Equal to 0!")
+  }
+}
+
+x <- seq(from = -4, to = 3)
+pos_neg_zero(x)
+```
+
+:::
+::: {.column width="53%"}
+
+```{r}
+result <- rep(NA, length(x))
+for(i in 1:length(x)){
+  result[i] <- pos_neg_zero(x[i])
+}
+
+result
+```
+:::
+::::
+
+
+## Vectorization
+
+**Not every function is vectorized.**
+
++ **Vectorized** versions of `if()` statements?
+
+<center>
+
+`if_else()` and `case_when()`
+
+</center>
+
+```{r}
+pos_neg_zero <- function(x){
+  state <- case_when(x > 0 ~ "Greater than 0!", 
+                     x < 0 ~ "Less than 0!", 
+                     .default = "Equal to 0!")
+  return(state)
+}
+
+x <- seq(from = -4, to = 3)
+pos_neg_zero(x)
+```
+
+
+## Some functions cannot be vectorized!
+
+Applying `class()` to a **single** variable in a dataframe returns the data type of that column:
+
+```{r}
+class(penguins[[1]])
+
+class(penguins$species)
+```
+
+Trying to apply `class()` to **every** variable in a dataframe returns the data type of the dataframe:
+
+```{r}
+class(penguins)
+```
+
+
+## What can we do instead?
+
+Write a `for()` loop...
+
+```{r}
+data_type <- rep(NA, length = ncol(penguins))
+for(i in 1:ncol(penguins)){
+  data_type[i] <- class(penguins[[i]])
+}
+
+# format table nicely
+data.frame(column = names(penguins), 
+       type = data_type) |> 
+  pivot_wider(names_from = column, 
+              values_from = type) |>  
+  knitr::kable() |>
+  kableExtra::kable_styling(font_size = 30)
+```
+
+. . .
+
+... but loops are computationally intensive!
+
+
+## What can we do instead?
+
+What about `across()`?
+
++ Easily perform the **same** operation on multiple columns.
+
+```{r}
+penguins |> 
+  summarise(across(.cols = everything(), 
+                   .fns = class)) |> 
+  knitr::kable()
+```
+
+. . .
+
+Ugh. Internally, `across()` uses a `for()` loop!
+
+```
+for (j in seq_fns) {
+  fn <- fns[[j]]
+  out[[k]] <- fn(col, ...)
+  k <- k + 1L
+```
+
+
+## What can we do instead?
+
+<br>
+
+...
+
+
+# Functional Programming with `purrr`
+
+The `purrr` package breaks common list manipulations into small, independent pieces.
+
+
+![](images/purrr.png){width=30%}
+
+
+## Brief Review: Lists
+
+A list is a 1-dimensional, heterogeneous data structure.
+
++ There are no restrictions on what data type or structure it can contain -- values, vectors, other lists, dataframes, etc.
++ Lists are indexed with `[]` or `[[]]`.
+
+. . .
+
+:::: {.columns}
+::: {.column width="50%"}
+```{r}
+#| echo: false
+(my_list <- list(c(T, F, T, T), 
+                matrix(c(6.7, 5.58, 4.4, 6.0), nrow = 2),
+                "A"))
+```
+:::
+::: {.column width="50%"}
+```{r}
+my_list[1]
+my_list[[2]]
+my_list[[2]][1,2]
+```
+:::
+::::
+
+
+## Brief Review: Lists
+
+A dataframe / tibble is a specially formatted **list of columns**!
+
+```{r}
+small_penguins <- penguins[1:8,]
+small_penguins[3]
+small_penguins[[3]]
+```
+
+. . .
+
+The `purrr` package works for lists, so it works for dataframes.
+
+
+## `map()`
+
+The `map()` function **iterates** through each item in a list (or vector) and applies a function, then returns the new list.
+
+```{r}
+#| fig-align: center
+#| out-width: 30%
+#| echo: false
+knitr::include_graphics("images/map.png")
+```
+
+Note: the first argument in `map()` is the list, so if we pipe into it, we **only** specify the function!
+
+
+## `map()` + Dataframes
+
+A dataframe is just a list of columns -- `map()` will apply a function to every column.
+
+. . .
+
+```{r}
+penguins |> 
+  select(bill_length_mm:body_mass_g) |>
+  map(~ mean(.x, na.rm = TRUE))
+```
+
+Use a lambda function (with `~` and `.x`), just like in <font size=6> `across()`</font>!
+
+
+## The `map()` Family
+
+The `map_xxx()` variants allow you to specify the **type of output** you want.
+
++ `map()` creates a *list*.
++ `map_chr()` creates a *character vector*.
++ `map_lgl()` creates an *logical vector*.
++ `map_int()` creates a *integer vector*.
++ `map_dbl()` creates a *numeric vector*.
+
+All take in a list or vector and a function as arguments.
+
+
+## `map()` + penguins
+
+::: panel-tabset
+
+### `map_dbl()`
+
+Calculate the mean of each column.
+
+```{r}
+penguins |> 
+  select(bill_length_mm:body_mass_g) |> 
+  map_dbl(~ mean(.x, na.rm = TRUE))
+```
+
+Output is a **vector of doubles**.
+
+
+### `map_int()`
+
+Calculate the number of `NA`s in each column.
+
+```{r}
+penguins |> 
+  map_int(~ sum(is.na(.x)))
+```
+
+Output is a **vector of integers**.
+
+
+### `map_lgl()`
+
+Calculate if there are any `NA`s in each column.
+
+```{r}
+
+penguins |> 
+  map_lgl(~ sum(is.na(.x)) > 0)
+```
+
+Output is a **vector of booleans**.
+
+
+### Choosing a map
+
+
+Calculate the number of `NA`s in each column.
+
+```{r}
+#| error: true
+penguins |> 
+  map_lgl(~ sum(is.na(.x)))
+```
+
+
+R returns an error if the output is of the wrong type!
+
+:::
+
+
+
+
+## `map_if()`
+
+The `map_if()` function allows us to **conditionally** apply a function to each item in a list.
+
+. . .
+
+::: panel-tabset
+
+### `across()`
+
+```{r}
+#| eval: false
+penguins |> 
+  mutate(across(.cols = where(is.numeric), 
+                .fns = scale))
+```
+
+```{r}
+#| echo: false
+penguins |> 
+  select(species:bill_depth_mm, sex) |> 
+  mutate(across(.cols = where(is.numeric), 
+                .fns = scale)) |> 
+  head(n = 8)
+```
+
+### `map_if()`
+
+```{r}
+penguins |> 
+  map_if(is.numeric, scale)
+```
+
+### `map_if()` to data (tibble)
+
+```{r}
+#| eval: false
+penguins |> 
+  map_if(is.numeric, scale) |> 
+  bind_cols()
+```
+
+```{r}
+#| echo: false
+penguins |> 
+  select(species:bill_depth_mm, sex) |> 
+  map_if(is.numeric, scale) |> 
+  bind_cols() |> 
+  head(n = 8) |> 
+  knitr::kable()
+```
+
+:::
+
+## BUT DR. C we just figured out `across()` 😭😭😭!!!
+
+:::{.incremental}
+I promise there are good reasons to learn `purrr`!
+
+1. Functional programming is computationally faster than `across()`
+2. You can complete a larger variety of data manipulations with `map()` functions 
+3. `across()` is just for datasets, while functional programming can be used for many different tasks
+:::
+
+. . .
+
+:::callout-tip
+This doesn't mean that `across()` is bad practice at all, just that there are times when using functional programming will be much better!
+:::
+
+## Comparing Speed
+
+Using functional programming can be **much faster** than using `for` loops.
+
+::: panel-tabset
+
+### `for()`
+
+```{r}
+#| echo: true
+loop_func <- function(d){
+  typ <- rep(NA, ncol(d))
+  for(i in 1:ncol(d)){
+    typ[i] <- class(d[,i])
+  }
+  return(typ)
+}
+```
+
+### `across()`
+
+```{r}
+#| echo: true
+across_func <- function(d){
+  typ <- d |> 
+    summarize(across(.cols = everything(),
+                     .fns = class))
+  return(typ)
+}
+```
+
+### `map()`
+
+```{r}
+#| echo: true
+map_func <- function(d){
+  typ <- map_chr(d, class)
+  return(typ)
+}
+```
+
+### Run
+
+```{r}
+#| echo: true
+df <- as.data.frame(matrix(1,
+                           nrow = 5,
+                           ncol = 7))
+
+loop_func(df)
+across_func(df)
+map_func(df)
+```
+
+### Compare
+
+```{r}
+#| echo: true
+#| eval: false
+df <- as.data.frame(matrix(1,
+                           nrow = 5,
+                           ncol = 100000))
+
+microbenchmark::microbenchmark(loop_func(df),
+                               across_func(df),
+                               map_func(df),
+                               times = 20)
+```
+
+![](images/speed-new.png)
+
+:::
+
+
+## The `pmap()` Family
+
+These functions take in a **list of vectors** and a **function**.
+
++ The function must accept a number of arguments equal to the length of the list,
+
+```{r}
+#| fig-align: center
+#| out-width: 65%
+#| echo: false
+knitr::include_graphics("images/pmap.png")
+```
+
+
+## The `pmap()` Family
+
+The vectors need to have the **same names** as the arguments of the function you are applying.
+
+```{r}
+fruit <- data.frame(string = c("apple", "banana", "cherry"),
+                    pattern = c("p", "n", "h"),
+                    replacement = c("P", "N", "H"))
+fruit
+```
+
+```{r}
+fruit |> 
+  pmap_chr(str_replace_all)
+```
+
+
+## The `map()` and `pmap()` Family
+
+<br>
+
+There are **so many** functions -- check out the `purrr` [cheatsheet](https://github.com/rstudio/cheatsheets/blob/main/purrr.pdf)!
+
+
+## Use functional programming!
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| out-width: 70%
+#| fig-cap: "https://bookdown.org/hneth/ds4psy"
+knitr::include_graphics("images/bart_board_map.png")
+```
+
+
+## PA 8.1: The Twelve Days of Christmas
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| out-width: 80%
+#| fig-cap: "https://studioplayhouse.org/the-12-days-of-christmas/"
+knitr::include_graphics("https://studioplayhouse.org/wp-content/uploads/2020/06/12-Days-of-christmas.jpg")
+```
+
+
+## `glue()`
+
+:::: {.columns}
+::: {.column width="70%"}
+
+The `glue` package embeds R expressions in curly brackets that are then evaluated and inserted into the argument string.
+
+:::
+::: {.column width="30%"}
+
+```{r}
+#| echo: false
+#| fig-align: center
+#| out-width: 50%
+knitr::include_graphics("images/glue.jpg")
+```
+:::
+::::
+
+```{r}
+library(glue)
+
+name <- "Dr. C"
+glue('My name is {name}.')
+```
+
+</br>
+
+This will be a handy function (and package) for putting our song together!
+
+## An Example
+
+*99 bottles of beer on the wall, 99 bottles of beer. Take one down, pass it around, 98 bottles of beer on the wall...*
+
+::: panel-tabset
+
+### Lyrics
+
+```{r}
+bottles_lyrics <- function(n){
+  lyrics <- glue("{n} bottles of beer on the wall, {n} bottles of beer \nTake one down, pass it around, {n -1} bottles of beer on the wall")
+  return(lyrics)
+}
+
+bottles_lyrics(3)
+```
+
+### Song
+
+```{r}
+bottles_song <- function(n){
+  song <- map_chr(n:0, bottles_lyrics)
+  return(glue("{song}"))
+}
+
+bottles_song(3)
+```
+
+### Alternate Ending
+
+*No more bottles of beer on the wall, no more bottles of beer. Go to the store, buy some more, 99 bottles of beer on the wall...*
+
+```{r}
+bottles_lyrics <- function(n){
+  if(n == 0){
+    lyrics <- glue("No more bottles of beer on the wall, no more bottles of beer. \nGo to the store, buy some more, 99 bottles of beer on the wall...")
+  } else{
+    lyrics <- glue("{n} bottles of beer on the wall, {n} bottles of beer \nTake one down, pass it around, {n -1} bottles of beer on the wall")
+  }
+  return(lyrics)
+}
+```
+
+### Final Song
+
+```{r}
+bottles_song(4)
+```
+:::
+
+
+## To do...
+  
++ **PA 8.1: The Twelve Days of Christmas**
+  + Due Thursday 5/22 before class.
+  
++ **Project Proposal + Data**
+  + Due Friday 5/23 at 11:59pm.
+  
++ **Lab 8: Searching for Efficiency**
+  + Due **Tuesday** 5/27 at 11:59pm.
+
+
