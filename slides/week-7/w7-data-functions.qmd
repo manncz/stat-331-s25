@@ -19,8 +19,9 @@ Today we will...
 
 
 + New Material
-  + Function Basics
-  + Variable Scope + Environment
+  + Calling Functions on Datasets
+  + `rlang` Tidy Evaluation
+  + Missing Data
 +  Lab 7: Functions + Fish
 
 
