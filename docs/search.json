@@ -5723,7 +5723,7 @@
     "href": "labs/lab8/lab8-iteration.html#the-data",
     "title": "Lab 8: Searching for Efficiency",
     "section": "The Data",
-    "text": "The Data\nFor this week’s lab, we will be revisiting questions from previous lab assignments, with the purpose of using functions from the map() family to iterate over certain tasks. To do this, we will need to load in the data from Lab 2, Lab 3, and Lab 7.\nEdit the code below to read in the appropriate datsets that you should have saved from the previous labs!\n\ngetwd()\n\n[1] \"/Users/czmann/Documents/teaching/stat331/stat331-calpoly-s25/labs/lab8\"\n\n# Data from Lab 2\nsurveys &lt;- read_csv(\"../lab2/surveys.csv\")\n\n# Data from Lab 3\nevals &lt;- read_csv(\"../lab3/input/teacher_evals.csv\") |&gt; \n  rename(sex = gender)\n\n# Data from Lab 7\nfish &lt;- read_csv(\"../lab7/BlackfootFish.csv\")"
+    "text": "The Data\nFor this week’s lab, we will be revisiting questions from previous lab assignments, with the purpose of using functions from the map() family to iterate over certain tasks. To do this, we will need to load in the data from Lab 2, Lab 3, and Lab 7.\nEdit the code below to read in the appropriate datsets that you should have saved from the previous labs!\n\n# Data from Lab 2\nsurveys &lt;- read_csv(\"../lab2/surveys.csv\")\n\n# Data from Lab 3\nevals &lt;- read_csv(\"../lab3/input/teacher_evals.csv\") |&gt; \n  rename(sex = gender)\n\n# Data from Lab 7\nfish &lt;- read_csv(\"../lab7/BlackfootFish.csv\")"
   },
   {
     "objectID": "labs/lab8/lab8-iteration.html#formatting-tables",

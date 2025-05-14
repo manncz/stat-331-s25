@@ -36,9 +36,6 @@ Edit the code below to read in the appropriate datsets that you should have save
 ```{r}
 #| label: read-in-old-data
 
-getwd()
-
-
 # Data from Lab 2
 surveys <- read_csv("../lab2/surveys.csv")
 
