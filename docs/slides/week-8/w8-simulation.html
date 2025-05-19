@@ -411,30 +411,30 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">min =</span> <span class="dv">10</span>, <span class="at">max =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 15.47512 19.16757 11.44538</code></pre>
+<pre><code>[1] 17.85968 12.01953 10.13345</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.00992409 -0.72341789 -0.67376835</code></pre>
+<pre><code>[1] -0.1058434 -0.2779280  1.5367872</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">mean =</span> <span class="sc">-</span><span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  -87.27010  -89.42932 -132.19049</code></pre>
+<pre><code>[1] -113.36050 -141.23086  -68.01073</code></pre>
 </div>
 </div>
 </div><div class="column">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">rt</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">df =</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.4144142 -0.9228648  1.6412388</code></pre>
+<pre><code>[1]  0.478290  1.172868 -1.287736</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">prob =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 9 8 7</code></pre>
+<pre><code>[1] 5 5 7</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">rchisq</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">df =</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  9.657773  4.752534 11.338656</code></pre>
+<pre><code>[1] 11.067706 10.697817  8.055547</code></pre>
 </div>
 </div>
 </div></div>
@@ -811,234 +811,6 @@
 </div>
 </div>
 </div>
-</section>
-<section id="simulate-multiple-datasets---step-1" class="slide level2">
-<h2>Simulate Multiple Datasets - Step 1</h2>
-<div class="small">
-<p>Write a function to simulate height data from a population with some mean and SD height.</p>
-<p>The user should be able to input:</p>
-<ul>
-<li>how many observations to simulate</li>
-<li>the mean and standard deviation of the Normal distribution to use when simulating</li>
-</ul>
-</div>
-<div class="columns">
-<div class="column" style="width:60%;">
-<div class="fragment">
-<div class="small">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a aria-hidden="true" tabindex="-1"></a>sim_ht <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">200</span>, avg, std){</span>
-<span id="cb42-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">person =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
-<span id="cb42-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">ht =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> avg, <span class="at">sd =</span> std))</span>
-<span id="cb42-4"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:35%;">
-<div class="fragment">
-<div class="small">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sim_ht</span>(<span class="at">n =</span> <span class="dv">5</span>, </span>
-<span id="cb43-2"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">avg =</span> <span class="dv">66</span>, </span>
-<span id="cb43-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">std =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 5 × 2
-  person    ht
-   &lt;int&gt; &lt;dbl&gt;
-1      1  62.5
-2      2  64.9
-3      3  71.2
-4      4  67.0
-5      5  69.1</code></pre>
-</div>
-</div>
-</div>
-</div>
-</div></div>
-</section>
-<section id="simulate-multiple-datasets---step-2" class="slide level2">
-<h2>Simulate Multiple Datasets - Step 2</h2>
-<p>Create a set of parameters (mean and SD) for each population.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
-<span id="cb45-2"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 2
-  mean_ht std_ht
-    &lt;dbl&gt;  &lt;dbl&gt;
-1      60      3
-2      60      6
-3      66      3
-4      66      6
-5      72      3
-6      72      6
-7      78      3
-8      78      6</code></pre>
-</div>
-</div>
-</section>
-<section id="simulate-multiple-datasets---step-3" class="slide level2">
-<h2>Simulate Multiple Datasets - Step 3</h2>
-<p>Simulate datasets with different mean and SD heights.</p>
-<div class="small">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47" data-code-line-numbers="4-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
-<span id="cb47-2"><a></a>         <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="cb47-3"><a></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb47-4"><a></a> <span class="fu">mutate</span>(<span class="at">ht_data =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(<span class="at">avg =</span> mean_ht, <span class="at">std =</span> std_ht), </span>
-<span id="cb47-5"><a></a>                       <span class="at">.f =</span> sim_ht</span>
-<span id="cb47-6"><a></a>                       )</span>
-<span id="cb47-7"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 8 × 3
-  mean_ht std_ht ht_data           
-    &lt;dbl&gt;  &lt;dbl&gt; &lt;list&gt;            
-1      60      3 &lt;tibble [200 × 2]&gt;
-2      60      6 &lt;tibble [200 × 2]&gt;
-3      66      3 &lt;tibble [200 × 2]&gt;
-4      66      6 &lt;tibble [200 × 2]&gt;
-5      72      3 &lt;tibble [200 × 2]&gt;
-6      72      6 &lt;tibble [200 × 2]&gt;
-7      78      3 &lt;tibble [200 × 2]&gt;
-8      78      6 &lt;tibble [200 × 2]&gt;</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="small">
-<div class="callout callout-tip callout-titled callout-style-default">
-<div class="callout-body">
-<div class="callout-title">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<p><strong>Why am I getting a tibble in the <code>ht_data</code> column?</strong></p>
-</div>
-<div class="callout-content">
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="simulate-multiple-datasets---step-4" class="slide level2">
-<h2>Simulate Multiple Datasets - Step 4</h2>
-<p>Extract the contents of each list!</p>
-<div class="small">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
-<span id="cb49-2"><a></a>         <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="cb49-3"><a></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb49-4"><a></a> <span class="fu">mutate</span>(<span class="at">ht_data =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(<span class="at">avg =</span> mean_ht, <span class="at">std =</span> std_ht), </span>
-<span id="cb49-5"><a></a>                       <span class="at">.f =</span> sim_ht</span>
-<span id="cb49-6"><a></a>                       )</span>
-<span id="cb49-7"><a></a>        ) <span class="sc">|&gt;</span> </span>
-<span id="cb49-8"><a></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> ht_data) <span class="sc">|&gt;</span> </span>
-<span id="cb49-9"><a></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="small">
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 10 × 4
-   mean_ht std_ht person    ht
-     &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;dbl&gt;
- 1      60      3      1  64.6
- 2      60      3      2  57.4
- 3      60      3      3  65.8
- 4      60      3      4  56.7
- 5      60      3      5  57.5
- 6      60      3      6  60.6
- 7      60      3      7  56.5
- 8      60      3      8  55.9
- 9      60      3      9  60.4
-10      60      3     10  60.1</code></pre>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:5%;">
-
-</div><div class="column" style="width:45%;">
-<div class="midi">
-<div class="fragment">
-<p>Why do I now have <code>person</code> and <code>ht</code> columns?</p>
-</div>
-<div class="fragment">
-<p>How many rows should I have for each <code>mean_ht</code>, <code>std_ht</code> combo?</p>
-</div>
-</div>
-</div></div>
-</section>
-<section id="a-note-nest-and-unnest" class="slide level2">
-<h2>A note: <code>nest()</code> and <code>unnest()</code></h2>
-<ul>
-<li>We can pair functions from the <code>map()</code> family very nicely with two <code>tidyr</code> functions: <code>nest()</code> and <code>unnest()</code>.</li>
-<li>These allow us to easily map functions onto subsets of the data.</li>
-</ul>
-<div class="fragment">
-<ul>
-<li><code>nest()</code> subsets of the data (as tibbles) inside a tibble.</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb51-2"><a></a>  <span class="fu">nest</span>(<span class="at">.by =</span> cyl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 2
-    cyl data              
-  &lt;dbl&gt; &lt;list&gt;            
-1     6 &lt;tibble [7 × 10]&gt; 
-2     4 &lt;tibble [11 × 10]&gt;
-3     8 &lt;tibble [14 × 10]&gt;</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<ul>
-<li><code>unnest()</code> the data by row binding the subsets back together.</li>
-</ul>
-</div>
-</section>
-<section id="simulate-multiple-datasets---step-5" class="slide level2">
-<h2>Simulate Multiple Datasets - Step 5</h2>
-<p>Plot the samples simulated from each population.</p>
-<div class="small">
-<div class="cell" data-layout-align="center">
-<details class="code-fold">
-<summary>Code</summary>
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>fake_ht_data <span class="sc">|&gt;</span> </span>
-<span id="cb53-2"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> mean_ht<span class="sc">:</span>std_ht, </span>
-<span id="cb53-3"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">as.character</span>(.x)), </span>
-<span id="cb53-4"><a></a>         <span class="at">mean_ht =</span> <span class="fu">fct_recode</span>(mean_ht, </span>
-<span id="cb53-5"><a></a>                              <span class="st">`</span><span class="at">Mean = 60</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"60"</span>, </span>
-<span id="cb53-6"><a></a>                              <span class="st">`</span><span class="at">Mean = 66</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"66"</span>, </span>
-<span id="cb53-7"><a></a>                              <span class="st">`</span><span class="at">Mean = 72</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"72"</span>, </span>
-<span id="cb53-8"><a></a>                              <span class="st">`</span><span class="at">Mean = 78</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"78"</span>), </span>
-<span id="cb53-9"><a></a>         <span class="at">std_ht =</span> <span class="fu">fct_recode</span>(std_ht, </span>
-<span id="cb53-10"><a></a>                             <span class="st">`</span><span class="at">Std = 3</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"3"</span>, </span>
-<span id="cb53-11"><a></a>                             <span class="st">`</span><span class="at">Std = 6</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"6"</span>)</span>
-<span id="cb53-12"><a></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb53-13"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> ht)) <span class="sc">+</span></span>
-<span id="cb53-14"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb53-15"><a></a>  <span class="fu">facet_grid</span>(std_ht <span class="sc">~</span> mean_ht) <span class="sc">+</span></span>
-<span id="cb53-16"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Height (in)"</span>,</span>
-<span id="cb53-17"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb53-18"><a></a>       <span class="at">subtitle =</span> <span class="st">"Frequency of Observations"</span>,</span>
-<span id="cb53-19"><a></a>       <span class="at">title =</span> <span class="st">"Simulated Heights from Eight Different Populations"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-34-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
 </section></section>
 <section>
 <section id="simulation---random-samples-from-a-fixed-population" class="title-slide slide level1 center">
@@ -1049,19 +821,19 @@
 <h2>Draw a Random Sample</h2>
 <p>Use <code>sample()</code> to take a random sample of values from a vector.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>my_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"dog"</span>, <span class="st">"cat"</span>, <span class="st">"bunny"</span>, <span class="st">"horse"</span>, <span class="st">"goat"</span>, <span class="st">"chicken"</span>)</span>
-<span id="cb54-2"><a></a></span>
-<span id="cb54-3"><a></a><span class="fu">sample</span>(<span class="at">x =</span> my_vec, <span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a>my_vec <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"dog"</span>, <span class="st">"cat"</span>, <span class="st">"bunny"</span>, <span class="st">"horse"</span>, <span class="st">"goat"</span>, <span class="st">"chicken"</span>)</span>
+<span id="cb42-2"><a></a></span>
+<span id="cb42-3"><a></a><span class="fu">sample</span>(<span class="at">x =</span> my_vec, <span class="at">size =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "cat"     "goat"    "chicken"</code></pre>
+<pre><code>[1] "horse"   "cat"     "chicken"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
-<span id="cb56-2"><a></a><span class="fu">sample</span>(<span class="at">x =</span> my_vec, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="fu">set.seed</span>(<span class="dv">1</span>)</span>
+<span id="cb44-2"><a></a><span class="fu">sample</span>(<span class="at">x =</span> my_vec, <span class="at">size =</span> <span class="dv">5</span>, <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "dog"   "horse" "dog"   "cat"   "goat" </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">size =</span> <span class="dv">10</span>, </span>
-<span id="cb58-2"><a></a>       <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">8</span>, .<span class="dv">2</span>), <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="fu">sample</span>(<span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>), <span class="at">size =</span> <span class="dv">10</span>, </span>
+<span id="cb46-2"><a></a>       <span class="at">prob =</span> <span class="fu">c</span>(.<span class="dv">8</span>, .<span class="dv">2</span>), <span class="at">replace =</span> T)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code> [1] 1 0 0 0 0 0 0 0 0 0</code></pre>
 </div>
@@ -1086,8 +858,8 @@
 <h2>Draw a Random Sample</h2>
 <p>Use <code>slice_sample()</code> to take a random sample of observations (rows) from a dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a>fake_data <span class="sc">|&gt;</span> </span>
-<span id="cb60-2"><a></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a>fake_data <span class="sc">|&gt;</span> </span>
+<span id="cb48-2"><a></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">3</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <div class="cell">
@@ -1132,8 +904,8 @@
 </div>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a>fake_data <span class="sc">|&gt;</span> </span>
-<span id="cb61-2"><a></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> .<span class="dv">005</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a>fake_data <span class="sc">|&gt;</span> </span>
+<span id="cb49-2"><a></a>  <span class="fu">slice_sample</span>(<span class="at">prop =</span> .<span class="dv">005</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="fragment">
@@ -1209,17 +981,17 @@
 </ul>
 <div class="fragment">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a>bDays <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">50</span>){</span>
-<span id="cb62-2"><a></a>  bday_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">person =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
-<span id="cb62-3"><a></a>                      <span class="at">bday   =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">365</span>, <span class="at">size =</span> n, <span class="at">replace =</span> T))</span>
-<span id="cb62-4"><a></a>  </span>
-<span id="cb62-5"><a></a>  double_bdays <span class="ot">&lt;-</span> bday_data <span class="sc">|&gt;</span> </span>
-<span id="cb62-6"><a></a>    <span class="fu">count</span>(bday) <span class="sc">|&gt;</span> </span>
-<span id="cb62-7"><a></a>    <span class="fu">filter</span>(n <span class="sc">&gt;=</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb62-8"><a></a>    <span class="fu">nrow</span>()</span>
-<span id="cb62-9"><a></a>  </span>
-<span id="cb62-10"><a></a>  <span class="fu">return</span>(double_bdays <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
-<span id="cb62-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a>bDays <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">50</span>){</span>
+<span id="cb50-2"><a></a>  bday_data <span class="ot">&lt;-</span> <span class="fu">tibble</span>(<span class="at">person =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
+<span id="cb50-3"><a></a>                      <span class="at">bday   =</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">365</span>, <span class="at">size =</span> n, <span class="at">replace =</span> T))</span>
+<span id="cb50-4"><a></a>  </span>
+<span id="cb50-5"><a></a>  double_bdays <span class="ot">&lt;-</span> bday_data <span class="sc">|&gt;</span> </span>
+<span id="cb50-6"><a></a>    <span class="fu">count</span>(bday) <span class="sc">|&gt;</span> </span>
+<span id="cb50-7"><a></a>    <span class="fu">filter</span>(n <span class="sc">&gt;=</span> <span class="dv">2</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb50-8"><a></a>    <span class="fu">nrow</span>()</span>
+<span id="cb50-9"><a></a>  </span>
+<span id="cb50-10"><a></a>  <span class="fu">return</span>(double_bdays <span class="sc">&gt;</span> <span class="dv">0</span>)</span>
+<span id="cb50-11"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </section>
@@ -1230,10 +1002,10 @@
 <li>What proportion of these datasets contain at least two people with the same birthday?</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a>sim_results <span class="ot">&lt;-</span> <span class="fu">map_lgl</span>(<span class="at">.x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,</span>
-<span id="cb63-2"><a></a>                       <span class="at">.f =</span> <span class="sc">~</span> <span class="fu">bDays</span>(<span class="at">n =</span> <span class="dv">50</span>))</span>
-<span id="cb63-3"><a></a></span>
-<span id="cb63-4"><a></a><span class="fu">mean</span>(sim_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a>sim_results <span class="ot">&lt;-</span> <span class="fu">map_lgl</span>(<span class="at">.x =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">1000</span>,</span>
+<span id="cb51-2"><a></a>                       <span class="at">.f =</span> <span class="sc">~</span> <span class="fu">bDays</span>(<span class="at">n =</span> <span class="dv">50</span>))</span>
+<span id="cb51-3"><a></a></span>
+<span id="cb51-4"><a></a><span class="fu">mean</span>(sim_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.969</code></pre>
 </div>
@@ -1246,7 +1018,7 @@
 <li>This ensures reproducibility when you have results from a random generation process.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">mean</span>(sim_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a><span class="fu">mean</span>(sim_results)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0.969</code></pre>
 </div>
@@ -1533,14 +1305,14 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>tab_dat <span class="ot">&lt;-</span> fish <span class="sc">|&gt;</span> </span>
-<span id="cb67-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb67-3"><a></a>  <span class="fu">summarize</span>(<span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> T),</span>
-<span id="cb67-4"><a></a>            <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight, <span class="at">na.rm =</span> T),</span>
-<span id="cb67-5"><a></a>            <span class="at">n =</span> <span class="fu">n</span>()) </span>
-<span id="cb67-6"><a></a></span>
-<span id="cb67-7"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
-<span id="cb67-8"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>tab_dat <span class="ot">&lt;-</span> fish <span class="sc">|&gt;</span> </span>
+<span id="cb55-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb55-3"><a></a>  <span class="fu">summarize</span>(<span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> T),</span>
+<span id="cb55-4"><a></a>            <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight, <span class="at">na.rm =</span> T),</span>
+<span id="cb55-5"><a></a>            <span class="at">n =</span> <span class="fu">n</span>()) </span>
+<span id="cb55-6"><a></a></span>
+<span id="cb55-7"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
+<span id="cb55-8"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top">
@@ -1587,16 +1359,16 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
-<span id="cb68-2"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_weight)) <span class="sc">|&gt;</span> </span>
-<span id="cb68-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb68-4"><a></a>        <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Mean"</span>, <span class="st">"SD"</span>, <span class="st">"N. Samples"</span>),</span>
-<span id="cb68-5"><a></a>        <span class="at">caption =</span> <span class="st">"Summaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites."</span>) <span class="sc">|&gt;</span></span>
-<span id="cb68-6"><a></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F,</span>
-<span id="cb68-7"><a></a>                <span class="at">bootstrap_options =</span> <span class="st">"striped"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb68-8"><a></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Weight (g)"</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>),</span>
-<span id="cb68-9"><a></a>                   <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb68-10"><a></a>  <span class="fu">row_spec</span>(<span class="at">row =</span> <span class="dv">0</span>, <span class="at">bold =</span> T, <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
+<span id="cb56-2"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_weight)) <span class="sc">|&gt;</span> </span>
+<span id="cb56-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb56-4"><a></a>        <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Mean"</span>, <span class="st">"SD"</span>, <span class="st">"N. Samples"</span>),</span>
+<span id="cb56-5"><a></a>        <span class="at">caption =</span> <span class="st">"Summaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites."</span>) <span class="sc">|&gt;</span></span>
+<span id="cb56-6"><a></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F,</span>
+<span id="cb56-7"><a></a>                <span class="at">bootstrap_options =</span> <span class="st">"striped"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb56-8"><a></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Weight (g)"</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>),</span>
+<span id="cb56-9"><a></a>                   <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb56-10"><a></a>  <span class="fu">row_spec</span>(<span class="at">row =</span> <span class="dv">0</span>, <span class="at">bold =</span> T, <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1650,30 +1422,30 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
-<span id="cb69-2"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_weight)) <span class="sc">|&gt;</span> </span>
-<span id="cb69-3"><a></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb69-4"><a></a>  <span class="fu">tab_options</span>(<span class="at">table.font.size =</span> <span class="dv">32</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb69-5"><a></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb69-6"><a></a>    <span class="at">title =</span> <span class="st">"Summary of Fish Weights by Species"</span>,</span>
-<span id="cb69-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"all sampling years, trips, and sites"</span></span>
-<span id="cb69-8"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb69-9"><a></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Weight (g)**"</span>), </span>
-<span id="cb69-10"><a></a>              <span class="at">columns =</span> <span class="fu">c</span>(avg_weight, sd_weight)) <span class="sc">|&gt;</span> </span>
-<span id="cb69-11"><a></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"center"</span>),</span>
-<span id="cb69-12"><a></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb69-13"><a></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"left"</span>,</span>
-<span id="cb69-14"><a></a>             <span class="at">columns =</span> species) <span class="sc">|&gt;</span> </span>
-<span id="cb69-15"><a></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(avg_weight, sd_weight),</span>
-<span id="cb69-16"><a></a>             <span class="at">decimals =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb69-17"><a></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> n,</span>
-<span id="cb69-18"><a></a>             <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb69-19"><a></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb69-20"><a></a>    <span class="st">"avg_weight"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Mean**"</span>),</span>
-<span id="cb69-21"><a></a>    <span class="st">"sd_weight"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**SD**"</span>),</span>
-<span id="cb69-22"><a></a>    <span class="st">"n"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**N. Samples**"</span>),</span>
-<span id="cb69-23"><a></a>    <span class="st">"species"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Species**"</span>)</span>
-<span id="cb69-24"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
+<span id="cb57-2"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_weight)) <span class="sc">|&gt;</span> </span>
+<span id="cb57-3"><a></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb57-4"><a></a>  <span class="fu">tab_options</span>(<span class="at">table.font.size =</span> <span class="dv">32</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb57-5"><a></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb57-6"><a></a>    <span class="at">title =</span> <span class="st">"Summary of Fish Weights by Species"</span>,</span>
+<span id="cb57-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"all sampling years, trips, and sites"</span></span>
+<span id="cb57-8"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb57-9"><a></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Weight (g)**"</span>), </span>
+<span id="cb57-10"><a></a>              <span class="at">columns =</span> <span class="fu">c</span>(avg_weight, sd_weight)) <span class="sc">|&gt;</span> </span>
+<span id="cb57-11"><a></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"center"</span>),</span>
+<span id="cb57-12"><a></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb57-13"><a></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"left"</span>,</span>
+<span id="cb57-14"><a></a>             <span class="at">columns =</span> species) <span class="sc">|&gt;</span> </span>
+<span id="cb57-15"><a></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(avg_weight, sd_weight),</span>
+<span id="cb57-16"><a></a>             <span class="at">decimals =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb57-17"><a></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> n,</span>
+<span id="cb57-18"><a></a>             <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb57-19"><a></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb57-20"><a></a>    <span class="st">"avg_weight"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Mean**"</span>),</span>
+<span id="cb57-21"><a></a>    <span class="st">"sd_weight"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**SD**"</span>),</span>
+<span id="cb57-22"><a></a>    <span class="st">"n"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**N. Samples**"</span>),</span>
+<span id="cb57-23"><a></a>    <span class="st">"species"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Species**"</span>)</span>
+<span id="cb57-24"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="xifqjciohd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -2214,6 +1986,239 @@
 </div>
 <div class="callout-content">
 <p>Enjoy the long weekend! A reminder that we do not have class on Tuesday 5/27.</p>
+</div>
+</div>
+</div>
+</section></section>
+<section>
+<section id="simulating-multiple-datasets" class="title-slide slide level1 center">
+<h1>Simulating Multiple Datasets</h1>
+
+</section>
+<section id="simulate-multiple-datasets---step-1" class="slide level2">
+<h2>Simulate Multiple Datasets - Step 1</h2>
+<div class="small">
+<p>Write a function to simulate height data from a population with some mean and SD height.</p>
+<p>The user should be able to input:</p>
+<ul>
+<li>how many observations to simulate</li>
+<li>the mean and standard deviation of the Normal distribution to use when simulating</li>
+</ul>
+</div>
+<div class="columns">
+<div class="column" style="width:60%;">
+<div class="fragment">
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a>sim_ht <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">200</span>, avg, std){</span>
+<span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">person =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
+<span id="cb58-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">ht =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> avg, <span class="at">sd =</span> std))</span>
+<span id="cb58-4"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:35%;">
+<div class="fragment">
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sim_ht</span>(<span class="at">n =</span> <span class="dv">5</span>, </span>
+<span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">avg =</span> <span class="dv">66</span>, </span>
+<span id="cb59-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">std =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 5 × 2
+  person    ht
+   &lt;int&gt; &lt;dbl&gt;
+1      1  67.9
+2      2  62.2
+3      3  66.5
+4      4  72.3
+5      5  66.2</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div></div>
+</section>
+<section id="simulate-multiple-datasets---step-2" class="slide level2">
+<h2>Simulate Multiple Datasets - Step 2</h2>
+<p>Create a set of parameters (mean and SD) for each population.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
+<span id="cb61-2"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 2
+  mean_ht std_ht
+    &lt;dbl&gt;  &lt;dbl&gt;
+1      60      3
+2      60      6
+3      66      3
+4      66      6
+5      72      3
+6      72      6
+7      78      3
+8      78      6</code></pre>
+</div>
+</div>
+</section>
+<section id="simulate-multiple-datasets---step-3" class="slide level2">
+<h2>Simulate Multiple Datasets - Step 3</h2>
+<p>Simulate datasets with different mean and SD heights.</p>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb63" data-code-line-numbers="4-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
+<span id="cb63-2"><a></a>         <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="cb63-3"><a></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb63-4"><a></a> <span class="fu">mutate</span>(<span class="at">ht_data =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(<span class="at">avg =</span> mean_ht, <span class="at">std =</span> std_ht), </span>
+<span id="cb63-5"><a></a>                       <span class="at">.f =</span> sim_ht</span>
+<span id="cb63-6"><a></a>                       )</span>
+<span id="cb63-7"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 8 × 3
+  mean_ht std_ht ht_data           
+    &lt;dbl&gt;  &lt;dbl&gt; &lt;list&gt;            
+1      60      3 &lt;tibble [200 × 2]&gt;
+2      60      6 &lt;tibble [200 × 2]&gt;
+3      66      3 &lt;tibble [200 × 2]&gt;
+4      66      6 &lt;tibble [200 × 2]&gt;
+5      72      3 &lt;tibble [200 × 2]&gt;
+6      72      6 &lt;tibble [200 × 2]&gt;
+7      78      3 &lt;tibble [200 × 2]&gt;
+8      78      6 &lt;tibble [200 × 2]&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<div class="small">
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Why am I getting a tibble in the <code>ht_data</code> column?</strong></p>
+</div>
+<div class="callout-content">
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="simulate-multiple-datasets---step-4" class="slide level2">
+<h2>Simulate Multiple Datasets - Step 4</h2>
+<p>Extract the contents of each list!</p>
+<div class="small">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb65" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
+<span id="cb65-2"><a></a>         <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="cb65-3"><a></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb65-4"><a></a> <span class="fu">mutate</span>(<span class="at">ht_data =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(<span class="at">avg =</span> mean_ht, <span class="at">std =</span> std_ht), </span>
+<span id="cb65-5"><a></a>                       <span class="at">.f =</span> sim_ht</span>
+<span id="cb65-6"><a></a>                       )</span>
+<span id="cb65-7"><a></a>        ) <span class="sc">|&gt;</span> </span>
+<span id="cb65-8"><a></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> ht_data) <span class="sc">|&gt;</span> </span>
+<span id="cb65-9"><a></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div class="columns">
+<div class="column" style="width:50%;">
+<div class="small">
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 4
+   mean_ht std_ht person    ht
+     &lt;dbl&gt;  &lt;dbl&gt;  &lt;int&gt; &lt;dbl&gt;
+ 1      60      3      1  51.0
+ 2      60      3      2  57.6
+ 3      60      3      3  64.9
+ 4      60      3      4  63.1
+ 5      60      3      5  62.0
+ 6      60      3      6  64.5
+ 7      60      3      7  64.2
+ 8      60      3      8  60.6
+ 9      60      3      9  62.6
+10      60      3     10  63.7</code></pre>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:5%;">
+
+</div><div class="column" style="width:45%;">
+<div class="midi">
+<div class="fragment">
+<p>Why do I now have <code>person</code> and <code>ht</code> columns?</p>
+</div>
+<div class="fragment">
+<p>How many rows should I have for each <code>mean_ht</code>, <code>std_ht</code> combo?</p>
+</div>
+</div>
+</div></div>
+</section>
+<section id="a-note-nest-and-unnest" class="slide level2">
+<h2>A note: <code>nest()</code> and <code>unnest()</code></h2>
+<ul>
+<li>We can pair functions from the <code>map()</code> family very nicely with two <code>tidyr</code> functions: <code>nest()</code> and <code>unnest()</code>.</li>
+<li>These allow us to easily map functions onto subsets of the data.</li>
+</ul>
+<div class="fragment">
+<ul>
+<li><code>nest()</code> subsets of the data (as tibbles) inside a tibble.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb67-2"><a></a>  <span class="fu">nest</span>(<span class="at">.by =</span> cyl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+    cyl data              
+  &lt;dbl&gt; &lt;list&gt;            
+1     6 &lt;tibble [7 × 10]&gt; 
+2     4 &lt;tibble [11 × 10]&gt;
+3     8 &lt;tibble [14 × 10]&gt;</code></pre>
+</div>
+</div>
+</div>
+<div class="fragment">
+<ul>
+<li><code>unnest()</code> the data by row binding the subsets back together.</li>
+</ul>
+</div>
+</section>
+<section id="simulate-multiple-datasets---step-5" class="slide level2">
+<h2>Simulate Multiple Datasets - Step 5</h2>
+<p>Plot the samples simulated from each population.</p>
+<div class="small">
+<div class="cell" data-layout-align="center">
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>fake_ht_data <span class="sc">|&gt;</span> </span>
+<span id="cb69-2"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> mean_ht<span class="sc">:</span>std_ht, </span>
+<span id="cb69-3"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">as.character</span>(.x)), </span>
+<span id="cb69-4"><a></a>         <span class="at">mean_ht =</span> <span class="fu">fct_recode</span>(mean_ht, </span>
+<span id="cb69-5"><a></a>                              <span class="st">`</span><span class="at">Mean = 60</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"60"</span>, </span>
+<span id="cb69-6"><a></a>                              <span class="st">`</span><span class="at">Mean = 66</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"66"</span>, </span>
+<span id="cb69-7"><a></a>                              <span class="st">`</span><span class="at">Mean = 72</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"72"</span>, </span>
+<span id="cb69-8"><a></a>                              <span class="st">`</span><span class="at">Mean = 78</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"78"</span>), </span>
+<span id="cb69-9"><a></a>         <span class="at">std_ht =</span> <span class="fu">fct_recode</span>(std_ht, </span>
+<span id="cb69-10"><a></a>                             <span class="st">`</span><span class="at">Std = 3</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"3"</span>, </span>
+<span id="cb69-11"><a></a>                             <span class="st">`</span><span class="at">Std = 6</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"6"</span>)</span>
+<span id="cb69-12"><a></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb69-13"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> ht)) <span class="sc">+</span></span>
+<span id="cb69-14"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb69-15"><a></a>  <span class="fu">facet_grid</span>(std_ht <span class="sc">~</span> mean_ht) <span class="sc">+</span></span>
+<span id="cb69-16"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Height (in)"</span>,</span>
+<span id="cb69-17"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb69-18"><a></a>       <span class="at">subtitle =</span> <span class="st">"Frequency of Observations"</span>,</span>
+<span id="cb69-19"><a></a>       <span class="at">title =</span> <span class="st">"Simulated Heights from Eight Different Populations"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-47-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+</figure>
+</div>
 </div>
 </div>
 </div>
