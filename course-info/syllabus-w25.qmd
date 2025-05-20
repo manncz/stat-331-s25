@@ -98,8 +98,8 @@ class_cal <- Cal |>
 exam_days <- Cal |> 
   filter(category == "Exam") |> 
   mutate(topic = c("Midterm Exam", 
-                   "Final Exam (70)",
-                   "Final Exam (71)"
+                   "Final Exam (70) 10:10am - 1:00 pm",
+                   "Final Exam (71) 10:10am - 1:00 pm"
                    )
          ) |> 
   rowwise() |> 
