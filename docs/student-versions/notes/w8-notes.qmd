@@ -1,0 +1,399 @@
+---
+title: "Week 8 Starter Notes"
+format: 
+  html:  
+    embed-resources: true
+    code-tools: true
+    toc: true
+editor: source
+execute: 
+  echo: true
+  warning: false
+  message: false
+  error: true
+---
+
+
+
+```{r}
+library(tidyverse)
+library(palmerpenguins)
+library(glue)
+library(kable)
+library(kableExtra)
+library(gt)
+
+data(penguins)
+```
+
+
+# Tuesday - Iteration
+
+```{r}
+
+```
+
+## Vectorization
+
+```{r}
+pos_neg_zero <- function(x){
+  if(x > 0){
+    return("Greater than 0!")
+  } else if (x < 0){
+    return("Less than 0!")
+  } else {
+    return("Equal to 0!")
+  }
+}
+
+x <- seq(from = -4, to = 4)
+pos_neg_zero(x)
+```
+
+```{r}
+result <- rep(NA, length(x))
+for(i in 1:length(x)){
+  result[i] <- pos_neg_zero(x[i])
+}
+
+result
+```
+
+
+
+
+```{r}
+data_type <- rep(NA, length = ncol(penguins))
+
+for(i in 1:ncol(penguins)){
+  data_type[i] <- class(penguins[[i]])
+}
+
+# format table nicely
+data.frame(column = names(penguins), 
+       type = data_type) |> 
+  pivot_wider(names_from = column, 
+              values_from = type) |>  
+  knitr::kable() |>
+  kableExtra::kable_styling(font_size = 30)
+```
+
+```{r}
+pos_neg_zero <- function(x){
+  state <- case_when(x > 0 ~ "Greater than 0!", 
+                     x < 0 ~ "Less than 0!", 
+                     .default = "Equal to 0!")
+  return(state)
+}
+
+x <- seq(from = -4, to = 3)
+pos_neg_zero(x)
+
+```
+
+## `purrr`
+
+### Review: Lists
+
+```{r}
+my_list <- list(c(T, F, T, T), 
+                matrix(c(6.7, 5.58, 4.4, 6.0), nrow = 2),
+                "A")
+
+```
+
+
+```{r}
+my_list[1]
+my_list[[2]]
+my_list[[2]][1,2]
+```
+
+
+### `map()` + Dataframe
+
+```{r}
+penguins |> 
+  select(bill_length_mm:body_mass_g) |>
+  map(~ mean(.x, na.rm = TRUE))
+```
+
+
+```{r}
+penguins |> 
+  select(bill_length_mm:body_mass_g) |> 
+  map_dbl(~ mean(.x, na.rm = TRUE))
+```
+
+
+```{r}
+penguins |> 
+  map_int(~ sum(is.na(.x)))
+```
+
+```{r}
+penguins |> 
+  map_lgl(~ sum(is.na(.x)) > 0)
+```
+
+
+```{r}
+#| error: true
+penguins |> 
+  map_lgl(~ sum(is.na(.x)))
+```
+
+### `map_if()` + Dataframe
+
+```{r}
+penguins |> 
+  map_if(is.numeric, scale)
+```
+
+```{r}
+#| eval: false
+penguins |> 
+  map_if(is.numeric, scale) |> 
+  bind_cols()
+```
+
+
+### `pmap()`
+
+```{r}
+fruit <- data.frame(string = c("apple", "banana", "cherry"),
+                    pattern = c("p", "n", "h"),
+                    replacement = c("P", "N", "H"))
+
+fruit
+```
+
+```{r}
+fruit |> 
+  pmap_chr(str_replace_all)
+```
+
+
+## `glue()`
+
+```{r}
+name <- "Dr. C"
+glue('My name is {name}.')
+```
+
+
+# Thursday - Simulation
+
+## Statistical Distributions
+
+```{r}
+runif(n = 3, min = 10, max = 20)
+rnorm(n = 3)
+rnorm(n = 3, mean = -100, sd = 50)
+```
+
+```{r}
+rt(n = 3, df = 11)
+rbinom(n = 3, size = 10, prob = 0.7)
+rchisq(n = 3, df = 11)
+```
+
+```{r}
+pnorm(q = 70, mean = 67, sd = 3)
+
+1 - pnorm(q = 70, mean = 67, sd = 3)
+pnorm(q = 70, mean = 67, sd = 3, lower.tail = FALSE)
+```
+
+```{r}
+qnorm(p = 0.95)
+qnorm(p = 0.95, mean = 67, sd = 3)
+```
+
+```{r}
+dbinom(x = 12, size = 20, prob = 0.3)
+```
+
+## Empirical vs. Theoretical Dist.
+
+```{r}
+data <- data.frame(height = rnorm(1000,
+                                  mean = 67, sd = 3))
+```
+
+
+```{r}
+data |> 
+  ggplot(aes(x = height)) +
+  geom_histogram(bins = 10, color = "white")
+```
+
+```{r}
+data |> 
+  ggplot(aes(x = height)) +
+  geom_histogram(bins = 10, color = "white") +
+  stat_function(fun = ~ dnorm(.x, mean = 67, sd = 3),
+                color = "steelblue", lwd = 2)
+```
+
+
+```{r}
+data |> 
+  ggplot(aes(x = height)) +
+  geom_histogram(aes(y = after_stat(density)),
+                 bins = 10, color = "white") +
+  stat_function(fun = ~ dnorm(.x, mean = 67, sd = 3),
+                color = "steelblue", lwd = 2)
+```
+
+## `set.seed()`
+
+
+```{r}
+set.seed(94301)
+
+runif(3, min = 15, max = 75)
+```
+
+```{r}
+set.seed(94301)
+
+runif(3, min = 15, max = 75)
+```
+
+## Synthetic / Simulated Data 
+
+```{r}
+set.seed(435)
+
+# generate synthetic dataset
+fake_data <- tibble(names   = charlatan::ch_name(1000),
+        height  = rnorm(1000, mean = 67, sd = 3),
+        age     = runif(1000, min = 15, max = 75),
+        measure = rbinom(1000, size = 1, prob = 0.6)) |> 
+  mutate(supports_measure_A = ifelse(measure == 1, "yes", "no"))
+```
+
+
+## Random Samples from Fixed Population
+
+### Sampling from Vectors
+
+```{r}
+my_vec <- c("dog", "cat", "bunny", "horse", "goat", "chicken")
+
+sample(x = my_vec, size = 3)
+
+set.seed(1)
+sample(x = my_vec, size = 5, replace = T)
+
+sample(c(0, 1), size = 10, 
+       prob = c(.8, .2), replace = T)
+```
+
+### Sampling Rows from Dataframes
+
+```{r}
+fake_data |> 
+  slice_sample(n = 3) 
+```
+
+```{r}
+fake_data |> 
+  slice_sample(prop = .005) 
+```
+
+
+## Example: Birthday Simulation
+
+
+```{r}
+bDays <- function(n = 50){
+  bday_data <- tibble(person = 1:n,
+                      bday   = sample(1:365, size = n, replace = T))
+  
+  double_bdays <- bday_data |> 
+    count(bday) |> 
+    filter(n >= 2) |> 
+    nrow()
+  
+  return(double_bdays > 0)
+}
+```
+
+```{r}
+sim_results <- map_lgl(.x = 1:1000,
+                       .f = ~ bDays(n = 50))
+
+mean(sim_results)
+```
+
+### Inline code
+
+In our simulation we found that `r mean(sim_results)*100`% of the datasets contain at least two people with the same birthday.
+
+
+
+# Thursday - Nice Tables
+
+You will need to change this file path to load the Lab 7 fish data:
+
+```{r}
+fish <- read_csv("../labs/lab7/BlackfootFish.csv")
+```
+
+
+```{r}
+tab_dat <- fish |> 
+  group_by(species) |> 
+  summarize(avg_weight = mean(weight, na.rm = T),
+            sd_weight = sd(weight, na.rm = T),
+            n = n()) 
+
+tab_dat |> 
+  kable()
+```
+
+## `kableExtra` Example
+
+```{r}
+tab_dat |> 
+  arrange(desc(avg_weight)) |> 
+  kable(digits = c(0, 1, 1, 0),
+        col.names = c("Species", "Mean", "SD", "N. Samples"),
+        caption = "Summaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites.") |>
+  kable_classic(full_width = F,
+                bootstrap_options = "striped") |> 
+  add_header_above(c(" " = 1, "Weight (g)" = 2," " = 1),
+                   bold = TRUE) |> 
+  row_spec(row = 0, bold = T, align = "c")
+```
+
+## `gt` example
+
+```{r}
+tab_dat |> 
+  arrange(desc(avg_weight)) |> 
+  gt() |> 
+  tab_options(table.font.size = 32) |> 
+  tab_header(
+    title = "Summary of Fish Weights by Species",
+    subtitle = "all sampling years, trips, and sites"
+  ) |> 
+  tab_spanner(label = md("**Weight (g)**"), 
+              columns = c(avg_weight, sd_weight)) |> 
+  tab_style(style = cell_text(align = "center"),
+    locations = cells_column_labels()) |> 
+  cols_align(align = "left",
+             columns = species) |> 
+  fmt_number(columns = c(avg_weight, sd_weight),
+             decimals = 1) |> 
+  fmt_number(columns = n,
+             decimals = 0) |> 
+  cols_label(
+    "avg_weight" = md("**Mean**"),
+    "sd_weight" = md("**SD**"),
+    "n" = md("**N. Samples**"),
+    "species" = md("**Species**")
+  )
+```
