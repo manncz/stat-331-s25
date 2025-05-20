@@ -15,6 +15,9 @@ execute:
 library(tidyverse)
 library(palmerpenguins)
 library(glue)
+library(knitr)
+
+data(penguins)
 ```
 
 
@@ -26,8 +29,8 @@ Today we will...
   + Iteration aka Performing Repeated Tasks
   + Vectorization
   + Efficient Iteration: the `map()` family
++ Midterm Feedback
 + PA 8.1: The Twelve Days of Christmas
-+ Lab 8: Searching for Efficiency
 
 ## Project Proposal + Data
 
@@ -37,6 +40,7 @@ You must complete the *objectives* and write up the *written components* outline
   + You may want to check there isn't a huge amount of missing data
   + Due on Canvas by 11:59pm on Friday, 5/23
   + "Group" Canvas assignment, so only one person needs to submit it in your group
+
 
 
 # Performing Repeated Tasks
@@ -704,6 +708,181 @@ There are **so many** functions -- check out the `purrr` [cheatsheet](https://gi
 #| fig-cap: "https://bookdown.org/hneth/ds4psy"
 knitr::include_graphics("images/bart_board_map.png")
 ```
+
+# Midterm Exam Feedback
+
+## Midterm Exam - What went well!
+
+- Overall, code formatting looks very nice!
+- Pivoting data
+- Data joins and cleaning on take-home
+- Working with strings (`stringr`)
+- Lot's of interesting and well-thought out open-ended analyses
+
+
+## Midterm Exam - What we still are working on
+
+- only saving needed intermediate objects
+- working with logical variables
+- quickly looking at variable values
+- citing sources
+- statistical language
+
+## Review: Environment Junk
+
+- Only save variables / data if you will **use it again** later
+
+:::panel-tabset
+
+# NO
+
+```{r}
+q1 <- penguins |> 
+  group_by(species) |> 
+  slice_max(bill_length_mm)
+  
+kable(q1)  
+```
+
+# YAY!
+
+
+```{r}
+penguins |> 
+  group_by(species) |> 
+  slice_max(bill_length_mm) |> 
+  kable()
+```
+
+# Saving makes sense here
+
+```{r}
+penguins_long <- penguins |> 
+  pivot_longer(cols = bill_length_mm:body_mass_g,
+               names_to = "measure",
+               values_to = "value")
+
+penguins_long |> 
+  slice_head(n = 3) |> 
+  kable()
+```
+:::
+
+## Review: Logical Variables
+
+- Logical / Boolean variables take the *special* values `TRUE` and `FALSE`
+  - can be treated like a numeric vector where 
+  
+  `TRUE == 1` and `FALSE == 0`
+
+. . .
+
+::: {style="font-size: 80%;"}
+What proportion of penguins in each species have a bill length less than 45 mm?
+:::
+
+```{r}
+penguins |> 
+  group_by(species) |> 
+  summarize(prop_shortbeak = mean(bill_length_mm < 45, na.rm = TRUE),
+            n_penguins = sum(!is.na(bill_length_mm))) |> 
+  kable(digits = 3)
+```
+
+
+
+## Review: Logical Variables
+
+- Using this logic is very useful for function / output checks!
+
+. . .
+
+ > Lab 5 Q0.2: Design and implement a check that you created the `address_number` and `address_street_name` columns correctly.
+
+```{r}
+#| echo: false
+
+url("https://raw.githubusercontent.com/manncz/stat-331-s25/main/labs/lab5/data/bCH_murder_data.Rdata") |> 
+  load()
+
+person <- person |> 
+  mutate(address_number = as.numeric(str_extract(address, 
+                                                 "\\d*")),
+         address_street_name = str_extract(address,
+                                           "[A-z].*"),
+         .after = address)
+```
+
+```{r}
+person |> 
+  mutate(address_check = str_c(address_number,
+                               address_street_name,
+                               sep = " "),
+         correct = address_check == address) |> 
+  pull(correct) |> 
+  mean()
+```
+## A Note: Logical Variables
+
+- While it works *in some cases* to use strings to reference the values `TRUE` and `FALSE`, it is very **bad practice**
+
+```{r}
+#| error: true
+
+TRUE == "TRUE"
+sum(c("TRUE", "FALSE"))
+sum(c(TRUE, FALSE))
+```
+
+
+## Review: Quickly Exploring Data
+
+- If you want to look at all of the possible values/levels of a character/factor variable, you can use 
+
+
+:::columns
+:::column
+`table()` (base) or
+```{r}
+table(penguins$island)
+table(penguins$island, penguins$species)
+```
+:::
+
+:::column
+`count()` (dplyr):
+```{r}
+penguins |> 
+  count(island)
+```
+:::
+:::
+
+
+
+## Reminder: Citing Coding Sources
+
+- Part of responsible coding is giving credit to other's work if we use it
+- "Assumed knowledge:" course textbook, course slides, and course assignments / solutions.
+- You need to let me know if you use **any other resources**
+- See [syllabus](https://manncz.github.io/stat-331-s25/course-info/syllabus-w25.html#academic-integrity-and-class-conduct)
+
+## Review: Statistical Langauge
+
+Specific statistical vocabulary (use *carefully* and *correctly*):
+
+- Correlation: a statistic calculated between **two quantitative** variables
+- Significant: referring to results of statistical **inference**
+
+. . . 
+
+Instead use general vocabulary:
+
+- association
+- relationship
+- meaningful / large
+- unsubstantial / small
+- "appears to be"
 
 
 ## PA 8.1: The Twelve Days of Christmas

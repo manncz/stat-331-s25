@@ -210,8 +210,8 @@
 <li>Vectorization</li>
 <li>Efficient Iteration: the <code>map()</code> family</li>
 </ul></li>
+<li>Midterm Feedback</li>
 <li>PA 8.1: The Twelve Days of Christmas</li>
-<li>Lab 8: Searching for Efficiency</li>
 </ul>
 <aside><ol class="aside-footnotes"><li id="fn1"><p>Material and images for today’s lecture were modified from Dr.&nbsp;Theobold and <a href="https://bookdown.org/hneth/ds4psy/12.3-iter:functional-programming.html#iter:functional-programming">Hansjörg Neth’s ds4psy text</a></p></li></ol></aside></section>
 <section id="project-proposal-data" class="slide level2">
@@ -2984,6 +2984,387 @@ attr(,"scaled:scale")
 </div>
 </div>
 </div>
+</section></section>
+<section>
+<section id="midterm-exam-feedback" class="title-slide slide level1 center">
+<h1>Midterm Exam Feedback</h1>
+
+</section>
+<section id="midterm-exam---what-went-well" class="slide level2">
+<h2>Midterm Exam - What went well!</h2>
+<ul>
+<li>Overall, code formatting looks very nice!</li>
+<li>Pivoting data</li>
+<li>Data joins and cleaning on take-home</li>
+<li>Working with strings (<code>stringr</code>)</li>
+<li>Lot’s of interesting and well-thought out open-ended analyses</li>
+</ul>
+</section>
+<section id="midterm-exam---what-we-still-are-working-on" class="slide level2">
+<h2>Midterm Exam - What we still are working on</h2>
+<ul>
+<li>only saving needed intermediate objects</li>
+<li>working with logical variables</li>
+<li>quickly looking at variable values</li>
+<li>citing sources</li>
+<li>statistical language</li>
+</ul>
+</section>
+<section id="review-environment-junk" class="slide level2">
+<h2>Review: Environment Junk</h2>
+<ul>
+<li>Only save variables / data if you will <strong>use it again</strong> later</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">NO</a></li><li><a href="#tabset-4-2">YAY!</a></li><li><a href="#tabset-4-3">Saving makes sense here</a></li></ul>
+<div class="tab-content">
+<div id="tabset-4-1">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a>q1 <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb72-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb72-3"><a></a>  <span class="fu">slice_max</span>(bill_length_mm)</span>
+<span id="cb72-4"><a></a>  </span>
+<span id="cb72-5"><a></a><span class="fu">kable</span>(q1)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 7%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">species</th>
+<th style="text-align: left;">island</th>
+<th style="text-align: right;">bill_length_mm</th>
+<th style="text-align: right;">bill_depth_mm</th>
+<th style="text-align: right;">flipper_length_mm</th>
+<th style="text-align: right;">body_mass_g</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: right;">year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">46.0</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">194</td>
+<td style="text-align: right;">4200</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: left;">Dream</td>
+<td style="text-align: right;">58.0</td>
+<td style="text-align: right;">17.8</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">3700</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2007</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: left;">Biscoe</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: right;">17.0</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">6050</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-4-2">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb73-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb73-3"><a></a>  <span class="fu">slice_max</span>(bill_length_mm) <span class="sc">|&gt;</span> </span>
+<span id="cb73-4"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<colgroup>
+<col style="width: 10%">
+<col style="width: 10%">
+<col style="width: 16%">
+<col style="width: 15%">
+<col style="width: 19%">
+<col style="width: 13%">
+<col style="width: 7%">
+<col style="width: 5%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">species</th>
+<th style="text-align: left;">island</th>
+<th style="text-align: right;">bill_length_mm</th>
+<th style="text-align: right;">bill_depth_mm</th>
+<th style="text-align: right;">flipper_length_mm</th>
+<th style="text-align: right;">body_mass_g</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: right;">year</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: right;">46.0</td>
+<td style="text-align: right;">21.5</td>
+<td style="text-align: right;">194</td>
+<td style="text-align: right;">4200</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: left;">Dream</td>
+<td style="text-align: right;">58.0</td>
+<td style="text-align: right;">17.8</td>
+<td style="text-align: right;">181</td>
+<td style="text-align: right;">3700</td>
+<td style="text-align: left;">female</td>
+<td style="text-align: right;">2007</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: left;">Biscoe</td>
+<td style="text-align: right;">59.6</td>
+<td style="text-align: right;">17.0</td>
+<td style="text-align: right;">230</td>
+<td style="text-align: right;">6050</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div id="tabset-4-3">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a>penguins_long <span class="ot">&lt;-</span> penguins <span class="sc">|&gt;</span> </span>
+<span id="cb74-2"><a></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> bill_length_mm<span class="sc">:</span>body_mass_g,</span>
+<span id="cb74-3"><a></a>               <span class="at">names_to =</span> <span class="st">"measure"</span>,</span>
+<span id="cb74-4"><a></a>               <span class="at">values_to =</span> <span class="st">"value"</span>)</span>
+<span id="cb74-5"><a></a></span>
+<span id="cb74-6"><a></a>penguins_long <span class="sc">|&gt;</span> </span>
+<span id="cb74-7"><a></a>  <span class="fu">slice_head</span>(<span class="at">n =</span> <span class="dv">3</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb74-8"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">species</th>
+<th style="text-align: left;">island</th>
+<th style="text-align: left;">sex</th>
+<th style="text-align: right;">year</th>
+<th style="text-align: left;">measure</th>
+<th style="text-align: right;">value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: left;">bill_length_mm</td>
+<td style="text-align: right;">39.1</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: left;">bill_depth_mm</td>
+<td style="text-align: right;">18.7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: left;">Torgersen</td>
+<td style="text-align: left;">male</td>
+<td style="text-align: right;">2007</td>
+<td style="text-align: left;">flipper_length_mm</td>
+<td style="text-align: right;">181.0</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="review-logical-variables" class="slide level2">
+<h2>Review: Logical Variables</h2>
+<ul>
+<li>Logical / Boolean variables take the <em>special</em> values <code>TRUE</code> and <code>FALSE</code>
+<ul>
+<li>can be treated like a numeric vector where</li>
+</ul>
+<code>TRUE == 1</code> and <code>FALSE == 0</code></li>
+</ul>
+<div class="fragment">
+<div style="font-size: 80%;">
+<p>What proportion of penguins in each species have a bill length less than 45 mm?</p>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb75-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb75-3"><a></a>  <span class="fu">summarize</span>(<span class="at">prop_shortbeak =</span> <span class="fu">mean</span>(bill_length_mm <span class="sc">&lt;</span> <span class="dv">45</span>, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb75-4"><a></a>            <span class="at">n_penguins =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(bill_length_mm))) <span class="sc">|&gt;</span> </span>
+<span id="cb75-5"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th style="text-align: left;">species</th>
+<th style="text-align: right;">prop_shortbeak</th>
+<th style="text-align: right;">n_penguins</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Adelie</td>
+<td style="text-align: right;">0.980</td>
+<td style="text-align: right;">151</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Chinstrap</td>
+<td style="text-align: right;">0.088</td>
+<td style="text-align: right;">68</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Gentoo</td>
+<td style="text-align: right;">0.179</td>
+<td style="text-align: right;">123</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<section id="review-logical-variables-1" class="slide level2">
+<h2>Review: Logical Variables</h2>
+<ul>
+<li>Using this logic is very useful for function / output checks!</li>
+</ul>
+<div class="fragment">
+<blockquote>
+<p>Lab 5 Q0.2: Design and implement a check that you created the <code>address_number</code> and <code>address_street_name</code> columns correctly.</p>
+</blockquote>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a>person <span class="sc">|&gt;</span> </span>
+<span id="cb76-2"><a></a>  <span class="fu">mutate</span>(<span class="at">address_check =</span> <span class="fu">str_c</span>(address_number,</span>
+<span id="cb76-3"><a></a>                               address_street_name,</span>
+<span id="cb76-4"><a></a>                               <span class="at">sep =</span> <span class="st">" "</span>),</span>
+<span id="cb76-5"><a></a>         <span class="at">correct =</span> address_check <span class="sc">==</span> address) <span class="sc">|&gt;</span> </span>
+<span id="cb76-6"><a></a>  <span class="fu">pull</span>(correct) <span class="sc">|&gt;</span> </span>
+<span id="cb76-7"><a></a>  <span class="fu">mean</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="a-note-logical-variables" class="slide level2">
+<h2>A Note: Logical Variables</h2>
+<ul>
+<li>While it works <em>in some cases</em> to use strings to reference the values <code>TRUE</code> and <code>FALSE</code>, it is very <strong>bad practice</strong></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a><span class="cn">TRUE</span> <span class="sc">==</span> <span class="st">"TRUE"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] TRUE</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="st">"TRUE"</span>, <span class="st">"FALSE"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<pre><code>Error in sum(c("TRUE", "FALSE")): invalid 'type' (character) of argument</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a><span class="fu">sum</span>(<span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1</code></pre>
+</div>
+</div>
+</section>
+<section id="review-quickly-exploring-data" class="slide level2">
+<h2>Review: Quickly Exploring Data</h2>
+<ul>
+<li>If you want to look at all of the possible values/levels of a character/factor variable, you can use</li>
+</ul>
+<div class="columns">
+<div class="column">
+<p><code>table()</code> (base) or</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a></a><span class="fu">table</span>(penguins<span class="sc">$</span>island)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   Biscoe     Dream Torgersen 
+      168       124        52 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb86"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb86-1"><a></a><span class="fu">table</span>(penguins<span class="sc">$</span>island, penguins<span class="sc">$</span>species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>           
+            Adelie Chinstrap Gentoo
+  Biscoe        44         0    124
+  Dream         56        68      0
+  Torgersen     52         0      0</code></pre>
+</div>
+</div>
+</div><div class="column">
+<p><code>count()</code> (dplyr):</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb88-2"><a></a>  <span class="fu">count</span>(island)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 2
+  island        n
+  &lt;fct&gt;     &lt;int&gt;
+1 Biscoe      168
+2 Dream       124
+3 Torgersen    52</code></pre>
+</div>
+</div>
+</div></div>
+</section>
+<section id="reminder-citing-coding-sources" class="slide level2">
+<h2>Reminder: Citing Coding Sources</h2>
+<ul>
+<li>Part of responsible coding is giving credit to other’s work if we use it</li>
+<li>“Assumed knowledge:” course textbook, course slides, and course assignments / solutions.</li>
+<li>You need to let me know if you use <strong>any other resources</strong></li>
+<li>See <a href="https://manncz.github.io/stat-331-s25/course-info/syllabus-w25.html#academic-integrity-and-class-conduct">syllabus</a></li>
+</ul>
+</section>
+<section id="review-statistical-langauge" class="slide level2">
+<h2>Review: Statistical Langauge</h2>
+<p>Specific statistical vocabulary (use <em>carefully</em> and <em>correctly</em>):</p>
+<ul>
+<li>Correlation: a statistic calculated between <strong>two quantitative</strong> variables</li>
+<li>Significant: referring to results of statistical <strong>inference</strong></li>
+</ul>
+<div class="fragment">
+<p>Instead use general vocabulary:</p>
+<ul>
+<li>association</li>
+<li>relationship</li>
+<li>meaningful / large</li>
+<li>unsubstantial / small</li>
+<li>“appears to be”</li>
+</ul>
+</div>
 </section>
 <section id="pa-8.1-the-twelve-days-of-christmas" class="slide level2">
 <h2>PA 8.1: The Twelve Days of Christmas</h2>
@@ -3015,10 +3396,10 @@ attr(,"scaled:scale")
 </div>
 </div></div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a><span class="fu">library</span>(glue)</span>
-<span id="cb72-2"><a></a></span>
-<span id="cb72-3"><a></a>name <span class="ot">&lt;-</span> <span class="st">"Dr. C"</span></span>
-<span id="cb72-4"><a></a><span class="fu">glue</span>(<span class="st">'My name is {name}.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a></a><span class="fu">library</span>(glue)</span>
+<span id="cb90-2"><a></a></span>
+<span id="cb90-3"><a></a>name <span class="ot">&lt;-</span> <span class="st">"Dr. C"</span></span>
+<span id="cb90-4"><a></a><span class="fu">glue</span>(<span class="st">'My name is {name}.'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>My name is Dr. C.</code></pre>
 </div>
@@ -3030,30 +3411,30 @@ attr(,"scaled:scale")
 <h2>An Example</h2>
 <p><em>99 bottles of beer on the wall, 99 bottles of beer. Take one down, pass it around, 98 bottles of beer on the wall…</em></p>
 <div class="panel-tabset">
-<ul id="tabset-4" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-4-1">Lyrics</a></li><li><a href="#tabset-4-2">Song</a></li><li><a href="#tabset-4-3">Alternate Ending</a></li><li><a href="#tabset-4-4">Final Song</a></li></ul>
+<ul id="tabset-5" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-5-1">Lyrics</a></li><li><a href="#tabset-5-2">Song</a></li><li><a href="#tabset-5-3">Alternate Ending</a></li><li><a href="#tabset-5-4">Final Song</a></li></ul>
 <div class="tab-content">
-<div id="tabset-4-1">
+<div id="tabset-5-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a>bottles_lyrics <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
-<span id="cb74-2"><a></a>  lyrics <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"{n} bottles of beer on the wall, {n} bottles of beer </span><span class="sc">\n</span><span class="st">Take one down, pass it around, {n -1} bottles of beer on the wall"</span>)</span>
-<span id="cb74-3"><a></a>  <span class="fu">return</span>(lyrics)</span>
-<span id="cb74-4"><a></a>}</span>
-<span id="cb74-5"><a></a></span>
-<span id="cb74-6"><a></a><span class="fu">bottles_lyrics</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a></a>bottles_lyrics <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb92-2"><a></a>  lyrics <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"{n} bottles of beer on the wall, {n} bottles of beer </span><span class="sc">\n</span><span class="st">Take one down, pass it around, {n -1} bottles of beer on the wall"</span>)</span>
+<span id="cb92-3"><a></a>  <span class="fu">return</span>(lyrics)</span>
+<span id="cb92-4"><a></a>}</span>
+<span id="cb92-5"><a></a></span>
+<span id="cb92-6"><a></a><span class="fu">bottles_lyrics</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3 bottles of beer on the wall, 3 bottles of beer 
 Take one down, pass it around, 2 bottles of beer on the wall</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-4-2">
+<div id="tabset-5-2">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a>bottles_song <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
-<span id="cb76-2"><a></a>  song <span class="ot">&lt;-</span> <span class="fu">map_chr</span>(n<span class="sc">:</span><span class="dv">0</span>, bottles_lyrics)</span>
-<span id="cb76-3"><a></a>  <span class="fu">return</span>(<span class="fu">glue</span>(<span class="st">"{song}"</span>))</span>
-<span id="cb76-4"><a></a>}</span>
-<span id="cb76-5"><a></a></span>
-<span id="cb76-6"><a></a><span class="fu">bottles_song</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a></a>bottles_song <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb94-2"><a></a>  song <span class="ot">&lt;-</span> <span class="fu">map_chr</span>(n<span class="sc">:</span><span class="dv">0</span>, bottles_lyrics)</span>
+<span id="cb94-3"><a></a>  <span class="fu">return</span>(<span class="fu">glue</span>(<span class="st">"{song}"</span>))</span>
+<span id="cb94-4"><a></a>}</span>
+<span id="cb94-5"><a></a></span>
+<span id="cb94-6"><a></a><span class="fu">bottles_song</span>(<span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>3 bottles of beer on the wall, 3 bottles of beer 
 Take one down, pass it around, 2 bottles of beer on the wall
@@ -3066,22 +3447,22 @@ Take one down, pass it around, -1 bottles of beer on the wall</code></pre>
 </div>
 </div>
 </div>
-<div id="tabset-4-3">
+<div id="tabset-5-3">
 <p><em>No more bottles of beer on the wall, no more bottles of beer. Go to the store, buy some more, 99 bottles of beer on the wall…</em></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a>bottles_lyrics <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
-<span id="cb78-2"><a></a>  <span class="cf">if</span>(n <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb78-3"><a></a>    lyrics <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"No more bottles of beer on the wall, no more bottles of beer. </span><span class="sc">\n</span><span class="st">Go to the store, buy some more, 99 bottles of beer on the wall..."</span>)</span>
-<span id="cb78-4"><a></a>  } <span class="cf">else</span>{</span>
-<span id="cb78-5"><a></a>    lyrics <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"{n} bottles of beer on the wall, {n} bottles of beer </span><span class="sc">\n</span><span class="st">Take one down, pass it around, {n -1} bottles of beer on the wall"</span>)</span>
-<span id="cb78-6"><a></a>  }</span>
-<span id="cb78-7"><a></a>  <span class="fu">return</span>(lyrics)</span>
-<span id="cb78-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a>bottles_lyrics <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb96-2"><a></a>  <span class="cf">if</span>(n <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb96-3"><a></a>    lyrics <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"No more bottles of beer on the wall, no more bottles of beer. </span><span class="sc">\n</span><span class="st">Go to the store, buy some more, 99 bottles of beer on the wall..."</span>)</span>
+<span id="cb96-4"><a></a>  } <span class="cf">else</span>{</span>
+<span id="cb96-5"><a></a>    lyrics <span class="ot">&lt;-</span> <span class="fu">glue</span>(<span class="st">"{n} bottles of beer on the wall, {n} bottles of beer </span><span class="sc">\n</span><span class="st">Take one down, pass it around, {n -1} bottles of beer on the wall"</span>)</span>
+<span id="cb96-6"><a></a>  }</span>
+<span id="cb96-7"><a></a>  <span class="fu">return</span>(lyrics)</span>
+<span id="cb96-8"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
-<div id="tabset-4-4">
+<div id="tabset-5-4">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="fu">bottles_song</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a></a><span class="fu">bottles_song</span>(<span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>4 bottles of beer on the wall, 4 bottles of beer 
 Take one down, pass it around, 3 bottles of beer on the wall
