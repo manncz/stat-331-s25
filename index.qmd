@@ -21,8 +21,8 @@ This page contains an outline of the topics, content, and assignments for the qu
 |  | **Thu, 5/8** |  | **Midterm Exam** |  |  |  |
 | 7 | Tue, 5/13 | [7: Writing Functions](https://manncz.github.io/stat331-calpoly-text/07-functions.html) | [Functions](slides/week-7/w7-functions.qmd) | [Week 7](student-versions/notes/w7-notes.qmd) | [PA 7](practice-activities/pa7.qmd) |  |
 |  | Thu, 5/15 |  | [More Functions](slides/week-7/w7-data-functions.qmd) |  |  | [Lab 7](labs/lab7/lab7-functions.qmd) |
-| 8 | Tue, 5/20 | [8: Iteration and Simulation](https://manncz.github.io/stat331-calpoly-text/08-functional-programming.html) | Iteration |  | [PA 8.1](practice-activities/pa8-1.qmd) |  |
-|  | Thu, 5/22 |  | Simulation + Tables |  | [PA 8.2](practice-activities/pa8-2.qmd) | [Lab 8](labs/lab8/lab8-iteration.qmd) |
+| 8 | Tue, 5/20 | [8: Iteration and Simulation](https://manncz.github.io/stat331-calpoly-text/08-functional-programming.html) | [Iteration](slides/week-8/w8-iteration.qmd) | [Week 8](student-versions/notes/w8-notes.qmd) | [PA 8.1](practice-activities/pa8-1.qmd) |  |
+|  | Thu, 5/22 |  | [Simulation + Tables](slides/week-8/w8-simulation.qmd) |  | [PA 8.2](practice-activities/pa8-2.qmd) | [Lab 8](labs/lab8/lab8-iteration.qmd) |
 | 9 | Tue, 5/27 |  | NO CLASS |  |  |  |
 |  | Thu, 5/29 | [9: Linear Regression](https://manncz.github.io/stat331-calpoly-text/09-statistical-modeling-and-simulation.html) | Linear Regression |  | PA 9 | Lab 9 |
 | 10 | Tue, 6/3 | TBD | Simulation Extensions |  | PA 10 |  |

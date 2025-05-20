@@ -809,7 +809,7 @@
     "href": "index.html",
     "title": "Statistical Computing in R",
     "section": "",
-    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDay\nTopic / Reading\nSlides\nStarter Notes\nPractice Activity\nLab\n\n\n\n\n1\nTue, 4/1\n1: Introduction\nSyllabus & Intro to R\nWeek 1\nPA 1\n\n\n\n\nThu, 4/3\n\nIntro to Quarto\n\n\nLab 1\n\n\n2\nTue, 4/8\n2: Basics of Graphics\nImporting Data + Graphics with ggplot2\nWeek 2\nPA 2\n\n\n\n\nThu, 4/10\n\nMore Graphics!\n\n\nLab 2\n\n\n3\nTue, 4/15\n3: Data Cleaning + Manipulation\nData Cleaning with dplyr\nWeek 3\nPA 3\n\n\n\n\nThu, 4/17\nData Feminism: The Numbers Don’t Speak for Themselves\nExtending dplyr + Data Ethics\n\n\nLab 3\n\n\n4\nTue, 4/22\n4: Data Joins + Transformations\nData Joins + Pivots\nWeek 4\nPA 4\n\n\n\n\nThu, 4/24\n\nFactor Variables\n\n\nLab 4\n\n\n5\nTue, 4/29\n5: Special Data Types\nStrings\nWeek 5\nPA 5.1\n\n\n\n\nThu, 5/1\n\nDates\n\nPA 5.2\nLab 5\n\n\n6\nTue, 5/6\n6: Version Control\nVersion Control\n\nPA 6\n\n\n\n\nThu, 5/8\n\nMidterm Exam\n\n\n\n\n\n7\nTue, 5/13\n7: Writing Functions\nFunctions\nWeek 7\nPA 7\n\n\n\n\nThu, 5/15\n\nMore Functions\n\n\nLab 7\n\n\n8\nTue, 5/20\n8: Iteration and Simulation\nIteration\n\nPA 8.1\n\n\n\n\nThu, 5/22\n\nSimulation + Tables\n\nPA 8.2\nLab 8\n\n\n9\nTue, 5/27\n\nNO CLASS\n\n\n\n\n\n\nThu, 5/29\n9: Linear Regression\nLinear Regression\n\nPA 9\nLab 9\n\n\n10\nTue, 6/3\nTBD\nSimulation Extensions\n\nPA 10\n\n\n\n\nThu, 6/5\n\nWrap-Up",
+    "text": "This page contains an outline of the topics, content, and assignments for the quarter. Note that this schedule will be updated as the quarter progresses, with all changes documented here.\n\n\n\n\n\n\n\n\n\n\n\n\nWeek\nDay\nTopic / Reading\nSlides\nStarter Notes\nPractice Activity\nLab\n\n\n\n\n1\nTue, 4/1\n1: Introduction\nSyllabus & Intro to R\nWeek 1\nPA 1\n\n\n\n\nThu, 4/3\n\nIntro to Quarto\n\n\nLab 1\n\n\n2\nTue, 4/8\n2: Basics of Graphics\nImporting Data + Graphics with ggplot2\nWeek 2\nPA 2\n\n\n\n\nThu, 4/10\n\nMore Graphics!\n\n\nLab 2\n\n\n3\nTue, 4/15\n3: Data Cleaning + Manipulation\nData Cleaning with dplyr\nWeek 3\nPA 3\n\n\n\n\nThu, 4/17\nData Feminism: The Numbers Don’t Speak for Themselves\nExtending dplyr + Data Ethics\n\n\nLab 3\n\n\n4\nTue, 4/22\n4: Data Joins + Transformations\nData Joins + Pivots\nWeek 4\nPA 4\n\n\n\n\nThu, 4/24\n\nFactor Variables\n\n\nLab 4\n\n\n5\nTue, 4/29\n5: Special Data Types\nStrings\nWeek 5\nPA 5.1\n\n\n\n\nThu, 5/1\n\nDates\n\nPA 5.2\nLab 5\n\n\n6\nTue, 5/6\n6: Version Control\nVersion Control\n\nPA 6\n\n\n\n\nThu, 5/8\n\nMidterm Exam\n\n\n\n\n\n7\nTue, 5/13\n7: Writing Functions\nFunctions\nWeek 7\nPA 7\n\n\n\n\nThu, 5/15\n\nMore Functions\n\n\nLab 7\n\n\n8\nTue, 5/20\n8: Iteration and Simulation\nIteration\nWeek 8\nPA 8.1\n\n\n\n\nThu, 5/22\n\nSimulation + Tables\n\nPA 8.2\nLab 8\n\n\n9\nTue, 5/27\n\nNO CLASS\n\n\n\n\n\n\nThu, 5/29\n9: Linear Regression\nLinear Regression\n\nPA 9\nLab 9\n\n\n10\nTue, 6/3\nTBD\nSimulation Extensions\n\nPA 10\n\n\n\n\nThu, 6/5\n\nWrap-Up",
     "crumbs": [
       "Course information",
       "Schedule"
@@ -4890,7 +4890,7 @@
     "href": "slides/week-8/w8-iteration.html#tuesday-520",
     "title": "Iteration",
     "section": "Tuesday, 5/20",
-    "text": "Tuesday, 5/20\nToday we will…\n\nProject Proposal + Data\nNew Material1\n\nIteration aka Performing Repeated Tasks\nVectorization\nEfficient Iteration: the map() family\n\nPA 8.1: The Twelve Days of Christmas\nLab 8: Searching for Efficiency\n\nMaterial and images for today’s lecture were modified from Dr. Theobold and Hansjörg Neth’s ds4psy text"
+    "text": "Tuesday, 5/20\nToday we will…\n\nProject Proposal + Data\nMidterm Feedback\nNew Material1\n\nIteration aka Performing Repeated Tasks\nVectorization\nEfficient Iteration: the map() family\n\nPA 8.1: The Twelve Days of Christmas\n\nMaterial and images for today’s lecture were modified from Dr. Theobold and Hansjörg Neth’s ds4psy text"
   },
   {
     "objectID": "slides/week-8/w8-iteration.html#project-proposal-data",
@@ -5149,7 +5149,7 @@
     "href": "slides/week-8/w8-simulation.html#statistical-distributions-with-names",
     "title": "Simulation + Nice Tables",
     "section": "Statistical Distributions with Names!",
-    "text": "Statistical Distributions with Names!\n\nunifnormtchisqbinom\n\n\nUniform Distribution\n\n\n\nWhen you know the range of values, but not much else.\nAll values in the range are equally likely to occur.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNormal Distribution\n\n\n\nWhen you expect values to fall near the center.\nFrequency of values follows a bell shaped curve.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nt-Distribution\n\n\n\nA slightly wider bell curve.\nBasically used in the same context as the normal distribution, but more common with real data (when the standard deviation is unknown).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChi-Square Distribution\n\n\n\nSomewhat skewed, and only allows values above zero.\nCommonly used in statistical testing.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBinomial Distribution\n\n\n\nThere are two possible outcomes, and you are counting how many times one of the outcomes occured out of a fixed number of trials.\nTakes discrete values from 0 to the number of trials."
+    "text": "Statistical Distributions with Names!\n\nunifnormtchisqbinom\n\n\nUniform Distribution\n\n\n\nWhen you know the range of values, but not much else.\nAll values in the range are equally likely to occur.\n\n\n\n\nWarning: The dot-dot notation (`..density..`) was deprecated in ggplot2 3.4.0.\nℹ Please use `after_stat(density)` instead.\n\n\n\n\n\n\n\n\n\n\n\n\n\nNormal Distribution\n\n\n\nWhen you expect values to fall near the center.\nFrequency of values follows a bell shaped curve.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nt-Distribution\n\n\n\nA slightly wider bell curve.\nBasically used in the same context as the normal distribution, but more common with real data (when the standard deviation is unknown).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nChi-Square Distribution\n\n\n\nSomewhat skewed, and only allows values above zero.\nCommonly used in statistical testing.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nBinomial Distribution\n\n\n\nThere are two possible outcomes, and you are counting how many times one of the outcomes occured out of a fixed number of trials.\nTakes discrete values from 0 to the number of trials."
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#how-do-we-use-distributions",
@@ -5163,7 +5163,7 @@
     "href": "slides/week-8/w8-simulation.html#distribution-functions-in-r",
     "title": "Simulation + Nice Tables",
     "section": "Distribution Functions in R",
-    "text": "Distribution Functions in R\n\nrpqd\n\n\nr is for random sampling.\n\nGenerate random values from a distribution.\nWe use this to simulate data (create pretend observations).\n\n\n\n\nrunif(n = 3, min = 10, max = 20)\n\n[1] 17.85968 12.01953 10.13345\n\nrnorm(n = 3)\n\n[1] -0.1058434 -0.2779280  1.5367872\n\nrnorm(n = 3, mean = -100, sd = 50)\n\n[1] -113.36050 -141.23086  -68.01073\n\n\n\n\nrt(n = 3, df = 11)\n\n[1]  0.478290  1.172868 -1.287736\n\nrbinom(n = 3, size = 10, prob = 0.7)\n\n[1] 5 5 7\n\nrchisq(n = 3, df = 11)\n\n[1] 11.067706 10.697817  8.055547\n\n\n\n\n\np is for probability.\n\nCompute the chances of observing a value less than x: \\(P(X &lt; x)\\)\nWe use this for calculating p-values.\n\n\n\n\npnorm(q = 70, mean = 67, sd = 3)\n\n[1] 0.8413447\n\n1 - pnorm(q = 70, mean = 67, sd = 3)\n\n[1] 0.1586553\n\npnorm(q = 70, mean = 67, sd = 3, lower.tail = FALSE)\n\n[1] 0.1586553\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nq is for quantile.\n\nGiven a probability \\(p\\), compute \\(x\\) such that \\(P(X &lt; x) = p\\).\nThe q functions are “backwards” of the p functions.\n\n\nqnorm(p = 0.95)\n\n[1] 1.644854\n\nqnorm(p = 0.95, mean = 67, sd = 3)\n\n[1] 71.93456\n\n\n\n\nd is for density.\n\nCompute the height of a distribution curve at a given \\(x\\).\nFor discrete dist: probability of getting exactly \\(x\\).\nFor continuous dist: usually meaningless.\n\nProbability of exactly 12 heads in 20 coin tosses, with a 70% chance of tails?\n\ndbinom(x = 12, size = 20, prob = 0.3)\n\n[1] 0.003859282"
+    "text": "Distribution Functions in R\n\nrpqd\n\n\nr is for random sampling.\n\nGenerate random values from a distribution.\nWe use this to simulate data (create pretend observations).\n\n\n\n\nrunif(n = 3, min = 10, max = 20)\n\n[1] 14.83676 19.40917 14.17190\n\nrnorm(n = 3)\n\n[1] -0.3574731 -0.2897954  0.3187520\n\nrnorm(n = 3, mean = -100, sd = 50)\n\n[1] -172.15928  -95.62517 -124.63122\n\n\n\n\nrt(n = 3, df = 11)\n\n[1]  0.2141174 -2.1872880 -0.8563166\n\nrbinom(n = 3, size = 10, prob = 0.7)\n\n[1] 4 7 8\n\nrchisq(n = 3, df = 11)\n\n[1] 12.210469  9.944479 21.050361\n\n\n\n\n\n\np is for probability.\n\nCompute the chances of observing a value less than x: \\(P(X &lt; x)\\)\nWe use this for calculating p-values.\n\n\n\n\npnorm(q = 70, mean = 67, sd = 3)\n\n[1] 0.8413447\n\n1 - pnorm(q = 70, mean = 67, sd = 3)\n\n[1] 0.1586553\n\npnorm(q = 70, mean = 67, sd = 3, lower.tail = FALSE)\n\n[1] 0.1586553\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nq is for quantile.\n\nGiven a probability \\(p\\), compute \\(x\\) such that \\(P(X &lt; x) = p\\).\nThe q functions are “backwards” of the p functions.\n\n\nqnorm(p = 0.95)\n\n[1] 1.644854\n\nqnorm(p = 0.95, mean = 67, sd = 3)\n\n[1] 71.93456\n\n\n\n\nd is for density.\n\nCompute the height of a distribution curve at a given \\(x\\).\nFor discrete dist: probability of getting exactly \\(x\\).\nFor continuous dist: usually meaningless.\n\nProbability of exactly 12 heads in 20 coin tosses, with a 70% chance of tails?\n\ndbinom(x = 12, size = 20, prob = 0.3)\n\n[1] 0.003859282"
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#empirical-vs.-theoretical-distributions",
@@ -5177,7 +5177,7 @@
     "href": "slides/week-8/w8-simulation.html#plotting-both-distributions",
     "title": "Simulation + Nice Tables",
     "section": "Plotting Both Distributions",
-    "text": "Plotting Both Distributions\n\n geom_histogram  dnorm  ..density.. \n\n\n\n\n\ndata |&gt; \n  ggplot(aes(x = height)) +\n  geom_histogram(bins = 10, color = \"white\")\n\n\n\n\n\n\n\n\n\n\nPlot your data.\n\n\n\n\n\n\n\ndata |&gt; \n  ggplot(aes(x = height)) +\n  geom_histogram(bins = 10, color = \"white\") +\n  stat_function(fun = ~ dnorm(.x, mean = 67, sd = 3),\n                color = \"steelblue\", lwd = 2)\n\n\n\n\n\n\n\n\n\n\nAdd a density curve.\n\n\n\n\n\n\n\ndata |&gt; \n  ggplot(aes(x = height)) +\n  geom_histogram(aes(y = ..density..),\n                 bins = 10, color = \"white\") +\n  stat_function(fun = ~ dnorm(.x, mean = 67, sd = 3),\n                color = \"steelblue\", lwd = 2)\n\n\n\n\n\n\n\n\n\n\nChange the y-axis of the histogram to match the y-axis of the density."
+    "text": "Plotting Both Distributions\n\n geom_histogram  dnorm  ..density.. \n\n\n\n\n\ndata |&gt; \n  ggplot(aes(x = height)) +\n  geom_histogram(bins = 10, color = \"white\")\n\n\n\n\n\n\n\n\n\n\nPlot your data.\n\n\n\n\n\n\n\n\ndata |&gt; \n  ggplot(aes(x = height)) +\n  geom_histogram(bins = 10, color = \"white\") +\n  stat_function(fun = ~ dnorm(.x, mean = 67, sd = 3),\n                color = \"steelblue\", lwd = 2)\n\n\n\n\n\n\n\n\n\n\nAdd a density curve.\n\n\n\n\n\n\n\n\ndata |&gt; \n  ggplot(aes(x = height)) +\n  geom_histogram(aes(y = after_stat(density)),\n                 bins = 10, color = \"white\") +\n  stat_function(fun = ~ dnorm(.x, mean = 67, sd = 3),\n                color = \"steelblue\", lwd = 2)\n\n\n\n\n\n\n\n\n\n\nChange the y-axis of the histogram to match the y-axis of the density."
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#generating-simulated-data---the-idea",
@@ -5191,14 +5191,14 @@
     "href": "slides/week-8/w8-simulation.html#reproducible-samples-set.seed",
     "title": "Simulation + Nice Tables",
     "section": "Reproducible samples: set.seed()",
-    "text": "Reproducible samples: set.seed()\nSince there is randomness involved, we will get a different result each time we run the code.\n\n\n\nrunif(3, min = 15, max = 75)\n\n[1] 50.72983 66.67432 68.35707\n\n\n\n\nrunif(3, min = 15, max = 75)\n\n[1] 67.11051 25.35165 35.57557\n\n\n\n\n\nTo generate a reproducible random sample, we first set the seed:\n\n\n\nset.seed(94301)\n\nrunif(3, min = 15, max = 75)\n\n[1] 59.68333 30.27768 38.29962\n\n\n\n\nset.seed(94301)\n\nrunif(3, min = 15, max = 75)\n\n[1] 59.68333 30.27768 38.29962\n\n\n\n\n\n\n\n\n\n\n\nWhenever you are doing an analysis that involves a random element, you should set the seed!"
+    "text": "Reproducible samples: set.seed()\nSince there is randomness involved, we will get a different result each time we run the code.\n\n\n\nrunif(3, min = 15, max = 75)\n\n[1] 50.72983 66.67432 68.35707\n\n\n\n\nrunif(3, min = 15, max = 75)\n\n[1] 67.11051 25.35165 35.57557\n\n\n\n\n\n. . .\nTo generate a reproducible random sample, we first set the seed:\n\n\n\nset.seed(94301)\n\nrunif(3, min = 15, max = 75)\n\n[1] 59.68333 30.27768 38.29962\n\n\n\n\nset.seed(94301)\n\nrunif(3, min = 15, max = 75)\n\n[1] 59.68333 30.27768 38.29962\n\n\n\n\n. . .\n\n\n\n\n\n\nWhenever you are doing an analysis that involves a random element, you should set the seed!"
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#simulate-a-dataset",
     "href": "slides/week-8/w8-simulation.html#simulate-a-dataset",
     "title": "Simulation + Nice Tables",
     "section": "Simulate a Dataset",
-    "text": "Simulate a Dataset\n\ntibblevisualize\n\n\n\nset.seed(435)\nfake_data &lt;- tibble(names   = charlatan::ch_name(1000),\n        height  = rnorm(1000, mean = 67, sd = 3),\n        age     = runif(1000, min = 15, max = 75),\n        measure = rbinom(1000, size = 1, prob = 0.6)) |&gt; \n  mutate(supports_measure_A = ifelse(measure == 1, \"yes\", \"no\"))\n\n\nhead(fake_data) \n\n\n\n\n \n  \n    names \n    height \n    age \n    measure \n    supports_measure_A \n  \n \n\n  \n    Elbridge Kautzer \n    67.43632 \n    66.29460 \n    1 \n    yes \n  \n  \n    Brandon King \n    64.99480 \n    61.53720 \n    0 \n    no \n  \n  \n    Phyllis Thompson \n    68.09035 \n    53.83715 \n    1 \n    yes \n  \n  \n    Humberto Corwin \n    67.45541 \n    33.87560 \n    1 \n    yes \n  \n  \n    Theresia Koelpin \n    71.37196 \n    16.12199 \n    1 \n    yes \n  \n  \n    Hayden O'Reilly-Johns \n    66.17853 \n    36.96293 \n    0 \n    no \n  \n\n\n\n\n\n\n\nCheck to see the ages look uniformly distributed.\n\n\nCode\nfake_data |&gt; \n  ggplot(aes( x = age,\n             fill = supports_measure_A)) +\n  geom_histogram(show.legend = F) +\n  facet_wrap(~ supports_measure_A,\n             ncol = 1) +\n  scale_fill_brewer(palette = \"Paired\") +\n  theme_bw() +\n  labs(x = \"Age (years)\",\n       y = \"\",\n       subtitle = \"Support for Measure A\",)"
+    "text": "Simulate a Dataset\n\ntibblevisualize\n\n\n\nset.seed(435)\nfake_data &lt;- tibble(names   = charlatan::ch_name(1000),\n        height  = rnorm(1000, mean = 67, sd = 3),\n        age     = runif(1000, min = 15, max = 75),\n        measure = rbinom(1000, size = 1, prob = 0.6)) |&gt; \n  mutate(supports_measure_A = ifelse(measure == 1, \"yes\", \"no\"))\n\n\nhead(fake_data) \n\n\n\n\n\n\n\nnames\nheight\nage\nmeasure\nsupports_measure_A\n\n\n\n\nElbridge Kautzer\n67.43632\n66.29460\n1\nyes\n\n\nBrandon King\n64.99480\n61.53720\n0\nno\n\n\nPhyllis Thompson\n68.09035\n53.83715\n1\nyes\n\n\nHumberto Corwin\n67.45541\n33.87560\n1\nyes\n\n\nTheresia Koelpin\n71.37196\n16.12199\n1\nyes\n\n\nHayden O'Reilly-Johns\n66.17853\n36.96293\n0\nno\n\n\n\n\n\n\n\n\n\nCheck to see the ages look uniformly distributed.\n\n\nCode\nfake_data |&gt; \n  ggplot(aes( x = age,\n             fill = supports_measure_A)) +\n  geom_histogram(show.legend = F) +\n  facet_wrap(~ supports_measure_A,\n             ncol = 1) +\n  scale_fill_brewer(palette = \"Paired\") +\n  theme_bw() +\n  labs(x = \"Age (years)\",\n       y = \"\",\n       subtitle = \"Support for Measure A\",)\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#simulate-multiple-datasets---step-1",
@@ -5219,7 +5219,7 @@
     "href": "slides/week-8/w8-simulation.html#simulate-multiple-datasets---step-3",
     "title": "Simulation + Nice Tables",
     "section": "Simulate Multiple Datasets - Step 3",
-    "text": "Simulate Multiple Datasets - Step 3\nSimulate datasets with different mean and SD heights.\n\n\ncrossing(mean_ht = seq(from = 60, to = 78, by = 6),\n         std_ht  = c(3, 6)\n         ) |&gt; \n mutate(ht_data = pmap(.l = list(avg = mean_ht, std = std_ht), \n                       .f = sim_ht\n                       )\n        )\n\n# A tibble: 8 × 3\n  mean_ht std_ht ht_data           \n    &lt;dbl&gt;  &lt;dbl&gt; &lt;list&gt;            \n1      60      3 &lt;tibble [200 × 2]&gt;\n2      60      6 &lt;tibble [200 × 2]&gt;\n3      66      3 &lt;tibble [200 × 2]&gt;\n4      66      6 &lt;tibble [200 × 2]&gt;\n5      72      3 &lt;tibble [200 × 2]&gt;\n6      72      6 &lt;tibble [200 × 2]&gt;\n7      78      3 &lt;tibble [200 × 2]&gt;\n8      78      6 &lt;tibble [200 × 2]&gt;\n\n\n\n\n\n\n\n\n\n\n\nWhy am I getting a tibble in the ht_data column?"
+    "text": "Simulate Multiple Datasets - Step 3\nSimulate datasets with different mean and SD heights.\n\n\ncrossing(mean_ht = seq(from = 60, to = 78, by = 6),\n         std_ht  = c(3, 6)\n         ) |&gt; \n mutate(ht_data = pmap(.l = list(avg = mean_ht, std = std_ht), \n                       .f = sim_ht\n                       )\n        )\n\n# A tibble: 8 × 3\n  mean_ht std_ht ht_data           \n    &lt;dbl&gt;  &lt;dbl&gt; &lt;list&gt;            \n1      60      3 &lt;tibble [200 × 2]&gt;\n2      60      6 &lt;tibble [200 × 2]&gt;\n3      66      3 &lt;tibble [200 × 2]&gt;\n4      66      6 &lt;tibble [200 × 2]&gt;\n5      72      3 &lt;tibble [200 × 2]&gt;\n6      72      6 &lt;tibble [200 × 2]&gt;\n7      78      3 &lt;tibble [200 × 2]&gt;\n8      78      6 &lt;tibble [200 × 2]&gt;\n\n\n\n. . .\n\n\n\n\n\n\n\nWhy am I getting a tibble in the ht_data column?"
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#simulate-multiple-datasets---step-4",
@@ -5233,28 +5233,28 @@
     "href": "slides/week-8/w8-simulation.html#a-note-nest-and-unnest",
     "title": "Simulation + Nice Tables",
     "section": "A note: nest() and unnest()",
-    "text": "A note: nest() and unnest()\n\nWe can pair functions from the map() family very nicely with two tidyr functions: nest() and unnest().\nThese allow us to easily map functions onto subsets of the data.\n\n\n\nnest() subsets of the data (as tibbles) inside a tibble.\n\n\nmtcars |&gt; \n  nest(.by = cyl)\n\n# A tibble: 3 × 2\n    cyl data              \n  &lt;dbl&gt; &lt;list&gt;            \n1     6 &lt;tibble [7 × 10]&gt; \n2     4 &lt;tibble [11 × 10]&gt;\n3     8 &lt;tibble [14 × 10]&gt;\n\n\n\n\n\nunnest() the data by row binding the subsets back together."
+    "text": "A note: nest() and unnest()\n\nWe can pair functions from the map() family very nicely with two tidyr functions: nest() and unnest().\nThese allow us to easily map functions onto subsets of the data.\n\n. . .\n\nnest() subsets of the data (as tibbles) inside a tibble.\n\n\nmtcars |&gt; \n  nest(.by = cyl)\n\n# A tibble: 3 × 2\n    cyl data              \n  &lt;dbl&gt; &lt;list&gt;            \n1     6 &lt;tibble [7 × 10]&gt; \n2     4 &lt;tibble [11 × 10]&gt;\n3     8 &lt;tibble [14 × 10]&gt;\n\n\n. . .\n\nunnest() the data by row binding the subsets back together."
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#simulate-multiple-datasets---step-5",
     "href": "slides/week-8/w8-simulation.html#simulate-multiple-datasets---step-5",
     "title": "Simulation + Nice Tables",
     "section": "Simulate Multiple Datasets - Step 5",
-    "text": "Simulate Multiple Datasets - Step 5\nPlot the samples simulated from each population.\n\n\n\nCode\nfake_ht_data |&gt; \n  mutate(across(.cols = mean_ht:std_ht, \n                .fns = ~as.character(.x)), \n         mean_ht = fct_recode(mean_ht, \n                              `Mean = 60` = \"60\", \n                              `Mean = 66` = \"66\", \n                              `Mean = 72` = \"72\", \n                              `Mean = 78` = \"78\"), \n         std_ht = fct_recode(std_ht, \n                             `Std = 3` = \"3\", \n                             `Std = 6` = \"6\")\n         ) |&gt; \n  ggplot(mapping = aes(x = ht)) +\n  geom_histogram(color = \"white\") +\n  facet_grid(std_ht ~ mean_ht) +\n  labs(x = \"Height (in)\",\n       y = \"\",\n       subtitle = \"Frequency of Observations\",\n       title = \"Simulated Heights from Eight Different Populations\")"
+    "text": "Simulate Multiple Datasets - Step 5\nPlot the samples simulated from each population.\n\n\n\nCode\nfake_ht_data |&gt; \n  mutate(across(.cols = mean_ht:std_ht, \n                .fns = ~as.character(.x)), \n         mean_ht = fct_recode(mean_ht, \n                              `Mean = 60` = \"60\", \n                              `Mean = 66` = \"66\", \n                              `Mean = 72` = \"72\", \n                              `Mean = 78` = \"78\"), \n         std_ht = fct_recode(std_ht, \n                             `Std = 3` = \"3\", \n                             `Std = 6` = \"6\")\n         ) |&gt; \n  ggplot(mapping = aes(x = ht)) +\n  geom_histogram(color = \"white\") +\n  facet_grid(std_ht ~ mean_ht) +\n  labs(x = \"Height (in)\",\n       y = \"\",\n       subtitle = \"Frequency of Observations\",\n       title = \"Simulated Heights from Eight Different Populations\")\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#draw-a-random-sample",
     "href": "slides/week-8/w8-simulation.html#draw-a-random-sample",
     "title": "Simulation + Nice Tables",
     "section": "Draw a Random Sample",
-    "text": "Draw a Random Sample\nUse sample() to take a random sample of values from a vector.\n\nmy_vec &lt;- c(\"dog\", \"cat\", \"bunny\", \"horse\", \"goat\", \"chicken\")\n\nsample(x = my_vec, size = 3)\n\n[1] \"horse\"   \"cat\"     \"chicken\"\n\nset.seed(1)\nsample(x = my_vec, size = 5, replace = T)\n\n[1] \"dog\"   \"horse\" \"dog\"   \"cat\"   \"goat\" \n\nsample(c(0, 1), size = 10, \n       prob = c(.8, .2), replace = T)\n\n [1] 1 0 0 0 0 0 0 0 0 0\n\n\n\n\n\n\n\n\n\nWarning\n\n\nWhenever you take a sample, think about if you want to take a sample with or without replacement. The default is to sample without replacement."
+    "text": "Draw a Random Sample\nUse sample() to take a random sample of values from a vector.\n\nmy_vec &lt;- c(\"dog\", \"cat\", \"bunny\", \"horse\", \"goat\", \"chicken\")\n\nsample(x = my_vec, size = 3)\n\n[1] \"horse\"   \"cat\"     \"chicken\"\n\nset.seed(1)\nsample(x = my_vec, size = 5, replace = T)\n\n[1] \"dog\"   \"horse\" \"dog\"   \"cat\"   \"goat\" \n\nsample(c(0, 1), size = 10, \n       prob = c(.8, .2), replace = T)\n\n [1] 1 0 0 0 0 0 0 0 0 0\n\n\n. . .\n\n\n\n\n\n\nWarning\n\n\n\nWhenever you take a sample, think about if you want to take a sample with or without replacement. The default is to sample without replacement."
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#draw-a-random-sample-1",
     "href": "slides/week-8/w8-simulation.html#draw-a-random-sample-1",
     "title": "Simulation + Nice Tables",
     "section": "Draw a Random Sample",
-    "text": "Draw a Random Sample\nUse slice_sample() to take a random sample of observations (rows) from a dataset.\n\nfake_data |&gt; \n  slice_sample(n = 3) \n\n\n\n\n\n \n  \n    names \n    height \n    age \n    measure \n    supports_measure_A \n  \n \n\n  \n    Alexander Nicolas \n    60.78593 \n    25.87201 \n    0 \n    no \n  \n  \n    Marnie Witting \n    67.55575 \n    48.26608 \n    1 \n    yes \n  \n  \n    Liddie Wiza-Pouros \n    66.36513 \n    29.91378 \n    1 \n    yes \n  \n\n\n\n\n\n\n\n\nfake_data |&gt; \n  slice_sample(prop = .005) \n\n\n\n\n\n\n \n  \n    names \n    height \n    age \n    measure \n    supports_measure_A \n  \n \n\n  \n    Debera Kirlin \n    70.01628 \n    20.18689 \n    0 \n    no \n  \n  \n    Demario Muller \n    69.03207 \n    34.78672 \n    1 \n    yes \n  \n  \n    Alvera Mayert \n    66.06743 \n    57.62611 \n    0 \n    no \n  \n  \n    Dr. Duwayne Gleichner \n    64.79083 \n    31.31543 \n    0 \n    no \n  \n  \n    Dr. Bethany Fisher \n    71.70982 \n    33.81118 \n    1 \n    yes"
+    "text": "Draw a Random Sample\nUse slice_sample() to take a random sample of observations (rows) from a dataset.\n\nfake_data |&gt; \n  slice_sample(n = 3) \n\n. . .\n\n\n\n\n\n\nnames\nheight\nage\nmeasure\nsupports_measure_A\n\n\n\n\nAlexander Nicolas\n60.78593\n25.87201\n0\nno\n\n\nMarnie Witting\n67.55575\n48.26608\n1\nyes\n\n\nLiddie Wiza-Pouros\n66.36513\n29.91378\n1\nyes\n\n\n\n\n\n\n\n. . .\n\nfake_data |&gt; \n  slice_sample(prop = .005) \n\n. . .\n\n\n\n\n\n\nnames\nheight\nage\nmeasure\nsupports_measure_A\n\n\n\n\nDebera Kirlin\n70.01628\n20.18689\n0\nno\n\n\nDemario Muller\n69.03207\n34.78672\n1\nyes\n\n\nAlvera Mayert\n66.06743\n57.62611\n0\nno\n\n\nDr. Duwayne Gleichner\n64.79083\n31.31543\n0\nno\n\n\nDr. Bethany Fisher\n71.70982\n33.81118\n1\nyes"
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#example-birthday-simulation",
@@ -5268,7 +5268,7 @@
     "href": "slides/week-8/w8-simulation.html#example-birthday-simulation-1",
     "title": "Simulation + Nice Tables",
     "section": "Example: Birthday Simulation",
-    "text": "Example: Birthday Simulation\nWrite a function to …\n\n… simulate the birthdays of 50 random people (assuming it is equally likely to be born any day of the year).\n… count how many birthdays are shared.\n… return whether or not a shared birthday exists.\n\n\n\nbDays &lt;- function(n = 50){\n  bday_data &lt;- tibble(person = 1:n,\n                      bday   = sample(1:365, size = n, replace = T))\n  \n  double_bdays &lt;- bday_data |&gt; \n    count(bday) |&gt; \n    filter(n &gt;= 2) |&gt; \n    nrow()\n  \n  return(double_bdays &gt; 0)\n}"
+    "text": "Example: Birthday Simulation\nWrite a function to …\n\n… simulate the birthdays of 50 random people (assuming it is equally likely to be born any day of the year).\n… count how many birthdays are shared.\n… return whether or not a shared birthday exists.\n\n. . .\n\nbDays &lt;- function(n = 50){\n  bday_data &lt;- tibble(person = 1:n,\n                      bday   = sample(1:365, size = n, replace = T))\n  \n  double_bdays &lt;- bday_data |&gt; \n    count(bday) |&gt; \n    filter(n &gt;= 2) |&gt; \n    nrow()\n  \n  return(double_bdays &gt; 0)\n}"
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#example-birthday-simulation-2",
@@ -5289,7 +5289,7 @@
     "href": "slides/week-8/w8-simulation.html#remember-the-data-science-process",
     "title": "Simulation + Nice Tables",
     "section": "Remember the Data Science Process",
-    "text": "Remember the Data Science Process\n\n\n\n\n\n\n\n\n\n\nCommunicating about your analysis and findings is a key element of statistical computing."
+    "text": "Remember the Data Science Process\n\n\n\n\n\n\n\n\n\n. . .\nCommunicating about your analysis and findings is a key element of statistical computing."
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#describing-data",
@@ -5303,7 +5303,7 @@
     "href": "slides/week-8/w8-simulation.html#describing-data-cleaning",
     "title": "Simulation + Nice Tables",
     "section": "Describing data cleaning",
-    "text": "Describing data cleaning\n\nWhat does the audience need to know about any choices / decisions that you make while cleaning the data?\n\nhow did you handle missing data?\nhow did you define variables?\ndid you drop any observations? How many and why?\n\n\n\n\nThis doesn’t include\n\ndiscussing specific file, variable, or function names\ndata cleaning that has no impact on interpretating the resulting analysis\n\ne.g. changing the type of a variable"
+    "text": "Describing data cleaning\n\nWhat does the audience need to know about any choices / decisions that you make while cleaning the data?\n\nhow did you handle missing data?\nhow did you define variables?\ndid you drop any observations? How many and why?\n\n\n. . .\n\nThis doesn’t include\n\ndiscussing specific file, variable, or function names\ndata cleaning that has no impact on interpretating the resulting analysis\n\ne.g. changing the type of a variable"
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#describing-data-cleaning-1",
@@ -5345,7 +5345,7 @@
     "href": "slides/week-8/w8-simulation.html#report-ready-tables-in-r",
     "title": "Simulation + Nice Tables",
     "section": "Report Ready Tables in R",
-    "text": "Report Ready Tables in R\n\nWe have just shown data tables directly, midly formatting for html using kable()\n\n\n\nWe can make report-ready tables using kableExtra or gt!"
+    "text": "Report Ready Tables in R\n\nWe have just shown data tables directly, midly formatting for html using kable()\n\n. . .\n\nWe can make report-ready tables using kableExtra or gt!"
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#yay-reproducibility",
@@ -5387,14 +5387,14 @@
     "href": "slides/week-8/w8-simulation.html#table-design-example---kableextra",
     "title": "Simulation + Nice Tables",
     "section": "Table Design Example - kableExtra",
-    "text": "Table Design Example - kableExtra\n\n\nCode\ntab_dat |&gt; \n  arrange(desc(avg_weight)) |&gt; \n  kable(digits = c(0, 1, 1, 0),\n        col.names = c(\"Species\", \"Mean\", \"SD\", \"N. Samples\"),\n        caption = \"Summaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites.\") |&gt;\n  kable_classic(full_width = F,\n                bootstrap_options = \"striped\") |&gt; \n  add_header_above(c(\" \" = 1, \"Weight (g)\" = 2,\" \" = 1),\n                   bold = TRUE) |&gt; \n  row_spec(row = 0, bold = T, align = \"c\")\n\n\n\nSummaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites.\n \n\n\nWeight (g)\n\n\n  \n    Species \n    Mean \n    SD \n    N. Samples \n  \n \n\n  \n    Bull \n    598.4 \n    635.4 \n    553 \n  \n  \n    Brown \n    425.9 \n    381.8 \n    3171 \n  \n  \n    WCT \n    266.4 \n    179.5 \n    2287 \n  \n  \n    RBT \n    183.2 \n    182.3 \n    12341"
+    "text": "Table Design Example - kableExtra\n\n\nCode\ntab_dat |&gt; \n  arrange(desc(avg_weight)) |&gt; \n  kable(digits = c(0, 1, 1, 0),\n        col.names = c(\"Species\", \"Mean\", \"SD\", \"N. Samples\"),\n        caption = \"Summaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites.\") |&gt;\n  kable_classic(full_width = F,\n                bootstrap_options = \"striped\") |&gt; \n  add_header_above(c(\" \" = 1, \"Weight (g)\" = 2,\" \" = 1),\n                   bold = TRUE) |&gt; \n  row_spec(row = 0, bold = T, align = \"c\")\n\n\n\nSummaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites.\n\n\n\n\n\n\n\n\n\n\nWeight (g)\n\n\n\n\nSpecies\nMean\nSD\nN. Samples\n\n\n\n\nBull\n598.4\n635.4\n553\n\n\nBrown\n425.9\n381.8\n3171\n\n\nWCT\n266.4\n179.5\n2287\n\n\nRBT\n183.2\n182.3\n12341"
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#table-design-example---gt",
     "href": "slides/week-8/w8-simulation.html#table-design-example---gt",
     "title": "Simulation + Nice Tables",
     "section": "Table Design Example - gt",
-    "text": "Table Design Example - gt\n\n\nCode\ntab_dat |&gt; \n  arrange(desc(avg_weight)) |&gt; \n  gt() |&gt; \n  tab_options(table.font.size = 32) |&gt; \n  tab_header(\n    title = \"Summary of Fish Weights by Species\",\n    subtitle = \"all sampling years, trips, and sites\"\n  ) |&gt; \n  tab_spanner(label = md(\"**Weight (g)**\"), \n              columns = c(avg_weight, sd_weight)) |&gt; \n  tab_style(style = cell_text(align = \"center\"),\n    locations = cells_column_labels()) |&gt; \n  cols_align(align = \"left\",\n             columns = species) |&gt; \n  fmt_number(columns = c(avg_weight, sd_weight),\n             decimals = 1) |&gt; \n  fmt_number(columns = n,\n             decimals = 0) |&gt; \n  cols_label(\n    \"avg_weight\" = md(\"**Mean**\"),\n    \"sd_weight\" = md(\"**SD**\"),\n    \"n\" = md(\"**N. Samples**\"),\n    \"species\" = md(\"**Species**\")\n  )\n\n\n\n\n\n  \n    \n      Summary of Fish Weights by Species\n    \n    \n      all sampling years, trips, and sites\n    \n    \n      Species\n      \n        Weight (g)\n      \n      N. Samples\n    \n    \n      Mean\n      SD\n    \n  \n  \n    Bull\n598.4\n635.4\n553\n    Brown\n425.9\n381.8\n3,171\n    WCT\n266.4\n179.5\n2,287\n    RBT\n183.2\n182.3\n12,341"
+    "text": "Table Design Example - gt\n\n\nCode\ntab_dat |&gt; \n  arrange(desc(avg_weight)) |&gt; \n  gt() |&gt; \n  tab_options(table.font.size = 32) |&gt; \n  tab_header(\n    title = \"Summary of Fish Weights by Species\",\n    subtitle = \"all sampling years, trips, and sites\"\n  ) |&gt; \n  tab_spanner(label = md(\"**Weight (g)**\"), \n              columns = c(avg_weight, sd_weight)) |&gt; \n  tab_style(style = cell_text(align = \"center\"),\n    locations = cells_column_labels()) |&gt; \n  cols_align(align = \"left\",\n             columns = species) |&gt; \n  fmt_number(columns = c(avg_weight, sd_weight),\n             decimals = 1) |&gt; \n  fmt_number(columns = n,\n             decimals = 0) |&gt; \n  cols_label(\n    \"avg_weight\" = md(\"**Mean**\"),\n    \"sd_weight\" = md(\"**SD**\"),\n    \"n\" = md(\"**N. Samples**\"),\n    \"species\" = md(\"**Species**\")\n  )\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSummary of Fish Weights by Species\n\n\nall sampling years, trips, and sites\n\n\nSpecies\n\nWeight (g)\n\nN. Samples\n\n\nMean\nSD\n\n\n\n\nBull\n598.4\n635.4\n553\n\n\nBrown\n425.9\n381.8\n3,171\n\n\nWCT\n266.4\n179.5\n2,287\n\n\nRBT\n183.2\n182.3\n12,341"
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#pa-8.2-instrument-con",
@@ -5415,7 +5415,7 @@
     "href": "slides/week-8/w8-simulation.html#to-do",
     "title": "Simulation + Nice Tables",
     "section": "To do…",
-    "text": "To do…\n\nProject Proposal + Data\n\nDue Tomorrow, Friday 5/23 at 11:59pm.\n\nLab 8: Searching for Efficiency\n\nDue Tuesday 5/27 at 11:59pm.\n\nRead Chapter 9: Linear Regression\n\nCheck-in 9 due Thursday 5/29 before class.\n\n\n\n\n\n\n\n\nSee you in a week!\n\n\nEnjoy the long weekend! A reminder that we do not have class on Tuesday 5/27."
+    "text": "To do…\n\nProject Proposal + Data\n\nDue Tomorrow, Friday 5/23 at 11:59pm.\n\nLab 8: Searching for Efficiency\n\nDue Tuesday 5/27 at 11:59pm.\n\nRead Chapter 9: Linear Regression\n\nCheck-in 9 due Thursday 5/29 before class.\n\n\n\n\n\n\n\n\nSee you in a week!\n\n\n\nEnjoy the long weekend! A reminder that we do not have class on Tuesday 5/27."
   },
   {
     "objectID": "slides/week-8/w8-simulation.html#thursday-xx",
@@ -5680,8 +5680,8 @@
     "objectID": "slides/week-8/w8-simulation.html#thursday-522",
     "href": "slides/week-8/w8-simulation.html#thursday-522",
     "title": "Simulation + Nice Tables",
-    "section": "Thursday, 5/22",
-    "text": "Thursday, 5/22\nToday we will…\n\nDebugging Functions\nStatistical Distributions\nSimulating Data\nCommunicating Findings from Statistical Computing\n\nDescribing data\nDesigning Plots\nReport-ready tables\n\nPA 8.2: Instrument Con"
+    "section": "",
+    "text": "Today we will…\n\nDebugging Functions\nStatistical Distributions\nSimulating Data\nCommunicating Findings from Statistical Computing\n\nDescribing data\nDesigning Plots\nReport-ready tables\n\nPA 8.2: Instrument Con"
   },
   {
     "objectID": "slides/week-8/w8-iteration.html",
@@ -5773,5 +5773,82 @@
     "title": "Linear Regression",
     "section": "",
     "text": "Today we will…\n\nData Intro + Cleaning: Feedback\nNew Material\n\nReview of Simple Linear Regression\nAssessing Model Fit\n\nWork Time\n\nPA 9: Mystery Animal\nPC4: Linear Regression"
+  },
+  {
+    "objectID": "slides/week-8/w8-simulation.html",
+    "href": "slides/week-8/w8-simulation.html",
+    "title": "Simulation + Nice Tables",
+    "section": "",
+    "text": "Today we will…\n\nDebugging Functions\nStatistical Distributions\nSimulating Data\nCommunicating Findings from Statistical Computing\n\nDescribing data\nDesigning Plots\nReport-ready tables\n\nPA 8.2: Instrument Con"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#midterm-exam---what-went-well",
+    "href": "slides/week-8/w8-iteration.html#midterm-exam---what-went-well",
+    "title": "Iteration",
+    "section": "Midterm Exam - What went well!",
+    "text": "Midterm Exam - What went well!\n\nOverall, code formatting looks very nice!\nPivoting data\nData joins and cleaning on take-home\nWorking with strings (stringr)\nLot’s of interesting and well-thought out open-ended analyses"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#midterm-exam---what-we-still-are-working-on",
+    "href": "slides/week-8/w8-iteration.html#midterm-exam---what-we-still-are-working-on",
+    "title": "Iteration",
+    "section": "Midterm Exam - What we still are working on",
+    "text": "Midterm Exam - What we still are working on\n\nonly saving needed intermediate objects\nworking with logical variables\nquickly looking at variable values\nciting sources\nstatistical language"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#review-environment-junk",
+    "href": "slides/week-8/w8-iteration.html#review-environment-junk",
+    "title": "Iteration",
+    "section": "Review: Environment Junk",
+    "text": "Review: Environment Junk\n\nOnly save variables / data if you will use it again later\n\n\nNOYAY!Saving makes sense here\n\n\n\nq1 &lt;- penguins |&gt; \n  group_by(species) |&gt; \n  slice_max(bill_length_mm)\n  \nkable(q1)  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\nAdelie\nTorgersen\n46.0\n21.5\n194\n4200\nmale\n2007\n\n\nChinstrap\nDream\n58.0\n17.8\n181\n3700\nfemale\n2007\n\n\nGentoo\nBiscoe\n59.6\n17.0\n230\n6050\nmale\n2007\n\n\n\n\n\n\n\n\npenguins |&gt; \n  group_by(species) |&gt; \n  slice_max(bill_length_mm) |&gt; \n  kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\nAdelie\nTorgersen\n46.0\n21.5\n194\n4200\nmale\n2007\n\n\nChinstrap\nDream\n58.0\n17.8\n181\n3700\nfemale\n2007\n\n\nGentoo\nBiscoe\n59.6\n17.0\n230\n6050\nmale\n2007\n\n\n\n\n\n\n\n\npenguins_long &lt;- penguins |&gt; \n  pivot_longer(cols = bill_length_mm:body_mass_g,\n               names_to = \"measure\",\n               values_to = \"value\")\n\npenguins_long |&gt; \n  slice_head(n = 3) |&gt; \n  kable()\n\n\n\n\nspecies\nisland\nsex\nyear\nmeasure\nvalue\n\n\n\n\nAdelie\nTorgersen\nmale\n2007\nbill_length_mm\n39.1\n\n\nAdelie\nTorgersen\nmale\n2007\nbill_depth_mm\n18.7\n\n\nAdelie\nTorgersen\nmale\n2007\nflipper_length_mm\n181.0"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#review-logical-variables",
+    "href": "slides/week-8/w8-iteration.html#review-logical-variables",
+    "title": "Iteration",
+    "section": "Review: Logical Variables",
+    "text": "Review: Logical Variables\n\nLogical / Boolean variables take the special values TRUE and FALSE\n\ncan be treated like a numeric vector where\n\nTRUE == 1 and FALSE == 0\n\n\n\nWhat proportion of penguins in each species have a bill length less than 45 mm?\n\n\npenguins |&gt; \n  group_by(species) |&gt; \n  summarize(prop_shortbeak = mean(bill_length_mm &lt; 45, na.rm = TRUE),\n            n_penguins = sum(!is.na(bill_length_mm))) |&gt; \n  kable(digits = 3)\n\n\n\n\nspecies\nprop_shortbeak\nn_penguins\n\n\n\n\nAdelie\n0.980\n151\n\n\nChinstrap\n0.088\n68\n\n\nGentoo\n0.179\n123"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#review-quickly-exploring-data",
+    "href": "slides/week-8/w8-iteration.html#review-quickly-exploring-data",
+    "title": "Iteration",
+    "section": "Review: Quickly Exploring Data",
+    "text": "Review: Quickly Exploring Data\n\nIf you want to look at all of the possible values/levels of a character/factor variable, you can use\n\n\n\ntable() (base) or\n\ntable(penguins$island)\n\n\n   Biscoe     Dream Torgersen \n      168       124        52 \n\ntable(penguins$island, penguins$species)\n\n           \n            Adelie Chinstrap Gentoo\n  Biscoe        44         0    124\n  Dream         56        68      0\n  Torgersen     52         0      0\n\n\n\ncount() (dplyr):\n\npenguins |&gt; \n  count(island)\n\n# A tibble: 3 × 2\n  island        n\n  &lt;fct&gt;     &lt;int&gt;\n1 Biscoe      168\n2 Dream       124\n3 Torgersen    52"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#reminder-citing-coding-sources",
+    "href": "slides/week-8/w8-iteration.html#reminder-citing-coding-sources",
+    "title": "Iteration",
+    "section": "Reminder: Citing Coding Sources",
+    "text": "Reminder: Citing Coding Sources\n\nPart of responsible coding is giving credit to other’s work if we use it\n“Assumed knowledge:” course textbook, course slides, and course assignments / solutions.\nYou need to let me know if you use any other resources\nSee syllabus"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#review-logical-variables-1",
+    "href": "slides/week-8/w8-iteration.html#review-logical-variables-1",
+    "title": "Iteration",
+    "section": "Review: Logical Variables",
+    "text": "Review: Logical Variables\n\nUsing this logic is very useful for function / output checks!\n\n\n\nLab 5 Q0.2: Design and implement a check that you created the address_number and address_street_name columns correctly.\n\n\nperson |&gt; \n  mutate(address_check = str_c(address_number,\n                               address_street_name,\n                               sep = \" \"),\n         correct = address_check == address) |&gt; \n  pull(correct) |&gt; \n  mean()\n\n[1] 1"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#review-logical-variables-2",
+    "href": "slides/week-8/w8-iteration.html#review-logical-variables-2",
+    "title": "Iteration",
+    "section": "Review: Logical Variables",
+    "text": "Review: Logical Variables\n\nUsing this logic is very useful for function / output checks!\n\n\n\nLab 5 Q0.2: Design and implement a check that you created the address_number and address_street_name columns correctly.\n\n\nperson |&gt; \n  mutate(address_check = str_c(address_number,\n                               address_street_name,\n                               sep = \" \"),\n         correct = address_check == address) |&gt; \n  pull(correct) |&gt; \n  mean()\n\n[1] 1"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#a-note-logical-variables",
+    "href": "slides/week-8/w8-iteration.html#a-note-logical-variables",
+    "title": "Iteration",
+    "section": "A Note: Logical Variables",
+    "text": "A Note: Logical Variables\n\nWhile it works in some cases to use strings to reference the values TRUE and FALSE, it is very bad practice\n\n\nTRUE == \"TRUE\"\n\n[1] TRUE\n\nsum(c(\"TRUE\", \"FALSE\"))\n\nError in sum(c(\"TRUE\", \"FALSE\")): invalid 'type' (character) of argument\n\nsum(c(TRUE, FALSE))\n\n[1] 1"
+  },
+  {
+    "objectID": "slides/week-8/w8-iteration.html#review-statistical-langauge",
+    "href": "slides/week-8/w8-iteration.html#review-statistical-langauge",
+    "title": "Iteration",
+    "section": "Review: Statistical Langauge",
+    "text": "Review: Statistical Langauge\nSpecific statistical vocabulary (use carefully and correctly):\n\nCorrelation: a statistic calculated between two quantitative variables\nSignificant: referring to results of statistical inference\n\n\nInstead use general vocabulary:\n\nassociation\nrelationship\nmeaningful / large\nunsubstantial / small\n“appears to be”"
   }
 ]
