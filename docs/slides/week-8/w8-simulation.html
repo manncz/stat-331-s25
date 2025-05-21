@@ -411,30 +411,30 @@
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">runif</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">min =</span> <span class="dv">10</span>, <span class="at">max =</span> <span class="dv">20</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 17.85968 12.01953 10.13345</code></pre>
+<pre><code>[1] 15.03247 14.88801 11.20575</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -0.1058434 -0.2779280  1.5367872</code></pre>
+<pre><code>[1]  0.7725824 -0.7609517  0.1138140</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">mean =</span> <span class="sc">-</span><span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">50</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] -113.36050 -141.23086  -68.01073</code></pre>
+<pre><code>[1]  -53.90008 -122.61353  -79.15539</code></pre>
 </div>
 </div>
 </div><div class="column">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="fu">rt</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">df =</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1]  0.478290  1.172868 -1.287736</code></pre>
+<pre><code>[1]  0.8496523 -1.3417337 -2.7849670</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">rbinom</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">size =</span> <span class="dv">10</span>, <span class="at">prob =</span> <span class="fl">0.7</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 5 5 7</code></pre>
+<pre><code>[1] 9 8 7</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="fu">rchisq</span>(<span class="at">n =</span> <span class="dv">3</span>, <span class="at">df =</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 11.067706 10.697817  8.055547</code></pre>
+<pre><code>[1] 14.90499 16.98204 15.21053</code></pre>
 </div>
 </div>
 </div></div>
@@ -610,7 +610,7 @@
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb29" data-code-line-numbers="3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a>data <span class="sc">|&gt;</span> </span>
 <span id="cb29-2"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> height)) <span class="sc">+</span></span>
-<span id="cb29-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..),</span>
+<span id="cb29-3"><a></a>  <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> <span class="fu">after_stat</span>(density)),</span>
 <span id="cb29-4"><a></a>                 <span class="at">bins =</span> <span class="dv">10</span>, <span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
 <span id="cb29-5"><a></a>  <span class="fu">stat_function</span>(<span class="at">fun =</span> <span class="sc">~</span> <span class="fu">dnorm</span>(.x, <span class="at">mean =</span> <span class="dv">67</span>, <span class="at">sd =</span> <span class="dv">3</span>),</span>
 <span id="cb29-6"><a></a>                <span class="at">color =</span> <span class="st">"steelblue"</span>, <span class="at">lwd =</span> <span class="dv">2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -1097,127 +1097,169 @@
 <li>You may want to try a couple of different aesthetic choices to see which is clearer</li>
 <li>A clear plot will often look “boring” to you!</li>
 </ul>
-<!-- ## Plot Design -->
-<!-- ```{r} -->
-<!-- #| layout-ncol: 2 -->
-<!-- #| code-fold: true -->
-<!-- sec.cols <- c("#fdb462", "#b3de69") -->
-<!-- trip.cols <- c("#fb8072", "#80b1d3") -->
-<!-- fish <- fish |>  -->
-<!--   mutate(trip = str_c("Trip ", trip)) |>  -->
-<!--   mutate(across(.cols = c(trip, section, species), -->
-<!--                 .fns = ~ as.factor(.x))) -->
-<!-- fish |>  -->
-<!--   filter(if_any(.cols = everything(), -->
-<!--                 .fns = ~ is.na(.x))) |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              fill = trip)) + -->
-<!--   geom_bar() + -->
-<!--   facet_grid(~ section) + -->
-<!--   scale_fill_manual(values = trip.cols) + -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        fill = "Trip Number") -->
-<!-- fish |>  -->
-<!--   filter(if_any(.cols = everything(), -->
-<!--                 .fns = ~ is.na(.x))) |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              fill = trip)) + -->
-<!--   geom_bar(position = "dodge") + -->
-<!--   facet_grid(~ section) + -->
-<!--   scale_fill_manual(values = trip.cols) + -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        fill = "Trip Number") + -->
-<!--   theme(legend.position = "bottom") -->
-<!-- fish |>  -->
-<!--   filter(if_any(.cols = everything(), -->
-<!--                 .fns = ~ is.na(.x))) |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              fill = section)) + -->
-<!--   geom_bar() + -->
-<!--   facet_grid(~ trip) + -->
-<!--   scale_fill_manual(values =  sec.cols) + -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        fill = "Section") -->
-<!-- fish |>  -->
-<!--   filter(if_any(.cols = everything(), -->
-<!--                 .fns = ~ is.na(.x))) |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              fill = section)) + -->
-<!--   geom_bar(position = "dodge") + -->
-<!--   facet_grid(~ trip) + -->
-<!--   scale_fill_manual(values = sec.cols) + -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        fill = "Section") + -->
-<!--   theme(legend.position = "bottom") -->
-<!-- ``` -->
-<!-- ## Plot Design -->
-<!-- ```{r} -->
-<!-- #| layout-ncol: 2 -->
-<!-- #| code-fold: true -->
-<!-- fish_sum <- fish |>  -->
-<!--   group_by(year, section, trip) |>  -->
-<!--   summarize(n_miss = sum(is.na(weight)))  -->
-<!-- fish_sum |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              y = n_miss, -->
-<!--              color = trip)) + -->
-<!--   geom_line(linewidth = 1) + -->
-<!--   geom_point() + -->
-<!--   facet_grid(cols = vars(section)) + -->
-<!--   scale_color_manual(values = trip.cols) +  -->
-<!--   theme_bw() +   -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        color = "Trip")  -->
-<!-- fish_sum |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              y = n_miss, -->
-<!--              color = section)) + -->
-<!--   geom_line(linewidth = 1) + -->
-<!--   geom_point() + -->
-<!--   facet_grid(cols = vars(trip)) + -->
-<!--   scale_color_manual(values = sec.cols) +  -->
-<!--   theme_bw() +   -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        color = "Section")  -->
-<!-- fish_sum |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              y = n_miss)) + -->
-<!--   geom_line(linewidth = 1) + -->
-<!--   geom_point() + -->
-<!--   facet_grid(cols = vars(trip), -->
-<!--              rows = vars(section)) + -->
-<!--   theme_bw() +   -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year")  -->
-<!-- fish_sum |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              y = n_miss, -->
-<!--              color = section, -->
-<!--              linetype = trip)) + -->
-<!--   geom_line(linewidth = 1) + -->
-<!--   geom_point() + -->
-<!--   scale_color_manual(values = sec.cols) +  -->
-<!--   scale_linetype_manual(values = c(2, 1)) + -->
-<!--   theme_bw() +   -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        color = "Section", -->
-<!--        linetype = "Trip")  -->
-<!-- ``` -->
+</section>
+<section id="plot-design-1" class="slide level2">
+<h2>Plot Design</h2>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>sec.cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#fdb462"</span>, <span class="st">"#b3de69"</span>)</span>
+<span id="cb55-2"><a></a>trip.cols <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"#fb8072"</span>, <span class="st">"#80b1d3"</span>)</span>
+<span id="cb55-3"><a></a></span>
+<span id="cb55-4"><a></a></span>
+<span id="cb55-5"><a></a>fish <span class="ot">&lt;-</span> fish <span class="sc">|&gt;</span></span>
+<span id="cb55-6"><a></a>  <span class="fu">mutate</span>(<span class="at">trip =</span> <span class="fu">str_c</span>(<span class="st">"Trip "</span>, trip)) <span class="sc">|&gt;</span></span>
+<span id="cb55-7"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> <span class="fu">c</span>(trip, section, species),</span>
+<span id="cb55-8"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">as.factor</span>(.x)))</span>
+<span id="cb55-9"><a></a></span>
+<span id="cb55-10"><a></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb55-11"><a></a>  <span class="fu">filter</span>(<span class="fu">if_any</span>(<span class="at">.cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb55-12"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x))) <span class="sc">|&gt;</span></span>
+<span id="cb55-13"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb55-14"><a></a>             <span class="at">fill =</span> trip)) <span class="sc">+</span></span>
+<span id="cb55-15"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb55-16"><a></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span> section) <span class="sc">+</span></span>
+<span id="cb55-17"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> trip.cols) <span class="sc">+</span></span>
+<span id="cb55-18"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb55-19"><a></a>       <span class="at">subtitle =</span> <span class="st">"Number of Missing Weight Values"</span>,</span>
+<span id="cb55-20"><a></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb55-21"><a></a>       <span class="at">fill =</span> <span class="st">"Trip Number"</span>)</span>
+<span id="cb55-22"><a></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb55-23"><a></a>  <span class="fu">filter</span>(<span class="fu">if_any</span>(<span class="at">.cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb55-24"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x))) <span class="sc">|&gt;</span></span>
+<span id="cb55-25"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb55-26"><a></a>             <span class="at">fill =</span> trip)) <span class="sc">+</span></span>
+<span id="cb55-27"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb55-28"><a></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span> section) <span class="sc">+</span></span>
+<span id="cb55-29"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> trip.cols) <span class="sc">+</span></span>
+<span id="cb55-30"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb55-31"><a></a>       <span class="at">subtitle =</span> <span class="st">"Number of Missing Weight Values"</span>,</span>
+<span id="cb55-32"><a></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb55-33"><a></a>       <span class="at">fill =</span> <span class="st">"Trip Number"</span>) <span class="sc">+</span></span>
+<span id="cb55-34"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span>
+<span id="cb55-35"><a></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb55-36"><a></a>  <span class="fu">filter</span>(<span class="fu">if_any</span>(<span class="at">.cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb55-37"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x))) <span class="sc">|&gt;</span></span>
+<span id="cb55-38"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb55-39"><a></a>             <span class="at">fill =</span> section)) <span class="sc">+</span></span>
+<span id="cb55-40"><a></a>  <span class="fu">geom_bar</span>() <span class="sc">+</span></span>
+<span id="cb55-41"><a></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span> trip) <span class="sc">+</span></span>
+<span id="cb55-42"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span>  sec.cols) <span class="sc">+</span></span>
+<span id="cb55-43"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb55-44"><a></a>       <span class="at">subtitle =</span> <span class="st">"Number of Missing Weight Values"</span>,</span>
+<span id="cb55-45"><a></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb55-46"><a></a>       <span class="at">fill =</span> <span class="st">"Section"</span>)</span>
+<span id="cb55-47"><a></a>fish <span class="sc">|&gt;</span></span>
+<span id="cb55-48"><a></a>  <span class="fu">filter</span>(<span class="fu">if_any</span>(<span class="at">.cols =</span> <span class="fu">everything</span>(),</span>
+<span id="cb55-49"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span> <span class="fu">is.na</span>(.x))) <span class="sc">|&gt;</span></span>
+<span id="cb55-50"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb55-51"><a></a>             <span class="at">fill =</span> section)) <span class="sc">+</span></span>
+<span id="cb55-52"><a></a>  <span class="fu">geom_bar</span>(<span class="at">position =</span> <span class="st">"dodge"</span>) <span class="sc">+</span></span>
+<span id="cb55-53"><a></a>  <span class="fu">facet_grid</span>(<span class="sc">~</span> trip) <span class="sc">+</span></span>
+<span id="cb55-54"><a></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> sec.cols) <span class="sc">+</span></span>
+<span id="cb55-55"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb55-56"><a></a>       <span class="at">subtitle =</span> <span class="st">"Number of Missing Weight Values"</span>,</span>
+<span id="cb55-57"><a></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb55-58"><a></a>       <span class="at">fill =</span> <span class="st">"Section"</span>) <span class="sc">+</span></span>
+<span id="cb55-59"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"bottom"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-35-1.png" width="960"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-35-2.png" width="960"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-35-3.png" width="960"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-35-4.png" width="960"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="plot-design-2" class="slide level2">
+<h2>Plot Design</h2>
+<details class="code-fold">
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>fish_sum <span class="ot">&lt;-</span> fish <span class="sc">|&gt;</span></span>
+<span id="cb56-2"><a></a>  <span class="fu">group_by</span>(year, section, trip) <span class="sc">|&gt;</span></span>
+<span id="cb56-3"><a></a>  <span class="fu">summarize</span>(<span class="at">n_miss =</span> <span class="fu">sum</span>(<span class="fu">is.na</span>(weight)))</span>
+<span id="cb56-4"><a></a></span>
+<span id="cb56-5"><a></a>fish_sum <span class="sc">|&gt;</span></span>
+<span id="cb56-6"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb56-7"><a></a>             <span class="at">y =</span> n_miss,</span>
+<span id="cb56-8"><a></a>             <span class="at">color =</span> trip)) <span class="sc">+</span></span>
+<span id="cb56-9"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb56-10"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb56-11"><a></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(section)) <span class="sc">+</span></span>
+<span id="cb56-12"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> trip.cols) <span class="sc">+</span></span>
+<span id="cb56-13"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb56-14"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb56-15"><a></a>       <span class="at">subtitle =</span> <span class="st">"Number of Missing Weight Values"</span>,</span>
+<span id="cb56-16"><a></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb56-17"><a></a>       <span class="at">color =</span> <span class="st">"Trip"</span>)</span>
+<span id="cb56-18"><a></a>fish_sum <span class="sc">|&gt;</span></span>
+<span id="cb56-19"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb56-20"><a></a>             <span class="at">y =</span> n_miss,</span>
+<span id="cb56-21"><a></a>             <span class="at">color =</span> section)) <span class="sc">+</span></span>
+<span id="cb56-22"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb56-23"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb56-24"><a></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(trip)) <span class="sc">+</span></span>
+<span id="cb56-25"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> sec.cols) <span class="sc">+</span></span>
+<span id="cb56-26"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb56-27"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb56-28"><a></a>       <span class="at">subtitle =</span> <span class="st">"Number of Missing Weight Values"</span>,</span>
+<span id="cb56-29"><a></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb56-30"><a></a>       <span class="at">color =</span> <span class="st">"Section"</span>)</span>
+<span id="cb56-31"><a></a>fish_sum <span class="sc">|&gt;</span></span>
+<span id="cb56-32"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb56-33"><a></a>             <span class="at">y =</span> n_miss)) <span class="sc">+</span></span>
+<span id="cb56-34"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb56-35"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb56-36"><a></a>  <span class="fu">facet_grid</span>(<span class="at">cols =</span> <span class="fu">vars</span>(trip),</span>
+<span id="cb56-37"><a></a>             <span class="at">rows =</span> <span class="fu">vars</span>(section)) <span class="sc">+</span></span>
+<span id="cb56-38"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb56-39"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb56-40"><a></a>       <span class="at">subtitle =</span> <span class="st">"Number of Missing Weight Values"</span>,</span>
+<span id="cb56-41"><a></a>       <span class="at">x =</span> <span class="st">"Year"</span>)</span>
+<span id="cb56-42"><a></a>fish_sum <span class="sc">|&gt;</span></span>
+<span id="cb56-43"><a></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> year,</span>
+<span id="cb56-44"><a></a>             <span class="at">y =</span> n_miss,</span>
+<span id="cb56-45"><a></a>             <span class="at">color =</span> section,</span>
+<span id="cb56-46"><a></a>             <span class="at">linetype =</span> trip)) <span class="sc">+</span></span>
+<span id="cb56-47"><a></a>  <span class="fu">geom_line</span>(<span class="at">linewidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb56-48"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb56-49"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> sec.cols) <span class="sc">+</span></span>
+<span id="cb56-50"><a></a>  <span class="fu">scale_linetype_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">1</span>)) <span class="sc">+</span></span>
+<span id="cb56-51"><a></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb56-52"><a></a>  <span class="fu">labs</span>(<span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb56-53"><a></a>       <span class="at">subtitle =</span> <span class="st">"Number of Missing Weight Values"</span>,</span>
+<span id="cb56-54"><a></a>       <span class="at">x =</span> <span class="st">"Year"</span>,</span>
+<span id="cb56-55"><a></a>       <span class="at">color =</span> <span class="st">"Section"</span>,</span>
+<span id="cb56-56"><a></a>       <span class="at">linetype =</span> <span class="st">"Trip"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell quarto-layout-panel" data-layout-ncol="2">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-36-1.png" width="960"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-36-2.png" width="960"></p>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-36-3.png" width="960"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-36-4.png" width="960"></p>
+</div>
+</div>
+</div>
 </section>
 <section id="table-design" class="slide level2">
 <h2>Table Design</h2>
@@ -1226,6 +1268,7 @@
 <li>What should the rows and columns be?
 <ul>
 <li>What are clear labels?</li>
+<li>Order of rows and columns?</li>
 </ul></li>
 <li>Is there any grouping of rows and/or columns that would be helpful?</li>
 </ul>
@@ -1305,14 +1348,14 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>tab_dat <span class="ot">&lt;-</span> fish <span class="sc">|&gt;</span> </span>
-<span id="cb55-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
-<span id="cb55-3"><a></a>  <span class="fu">summarize</span>(<span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> T),</span>
-<span id="cb55-4"><a></a>            <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight, <span class="at">na.rm =</span> T),</span>
-<span id="cb55-5"><a></a>            <span class="at">n =</span> <span class="fu">n</span>()) </span>
-<span id="cb55-6"><a></a></span>
-<span id="cb55-7"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
-<span id="cb55-8"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>tab_dat <span class="ot">&lt;-</span> fish <span class="sc">|&gt;</span> </span>
+<span id="cb57-2"><a></a>  <span class="fu">group_by</span>(species) <span class="sc">|&gt;</span> </span>
+<span id="cb57-3"><a></a>  <span class="fu">summarize</span>(<span class="at">avg_weight =</span> <span class="fu">mean</span>(weight, <span class="at">na.rm =</span> T),</span>
+<span id="cb57-4"><a></a>            <span class="at">sd_weight =</span> <span class="fu">sd</span>(weight, <span class="at">na.rm =</span> T),</span>
+<span id="cb57-5"><a></a>            <span class="at">n =</span> <span class="fu">n</span>()) </span>
+<span id="cb57-6"><a></a></span>
+<span id="cb57-7"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
+<span id="cb57-8"><a></a>  <span class="fu">kable</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class="caption-top">
@@ -1359,16 +1402,16 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
-<span id="cb56-2"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_weight)) <span class="sc">|&gt;</span> </span>
-<span id="cb56-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
-<span id="cb56-4"><a></a>        <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Mean"</span>, <span class="st">"SD"</span>, <span class="st">"N. Samples"</span>),</span>
-<span id="cb56-5"><a></a>        <span class="at">caption =</span> <span class="st">"Summaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites."</span>) <span class="sc">|&gt;</span></span>
-<span id="cb56-6"><a></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F,</span>
-<span id="cb56-7"><a></a>                <span class="at">bootstrap_options =</span> <span class="st">"striped"</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb56-8"><a></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Weight (g)"</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>),</span>
-<span id="cb56-9"><a></a>                   <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb56-10"><a></a>  <span class="fu">row_spec</span>(<span class="at">row =</span> <span class="dv">0</span>, <span class="at">bold =</span> T, <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
+<span id="cb58-2"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_weight)) <span class="sc">|&gt;</span> </span>
+<span id="cb58-3"><a></a>  <span class="fu">kable</span>(<span class="at">digits =</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb58-4"><a></a>        <span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Species"</span>, <span class="st">"Mean"</span>, <span class="st">"SD"</span>, <span class="st">"N. Samples"</span>),</span>
+<span id="cb58-5"><a></a>        <span class="at">caption =</span> <span class="st">"Summaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites."</span>) <span class="sc">|&gt;</span></span>
+<span id="cb58-6"><a></a>  <span class="fu">kable_classic</span>(<span class="at">full_width =</span> F,</span>
+<span id="cb58-7"><a></a>                <span class="at">bootstrap_options =</span> <span class="st">"striped"</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb58-8"><a></a>  <span class="fu">add_header_above</span>(<span class="fu">c</span>(<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>, <span class="st">"Weight (g)"</span> <span class="ot">=</span> <span class="dv">2</span>,<span class="st">" "</span> <span class="ot">=</span> <span class="dv">1</span>),</span>
+<span id="cb58-9"><a></a>                   <span class="at">bold =</span> <span class="cn">TRUE</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb58-10"><a></a>  <span class="fu">row_spec</span>(<span class="at">row =</span> <span class="dv">0</span>, <span class="at">bold =</span> T, <span class="at">align =</span> <span class="st">"c"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <table class=" lightable-classic" style="font-family: &quot;Arial Narrow&quot;, &quot;Source Sans Pro&quot;, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;">
@@ -1422,30 +1465,30 @@
 <div class="cell">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
-<span id="cb57-2"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_weight)) <span class="sc">|&gt;</span> </span>
-<span id="cb57-3"><a></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
-<span id="cb57-4"><a></a>  <span class="fu">tab_options</span>(<span class="at">table.font.size =</span> <span class="dv">32</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb57-5"><a></a>  <span class="fu">tab_header</span>(</span>
-<span id="cb57-6"><a></a>    <span class="at">title =</span> <span class="st">"Summary of Fish Weights by Species"</span>,</span>
-<span id="cb57-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"all sampling years, trips, and sites"</span></span>
-<span id="cb57-8"><a></a>  ) <span class="sc">|&gt;</span> </span>
-<span id="cb57-9"><a></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Weight (g)**"</span>), </span>
-<span id="cb57-10"><a></a>              <span class="at">columns =</span> <span class="fu">c</span>(avg_weight, sd_weight)) <span class="sc">|&gt;</span> </span>
-<span id="cb57-11"><a></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"center"</span>),</span>
-<span id="cb57-12"><a></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()) <span class="sc">|&gt;</span> </span>
-<span id="cb57-13"><a></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"left"</span>,</span>
-<span id="cb57-14"><a></a>             <span class="at">columns =</span> species) <span class="sc">|&gt;</span> </span>
-<span id="cb57-15"><a></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(avg_weight, sd_weight),</span>
-<span id="cb57-16"><a></a>             <span class="at">decimals =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb57-17"><a></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> n,</span>
-<span id="cb57-18"><a></a>             <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
-<span id="cb57-19"><a></a>  <span class="fu">cols_label</span>(</span>
-<span id="cb57-20"><a></a>    <span class="st">"avg_weight"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Mean**"</span>),</span>
-<span id="cb57-21"><a></a>    <span class="st">"sd_weight"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**SD**"</span>),</span>
-<span id="cb57-22"><a></a>    <span class="st">"n"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**N. Samples**"</span>),</span>
-<span id="cb57-23"><a></a>    <span class="st">"species"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Species**"</span>)</span>
-<span id="cb57-24"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a>tab_dat <span class="sc">|&gt;</span> </span>
+<span id="cb59-2"><a></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(avg_weight)) <span class="sc">|&gt;</span> </span>
+<span id="cb59-3"><a></a>  <span class="fu">gt</span>() <span class="sc">|&gt;</span> </span>
+<span id="cb59-4"><a></a>  <span class="fu">tab_options</span>(<span class="at">table.font.size =</span> <span class="dv">32</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb59-5"><a></a>  <span class="fu">tab_header</span>(</span>
+<span id="cb59-6"><a></a>    <span class="at">title =</span> <span class="st">"Summary of Fish Weights by Species"</span>,</span>
+<span id="cb59-7"><a></a>    <span class="at">subtitle =</span> <span class="st">"all sampling years, trips, and sites"</span></span>
+<span id="cb59-8"><a></a>  ) <span class="sc">|&gt;</span> </span>
+<span id="cb59-9"><a></a>  <span class="fu">tab_spanner</span>(<span class="at">label =</span> <span class="fu">md</span>(<span class="st">"**Weight (g)**"</span>), </span>
+<span id="cb59-10"><a></a>              <span class="at">columns =</span> <span class="fu">c</span>(avg_weight, sd_weight)) <span class="sc">|&gt;</span> </span>
+<span id="cb59-11"><a></a>  <span class="fu">tab_style</span>(<span class="at">style =</span> <span class="fu">cell_text</span>(<span class="at">align =</span> <span class="st">"center"</span>),</span>
+<span id="cb59-12"><a></a>    <span class="at">locations =</span> <span class="fu">cells_column_labels</span>()) <span class="sc">|&gt;</span> </span>
+<span id="cb59-13"><a></a>  <span class="fu">cols_align</span>(<span class="at">align =</span> <span class="st">"left"</span>,</span>
+<span id="cb59-14"><a></a>             <span class="at">columns =</span> species) <span class="sc">|&gt;</span> </span>
+<span id="cb59-15"><a></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> <span class="fu">c</span>(avg_weight, sd_weight),</span>
+<span id="cb59-16"><a></a>             <span class="at">decimals =</span> <span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb59-17"><a></a>  <span class="fu">fmt_number</span>(<span class="at">columns =</span> n,</span>
+<span id="cb59-18"><a></a>             <span class="at">decimals =</span> <span class="dv">0</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb59-19"><a></a>  <span class="fu">cols_label</span>(</span>
+<span id="cb59-20"><a></a>    <span class="st">"avg_weight"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Mean**"</span>),</span>
+<span id="cb59-21"><a></a>    <span class="st">"sd_weight"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**SD**"</span>),</span>
+<span id="cb59-22"><a></a>    <span class="st">"n"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**N. Samples**"</span>),</span>
+<span id="cb59-23"><a></a>    <span class="st">"species"</span> <span class="ot">=</span> <span class="fu">md</span>(<span class="st">"**Species**"</span>)</span>
+<span id="cb59-24"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div id="xifqjciohd" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -2010,10 +2053,10 @@
 <div class="fragment">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a aria-hidden="true" tabindex="-1"></a>sim_ht <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">200</span>, avg, std){</span>
-<span id="cb58-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">person =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
-<span id="cb58-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">ht =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> avg, <span class="at">sd =</span> std))</span>
-<span id="cb58-4"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a aria-hidden="true" tabindex="-1"></a>sim_ht <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">n =</span> <span class="dv">200</span>, avg, std){</span>
+<span id="cb60-2"><a aria-hidden="true" tabindex="-1"></a>  <span class="fu">tibble</span>(<span class="at">person =</span> <span class="dv">1</span><span class="sc">:</span>n,</span>
+<span id="cb60-3"><a aria-hidden="true" tabindex="-1"></a>         <span class="at">ht =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> n, <span class="at">mean =</span> avg, <span class="at">sd =</span> std))</span>
+<span id="cb60-4"><a aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -2023,9 +2066,9 @@
 <div class="fragment">
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sim_ht</span>(<span class="at">n =</span> <span class="dv">5</span>, </span>
-<span id="cb59-2"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">avg =</span> <span class="dv">66</span>, </span>
-<span id="cb59-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">std =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">sim_ht</span>(<span class="at">n =</span> <span class="dv">5</span>, </span>
+<span id="cb61-2"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">avg =</span> <span class="dv">66</span>, </span>
+<span id="cb61-3"><a aria-hidden="true" tabindex="-1"></a>        <span class="at">std =</span> <span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
   person    ht
@@ -2045,8 +2088,8 @@
 <h2>Simulate Multiple Datasets - Step 2</h2>
 <p>Create a set of parameters (mean and SD) for each population.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
-<span id="cb61-2"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a aria-hidden="true" tabindex="-1"></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
+<span id="cb63-2"><a aria-hidden="true" tabindex="-1"></a>            <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 2
   mean_ht std_ht
@@ -2067,13 +2110,13 @@
 <p>Simulate datasets with different mean and SD heights.</p>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63" data-code-line-numbers="4-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
-<span id="cb63-2"><a></a>         <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="cb63-3"><a></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb63-4"><a></a> <span class="fu">mutate</span>(<span class="at">ht_data =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(<span class="at">avg =</span> mean_ht, <span class="at">std =</span> std_ht), </span>
-<span id="cb63-5"><a></a>                       <span class="at">.f =</span> sim_ht</span>
-<span id="cb63-6"><a></a>                       )</span>
-<span id="cb63-7"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb65" data-code-line-numbers="4-7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
+<span id="cb65-2"><a></a>         <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="cb65-3"><a></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb65-4"><a></a> <span class="fu">mutate</span>(<span class="at">ht_data =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(<span class="at">avg =</span> mean_ht, <span class="at">std =</span> std_ht), </span>
+<span id="cb65-5"><a></a>                       <span class="at">.f =</span> sim_ht</span>
+<span id="cb65-6"><a></a>                       )</span>
+<span id="cb65-7"><a></a>        )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 3
   mean_ht std_ht ht_data           
@@ -2112,15 +2155,15 @@
 <p>Extract the contents of each list!</p>
 <div class="small">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
-<span id="cb65-2"><a></a>         <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>)</span>
-<span id="cb65-3"><a></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb65-4"><a></a> <span class="fu">mutate</span>(<span class="at">ht_data =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(<span class="at">avg =</span> mean_ht, <span class="at">std =</span> std_ht), </span>
-<span id="cb65-5"><a></a>                       <span class="at">.f =</span> sim_ht</span>
-<span id="cb65-6"><a></a>                       )</span>
-<span id="cb65-7"><a></a>        ) <span class="sc">|&gt;</span> </span>
-<span id="cb65-8"><a></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> ht_data) <span class="sc">|&gt;</span> </span>
-<span id="cb65-9"><a></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67" data-code-line-numbers="8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a><span class="fu">crossing</span>(<span class="at">mean_ht =</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">60</span>, <span class="at">to =</span> <span class="dv">78</span>, <span class="at">by =</span> <span class="dv">6</span>),</span>
+<span id="cb67-2"><a></a>         <span class="at">std_ht  =</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">6</span>)</span>
+<span id="cb67-3"><a></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb67-4"><a></a> <span class="fu">mutate</span>(<span class="at">ht_data =</span> <span class="fu">pmap</span>(<span class="at">.l =</span> <span class="fu">list</span>(<span class="at">avg =</span> mean_ht, <span class="at">std =</span> std_ht), </span>
+<span id="cb67-5"><a></a>                       <span class="at">.f =</span> sim_ht</span>
+<span id="cb67-6"><a></a>                       )</span>
+<span id="cb67-7"><a></a>        ) <span class="sc">|&gt;</span> </span>
+<span id="cb67-8"><a></a>  <span class="fu">unnest</span>(<span class="at">cols =</span> ht_data) <span class="sc">|&gt;</span> </span>
+<span id="cb67-9"><a></a>  <span class="fu">slice_sample</span>(<span class="at">n =</span> <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 <div class="columns">
@@ -2168,8 +2211,8 @@
 <li><code>nest()</code> subsets of the data (as tibbles) inside a tibble.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a>mtcars <span class="sc">|&gt;</span> </span>
-<span id="cb67-2"><a></a>  <span class="fu">nest</span>(<span class="at">.by =</span> cyl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>mtcars <span class="sc">|&gt;</span> </span>
+<span id="cb69-2"><a></a>  <span class="fu">nest</span>(<span class="at">.by =</span> cyl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 2
     cyl data              
@@ -2193,30 +2236,30 @@
 <div class="cell" data-layout-align="center">
 <details class="code-fold">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a>fake_ht_data <span class="sc">|&gt;</span> </span>
-<span id="cb69-2"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> mean_ht<span class="sc">:</span>std_ht, </span>
-<span id="cb69-3"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">as.character</span>(.x)), </span>
-<span id="cb69-4"><a></a>         <span class="at">mean_ht =</span> <span class="fu">fct_recode</span>(mean_ht, </span>
-<span id="cb69-5"><a></a>                              <span class="st">`</span><span class="at">Mean = 60</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"60"</span>, </span>
-<span id="cb69-6"><a></a>                              <span class="st">`</span><span class="at">Mean = 66</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"66"</span>, </span>
-<span id="cb69-7"><a></a>                              <span class="st">`</span><span class="at">Mean = 72</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"72"</span>, </span>
-<span id="cb69-8"><a></a>                              <span class="st">`</span><span class="at">Mean = 78</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"78"</span>), </span>
-<span id="cb69-9"><a></a>         <span class="at">std_ht =</span> <span class="fu">fct_recode</span>(std_ht, </span>
-<span id="cb69-10"><a></a>                             <span class="st">`</span><span class="at">Std = 3</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"3"</span>, </span>
-<span id="cb69-11"><a></a>                             <span class="st">`</span><span class="at">Std = 6</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"6"</span>)</span>
-<span id="cb69-12"><a></a>         ) <span class="sc">|&gt;</span> </span>
-<span id="cb69-13"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> ht)) <span class="sc">+</span></span>
-<span id="cb69-14"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
-<span id="cb69-15"><a></a>  <span class="fu">facet_grid</span>(std_ht <span class="sc">~</span> mean_ht) <span class="sc">+</span></span>
-<span id="cb69-16"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Height (in)"</span>,</span>
-<span id="cb69-17"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
-<span id="cb69-18"><a></a>       <span class="at">subtitle =</span> <span class="st">"Frequency of Observations"</span>,</span>
-<span id="cb69-19"><a></a>       <span class="at">title =</span> <span class="st">"Simulated Heights from Eight Different Populations"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a>fake_ht_data <span class="sc">|&gt;</span> </span>
+<span id="cb71-2"><a></a>  <span class="fu">mutate</span>(<span class="fu">across</span>(<span class="at">.cols =</span> mean_ht<span class="sc">:</span>std_ht, </span>
+<span id="cb71-3"><a></a>                <span class="at">.fns =</span> <span class="sc">~</span><span class="fu">as.character</span>(.x)), </span>
+<span id="cb71-4"><a></a>         <span class="at">mean_ht =</span> <span class="fu">fct_recode</span>(mean_ht, </span>
+<span id="cb71-5"><a></a>                              <span class="st">`</span><span class="at">Mean = 60</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"60"</span>, </span>
+<span id="cb71-6"><a></a>                              <span class="st">`</span><span class="at">Mean = 66</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"66"</span>, </span>
+<span id="cb71-7"><a></a>                              <span class="st">`</span><span class="at">Mean = 72</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"72"</span>, </span>
+<span id="cb71-8"><a></a>                              <span class="st">`</span><span class="at">Mean = 78</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"78"</span>), </span>
+<span id="cb71-9"><a></a>         <span class="at">std_ht =</span> <span class="fu">fct_recode</span>(std_ht, </span>
+<span id="cb71-10"><a></a>                             <span class="st">`</span><span class="at">Std = 3</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"3"</span>, </span>
+<span id="cb71-11"><a></a>                             <span class="st">`</span><span class="at">Std = 6</span><span class="st">`</span> <span class="ot">=</span> <span class="st">"6"</span>)</span>
+<span id="cb71-12"><a></a>         ) <span class="sc">|&gt;</span> </span>
+<span id="cb71-13"><a></a>  <span class="fu">ggplot</span>(<span class="at">mapping =</span> <span class="fu">aes</span>(<span class="at">x =</span> ht)) <span class="sc">+</span></span>
+<span id="cb71-14"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">color =</span> <span class="st">"white"</span>) <span class="sc">+</span></span>
+<span id="cb71-15"><a></a>  <span class="fu">facet_grid</span>(std_ht <span class="sc">~</span> mean_ht) <span class="sc">+</span></span>
+<span id="cb71-16"><a></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"Height (in)"</span>,</span>
+<span id="cb71-17"><a></a>       <span class="at">y =</span> <span class="st">""</span>,</span>
+<span id="cb71-18"><a></a>       <span class="at">subtitle =</span> <span class="st">"Frequency of Observations"</span>,</span>
+<span id="cb71-19"><a></a>       <span class="at">title =</span> <span class="st">"Simulated Heights from Eight Different Populations"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-47-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
+<p><img data-src="w8-simulation_files/figure-revealjs/unnamed-chunk-49-1.png" class="quarto-figure quarto-figure-center" width="768"></p>
 </figure>
 </div>
 </div>

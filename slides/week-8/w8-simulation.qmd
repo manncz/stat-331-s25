@@ -406,7 +406,7 @@ data |>
 #| out-width: 80%
 data |> 
   ggplot(aes(x = height)) +
-  geom_histogram(aes(y = ..density..),
+  geom_histogram(aes(y = after_stat(density)),
                  bins = 10, color = "white") +
   stat_function(fun = ~ dnorm(.x, mean = 67, sd = 3),
                 color = "steelblue", lwd = 2)
@@ -532,6 +532,530 @@ fake_data |>
 
 
 
+
+
+# Simulation - Random Samples from a Fixed Population
+
+## Draw a Random Sample
+
+Use `sample()` to take a random sample of values from a vector.
+
+```{r}
+my_vec <- c("dog", "cat", "bunny", "horse", "goat", "chicken")
+
+sample(x = my_vec, size = 3)
+
+set.seed(1)
+sample(x = my_vec, size = 5, replace = T)
+
+sample(c(0, 1), size = 10, 
+       prob = c(.8, .2), replace = T)
+```
+
+. . .
+
+:::callout-warning
+Whenever you take a sample, think about if you want to take a sample with or without **replacement**. The default is to sample without replacement.
+:::
+
+
+## Draw a Random Sample
+
+Use `slice_sample()` to take a random sample of observations (rows) from a dataset.
+
+```{r}
+#| eval: false
+fake_data |> 
+  slice_sample(n = 3) 
+```
+
+. . .
+
+```{r}
+#| echo: false
+fake_data |> 
+  slice_sample(n = 3) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 25)
+```
+
+. . .
+
+```{r}
+#| eval: false
+fake_data |> 
+  slice_sample(prop = .005) 
+```
+
+. . .
+
+```{r}
+#| echo: false
+fake_data |> 
+  slice_sample(prop = .005) |> 
+  knitr::kable() |> 
+  kableExtra::scroll_box(height = "200px") |> 
+  kableExtra::kable_styling(font_size = 25)
+```
+
+
+## Example: Birthday Simulation
+
+Suppose there is a group of 50 people.
+
++ Simulate the approximate probability that at least two people have the same birthday (same day of the year, not considering year of birth or leap years).
+
+
+## Example: Birthday Simulation
+
+Write a function to ...
+
++ ... simulate the birthdays of 50 random people (assuming it is equally likely to be born any day of the year).
++ ... count how many birthdays are shared.
++ ... return whether or not a shared birthday exists.
+
+. . .
+
+```{r}
+bDays <- function(n = 50){
+  bday_data <- tibble(person = 1:n,
+                      bday   = sample(1:365, size = n, replace = T))
+  
+  double_bdays <- bday_data |> 
+    count(bday) |> 
+    filter(n >= 2) |> 
+    nrow()
+  
+  return(double_bdays > 0)
+}
+```
+
+
+## Example: Birthday Simulation
+
+Use a `map()` function to repeat this simulation 1,000 times.
+
++ What proportion of these datasets contain at least two people with the same birthday?
+
+```{r}
+sim_results <- map_lgl(.x = 1:1000,
+                       .f = ~ bDays(n = 50))
+
+mean(sim_results)
+```
+
+
+
+## In-line Code
+
+We can automatically include code output in the written portion of a Quarto document using `` `r ` ``.
+
++ This ensures reproducibility when you have results from a random generation process.
+
+```{r}
+mean(sim_results)
+```
+
+Type this: ```r knitr::inline_expr("mean(sim_results)*100")`% of the datasets contain at least two people with the same birthday. ``
+
+To get this: `r mean(sim_results)*100`% of the datasets contain at least two people with the same birthday.
+
+
+
+# Communicating Findings from Statistical Computing
+
+## Remember the Data Science Process
+
+```{r}
+#| out-width: "90%"
+#| fig-align: center
+#| echo: false
+knitr::include_graphics("images/data-science-workflow.png")
+```
+
+. . .
+
+Communicating about your analysis and findings is a key element of statistical computing.
+
+## Describing data
+
+- Data source(s)
+- Observational unit / level (e.g. county and year)
+- Overview of what is included (e.g. demographic incormation and weekly median childcare costs for each county and year)
+- Years or geographies included (e.g. 2008-2018, CA only)
+
+## Describing data cleaning
+
+- What does the audience need to know about any **choices / decisions** that you make while cleaning the data?
+  - how did you handle missing data?
+  - how did you define variables?
+  - did you drop any observations? How many and why?
+  
+. . .  
+  
+- This doesn't include
+  - discussing specific file, variable, or function names
+  - data cleaning that has no impact on *interpretating* the resulting analysis
+    - e.g. changing the type of a variable
+  
+  
+## Describing data cleaning
+
+Which is clearer to a general audience?:
+
+
+> In this analysis, we use data from the US Department of Labor which includes a variety of measurements of a state's minimum wage for US states and territories by year. We additionally include information from a dataset provided by the Harvard Dataverse on state party leanings by year. Our analysis includes the years 1976 - 2020 and the 50 US states. 
+
+> In this analysis, we use `inner_join()` to join `us-party-data.csv` and `us-minimum-wage-data.csv` by `year` and `state`.
+  
+
+## Plot Design
+
+Stepping back...
+
+- What do you want to be very easy to see from your plot?
+- What aesthetics will help make comparisons?
+- You may want to try a couple of different aesthetic choices to see which is clearer
+- A clear plot will often look "boring" to you!
+
+
+## Plot Design
+
+```{r}
+#| layout-ncol: 2
+#| code-fold: true
+
+sec.cols <- c("#fdb462", "#b3de69")
+trip.cols <- c("#fb8072", "#80b1d3")
+
+
+fish <- fish |>
+  mutate(trip = str_c("Trip ", trip)) |>
+  mutate(across(.cols = c(trip, section, species),
+                .fns = ~ as.factor(.x)))
+
+fish |>
+  filter(if_any(.cols = everything(),
+                .fns = ~ is.na(.x))) |>
+  ggplot(aes(x = year,
+             fill = trip)) +
+  geom_bar() +
+  facet_grid(~ section) +
+  scale_fill_manual(values = trip.cols) +
+  labs(y = "",
+       subtitle = "Number of Missing Weight Values",
+       x = "Year",
+       fill = "Trip Number")
+
+
+
+fish |>
+  filter(if_any(.cols = everything(),
+                .fns = ~ is.na(.x))) |>
+  ggplot(aes(x = year,
+             fill = trip)) +
+  geom_bar(position = "dodge") +
+  facet_grid(~ section) +
+  scale_fill_manual(values = trip.cols) +
+  labs(y = "",
+       subtitle = "Number of Missing Weight Values",
+       x = "Year",
+       fill = "Trip Number") +
+  theme(legend.position = "bottom")
+
+
+fish |>
+  filter(if_any(.cols = everything(),
+                .fns = ~ is.na(.x))) |>
+  ggplot(aes(x = year,
+             fill = section)) +
+  geom_bar() +
+  facet_grid(~ trip) +
+  scale_fill_manual(values =  sec.cols) +
+  labs(y = "",
+       subtitle = "Number of Missing Weight Values",
+       x = "Year",
+       fill = "Section")
+
+
+
+fish |>
+  filter(if_any(.cols = everything(),
+                .fns = ~ is.na(.x))) |>
+  ggplot(aes(x = year,
+             fill = section)) +
+  geom_bar(position = "dodge") +
+  facet_grid(~ trip) +
+  scale_fill_manual(values = sec.cols) +
+  labs(y = "",
+       subtitle = "Number of Missing Weight Values",
+       x = "Year",
+       fill = "Section") +
+  theme(legend.position = "bottom")
+```
+
+## Plot Design
+
+
+```{r}
+#| layout-ncol: 2
+#| code-fold: true
+
+fish_sum <- fish |>
+  group_by(year, section, trip) |>
+  summarize(n_miss = sum(is.na(weight)))
+
+fish_sum |>
+  ggplot(aes(x = year,
+             y = n_miss,
+             color = trip)) +
+  geom_line(linewidth = 1) +
+  geom_point() +
+  facet_grid(cols = vars(section)) +
+  scale_color_manual(values = trip.cols) +
+  theme_bw() +
+  labs(y = "",
+       subtitle = "Number of Missing Weight Values",
+       x = "Year",
+       color = "Trip")
+
+
+fish_sum |>
+  ggplot(aes(x = year,
+             y = n_miss,
+             color = section)) +
+  geom_line(linewidth = 1) +
+  geom_point() +
+  facet_grid(cols = vars(trip)) +
+  scale_color_manual(values = sec.cols) +
+  theme_bw() +
+  labs(y = "",
+       subtitle = "Number of Missing Weight Values",
+       x = "Year",
+       color = "Section")
+
+
+fish_sum |>
+  ggplot(aes(x = year,
+             y = n_miss)) +
+  geom_line(linewidth = 1) +
+  geom_point() +
+  facet_grid(cols = vars(trip),
+             rows = vars(section)) +
+  theme_bw() +
+  labs(y = "",
+       subtitle = "Number of Missing Weight Values",
+       x = "Year")
+
+
+fish_sum |>
+  ggplot(aes(x = year,
+             y = n_miss,
+             color = section,
+             linetype = trip)) +
+  geom_line(linewidth = 1) +
+  geom_point() +
+  scale_color_manual(values = sec.cols) +
+  scale_linetype_manual(values = c(2, 1)) +
+  theme_bw() +
+  labs(y = "",
+       subtitle = "Number of Missing Weight Values",
+       x = "Year",
+       color = "Section",
+       linetype = "Trip")
+```
+
+## Table Design
+
+- What do you want to communicate / emphasize?
+- What should the rows and columns be?
+  - What are clear labels?
+  - Order of rows and columns?
+- Is there any grouping of rows and/or columns that would be helpful?
+
+
+## Report Ready Tables in `R`
+
+- We have just shown data tables directly, midly formatting for html using `kable()`
+
+. . .
+
+- We can make report-ready tables using `kableExtra` or `gt`!
+
+
+
+:::: {.columns}
+::: {.column width="50%"}
+![](images/kable.png){width=70%}
+:::
+::: {.column width="50%"}
+![](images/gt.svg){width=70%}
+:::
+:::
+
+
+## Yay reproducibility!
+
+- Formatting tables in code makes them completely reproducible
+- No need to update results manually in a table
+- No room for copy-paste error
+- Can integrate directly into a report / paper
+
+## Yay reproducibility!
+
+
+```{r}
+#| fig-align: center
+#| fig-cap: "A table for one of my papers, produced directly in R"
+#| echo: false
+#| out-width: 80%
+knitr::include_graphics("images/report_table.png")
+```
+
+
+
+## Nice tables with `kable()` and `kableExtra` functions
+
+
+::: {.columns}
+
+::: {.column width="70%"}
+- Great for tables that don't need to be *super* fancy but you want to clean up a bit
+- Default options look nice in html
+- Nice options for changing rows / columns individually
+- Get started with these resources ([1](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#Overview)) ([2](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html))
+:::
+
+::: {.column width="30%"}
+![](images/kable.png){width=70%,fig-align="center"}
+:::
+:::
+
+
+
+## Nice tables with the `gt` package
+
+::: {.columns}
+
+::: {.column width="70%"}
+- Fancy, report tables
+- Lots of formatting options for common variable types
+- Syntax less error-prone
+- Create labels directly with markdown!
+- [Get started](https://gt.rstudio.com/articles/gt.html)
+- [Full index of functions](https://gt.rstudio.com/reference/index.html)
+:::
+
+::: {.column width="30%"}
+![](images/gt.svg){width=70%,fig-align="center"}
+:::
+:::
+
+
+## Table Design Example
+
+"Raw" Table:
+
+```{r}
+#| code-fold: true
+
+tab_dat <- fish |> 
+  group_by(species) |> 
+  summarize(avg_weight = mean(weight, na.rm = T),
+            sd_weight = sd(weight, na.rm = T),
+            n = n()) 
+
+tab_dat |> 
+  kable()
+```
+## Table Design Example - `kableExtra`
+
+```{r}
+#| code-fold: true
+
+tab_dat |> 
+  arrange(desc(avg_weight)) |> 
+  kable(digits = c(0, 1, 1, 0),
+        col.names = c("Species", "Mean", "SD", "N. Samples"),
+        caption = "Summaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites.") |>
+  kable_classic(full_width = F,
+                bootstrap_options = "striped") |> 
+  add_header_above(c(" " = 1, "Weight (g)" = 2," " = 1),
+                   bold = TRUE) |> 
+  row_spec(row = 0, bold = T, align = "c")
+```
+## Table Design Example - `gt`
+
+
+```{r}
+#| code-fold: true
+
+tab_dat |> 
+  arrange(desc(avg_weight)) |> 
+  gt() |> 
+  tab_options(table.font.size = 32) |> 
+  tab_header(
+    title = "Summary of Fish Weights by Species",
+    subtitle = "all sampling years, trips, and sites"
+  ) |> 
+  tab_spanner(label = md("**Weight (g)**"), 
+              columns = c(avg_weight, sd_weight)) |> 
+  tab_style(style = cell_text(align = "center"),
+    locations = cells_column_labels()) |> 
+  cols_align(align = "left",
+             columns = species) |> 
+  fmt_number(columns = c(avg_weight, sd_weight),
+             decimals = 1) |> 
+  fmt_number(columns = n,
+             decimals = 0) |> 
+  cols_label(
+    "avg_weight" = md("**Mean**"),
+    "sd_weight" = md("**SD**"),
+    "n" = md("**N. Samples**"),
+    "species" = md("**Species**")
+  )
+```
+
+## PA 8.2: Instrument Con
+
+:::{columns}
+:::{.column width=50%}
+Work with statistical distributions to determine if an instrument salesman is lying.
+:::
+:::{.column width=50%}
+![](images/The_Music_Man_poster_1957.jpg){width=90%}
+:::
+:::
+
+## Lab 8: Searching for Efficiency
+
+Revisit previous lab problems through the lens of efficiency
+
+- Use functions from `map()` instead of `across()`
+- Reduce separate pipelines into a single pipeline
+- Make nice tables!
+
+
+## To do...
+  
+  
++ **Project Proposal + Data**
+  + Due Tomorrow, Friday 5/23 at 11:59pm.
+  
++ **Lab 8: Searching for Efficiency**
+  + Due **Tuesday** 5/27 at 11:59pm.
+  
++ Read **Chapter 9: Linear Regression**
+  + Check-in 9 due **Thursday** 5/29 before class.
+  
+  
+:::callout-note
+## See you in a week!
+Enjoy the long weekend! A reminder that we do not have class on Tuesday 5/27.
+:::
+
+# Simulating Multiple Datasets
 
 
 ## Simulate Multiple Datasets - Step 1
@@ -748,523 +1272,4 @@ fake_ht_data |>
 ```
 :::
 
-# Simulation - Random Samples from a Fixed Population
-
-## Draw a Random Sample
-
-Use `sample()` to take a random sample of values from a vector.
-
-```{r}
-my_vec <- c("dog", "cat", "bunny", "horse", "goat", "chicken")
-
-sample(x = my_vec, size = 3)
-
-set.seed(1)
-sample(x = my_vec, size = 5, replace = T)
-
-sample(c(0, 1), size = 10, 
-       prob = c(.8, .2), replace = T)
-```
-
-. . .
-
-:::callout-warning
-Whenever you take a sample, think about if you want to take a sample with or without **replacement**. The default is to sample without replacement.
-:::
-
-
-## Draw a Random Sample
-
-Use `slice_sample()` to take a random sample of observations (rows) from a dataset.
-
-```{r}
-#| eval: false
-fake_data |> 
-  slice_sample(n = 3) 
-```
-
-. . .
-
-```{r}
-#| echo: false
-fake_data |> 
-  slice_sample(n = 3) |> 
-  knitr::kable() |> 
-  kableExtra::scroll_box(height = "200px") |> 
-  kableExtra::kable_styling(font_size = 25)
-```
-
-. . .
-
-```{r}
-#| eval: false
-fake_data |> 
-  slice_sample(prop = .005) 
-```
-
-. . .
-
-```{r}
-#| echo: false
-fake_data |> 
-  slice_sample(prop = .005) |> 
-  knitr::kable() |> 
-  kableExtra::scroll_box(height = "200px") |> 
-  kableExtra::kable_styling(font_size = 25)
-```
-
-
-## Example: Birthday Simulation
-
-Suppose there is a group of 50 people.
-
-+ Simulate the approximate probability that at least two people have the same birthday (same day of the year, not considering year of birth or leap years).
-
-
-## Example: Birthday Simulation
-
-Write a function to ...
-
-+ ... simulate the birthdays of 50 random people (assuming it is equally likely to be born any day of the year).
-+ ... count how many birthdays are shared.
-+ ... return whether or not a shared birthday exists.
-
-. . .
-
-```{r}
-bDays <- function(n = 50){
-  bday_data <- tibble(person = 1:n,
-                      bday   = sample(1:365, size = n, replace = T))
-  
-  double_bdays <- bday_data |> 
-    count(bday) |> 
-    filter(n >= 2) |> 
-    nrow()
-  
-  return(double_bdays > 0)
-}
-```
-
-
-## Example: Birthday Simulation
-
-Use a `map()` function to repeat this simulation 1,000 times.
-
-+ What proportion of these datasets contain at least two people with the same birthday?
-
-```{r}
-sim_results <- map_lgl(.x = 1:1000,
-                       .f = ~ bDays(n = 50))
-
-mean(sim_results)
-```
-
-
-
-## In-line Code
-
-We can automatically include code output in the written portion of a Quarto document using `` `r ` ``.
-
-+ This ensures reproducibility when you have results from a random generation process.
-
-```{r}
-mean(sim_results)
-```
-
-Type this: ```r knitr::inline_expr("mean(sim_results)*100")`% of the datasets contain at least two people with the same birthday. ``
-
-To get this: `r mean(sim_results)*100`% of the datasets contain at least two people with the same birthday.
-
-
-
-# Communicating Findings from Statistical Computing
-
-## Remember the Data Science Process
-
-```{r}
-#| out-width: "90%"
-#| fig-align: center
-#| echo: false
-knitr::include_graphics("images/data-science-workflow.png")
-```
-
-. . .
-
-Communicating about your analysis and findings is a key element of statistical computing.
-
-## Describing data
-
-- Data source(s)
-- Observational unit / level (e.g. county and year)
-- Overview of what is included (e.g. demographic incormation and weekly median childcare costs for each county and year)
-- Years or geographies included (e.g. 2008-2018, CA only)
-
-## Describing data cleaning
-
-- What does the audience need to know about any **choices / decisions** that you make while cleaning the data?
-  - how did you handle missing data?
-  - how did you define variables?
-  - did you drop any observations? How many and why?
-  
-. . .  
-  
-- This doesn't include
-  - discussing specific file, variable, or function names
-  - data cleaning that has no impact on *interpretating* the resulting analysis
-    - e.g. changing the type of a variable
-  
-  
-## Describing data cleaning
-
-Which is clearer to a general audience?:
-
-
-> In this analysis, we use data from the US Department of Labor which includes a variety of measurements of a state's minimum wage for US states and territories by year. We additionally include information from a dataset provided by the Harvard Dataverse on state party leanings by year. Our analysis includes the years 1976 - 2020 and the 50 US states. 
-
-> In this analysis, we use `inner_join()` to join `us-party-data.csv` and `us-minimum-wage-data.csv` by `year` and `state`.
-  
-
-## Plot Design
-
-Stepping back...
-
-- What do you want to be very easy to see from your plot?
-- What aesthetics will help make comparisons?
-- You may want to try a couple of different aesthetic choices to see which is clearer
-- A clear plot will often look "boring" to you!
-
-
-<!-- ## Plot Design -->
-
-<!-- ```{r} -->
-<!-- #| layout-ncol: 2 -->
-<!-- #| code-fold: true -->
-
-<!-- sec.cols <- c("#fdb462", "#b3de69") -->
-<!-- trip.cols <- c("#fb8072", "#80b1d3") -->
-
-
-<!-- fish <- fish |>  -->
-<!--   mutate(trip = str_c("Trip ", trip)) |>  -->
-<!--   mutate(across(.cols = c(trip, section, species), -->
-<!--                 .fns = ~ as.factor(.x))) -->
-
-<!-- fish |>  -->
-<!--   filter(if_any(.cols = everything(), -->
-<!--                 .fns = ~ is.na(.x))) |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              fill = trip)) + -->
-<!--   geom_bar() + -->
-<!--   facet_grid(~ section) + -->
-<!--   scale_fill_manual(values = trip.cols) + -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        fill = "Trip Number") -->
-
-
-
-<!-- fish |>  -->
-<!--   filter(if_any(.cols = everything(), -->
-<!--                 .fns = ~ is.na(.x))) |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              fill = trip)) + -->
-<!--   geom_bar(position = "dodge") + -->
-<!--   facet_grid(~ section) + -->
-<!--   scale_fill_manual(values = trip.cols) + -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        fill = "Trip Number") + -->
-<!--   theme(legend.position = "bottom") -->
-
-
-<!-- fish |>  -->
-<!--   filter(if_any(.cols = everything(), -->
-<!--                 .fns = ~ is.na(.x))) |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              fill = section)) + -->
-<!--   geom_bar() + -->
-<!--   facet_grid(~ trip) + -->
-<!--   scale_fill_manual(values =  sec.cols) + -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        fill = "Section") -->
-
-
-
-<!-- fish |>  -->
-<!--   filter(if_any(.cols = everything(), -->
-<!--                 .fns = ~ is.na(.x))) |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              fill = section)) + -->
-<!--   geom_bar(position = "dodge") + -->
-<!--   facet_grid(~ trip) + -->
-<!--   scale_fill_manual(values = sec.cols) + -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        fill = "Section") + -->
-<!--   theme(legend.position = "bottom") -->
-<!-- ``` -->
-
-<!-- ## Plot Design -->
-
-
-<!-- ```{r} -->
-<!-- #| layout-ncol: 2 -->
-<!-- #| code-fold: true -->
-
-<!-- fish_sum <- fish |>  -->
-<!--   group_by(year, section, trip) |>  -->
-<!--   summarize(n_miss = sum(is.na(weight)))  -->
-
-<!-- fish_sum |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              y = n_miss, -->
-<!--              color = trip)) + -->
-<!--   geom_line(linewidth = 1) + -->
-<!--   geom_point() + -->
-<!--   facet_grid(cols = vars(section)) + -->
-<!--   scale_color_manual(values = trip.cols) +  -->
-<!--   theme_bw() +   -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        color = "Trip")  -->
-
-
-<!-- fish_sum |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              y = n_miss, -->
-<!--              color = section)) + -->
-<!--   geom_line(linewidth = 1) + -->
-<!--   geom_point() + -->
-<!--   facet_grid(cols = vars(trip)) + -->
-<!--   scale_color_manual(values = sec.cols) +  -->
-<!--   theme_bw() +   -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        color = "Section")  -->
-
-
-<!-- fish_sum |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              y = n_miss)) + -->
-<!--   geom_line(linewidth = 1) + -->
-<!--   geom_point() + -->
-<!--   facet_grid(cols = vars(trip), -->
-<!--              rows = vars(section)) + -->
-<!--   theme_bw() +   -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year")  -->
-
-
-<!-- fish_sum |>  -->
-<!--   ggplot(aes(x = year, -->
-<!--              y = n_miss, -->
-<!--              color = section, -->
-<!--              linetype = trip)) + -->
-<!--   geom_line(linewidth = 1) + -->
-<!--   geom_point() + -->
-<!--   scale_color_manual(values = sec.cols) +  -->
-<!--   scale_linetype_manual(values = c(2, 1)) + -->
-<!--   theme_bw() +   -->
-<!--   labs(y = "", -->
-<!--        subtitle = "Number of Missing Weight Values", -->
-<!--        x = "Year", -->
-<!--        color = "Section", -->
-<!--        linetype = "Trip")  -->
-<!-- ``` -->
-
-## Table Design
-
-- What do you want to communicate / emphasize?
-- What should the rows and columns be?
-  - What are clear labels?
-- Is there any grouping of rows and/or columns that would be helpful?
-
-
-## Report Ready Tables in `R`
-
-- We have just shown data tables directly, midly formatting for html using `kable()`
-
-. . .
-
-- We can make report-ready tables using `kableExtra` or `gt`!
-
-
-
-:::: {.columns}
-::: {.column width="50%"}
-![](images/kable.png){width=70%}
-:::
-::: {.column width="50%"}
-![](images/gt.svg){width=70%}
-:::
-:::
-
-
-## Yay reproducibility!
-
-- Formatting tables in code makes them completely reproducible
-- No need to update results manually in a table
-- No room for copy-paste error
-- Can integrate directly into a report / paper
-
-## Yay reproducibility!
-
-
-```{r}
-#| fig-align: center
-#| fig-cap: "A table for one of my papers, produced directly in R"
-#| echo: false
-#| out-width: 80%
-knitr::include_graphics("images/report_table.png")
-```
-
-
-
-## Nice tables with `kable()` and `kableExtra` functions
-
-
-::: {.columns}
-
-::: {.column width="70%"}
-- Great for tables that don't need to be *super* fancy but you want to clean up a bit
-- Default options look nice in html
-- Nice options for changing rows / columns individually
-- Get started with these resources ([1](https://haozhu233.github.io/kableExtra/awesome_table_in_html.html#Overview)) ([2](https://bookdown.org/yihui/rmarkdown-cookbook/kable.html))
-:::
-
-::: {.column width="30%"}
-![](images/kable.png){width=70%,fig-align="center"}
-:::
-:::
-
-
-
-## Nice tables with the `gt` package
-
-::: {.columns}
-
-::: {.column width="70%"}
-- Fancy, report tables
-- Lots of formatting options for common variable types
-- Syntax less error-prone
-- Create labels directly with markdown!
-- [Get started](https://gt.rstudio.com/articles/gt.html)
-- [Full index of functions](https://gt.rstudio.com/reference/index.html)
-:::
-
-::: {.column width="30%"}
-![](images/gt.svg){width=70%,fig-align="center"}
-:::
-:::
-
-
-## Table Design Example
-
-"Raw" Table:
-
-```{r}
-#| code-fold: true
-
-tab_dat <- fish |> 
-  group_by(species) |> 
-  summarize(avg_weight = mean(weight, na.rm = T),
-            sd_weight = sd(weight, na.rm = T),
-            n = n()) 
-
-tab_dat |> 
-  kable()
-```
-## Table Design Example - `kableExtra`
-
-```{r}
-#| code-fold: true
-
-tab_dat |> 
-  arrange(desc(avg_weight)) |> 
-  kable(digits = c(0, 1, 1, 0),
-        col.names = c("Species", "Mean", "SD", "N. Samples"),
-        caption = "Summaries of fish weights by species across all sampling years (between 1989 - 2006) trips and sites.") |>
-  kable_classic(full_width = F,
-                bootstrap_options = "striped") |> 
-  add_header_above(c(" " = 1, "Weight (g)" = 2," " = 1),
-                   bold = TRUE) |> 
-  row_spec(row = 0, bold = T, align = "c")
-```
-## Table Design Example - `gt`
-
-
-```{r}
-#| code-fold: true
-
-tab_dat |> 
-  arrange(desc(avg_weight)) |> 
-  gt() |> 
-  tab_options(table.font.size = 32) |> 
-  tab_header(
-    title = "Summary of Fish Weights by Species",
-    subtitle = "all sampling years, trips, and sites"
-  ) |> 
-  tab_spanner(label = md("**Weight (g)**"), 
-              columns = c(avg_weight, sd_weight)) |> 
-  tab_style(style = cell_text(align = "center"),
-    locations = cells_column_labels()) |> 
-  cols_align(align = "left",
-             columns = species) |> 
-  fmt_number(columns = c(avg_weight, sd_weight),
-             decimals = 1) |> 
-  fmt_number(columns = n,
-             decimals = 0) |> 
-  cols_label(
-    "avg_weight" = md("**Mean**"),
-    "sd_weight" = md("**SD**"),
-    "n" = md("**N. Samples**"),
-    "species" = md("**Species**")
-  )
-```
-
-## PA 8.2: Instrument Con
-
-:::{columns}
-:::{.column width=50%}
-Work with statistical distributions to determine if an instrument salesman is lying.
-:::
-:::{.column width=50%}
-![](images/The_Music_Man_poster_1957.jpg){width=90%}
-:::
-:::
-
-## Lab 8: Searching for Efficiency
-
-Revisit previous lab problems through the lens of efficiency
-
-- Use functions from `map()` instead of `across()`
-- Reduce separate pipelines into a single pipeline
-- Make nice tables!
-
-
-## To do...
-  
-  
-+ **Project Proposal + Data**
-  + Due Tomorrow, Friday 5/23 at 11:59pm.
-  
-+ **Lab 8: Searching for Efficiency**
-  + Due **Tuesday** 5/27 at 11:59pm.
-  
-+ Read **Chapter 9: Linear Regression**
-  + Check-in 9 due **Thursday** 5/29 before class.
-  
-  
-:::callout-note
-## See you in a week!
-Enjoy the long weekend! A reminder that we do not have class on Tuesday 5/27.
-:::
   
