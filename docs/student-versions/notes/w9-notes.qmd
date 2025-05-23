@@ -1,0 +1,260 @@
+---
+title: "Week 9 Starter Notes"
+format: 
+  html:  
+    embed-resources: true
+    code-tools: true
+    toc: true
+editor: source
+execute: 
+  echo: true
+  warning: false
+  message: false
+  error: true
+---
+
+
+```{r, setup}
+library(tidyverse)
+library(gt)
+library(gtsummary)
+library(knitr)
+library(broom)
+```
+
+NC births data loaded from `openintro` package:
+
+```{r}
+library(openintro)
+data(ncbirths)
+?ncbirths
+```
+```{r}
+ncbirths |> 
+ggplot(aes(x = weeks, y = weight)) +
+  geom_jitter() + 
+  labs(x = "Length of pregnancy (in weeks)",
+       y = "Birth weight of baby (in lbs)") +
+  theme(axis.title = element_text(size = 20),
+        axis.text = element_text(size = 18))
+```
+
+```{r}
+ncbirths |> 
+  ggplot(aes(x = gained, y = weight)) +
+  geom_jitter() + 
+  geom_smooth(method = "lm") 
+```
+
+```{r}
+ncbirth_lm <- lm(weight ~ gained, 
+                 data = ncbirths)
+```
+
+```{r}
+summary(ncbirth_lm)
+```
+
+```{r}
+tidy(ncbirth_lm)
+```
+
+```{r}
+ncbirth_lm$residuals[1:10]
+```
+```{r}
+resid(ncbirth_lm)[1:10]
+```
+
+```{r}
+augment(ncbirth_lm) |> 
+  head(10)
+```
+
+## SLR Assumptions
+
+```{r}
+ggplot(ncbirths, aes(x = weeks, y = weight)) +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm") +
+  labs(x = "Length of pregnancy (in weeks)", y = "Birth weight of baby (in lbs)")
+```
+
+```{r}
+ggplot(ncbirths, aes(x = weeks, y = weight)) +
+  scale_y_log10() +
+  scale_x_log10() +
+  geom_point(alpha = 0.5) +
+  geom_smooth(method = "lm") +
+  labs(x = "Length of pregnancy (in log weeks)", y = "Birth weight of baby (in log lbs)")
+```
+
+
+```{r}
+ncbirth_lm |> 
+  augment() |> 
+  ggplot(aes(x = .resid)) +
+  geom_histogram(aes(y = after_stat(density))) +
+  stat_function(fun = ~ dnorm(.x, mean = 0, sd = 1),
+                color = "steelblue", lwd = 1.5) +
+  xlab("Residuals") +
+  theme(aspect.ratio = 1)
+```
+
+```{r}
+ncbirth_lm |> 
+  augment() |> 
+  ggplot(aes(x = .fitted, y = .resid)) +
+  geom_point() +
+  geom_hline(yintercept = 0, linetype = "dashed", 
+             color = "red", lwd = 1.5)
+```
+
+## Assessing Fit
+
+```{r}
+ncbirth_lm |> 
+  glance()
+```
+
+
+
+## MLR
+
+```{r}
+gest_lm <- lm(weight ~ gained + weeks, data = ncbirths)
+summary(gest_lm)
+```
+
+```{r}
+gest_int_lm <- lm(weight ~ gained*weeks, data = ncbirths)
+summary(gest_int_lm)
+```
+
+## Regression Table
+
+```{r}
+ncbirth_lm |> 
+  tbl_regression(intercept = TRUE)
+```
+
+```{r}
+ncbirth_lm |> 
+  tidy() |> 
+  select(term, estimate, std.error, p.value) |> 
+  mutate(term = str_to_title(term),
+         term = str_remove_all(term, "[:punct:]")) |> 
+  kable(digits = 2, 
+        col.names = c("Variable",
+                      "Estimated Coefficient",
+                      "SE",
+                      "P-Value"))
+```
+
+## Regression on Data Subsets
+
+### `map2()`
+
+```{r}
+a <- c(1, 2, 4)
+b <- c(6, 5, 3)
+
+map2_chr(.x = a, 
+         .y = b,
+         ~ str_glue("The minimum of {.x} and {.y} is {min(.x, .y)}."))
+```
+
+## `nest()` / `unnest()`
+
+```{r}
+ncbirths |> 
+  nest(premie_dat = -premie)
+```
+
+```{r}
+ncbirths |> 
+  nest(ph_dat = -c(premie, habit))
+```
+
+```{r}
+ncbirths |> 
+  nest(premie_dat = -premie) |> 
+  unnest(premie_dat) |> 
+  head()
+```
+
+## Example
+
+```{r}
+ncbirths_clean <- ncbirths |> 
+    filter(!if_any(.cols = c(premie, habit, weight, gained),
+                 .fns = is.na))
+```
+
+Get model predictions fitting separate models on data subsets:
+
+```{r}
+mod_pred <- ncbirths_clean |> 
+  nest(premie_smoke_dat = -c(premie, habit)) |> 
+  mutate(mod = map(premie_smoke_dat, 
+                   ~ lm(weight ~ gained, data = .x)),
+         pred_weight = map2(.x = mod,
+                         .y = premie_smoke_dat, 
+                         .f = ~ predict(object = .x, data = .y))) |> 
+  select(-mod) |> 
+  unnest(cols = c(premie_smoke_dat, pred_weight)) |> 
+  select(premie, habit, weight, gained, pred_weight)
+```
+
+Get model coefficients, fitting separate models on data subsets:
+
+```{r}
+mod_coefs <- ncbirths_clean |> 
+  nest(premie_smoke_dat = -c(premie, habit)) |> 
+  mutate(mod = map(premie_smoke_dat, 
+                   ~ lm(weight ~ gained, data = .x)),
+         coefs = map(mod,
+                      ~ broom::tidy(.x))) |> 
+  select(premie, habit, coefs) |> 
+  unnest(cols = coefs)
+```
+Format table:
+
+```{r}
+mod_coefs |> 
+  mutate(term = fct_recode(.f = term,
+                            "Intercept" = "(Intercept)",
+                            "Mother Weight Gain (lb.)" = "gained"
+                            )) |> 
+  select(-std.error, -statistic) |> 
+  mutate(p.value = case_when(p.value < .0001 ~ "<.001",
+                             TRUE ~ as.character(round(p.value, 3)))) |> 
+  arrange(premie, habit, term) |> 
+  gt() |> 
+  fmt_number(estimate,
+             decimals = 3) |> 
+  tab_row_group(
+    label = md("**Premature + Smoker**"),
+    rows = premie == "premie" & habit == "smoker") |> 
+  tab_row_group(
+    label = md("**Premature + Non-Smoker**"),
+    rows = premie == "premie" & habit == "nonsmoker") |> 
+  tab_row_group(
+    label = md("**Full Term + Smoker**"),
+    rows = premie == "full term" & habit == "smoker") |> 
+  tab_row_group(
+    label = md("**Full Term + Non-Smoker**"),
+    rows = premie == "full term" & habit == "nonsmoker") |> 
+  cols_hide(c(premie, habit)) |> 
+  cols_align(align = "left",
+             columns = term) |> 
+  tab_style(
+    style = cell_fill(color = "gray85"),
+    locations = cells_row_groups()) |> 
+  cols_label(
+    "term" = md("**Model & Term**"),
+    "estimate" = md("**Est. Coef.**"),
+    "p.value" = md("**p-value**")
+  ) 
+```
+

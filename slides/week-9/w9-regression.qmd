@@ -775,7 +775,7 @@ ncbirths_clean |>
          coefs = map(mod,
                       ~ broom::tidy(.x))) |> 
   select(premie, habit, coefs) |> 
-  unnest()
+  unnest(cols = coefs)
 ```
 
 ### Format Table
@@ -791,7 +791,7 @@ ncbirths_clean |>
          coefs = map(mod,
                       ~ broom::tidy(.x))) |> 
   select(premie, habit, coefs) |> 
-  unnest() |> 
+  unnest(cols = coefs) |> 
   mutate(term = fct_recode(.f = term,
                             "Intercept" = "(Intercept)",
                             "Mother Weight Gain (lb.)" = "gained"
@@ -848,6 +848,6 @@ ncbirths_clean |>
 + **Lab 9: Simulation Exploration**
   + Due Monday 6/2 at 11:59pm.
   
-+ Read **Chapter 10: Cross Validation**
++ Read **Chapter 10: Model Validation + Graphics Extensions**
   + Check-in 10 due Tuesday 6/3 before class.
   
