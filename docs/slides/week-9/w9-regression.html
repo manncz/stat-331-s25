@@ -215,56 +215,70 @@
 <li>PC4: Linear Regression</li>
 </ul></li>
 </ul>
-<!--## Data Intro + Cleaning: Feedback
-
-+ Describe **how** the data were collected, if provided.
-  + E.g., how do we know the average life expectancy?
-+ Only explain data cleaning that impacts the interpretation of your analyses. Explain **why** you performed your chosen cleaning steps.
-+ This assignment is to assess **your learning in this course**. You are expected to use functions and code techniques from this class.
-  + You will lose points for using non-tidyverse functions to do tasks that we have discussed in this class!
-
-
-
-## Data Intro + Cleaning: Feedback
-
-**Code:**
-
-+ All code should be hidden -- use `echo: false` or `code-fold: true` in your YAML.
-+ Don't name the `R` functions you have used ("We used `str_detect` to...".).
-  + Instead, describe what you did in plain English.
-+ Don't use dataset or variable names in the text.
-  + Say "We removed missing values from per capita GDP." rather than "We removed `NA` from `per_cap_gdp`."
-+ Don't print out the head of the data!
-
-
-## Data Intro + Cleaning: Feedback
-
-**Citations:**
-
-+ Cite your sources, including:
-  + data sources.
-  + description of your variables that is not general knowledge.
-  + any other outside resources.
-+ You should have **both** in-line citations and a *References* section at the end of your report.
-  + I will include better instructions for this on Canvas soon
-
-
-## Data Intro + Cleaning: Feedback
-
-**Style + Organization:**
-
-+ Define all acronyms, especially any that are related to the variables of interest.
-+ Everything should be in paragraph form -- **no** bullets or numbered lists.
-+ Read through your paper from top to bottom to make sure the organization makes sense.
-  + At what point might someone get confused?
-
-## Data Intro + Cleaning: Feedback
-
-**Overall Style**
-
-- You are writing a report on an interesting topic / analysis that is **supported** by your code
-- I want to hear about your analysis, not the code! I will read through your code itself.
--->
+</section>
+<section id="data-intro-cleaning-feedback" class="slide level2">
+<h2>Data Intro + Cleaning: Feedback</h2>
+<p><strong>General:</strong></p>
+<ul>
+<li>Overall these are looking good!
+<ul>
+<li>Lots of interesting topics to explore.</li>
+<li>Nice insights and descriptions of data sources</li>
+</ul></li>
+<li>Before the final submission, read all instructions carefully
+<ul>
+<li><a href="https://canvas.calpoly.edu/courses/150526/pages/project-details">Project Details</a></li>
+<li><a href="https://canvas.calpoly.edu/courses/150526/pages/project-report-writing-guide">Project Report Writing Guide</a></li>
+<li><a href="https://manncz.github.io/stat-331-s25/project/proj-citations.html">Citations Guide</a></li>
+</ul></li>
+</ul>
+</section>
+<section id="data-intro-cleaning-feedback-1" class="slide level2">
+<h2>Data Intro + Cleaning: Feedback</h2>
+<p><strong>Code:</strong></p>
+<ul>
+<li>All code should be hidden – use <code>echo: false</code> or <code>code-fold: true</code> in your YAML.</li>
+<li>Don’t name the <code>R</code> functions you have used (“We used <code>str_detect</code> to…”.).
+<ul>
+<li>Instead, describe what you did in plain English.</li>
+</ul></li>
+<li>Don’t use dataset or variable names in the text.
+<ul>
+<li>Say “We removed missing values from per capita GDP.” rather than “We removed <code>NA</code> from <code>per_cap_gdp</code>.”</li>
+</ul></li>
+<li>Don’t print out the head of the data!</li>
+</ul>
+</section>
+<section id="data-intro-cleaning-feedback-2" class="slide level2">
+<h2>Data Intro + Cleaning: Feedback</h2>
+<p><strong>Citations:</strong></p>
+<ul>
+<li>Cite your sources, including:
+<ul>
+<li>data sources.</li>
+<li>description of your variables that is not general knowledge.</li>
+<li>any other outside resources.</li>
+</ul></li>
+<li>You should have <strong>both</strong> in-line citations and a <em>References</em> section at the end of your report.
+<ul>
+<li>see intstuctions on Canvas</li>
+</ul></li>
+</ul>
+</section>
+<section id="data-intro-cleaning-feedback-3" class="slide level2">
+<h2>Data Intro + Cleaning: Feedback</h2>
+<p><strong>Style + Organization:</strong></p>
+<ul>
+<li>Define all acronyms, especially any that are related to the variables of interest.</li>
+<li>Everything should be in paragraph form
+<ul>
+<li>no bullets or numbered lists unless there is a very good reason</li>
+</ul></li>
+<li>Read through your paper from top to bottom to make sure the organization makes sense.
+<ul>
+<li>At what point might someone get confused?</li>
+</ul></li>
+</ul>
 </section>
 <section>
 <section id="simple-linear-regression" class="title-slide slide level1 center">
@@ -312,135 +326,60 @@
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:right;"> 39 </td>
-   <td style="text-align:right;"> 45 </td>
-   <td style="text-align:left;"> mature mom </td>
-   <td style="text-align:right;"> 40 </td>
-   <td style="text-align:left;"> full term </td>
-   <td style="text-align:right;"> 15 </td>
-   <td style="text-align:left;"> married </td>
-   <td style="text-align:right;"> 32 </td>
-   <td style="text-align:right;"> 6.94 </td>
-   <td style="text-align:left;"> not low </td>
-   <td style="text-align:left;"> female </td>
-   <td style="text-align:left;"> nonsmoker </td>
-   <td style="text-align:left;"> white </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> 23 </td>
+   <td style="text-align:right;"> 37 </td>
+   <td style="text-align:right;"> 33 </td>
    <td style="text-align:left;"> younger mom </td>
    <td style="text-align:right;"> 38 </td>
    <td style="text-align:left;"> full term </td>
-   <td style="text-align:right;"> 12 </td>
-   <td style="text-align:left;"> not married </td>
-   <td style="text-align:right;"> 35 </td>
-   <td style="text-align:right;"> 8.38 </td>
-   <td style="text-align:left;"> not low </td>
-   <td style="text-align:left;"> female </td>
-   <td style="text-align:left;"> nonsmoker </td>
-   <td style="text-align:left;"> white </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 31 </td>
-   <td style="text-align:right;"> 35 </td>
-   <td style="text-align:left;"> mature mom </td>
-   <td style="text-align:right;"> 36 </td>
-   <td style="text-align:left;"> premie </td>
-   <td style="text-align:right;"> 12 </td>
+   <td style="text-align:right;"> 13 </td>
    <td style="text-align:left;"> married </td>
-   <td style="text-align:right;"> 24 </td>
-   <td style="text-align:right;"> 8.69 </td>
-   <td style="text-align:left;"> not low </td>
-   <td style="text-align:left;"> male </td>
-   <td style="text-align:left;"> nonsmoker </td>
-   <td style="text-align:left;"> white </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 21 </td>
-   <td style="text-align:right;"> 24 </td>
-   <td style="text-align:left;"> younger mom </td>
-   <td style="text-align:right;"> 40 </td>
-   <td style="text-align:left;"> full term </td>
    <td style="text-align:right;"> 18 </td>
-   <td style="text-align:left;"> married </td>
-   <td style="text-align:right;"> 35 </td>
-   <td style="text-align:right;"> 7.13 </td>
-   <td style="text-align:left;"> not low </td>
-   <td style="text-align:left;"> female </td>
-   <td style="text-align:left;"> nonsmoker </td>
-   <td style="text-align:left;"> white </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:left;"> younger mom </td>
-   <td style="text-align:right;"> 40 </td>
-   <td style="text-align:left;"> full term </td>
-   <td style="text-align:right;"> 17 </td>
-   <td style="text-align:left;"> not married </td>
-   <td style="text-align:right;"> 39 </td>
-   <td style="text-align:right;"> 9.06 </td>
+   <td style="text-align:right;"> 8.63 </td>
    <td style="text-align:left;"> not low </td>
    <td style="text-align:left;"> male </td>
-   <td style="text-align:left;"> smoker </td>
-   <td style="text-align:left;"> white </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 22 </td>
-   <td style="text-align:right;"> 21 </td>
-   <td style="text-align:left;"> younger mom </td>
-   <td style="text-align:right;"> 38 </td>
-   <td style="text-align:left;"> full term </td>
-   <td style="text-align:right;"> 14 </td>
-   <td style="text-align:left;"> not married </td>
-   <td style="text-align:right;"> 36 </td>
-   <td style="text-align:right;"> 6.38 </td>
-   <td style="text-align:left;"> not low </td>
-   <td style="text-align:left;"> female </td>
    <td style="text-align:left;"> nonsmoker </td>
    <td style="text-align:left;"> white </td>
   </tr>
   <tr>
    <td style="text-align:right;"> 33 </td>
-   <td style="text-align:right;"> 29 </td>
+   <td style="text-align:right;"> 28 </td>
    <td style="text-align:left;"> younger mom </td>
-   <td style="text-align:right;"> 39 </td>
-   <td style="text-align:left;"> full term </td>
-   <td style="text-align:right;"> 11 </td>
-   <td style="text-align:left;"> not married </td>
-   <td style="text-align:right;"> 45 </td>
-   <td style="text-align:right;"> 8.69 </td>
-   <td style="text-align:left;"> not low </td>
-   <td style="text-align:left;"> male </td>
-   <td style="text-align:left;"> smoker </td>
-   <td style="text-align:left;"> white </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 25 </td>
-   <td style="text-align:left;"> younger mom </td>
-   <td style="text-align:right;"> 39 </td>
+   <td style="text-align:right;"> 41 </td>
    <td style="text-align:left;"> full term </td>
    <td style="text-align:right;"> 10 </td>
    <td style="text-align:left;"> married </td>
-   <td style="text-align:right;"> 29 </td>
-   <td style="text-align:right;"> 7.63 </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 8.13 </td>
    <td style="text-align:left;"> not low </td>
-   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> nonsmoker </td>
+   <td style="text-align:left;"> not white </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:right;"> 31 </td>
+   <td style="text-align:left;"> younger mom </td>
+   <td style="text-align:right;"> 37 </td>
+   <td style="text-align:left;"> full term </td>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:left;"> married </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 10.38 </td>
+   <td style="text-align:left;"> not low </td>
+   <td style="text-align:left;"> male </td>
    <td style="text-align:left;"> nonsmoker </td>
    <td style="text-align:left;"> white </td>
   </tr>
   <tr>
-   <td style="text-align:right;"> NA </td>
-   <td style="text-align:right;"> 17 </td>
+   <td style="text-align:right;"> 38 </td>
+   <td style="text-align:right;"> 33 </td>
    <td style="text-align:left;"> younger mom </td>
    <td style="text-align:right;"> 39 </td>
    <td style="text-align:left;"> full term </td>
    <td style="text-align:right;"> 12 </td>
-   <td style="text-align:left;"> not married </td>
-   <td style="text-align:right;"> 50 </td>
-   <td style="text-align:right;"> 7.50 </td>
+   <td style="text-align:left;"> married </td>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 9.25 </td>
    <td style="text-align:left;"> not low </td>
    <td style="text-align:left;"> male </td>
    <td style="text-align:left;"> nonsmoker </td>
@@ -448,18 +387,93 @@
   </tr>
   <tr>
    <td style="text-align:right;"> 38 </td>
-   <td style="text-align:right;"> 37 </td>
-   <td style="text-align:left;"> mature mom </td>
-   <td style="text-align:right;"> 35 </td>
-   <td style="text-align:left;"> premie </td>
-   <td style="text-align:right;"> 20 </td>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:left;"> younger mom </td>
+   <td style="text-align:right;"> 38 </td>
+   <td style="text-align:left;"> full term </td>
+   <td style="text-align:right;"> 14 </td>
    <td style="text-align:left;"> married </td>
-   <td style="text-align:right;"> 37 </td>
-   <td style="text-align:right;"> 5.94 </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 5.88 </td>
    <td style="text-align:left;"> not low </td>
    <td style="text-align:left;"> male </td>
    <td style="text-align:left;"> nonsmoker </td>
    <td style="text-align:left;"> white </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 24 </td>
+   <td style="text-align:left;"> younger mom </td>
+   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:left;"> full term </td>
+   <td style="text-align:right;"> 15 </td>
+   <td style="text-align:left;"> married </td>
+   <td style="text-align:right;"> 29 </td>
+   <td style="text-align:right;"> 8.50 </td>
+   <td style="text-align:left;"> not low </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> nonsmoker </td>
+   <td style="text-align:left;"> white </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 31 </td>
+   <td style="text-align:right;"> 26 </td>
+   <td style="text-align:left;"> younger mom </td>
+   <td style="text-align:right;"> 36 </td>
+   <td style="text-align:left;"> premie </td>
+   <td style="text-align:right;"> 18 </td>
+   <td style="text-align:left;"> married </td>
+   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:right;"> 8.00 </td>
+   <td style="text-align:left;"> not low </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> nonsmoker </td>
+   <td style="text-align:left;"> white </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 33 </td>
+   <td style="text-align:right;"> 34 </td>
+   <td style="text-align:left;"> younger mom </td>
+   <td style="text-align:right;"> 40 </td>
+   <td style="text-align:left;"> full term </td>
+   <td style="text-align:right;"> 13 </td>
+   <td style="text-align:left;"> married </td>
+   <td style="text-align:right;"> 25 </td>
+   <td style="text-align:right;"> 8.25 </td>
+   <td style="text-align:left;"> not low </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> nonsmoker </td>
+   <td style="text-align:left;"> white </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> NA </td>
+   <td style="text-align:right;"> 19 </td>
+   <td style="text-align:left;"> younger mom </td>
+   <td style="text-align:right;"> 39 </td>
+   <td style="text-align:left;"> full term </td>
+   <td style="text-align:right;"> 9 </td>
+   <td style="text-align:left;"> not married </td>
+   <td style="text-align:right;"> 35 </td>
+   <td style="text-align:right;"> 7.75 </td>
+   <td style="text-align:left;"> not low </td>
+   <td style="text-align:left;"> male </td>
+   <td style="text-align:left;"> nonsmoker </td>
+   <td style="text-align:left;"> not white </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 32 </td>
+   <td style="text-align:right;"> 27 </td>
+   <td style="text-align:left;"> younger mom </td>
+   <td style="text-align:right;"> 43 </td>
+   <td style="text-align:left;"> full term </td>
+   <td style="text-align:right;"> 11 </td>
+   <td style="text-align:left;"> married </td>
+   <td style="text-align:right;"> 30 </td>
+   <td style="text-align:right;"> 6.56 </td>
+   <td style="text-align:left;"> not low </td>
+   <td style="text-align:left;"> female </td>
+   <td style="text-align:left;"> nonsmoker </td>
+   <td style="text-align:left;"> not white </td>
   </tr>
 </tbody>
 </table></div>
@@ -1065,7 +1079,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
 <li>Discuss the slope:
 <ul>
 <li>Think about units that are helpful for interpretation!</li>
-<li>e.g.: We estimate that for every <strong>10</strong> pounds gained during pregnancy by the birthing parent the baby will weight around <strong>2.5 ounces</strong> more, on average.</li>
+<li>e.g.: We estimate that for every <strong>10</strong> pounds gained during pregnancy by the birthing parent the baby will weigh around <strong>2.5 ounces</strong> more, on average.</li>
 </ul></li>
 </ul>
 </section>
@@ -1078,23 +1092,23 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>ncbirth_lm <span class="sc">|&gt;</span> </span>
 <span id="cb18-2"><a></a>  <span class="fu">tbl_regression</span>(<span class="at">intercept =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
-<div id="byrmtymnyb" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#byrmtymnyb table {
+<div id="hybawitupn" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#hybawitupn table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#byrmtymnyb thead, #byrmtymnyb tbody, #byrmtymnyb tfoot, #byrmtymnyb tr, #byrmtymnyb td, #byrmtymnyb th {
+#hybawitupn thead, #hybawitupn tbody, #hybawitupn tfoot, #hybawitupn tr, #hybawitupn td, #hybawitupn th {
   border-style: none;
 }
 
-#byrmtymnyb p {
+#hybawitupn p {
   margin: 0;
   padding: 0;
 }
 
-#byrmtymnyb .gt_table {
+#hybawitupn .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1120,12 +1134,12 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_caption {
+#hybawitupn .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#byrmtymnyb .gt_title {
+#hybawitupn .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1137,7 +1151,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-bottom-width: 0;
 }
 
-#byrmtymnyb .gt_subtitle {
+#hybawitupn .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1149,7 +1163,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-top-width: 0;
 }
 
-#byrmtymnyb .gt_heading {
+#hybawitupn .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1161,13 +1175,13 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_bottom_border {
+#hybawitupn .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_col_headings {
+#hybawitupn .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1182,7 +1196,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_col_heading {
+#hybawitupn .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1202,7 +1216,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   overflow-x: hidden;
 }
 
-#byrmtymnyb .gt_column_spanner_outer {
+#hybawitupn .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1214,15 +1228,15 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 4px;
 }
 
-#byrmtymnyb .gt_column_spanner_outer:first-child {
+#hybawitupn .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#byrmtymnyb .gt_column_spanner_outer:last-child {
+#hybawitupn .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#byrmtymnyb .gt_column_spanner {
+#hybawitupn .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -1234,11 +1248,11 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   width: 100%;
 }
 
-#byrmtymnyb .gt_spanner_row {
+#hybawitupn .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#byrmtymnyb .gt_group_heading {
+#hybawitupn .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1264,7 +1278,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   text-align: left;
 }
 
-#byrmtymnyb .gt_empty_group_heading {
+#hybawitupn .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -1279,15 +1293,15 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   vertical-align: middle;
 }
 
-#byrmtymnyb .gt_from_md > :first-child {
+#hybawitupn .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#byrmtymnyb .gt_from_md > :last-child {
+#hybawitupn .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#byrmtymnyb .gt_row {
+#hybawitupn .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1306,7 +1320,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   overflow-x: hidden;
 }
 
-#byrmtymnyb .gt_stub {
+#hybawitupn .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1319,7 +1333,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#byrmtymnyb .gt_stub_row_group {
+#hybawitupn .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1333,15 +1347,15 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   vertical-align: top;
 }
 
-#byrmtymnyb .gt_row_group_first td {
+#hybawitupn .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#byrmtymnyb .gt_row_group_first th {
+#hybawitupn .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#byrmtymnyb .gt_summary_row {
+#hybawitupn .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1351,16 +1365,16 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#byrmtymnyb .gt_first_summary_row {
+#hybawitupn .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_first_summary_row.thick {
+#hybawitupn .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#byrmtymnyb .gt_last_summary_row {
+#hybawitupn .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1370,7 +1384,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_grand_summary_row {
+#hybawitupn .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -1380,7 +1394,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#byrmtymnyb .gt_first_grand_summary_row {
+#hybawitupn .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1390,7 +1404,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_last_grand_summary_row_top {
+#hybawitupn .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -1400,11 +1414,11 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_striped {
+#hybawitupn .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#byrmtymnyb .gt_table_body {
+#hybawitupn .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1413,7 +1427,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_footnotes {
+#hybawitupn .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1427,7 +1441,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_footnote {
+#hybawitupn .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -1436,7 +1450,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#byrmtymnyb .gt_sourcenotes {
+#hybawitupn .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -1450,7 +1464,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#byrmtymnyb .gt_sourcenote {
+#hybawitupn .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -1458,72 +1472,72 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#byrmtymnyb .gt_left {
+#hybawitupn .gt_left {
   text-align: left;
 }
 
-#byrmtymnyb .gt_center {
+#hybawitupn .gt_center {
   text-align: center;
 }
 
-#byrmtymnyb .gt_right {
+#hybawitupn .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#byrmtymnyb .gt_font_normal {
+#hybawitupn .gt_font_normal {
   font-weight: normal;
 }
 
-#byrmtymnyb .gt_font_bold {
+#hybawitupn .gt_font_bold {
   font-weight: bold;
 }
 
-#byrmtymnyb .gt_font_italic {
+#hybawitupn .gt_font_italic {
   font-style: italic;
 }
 
-#byrmtymnyb .gt_super {
+#hybawitupn .gt_super {
   font-size: 65%;
 }
 
-#byrmtymnyb .gt_footnote_marks {
+#hybawitupn .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#byrmtymnyb .gt_asterisk {
+#hybawitupn .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#byrmtymnyb .gt_indent_1 {
+#hybawitupn .gt_indent_1 {
   text-indent: 5px;
 }
 
-#byrmtymnyb .gt_indent_2 {
+#hybawitupn .gt_indent_2 {
   text-indent: 10px;
 }
 
-#byrmtymnyb .gt_indent_3 {
+#hybawitupn .gt_indent_3 {
   text-indent: 15px;
 }
 
-#byrmtymnyb .gt_indent_4 {
+#hybawitupn .gt_indent_4 {
   text-indent: 20px;
 }
 
-#byrmtymnyb .gt_indent_5 {
+#hybawitupn .gt_indent_5 {
   text-indent: 25px;
 }
 
-#byrmtymnyb .katex-display {
+#hybawitupn .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#byrmtymnyb div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#hybawitupn div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1557,7 +1571,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
 </div>
 </div>
 <ul>
-<li>This is a nice build-it function from and extension of the <code>gt</code> package (<code>gtsummary</code>)</li>
+<li>This is a nice build-it function from an extension of the <code>gt</code> package (<code>gtsummary</code>)</li>
 </ul>
 </section></section>
 <section>
@@ -1598,7 +1612,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
 </section>
 <section id="nest" class="slide level2">
 <h2><code>nest()</code></h2>
-<p><strong>Nest</strong> subsets of the data (as tibbles) inside a tibble.</p>
+<p><strong>Nest</strong> subsets the data (as tibbles) inside a tibble.</p>
 <ul>
 <li>Specify the column(s) to create subsets on.</li>
 </ul>
@@ -1846,23 +1860,23 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
 <span id="cb39-42"><a></a>  ) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-<div id="awaujtsmfx" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#awaujtsmfx table {
+<div id="urdcwflftj" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#urdcwflftj table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#awaujtsmfx thead, #awaujtsmfx tbody, #awaujtsmfx tfoot, #awaujtsmfx tr, #awaujtsmfx td, #awaujtsmfx th {
+#urdcwflftj thead, #urdcwflftj tbody, #urdcwflftj tfoot, #urdcwflftj tr, #urdcwflftj td, #urdcwflftj th {
   border-style: none;
 }
 
-#awaujtsmfx p {
+#urdcwflftj p {
   margin: 0;
   padding: 0;
 }
 
-#awaujtsmfx .gt_table {
+#urdcwflftj .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -1888,12 +1902,12 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-left-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_caption {
+#urdcwflftj .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#awaujtsmfx .gt_title {
+#urdcwflftj .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -1905,7 +1919,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-bottom-width: 0;
 }
 
-#awaujtsmfx .gt_subtitle {
+#urdcwflftj .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -1917,7 +1931,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-top-width: 0;
 }
 
-#awaujtsmfx .gt_heading {
+#urdcwflftj .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -1929,13 +1943,13 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_bottom_border {
+#urdcwflftj .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_col_headings {
+#urdcwflftj .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -1950,7 +1964,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_col_heading {
+#urdcwflftj .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1970,7 +1984,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   overflow-x: hidden;
 }
 
-#awaujtsmfx .gt_column_spanner_outer {
+#urdcwflftj .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -1982,15 +1996,15 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 4px;
 }
 
-#awaujtsmfx .gt_column_spanner_outer:first-child {
+#urdcwflftj .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#awaujtsmfx .gt_column_spanner_outer:last-child {
+#urdcwflftj .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#awaujtsmfx .gt_column_spanner {
+#urdcwflftj .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -2002,11 +2016,11 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   width: 100%;
 }
 
-#awaujtsmfx .gt_spanner_row {
+#urdcwflftj .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#awaujtsmfx .gt_group_heading {
+#urdcwflftj .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2032,7 +2046,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   text-align: left;
 }
 
-#awaujtsmfx .gt_empty_group_heading {
+#urdcwflftj .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -2047,15 +2061,15 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   vertical-align: middle;
 }
 
-#awaujtsmfx .gt_from_md > :first-child {
+#urdcwflftj .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#awaujtsmfx .gt_from_md > :last-child {
+#urdcwflftj .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#awaujtsmfx .gt_row {
+#urdcwflftj .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2074,7 +2088,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   overflow-x: hidden;
 }
 
-#awaujtsmfx .gt_stub {
+#urdcwflftj .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2087,7 +2101,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#awaujtsmfx .gt_stub_row_group {
+#urdcwflftj .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -2101,15 +2115,15 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   vertical-align: top;
 }
 
-#awaujtsmfx .gt_row_group_first td {
+#urdcwflftj .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#awaujtsmfx .gt_row_group_first th {
+#urdcwflftj .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#awaujtsmfx .gt_summary_row {
+#urdcwflftj .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2119,16 +2133,16 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#awaujtsmfx .gt_first_summary_row {
+#urdcwflftj .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_first_summary_row.thick {
+#urdcwflftj .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#awaujtsmfx .gt_last_summary_row {
+#urdcwflftj .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2138,7 +2152,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_grand_summary_row {
+#urdcwflftj .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -2148,7 +2162,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#awaujtsmfx .gt_first_grand_summary_row {
+#urdcwflftj .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2158,7 +2172,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-top-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_last_grand_summary_row_top {
+#urdcwflftj .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -2168,11 +2182,11 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_striped {
+#urdcwflftj .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#awaujtsmfx .gt_table_body {
+#urdcwflftj .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -2181,7 +2195,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-bottom-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_footnotes {
+#urdcwflftj .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2195,7 +2209,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_footnote {
+#urdcwflftj .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -2204,7 +2218,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#awaujtsmfx .gt_sourcenotes {
+#urdcwflftj .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -2218,7 +2232,7 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   border-right-color: #D3D3D3;
 }
 
-#awaujtsmfx .gt_sourcenote {
+#urdcwflftj .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -2226,72 +2240,72 @@ F-statistic: 23.64 on 1 and 971 DF,  p-value: 1.353e-06</code></pre>
   padding-right: 5px;
 }
 
-#awaujtsmfx .gt_left {
+#urdcwflftj .gt_left {
   text-align: left;
 }
 
-#awaujtsmfx .gt_center {
+#urdcwflftj .gt_center {
   text-align: center;
 }
 
-#awaujtsmfx .gt_right {
+#urdcwflftj .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#awaujtsmfx .gt_font_normal {
+#urdcwflftj .gt_font_normal {
   font-weight: normal;
 }
 
-#awaujtsmfx .gt_font_bold {
+#urdcwflftj .gt_font_bold {
   font-weight: bold;
 }
 
-#awaujtsmfx .gt_font_italic {
+#urdcwflftj .gt_font_italic {
   font-style: italic;
 }
 
-#awaujtsmfx .gt_super {
+#urdcwflftj .gt_super {
   font-size: 65%;
 }
 
-#awaujtsmfx .gt_footnote_marks {
+#urdcwflftj .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#awaujtsmfx .gt_asterisk {
+#urdcwflftj .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#awaujtsmfx .gt_indent_1 {
+#urdcwflftj .gt_indent_1 {
   text-indent: 5px;
 }
 
-#awaujtsmfx .gt_indent_2 {
+#urdcwflftj .gt_indent_2 {
   text-indent: 10px;
 }
 
-#awaujtsmfx .gt_indent_3 {
+#urdcwflftj .gt_indent_3 {
   text-indent: 15px;
 }
 
-#awaujtsmfx .gt_indent_4 {
+#urdcwflftj .gt_indent_4 {
   text-indent: 20px;
 }
 
-#awaujtsmfx .gt_indent_5 {
+#urdcwflftj .gt_indent_5 {
   text-indent: 25px;
 }
 
-#awaujtsmfx .katex-display {
+#urdcwflftj .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#awaujtsmfx div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#urdcwflftj div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>

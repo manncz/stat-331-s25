@@ -32,15 +32,16 @@ Today we will...
   + PA 9: Mystery Animal
   + PC4: Linear Regression
 
-<!--## Data Intro + Cleaning: Feedback
+## Data Intro + Cleaning: Feedback
+**General:**
 
-+ Describe **how** the data were collected, if provided.
-  + E.g., how do we know the average life expectancy?
-+ Only explain data cleaning that impacts the interpretation of your analyses. Explain **why** you performed your chosen cleaning steps.
-+ This assignment is to assess **your learning in this course**. You are expected to use functions and code techniques from this class.
-  + You will lose points for using non-tidyverse functions to do tasks that we have discussed in this class!
-
-
++ Overall these are looking good!
+  + Lots of interesting topics to explore.
+  + Nice insights and descriptions of data sources
++ Before the final submission, read all instructions carefully
+  + [Project Details](https://canvas.calpoly.edu/courses/150526/pages/project-details)
+  + [Project Report Writing Guide](https://canvas.calpoly.edu/courses/150526/pages/project-report-writing-guide)
+  + [Citations Guide](https://manncz.github.io/stat-331-s25/project/proj-citations.html)
 
 ## Data Intro + Cleaning: Feedback
 
@@ -63,7 +64,7 @@ Today we will...
   + description of your variables that is not general knowledge.
   + any other outside resources.
 + You should have **both** in-line citations and a *References* section at the end of your report.
-  + I will include better instructions for this on Canvas soon
+  + see intstuctions on Canvas
 
 
 ## Data Intro + Cleaning: Feedback
@@ -71,17 +72,12 @@ Today we will...
 **Style + Organization:**
 
 + Define all acronyms, especially any that are related to the variables of interest.
-+ Everything should be in paragraph form -- **no** bullets or numbered lists.
++ Everything should be in paragraph form
+  + no bullets or numbered lists unless there is a very good reason
 + Read through your paper from top to bottom to make sure the organization makes sense.
   + At what point might someone get confused?
 
-## Data Intro + Cleaning: Feedback
 
-**Overall Style**
-
-- You are writing a report on an interesting topic / analysis that is **supported** by your code
-- I want to hear about your analysis, not the code! I will read through your code itself.
--->
 
 # Simple Linear Regression 
 
@@ -606,7 +602,7 @@ where $\hat{y}_i$ is the estimated birth weight in pounds and $x_i$ is the weigh
 
 - Discuss the slope:
   - Think about units that are helpful for interpretation!
-  - e.g.: We estimate that for every **10** pounds gained during pregnancy by the birthing parent the baby will weight around **2.5 ounces** more, on average.
+  - e.g.: We estimate that for every **10** pounds gained during pregnancy by the birthing parent the baby will weigh around **2.5 ounces** more, on average.
   
 ## Regression Table
 
@@ -616,7 +612,7 @@ where $\hat{y}_i$ is the estimated birth weight in pounds and $x_i$ is the weigh
 ncbirth_lm |> 
   tbl_regression(intercept = TRUE)
 ```
-- This is a nice build-it function from and extension of the `gt` package (`gtsummary`)
+- This is a nice build-it function from an extension of the `gt` package (`gtsummary`)
 
 # Putting it together: Fitting SLR On Subsets
 
@@ -652,7 +648,7 @@ map2_chr(.x = a,
 
 ## `nest()`
 
-**Nest** subsets of the data (as tibbles) inside a tibble.
+**Nest** subsets the data (as tibbles) inside a tibble.
 
 + Specify the column(s) to create subsets on.
 
