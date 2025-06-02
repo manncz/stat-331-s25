@@ -5913,5 +5913,397 @@
     "title": "Linear Regression",
     "section": "Data Intro + Cleaning: Feedback",
     "text": "Data Intro + Cleaning: Feedback\nStyle + Organization:\n\nDefine all acronyms, especially any that are related to the variables of interest.\nEverything should be in paragraph form\n\nno bullets or numbered lists unless there is a very good reason\n\nRead through your paper from top to bottom to make sure the organization makes sense.\n\nAt what point might someone get confused?"
+  },
+  {
+    "objectID": "labs/lab7/grading.html",
+    "href": "labs/lab7/grading.html",
+    "title": "Lab 7: Functions + Fish",
+    "section": "",
+    "text": "The goal of this lab is learn more about exploring missing data and writing modular code.\nlibrary(tidyverse)\nlibrary(knitr)\nlibrary(rlang)\nfish &lt;- read.csv(\"BlackfootFish.csv\")"
+  },
+  {
+    "objectID": "labs/lab7/grading.html#the-data",
+    "href": "labs/lab7/grading.html#the-data",
+    "title": "Lab 7: Functions + Fish",
+    "section": "The Data",
+    "text": "The Data\nThis lab’s data concerns mark-recapture data on four species of trout from the Blackfoot River outside of Helena, Montana. These four species are rainbow trout (RBT), westslope cutthroat trout (WCT), bull trout, and brown trout.\nMark-recapture is a common method used by ecologists to estimate a population’s size when it is impossible to conduct a census (count every animal). This method works by tagging animals with a tracking device so that scientists can track their movement and presence."
+  },
+  {
+    "objectID": "labs/lab7/grading.html#data-exploration",
+    "href": "labs/lab7/grading.html#data-exploration",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Data Exploration",
+    "text": "Data Exploration\nThe measurements of each captured fish were taken by a biologist on a raft in the river. The lack of a laboratory setting opens the door to the possibility of measurement errors.\n1. Let’s look for missing values in the dataset. Output ONE table that answers BOTH of the following questions:\n\nHow many observations have missing values?\nWhat variable(s) have missing values present?\n\n\nfish |&gt;\n  mutate(is_missing = if_any(everything(), is.na)) |&gt;\n  summarize(\n    n_missing = sum(is_missing),\n    across(\n      trip:species,\n      ~ sum(is.na(.x))\n    )\n  )|&gt;\n  rename(\"Missing Observations\" = n_missing)|&gt;\n  kable()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nMissing Observations\ntrip\nmark\nlength\nweight\nyear\nsection\nspecies\n\n\n\n\n1796\n0\n0\n0\n1796\n0\n0\n0\n\n\n\n\n\n2. Create ONE thoughtful visualization that explores the frequency of missing values across the different years, sections, and trips.\n\nnagraph &lt;- fish |&gt;\n  mutate(is_missing = if_any(everything(), is.na)) |&gt;\n  select(year, section, trip, is_missing)|&gt;\n  group_by(year, section, trip)|&gt;\n  summarise(across(where(is.logical), ~ sum(. == TRUE, na.rm = TRUE)))\n\nggplot(data = nagraph, mapping = aes(x = year, y = is_missing, color = section))+\n  geom_line()+\n  facet_wrap(~ trip)+\n  labs(title = \"Missing Values Graph\", subtitle = \"Number of Missing Values by Trip\", y = \"\", color = \"Group Leader\")"
+  },
+  {
+    "objectID": "labs/lab7/grading.html#rescaling-the-data",
+    "href": "labs/lab7/grading.html#rescaling-the-data",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Rescaling the Data",
+    "text": "Rescaling the Data\nIf I wanted to rescale every quantitative variable in my dataset so that they only have values between 0 and 1, I could use this formula:\n\n\\[y_{scaled} = \\frac{y_i - min\\{y_1, y_2,..., y_n\\}}{max\\{y_1, y_2,..., y_n\\}\n- min\\{y_1, y_2,..., y_n\\}}\\]\n\nI might write the following R code to carry out the rescaling procedure for the length and weight columns of the BlackfootFish data:\n\nfish &lt;- fish |&gt; \n  mutate(length = (length - min(length, na.rm = TRUE)) / \n           (max(length, na.rm = TRUE) - min(length, na.rm = TRUE)), \n         weight = (weight - min(weight, na.rm = TRUE)) / \n           (max(weight, na.rm = TRUE) - min(length, na.rm = TRUE)))\n\nThis process of duplicating an action multiple times can make it difficult to understand the intent of the process. Additionally, it can make it very difficult to spot mistakes.\n3. What is the mistake I made in the above rescaling code?\nIn the weight rescaling calculation the minimum length was subtracted instead of the min weight.\n4. Transform the repeated process above into a rescale_01() function. Your function should…\n\n… take a single vector as input.\n… return the rescaled vector.\n\n\nrescale_01 &lt;- function(vec) {\n  stopifnot(is.numeric(vec), length(vec) &gt;= 1)\n  rescaled &lt;- (vec - min(vec, na.rm = TRUE)) / \n              (max(vec, na.rm = TRUE) - min(vec, na.rm = TRUE))\n  return(rescaled) \n  }\n\n5. Let’s incorporate some input validation into your function. Modify your previous code so that the function stops if …\n\n… the input vector is not numeric.\n… the length of the input vector is not greater than 1."
+  },
+  {
+    "objectID": "labs/lab7/grading.html#test-your-function",
+    "href": "labs/lab7/grading.html#test-your-function",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Test Your Function",
+    "text": "Test Your Function\n6. Run the code below to test your function. Verify that the maximum of your rescaled vector is 1 and the minimum is 0!\n\nx &lt;- c(1:25, NA)\n\nrescaled &lt;- rescale_01(x)\nmin(rescaled, na.rm = TRUE)\n\n[1] 0\n\nmax(rescaled, na.rm = TRUE)\n\n[1] 1\n\n\n7. The code below makes a histogram of the original values of length. Add a plot of the rescaled values of length. Output your plots side-by-side, so the reader can confirm the only aspect that has changed is the scale.\n\nSet the y-axis limits for both plots to go from 0 to 4000 to allow for direct comparison across plots.\nPay attention to binwidth! Adjust it so that the plots are comparable (they may not look exactly the same).\nLook for a Quarto code-chunk option to put the plots side-by-side.\n\nfish |&gt;  \n  ggplot(aes(x = length)) + \n  geom_histogram(binwidth = 45) +\n  labs(x = \"Original Values of Fish Length (mm)\") +\n  scale_y_continuous(limits = c(0,4000))\n# Code for Q7 plot.\nfish |&gt;\n  mutate(length = rescale_01(length))|&gt;\n  ggplot(aes(x = length)) + \n  geom_histogram(binwidth = .045) +\n  labs(x = \"Rescaled Values of Fish Length (Scale 0-1)\") +\n  scale_y_continuous(limits = c(0,4000))"
+  },
+  {
+    "objectID": "labs/lab7/grading.html#use-variables-within-a-dataset",
+    "href": "labs/lab7/grading.html#use-variables-within-a-dataset",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Use Variables within a Dataset",
+    "text": "Use Variables within a Dataset\nSuppose you would like for your rescale() function to perform operations on a variable within a dataset. Ideally, your function would take in a dataframe and a variable name as inputs and return a dataframe where the variable has been rescaled.\n8. Create a rescale_column() function that accepts two arguments: (1) a dataframe and (2) the name(s) of the variable(s) to be rescaled. The body of the function should call the original rescale_01() function you wrote previously. Your solution MUST use one of the rlang options from class.\n\nrescale_column &lt;- function(data, colnamez)\n  {\n  data &lt;- data |&gt;\n    mutate({{ colnamez }} := rescale_01({{ colnamez }}))\n  return(data)\n  \n}\n\n9. Use your rescale_column() function to rescale both the length and weight columns.\n\nfish |&gt;\n  mutate(across(length:weight, rescale_01)) |&gt;\n  head() |&gt;\n  kable()\n\n\n\n\ntrip\nmark\nlength\nweight\nyear\nsection\nspecies\n\n\n\n\n1\n0\n0.2804124\n0.0374171\n1989\nJohnsrud\nRBT\n\n\n1\n0\n0.2804124\n0.0406243\n1989\nJohnsrud\nRBT\n\n\n1\n0\n0.2773196\n0.0523840\n1989\nJohnsrud\nRBT\n\n\n1\n0\n0.3154639\n0.0587984\n1989\nJohnsrud\nRBT\n\n\n1\n0\n0.3051546\n0.0641437\n1989\nJohnsrud\nRBT\n\n\n1\n0\n0.3577320\n0.0812487\n1989\nJohnsrud\nRBT"
+  },
+  {
+    "objectID": "labs/lab7/grading.html#condition-index",
+    "href": "labs/lab7/grading.html#condition-index",
+    "title": "Lab 7: Functions + Fish",
+    "section": "Condition Index",
+    "text": "Condition Index\nA frequently used measurement for fish health is a condition index (Wikipedia). The following equation can be used to calculate the approximate condition index of a fish:\n\\[\\text{condition index} = \\frac{weight}{length^3} \\times 100\\]\n10. When calculating the condition index, fish length must be in centimeters and fish weight must be in grams. The weight data for the Blackfoot River fish were collected in grams, but the length data were collected in millimeters. Transform the length column to the correct units.\n\nfish &lt;- fish |&gt;\n  mutate(length = length * 0.1)\n\n11. Collecting data of this sort can be very messy! Write a function that will replace unlikely length and weight measurements with NA. Your function should accept at least three inputs:\n\na vector of measurements,\nthe minimum reasonable value,\nthe maximum reasonable value.\n\n\ndemessy &lt;- function(data, column, miny, maxy) {\n  data |&gt;\n    filter({{ column }} &gt;= miny & {{ column }} &lt;= maxy)}\n\n12. After consulting the Montana Record Table for the 4 species of trout included in these data, I have conjectured that it is unlikely to have measurements for fish below 5 cm and above 80 cm in length or below 10 g and above 4,000 g in weight. Use your function to modify the length and weight columns of the fish dataset based on my cutoffs.\n\nfish &lt;- fish|&gt;\ndemessy(length, 5, 80) |&gt;\ndemessy(weight, 10, 4000) \n\nfish |&gt;\n  head() |&gt;\n  kable()\n\n\n\n\ntrip\nmark\nlength\nweight\nyear\nsection\nspecies\n\n\n\n\n1\n0\n28.8\n175\n1989\nJohnsrud\nRBT\n\n\n1\n0\n28.8\n190\n1989\nJohnsrud\nRBT\n\n\n1\n0\n28.5\n245\n1989\nJohnsrud\nRBT\n\n\n1\n0\n32.2\n275\n1989\nJohnsrud\nRBT\n\n\n1\n0\n31.2\n300\n1989\nJohnsrud\nRBT\n\n\n1\n0\n36.3\n380\n1989\nJohnsrud\nRBT\n\n\n\n\n\n13. Write a function to calculate the condition index of a fish, given inputs of weight and length. Show that it works on your modified fish dataset\n\ncondition_index &lt;- function(data, length, weight){\n  data|&gt;\n  mutate (conditionx = (({{ length }})  / ({{ weight }}) ^ 3) * 100)\n  \n}\n\n\ncondition_index(fish, length, weight) |&gt;\n  head()|&gt;\n  kable()\n\n\n\n\ntrip\nmark\nlength\nweight\nyear\nsection\nspecies\nconditionx\n\n\n\n\n1\n0\n28.8\n175\n1989\nJohnsrud\nRBT\n0.0005374\n\n\n1\n0\n28.8\n190\n1989\nJohnsrud\nRBT\n0.0004199\n\n\n1\n0\n28.5\n245\n1989\nJohnsrud\nRBT\n0.0001938\n\n\n1\n0\n32.2\n275\n1989\nJohnsrud\nRBT\n0.0001548\n\n\n1\n0\n31.2\n300\n1989\nJohnsrud\nRBT\n0.0001156\n\n\n1\n0\n36.3\n380\n1989\nJohnsrud\nRBT\n0.0000662"
+  },
+  {
+    "objectID": "practice-activities/pa10.html",
+    "href": "practice-activities/pa10.html",
+    "title": "PA 10: Map it!",
+    "section": "",
+    "text": "Download starter .qmd template\nDownload secret_map.csv data"
+  },
+  {
+    "objectID": "practice-activities/pa10.html#data",
+    "href": "practice-activities/pa10.html#data",
+    "title": "PA 10: Map it!",
+    "section": "1 Data",
+    "text": "1 Data\nsecret_map.csv contains a secret code for each county in the U.S. In this PA, you will figure out the code and then create a map in ggplot showing what you found.\n\n# read in and save secret_map.csv"
+  },
+  {
+    "objectID": "practice-activities/pa10.html#simple-map-of-us-counties",
+    "href": "practice-activities/pa10.html#simple-map-of-us-counties",
+    "title": "PA 10: Map it!",
+    "section": "2 Simple Map of US Counties",
+    "text": "2 Simple Map of US Counties\nLet’s start by just creating a map of all of the counties in the continuous US.\n\nUse the map_data() function to load a dataframe of US counties with their latitudes and longitudes. Save this data as county_map.\n\n\n# code for Q1\n\n\nUsing ggplot(), generate a map of the US counties. Have the fill color for each county be white and the outline color be a dark grey. Use cartesian coordinates.\n\n\n\n\n\n\n\nTip\n\n\n\nYou will want to reference 10.3 from our “textbook” and the resources linked there to complete this task!\n\n\n\n# code for Q2-3\n\n\nIf you haven’t already, remove any axes labels and normal plot grid lines. You can remove the default grey ggplot background as well if you prefer!\nWhile cartesian coordinates are typical, they are actually somewhat visually misleading since the globe is a sphere. A recommended system for showing the US is the “Albers Equal Area Conic Projection”. Copy and paste your code from Q2-3 and change the coordinate system to this projection (or any conic projection).\n\n\n\n\n\n\n\nHint\n\n\n\nCheck out the documentation for coord_map() and the help file for map_data().\n\n\n\n# code for Q4\n\nGreat! Now you should have a nice simple map of all of the US counties. Let’s add the information from the secret_map.csv data."
+  },
+  {
+    "objectID": "practice-activities/pa10.html#canvas-submission",
+    "href": "practice-activities/pa10.html#canvas-submission",
+    "title": "PA 10: Map it!",
+    "section": "4 Canvas Submission:",
+    "text": "4 Canvas Submission:\n\nSubmit a screenshot of your final plot. What flag is shown?"
+  },
+  {
+    "objectID": "practice-activities/pa10.html#color-that-map",
+    "href": "practice-activities/pa10.html#color-that-map",
+    "title": "PA 10: Map it!",
+    "section": "3 Color that Map",
+    "text": "3 Color that Map\n\nFirst of all, word is just in that there are a couple of typos in the secret_code column:\n\n\nAny “g” should be replaced with “F” (case matters!)\nThe secret code should start with the hashtag character (#)\n\n\n# code for Q5\n\n\nIt turns out that the secret code gives you the colors that should be used in your final map. Save a vector called map_colors with the unique values of the secret_code column (after the cleaning in Q5).\n\n\n# code for Q6\n\n\n\n\n\n\n\nHint\n\n\n\nThere should be 3 colors.\n\n\n\nNow map it! Fill the counties as indicated in the secret map data with the appropriate color (as given by secret_code) in your US map.\n\n\n# code for Q7-8\n\n\n\n\n\n\n\nHint\n\n\n\nYou will need to join the secret_code information onto the county_map data.\nRemember the secret_code column gives both the variable to fill by in the plot and the color to use. You will want to use the map_colors vector to use the right colors.\n\n\n\nFinally, also change the outline color for counties to the appropriate color for the county based on the secret_code. Submit a screenshot of this final plot in your Canvas submission!"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#tuesday-june-3",
+    "href": "slides/week-10/w10-checks.html#tuesday-june-3",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Tuesday, June 3",
+    "text": "Tuesday, June 3\nToday we will…\n\nLinear Regression: Feedack\nNew Material:\n\nModel Validation\nGraphics with Geospacial Data (Maps)\n\nWork Time\n\nPA 10: Map it!\nPC5: Final Report"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#linear-regression-project-feedback",
+    "href": "slides/week-10/w10-checks.html#linear-regression-project-feedback",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Linear Regression: Project Feedback",
+    "text": "Linear Regression: Project Feedback\n\n\nThey are coming along very nicely!\nFinal submission should be a polished report.\n\nIntegrate writing and analysis.\n\nThink about the readability of the numbers you are presenting.\n\nDo you need 6 decimal places?\nIs scientific notation easily understood?\n\nInclude units on your plots including any transformations\nDon’t display the raw R lm() output"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#linear-regression-project-feedback-1",
+    "href": "slides/week-10/w10-checks.html#linear-regression-project-feedback-1",
+    "title": "Predictive Checks + Final Project",
+    "section": "Linear Regression: Project Feedback",
+    "text": "Linear Regression: Project Feedback\n\n\nWhen you present a plot or a table, discuss in words what it is showing and what you want the reader to take away from it.\n\nMake sure it is very clear what one point is on any plot\nDiscuss the table of variances as part of your discussion of model fit.\n\nThink about the readability of the numbers you are presenting.\n\nDo you need 6 decimal places?\nIs scientific notation easily understood?\n\nInclude units on your plots!\nDon’t display the raw R lm() output"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#pa-10-map-it",
+    "href": "slides/week-10/w10-checks.html#pa-10-map-it",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "PA 10: Map it!",
+    "text": "PA 10: Map it!\nYou are implementing CV and animated plots in your project, so we’ll take this time to practice making nice maps with ggplot!\n\n\n\nThis image has nothing to do with this PA, it used to and is to fun to remove."
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#to-do",
+    "href": "slides/week-10/w10-checks.html#to-do",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "To do…",
+    "text": "To do…\n\nPA 10: Map it!\n\nDue Thursday, 6/5 before class.\n\nFinal Project Report\n\nDue Friday, 6/6 at 11:59pm.\n\nCourse Evaluation\n\nCloses Friday, 6/6 at 11:59pm."
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#how-do-we-tell-if-a-model-is-good",
+    "href": "slides/week-10/w10-checks.html#how-do-we-tell-if-a-model-is-good",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "How do we tell if a model is “good”?",
+    "text": "How do we tell if a model is “good”?\n\nThere are lots of different metrics to measure model performance!\n\nYour choice depends on the type of model and what is “good” for the context\nDo you only care about predictions? Or more about inference?\n\n\n\nRegressionClassification (binary outcomes)\n\n\n\nSee week 9 slides\nRMSE\n\\(R^2\\)\n\n\n\n\noverall prediction success or failure rate\nsensitivity: true positive rate\nspecificity: true negative rater\nmany more…"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#section",
+    "href": "slides/week-10/w10-checks.html#section",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "",
+    "text": "Plotting geospacial data can uncover patterns that would be hard to determine through other analyses …\n\n\n\nhttps://hpcf-files.umbc.edu/research/papers/REU2015Team2.pdf"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#overfitting-underfitting",
+    "href": "slides/week-10/w10-checks.html#overfitting-underfitting",
+    "title": "Predictive Checks + Final Project",
+    "section": "Overfitting / Underfitting",
+    "text": "Overfitting / Underfitting\n\n\n\nFrom Introduction to Statistical Modeling"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#overfitting-and-underfitting",
+    "href": "slides/week-10/w10-checks.html#overfitting-and-underfitting",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Overfitting and Underfitting",
+    "text": "Overfitting and Underfitting\n\n\n\nFrom Introduction to Statistical Modeling"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#train-test",
+    "href": "slides/week-10/w10-checks.html#train-test",
+    "title": "Predictive Checks + Final Project",
+    "section": "Train / Test",
+    "text": "Train / Test"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#k-fold-cross-validation",
+    "href": "slides/week-10/w10-checks.html#k-fold-cross-validation",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation",
+    "text": "\\(k\\)-fold Cross Validation\n\n\nIterates over \\(k\\) train / test splits\nUses all of the data\nEspecially useful for model development\n\ncovariate selection\nspecifying parameters for ML models"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#k-fold-cross-validation-process",
+    "href": "slides/week-10/w10-checks.html#k-fold-cross-validation-process",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process",
+    "text": "\\(k\\)-fold Cross Validation Process\n\nChoose a value for \\(k\\)\nSplit data into \\(k\\) folds\nFor fold \\(i\\) from 1 … \\(k\\):\n\nFit model on observations not in fold \\(i\\)\nGenerate predictions from this model for the observations in fold \\(i\\)\nCalculate and save performance metric of interest\n\nAverage the \\(k\\) performance metrics across folds"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#k-fold-cross-validation-process-1",
+    "href": "slides/week-10/w10-checks.html#k-fold-cross-validation-process-1",
+    "title": "Predictive Checks + Final Project",
+    "section": "\\(k\\)-fold Cross Validation Process",
+    "text": "\\(k\\)-fold Cross Validation Process\n\n\n\nVisualization of 5-fold CV by Joshua Ebner"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#k-fold-cross-validation-process---details",
+    "href": "slides/week-10/w10-checks.html#k-fold-cross-validation-process---details",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process - details",
+    "text": "\\(k\\)-fold Cross Validation Process - details\n0.Choose a value for \\(k\\)\n\nTypical values are 5 or 10\n\n\nk &lt;- 5"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#k-fold-cross-validation-process---details-1",
+    "href": "slides/week-10/w10-checks.html#k-fold-cross-validation-process---details-1",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process - details",
+    "text": "\\(k\\)-fold Cross Validation Process - details\n\nSplit data into \\(k\\) folds\n\n\nShould be approximately the same size\nYou could just split the data into \\(k\\) groups based on their row number\n\n\nn &lt;- nrow(ncbirths) \n\nncbirths &lt;- ncbirths |&gt; \n  mutate(fold_cut = cut(1:n, breaks = k, labels = FALSE))\n\n\nMore typical to assign groups randomly\n\n\nncbirths &lt;- ncbirths |&gt; \n  mutate(fold_random = sample(rep_len(1:k, length.out = n),\n                       size = n))"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#k-fold-cross-validation-process---details-2",
+    "href": "slides/week-10/w10-checks.html#k-fold-cross-validation-process---details-2",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process - details",
+    "text": "\\(k\\)-fold Cross Validation Process - details\n\n\n\nVisualization of 5-fold CV by Joshua Ebner"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#big-question-for-model-validation",
+    "href": "slides/week-10/w10-checks.html#big-question-for-model-validation",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Big Question for Model Validation",
+    "text": "Big Question for Model Validation\nEven if a model is “good” according to our metric with the data we have, how do we know if it will still work well with other data?"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#k-fold-cross-validation-process---details-3",
+    "href": "slides/week-10/w10-checks.html#k-fold-cross-validation-process---details-3",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process - details",
+    "text": "\\(k\\)-fold Cross Validation Process - details\nWe implemented 5-fold CV for the model of birth weight on gestation weeks with the NC births data…\n\ncv_r2\n\n[1] 0.3474592 0.4493777 0.5702561 0.4499808 0.4715257\n\n\n\n\nAverage the \\(k\\) performance metrics across folds\n\n\nmean(cv_r2)\n\n[1] 0.4577199\n\n\n\n\nThe \\(R^2\\) from fitting the model on the full dataset was 0.449, so it appears the model is neither overfitting or underfitting."
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#arcgis-doesnt-get-to-have-all-the-fun",
+    "href": "slides/week-10/w10-checks.html#arcgis-doesnt-get-to-have-all-the-fun",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "ArcGIS doesn’t get to have all the fun",
+    "text": "ArcGIS doesn’t get to have all the fun\n\nThere are now many tools in R to plot geospacial data\nmaps / mapdata + geom_polygon()\n\npros: simplest way to map the US counties / states and world countries\ncons: doesn’t include all geospacial boundaries you might want!\n\nsf\n\npros: work with any common spacial object (like those used in ArcGIS) plus well maintained and up to date!\ncons: a bit more of a learning curve to use"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#plotting-geospacial-data-can-uncover-patterns-that-would-be-hard-to-determine-through-other-analyses",
+    "href": "slides/week-10/w10-checks.html#plotting-geospacial-data-can-uncover-patterns-that-would-be-hard-to-determine-through-other-analyses",
+    "title": "Predictive Checks + Final Project",
+    "section": "Plotting geospacial data can uncover patterns that would be hard to determine through other analyses …",
+    "text": "Plotting geospacial data can uncover patterns that would be hard to determine through other analyses …\n ## It can also help make grouping of observations in your analysis clear!\n\n\n\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC11180987/"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#section-1",
+    "href": "slides/week-10/w10-checks.html#section-1",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "",
+    "text": "… It can also help make grouping of observations in your analysis clear!\n\n\n\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC11180987/"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#graphics-with-geospacial-data-in-r",
+    "href": "slides/week-10/w10-checks.html#graphics-with-geospacial-data-in-r",
+    "title": "Predictive Checks + Final Project",
+    "section": "Graphics with Geospacial Data in R",
+    "text": "Graphics with Geospacial Data in R\n\nThere are now many tools in R to plot geospacial data\nmaps / mapdata + geom_polygon()\n\npros: simplest way to map the US counties / states and world countries\ncons: doesn’t include all geospacial boundaries you might want!\n\nsf\n\npros: work with any common spacial object (like those used in ArcGIS) plus well maintained and up to date!\ncons: a bit more of a learning curve to use"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#we-see-geospacial-graphics-all-the-time",
+    "href": "slides/week-10/w10-checks.html#we-see-geospacial-graphics-all-the-time",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "We see geospacial graphics all the time",
+    "text": "We see geospacial graphics all the time\n\n\n\nhttps://www.npr.org/sections/health-shots/2020/07/01/885263658/green-yellow-orange-or-red-this-new-tool-shows-covid-19-risk-in-your-county"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#train-test-split",
+    "href": "slides/week-10/w10-checks.html#train-test-split",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Train / Test Split",
+    "text": "Train / Test Split\n\n\nBig idea: Reserve part of your data for testing to get an idea of how the model would do on outside data\n\nSplit your data into a training and a testing set (typically 80%/20%)\nSet the testing set aside\nDo all the model development you want with the training data\nFit a final model with the training data\nGenerate predictions from that model with the testing data and calculate your performance metric\nCompare the testing and training metrics"
+  },
+  {
+    "objectID": "slides/week-10/w10-checks.html#comparing-train-test-performance",
+    "href": "slides/week-10/w10-checks.html#comparing-train-test-performance",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Comparing Train / Test Performance",
+    "text": "Comparing Train / Test Performance\n\n\nIf the model is overfit…\n\ntest performance &lt; training performance\n\nIf the model is underfit …\n\ntest performance &gt; training performance\n\nIf the model is neither over nor underfit …\n\ntest performance \\(\\approx\\) training performance"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#tuesday-june-3",
+    "href": "slides/week-10/w10-cv-maps.html#tuesday-june-3",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Tuesday, June 3",
+    "text": "Tuesday, June 3\nToday we will…\n\nLinear Regression: Feedack\nNew Material:\n\nModel Validation\nGraphics with Geospacial Data (Maps)\n\nWork Time\n\nPA 10: Map it!\nPC5: Final Report"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#linear-regression-project-feedback",
+    "href": "slides/week-10/w10-cv-maps.html#linear-regression-project-feedback",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Linear Regression: Project Feedback",
+    "text": "Linear Regression: Project Feedback\n\n\nThey are coming along very nicely!\nFinal submission should be a polished report.\n\nIntegrate writing and analysis.\n\nThink about the readability of the numbers you are presenting.\n\nDo you need 6 decimal places?\nIs scientific notation easily understood?\n\nInclude units on your plots including any transformations\nDon’t display the raw R lm() output"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#how-do-we-tell-if-a-model-is-good",
+    "href": "slides/week-10/w10-cv-maps.html#how-do-we-tell-if-a-model-is-good",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "How do we tell if a model is “good”?",
+    "text": "How do we tell if a model is “good”?\n\nThere are lots of different metrics to measure model performance!\n\nYour choice depends on the type of model and what is “good” for the context\nDo you only care about predictions? Or more about inference?\n\n\n\nRegressionClassification (binary outcomes)\n\n\n\nSee week 9 slides\nRMSE\n\\(R^2\\)\n\n\n\n\noverall prediction success or failure rate\nsensitivity: true positive rate\nspecificity: true negative rater\nmany more…"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#overfitting-and-underfitting",
+    "href": "slides/week-10/w10-cv-maps.html#overfitting-and-underfitting",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Overfitting and Underfitting",
+    "text": "Overfitting and Underfitting\n\n\n\nFrom Introduction to Statistical Modeling"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#big-question-for-model-validation",
+    "href": "slides/week-10/w10-cv-maps.html#big-question-for-model-validation",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Big Question for Model Validation",
+    "text": "Big Question for Model Validation\nEven if a model is “good” according to our metric with the data we have, how do we know if it will still work well with other data?"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#train-test-split",
+    "href": "slides/week-10/w10-cv-maps.html#train-test-split",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Train / Test Split",
+    "text": "Train / Test Split\n\n\nBig idea: Reserve part of your data for testing to get an idea of how the model would do on outside data\n\nSplit your data into a training and a testing set (typically 80%/20%)\nSet the testing set aside\nDo all the model development you want with the training data\nFit a final model with the training data\nGenerate predictions from that model with the testing data and calculate your performance metric\nCompare the testing and training metrics"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#comparing-train-test-performance",
+    "href": "slides/week-10/w10-cv-maps.html#comparing-train-test-performance",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "Comparing Train / Test Performance",
+    "text": "Comparing Train / Test Performance\n\n\nIf the model is overfit…\n\ntest performance &lt; training performance\n\nIf the model is underfit …\n\ntest performance &gt; training performance\n\nIf the model is neither over nor underfit …\n\ntest performance \\(\\approx\\) training performance"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation",
+    "href": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation",
+    "text": "\\(k\\)-fold Cross Validation\n\n\nIterates over \\(k\\) train / test splits\nUses all of the data\nEspecially useful for model development\n\ncovariate selection\nspecifying parameters for ML models"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process",
+    "href": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process",
+    "text": "\\(k\\)-fold Cross Validation Process\n\nChoose a value for \\(k\\)\nSplit data into \\(k\\) folds\nFor fold \\(i\\) from 1 … \\(k\\):\n\nFit model on observations not in fold \\(i\\)\nGenerate predictions from this model for the observations in fold \\(i\\)\nCalculate and save performance metric of interest\n\nAverage the \\(k\\) performance metrics across folds"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process---details",
+    "href": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process---details",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process - details",
+    "text": "\\(k\\)-fold Cross Validation Process - details\n0.Choose a value for \\(k\\)\n\nTypical values are 5 or 10\n\n\nk &lt;- 5"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process---details-1",
+    "href": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process---details-1",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process - details",
+    "text": "\\(k\\)-fold Cross Validation Process - details\n\nSplit data into \\(k\\) folds\n\n\nShould be approximately the same size\nYou could just split the data into \\(k\\) groups based on their row number\n\n\nn &lt;- nrow(ncbirths) \n\nncbirths &lt;- ncbirths |&gt; \n  mutate(fold_cut = cut(1:n, breaks = k, labels = FALSE))\n\n\nMore typical to assign groups randomly\n\n\nncbirths &lt;- ncbirths |&gt; \n  mutate(fold_random = sample(rep_len(1:k, length.out = n),\n                       size = n))"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process---details-2",
+    "href": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process---details-2",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process - details",
+    "text": "\\(k\\)-fold Cross Validation Process - details\n\n\n\nVisualization of 5-fold CV by Joshua Ebner"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process---details-3",
+    "href": "slides/week-10/w10-cv-maps.html#k-fold-cross-validation-process---details-3",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "\\(k\\)-fold Cross Validation Process - details",
+    "text": "\\(k\\)-fold Cross Validation Process - details\nWe implemented 5-fold CV for the model of birth weight on gestation weeks with the NC births data…\n\ncv_r2\n\n[1] 0.4677269 0.5130754 0.4223354 0.4381092 0.3779959\n\n\n\n\nAverage the \\(k\\) performance metrics across folds\n\n\nmean(cv_r2)\n\n[1] 0.4438486\n\n\n\n\nThe \\(R^2\\) from fitting the model on the full dataset was 0.449, so it appears the model is neither overfitting or underfitting."
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#we-see-geospacial-graphics-all-the-time",
+    "href": "slides/week-10/w10-cv-maps.html#we-see-geospacial-graphics-all-the-time",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "We see geospacial graphics all the time",
+    "text": "We see geospacial graphics all the time\n\n\n\nhttps://www.npr.org/sections/health-shots/2020/07/01/885263658/green-yellow-orange-or-red-this-new-tool-shows-covid-19-risk-in-your-county"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#section",
+    "href": "slides/week-10/w10-cv-maps.html#section",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "",
+    "text": "Plotting geospacial data can uncover patterns that would be hard to determine through other analyses …\n\n\n\nhttps://hpcf-files.umbc.edu/research/papers/REU2015Team2.pdf"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#section-1",
+    "href": "slides/week-10/w10-cv-maps.html#section-1",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "",
+    "text": "… It can also help make grouping of observations in your analysis clear!\n\n\n\nhttps://pmc.ncbi.nlm.nih.gov/articles/PMC11180987/"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#arcgis-doesnt-get-to-have-all-the-fun",
+    "href": "slides/week-10/w10-cv-maps.html#arcgis-doesnt-get-to-have-all-the-fun",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "ArcGIS doesn’t get to have all the fun",
+    "text": "ArcGIS doesn’t get to have all the fun\n\nThere are now many tools in R to plot geospacial data\nmaps / mapdata + geom_polygon()\n\npros: simplest way to map the US counties / states and world countries\ncons: doesn’t include all geospacial boundaries you might want!\n\nsf\n\npros: work with any common spacial object (like those used in ArcGIS) plus well maintained and up to date!\ncons: a bit more of a learning curve to use"
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#pa-10-map-it",
+    "href": "slides/week-10/w10-cv-maps.html#pa-10-map-it",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "PA 10: Map it!",
+    "text": "PA 10: Map it!\nYou are implementing CV and animated plots in your project, so we’ll take this time to practice making nice maps with ggplot!\n\n\n\nThis image has nothing to do with this PA, it used to and is to fun to remove."
+  },
+  {
+    "objectID": "slides/week-10/w10-cv-maps.html#to-do",
+    "href": "slides/week-10/w10-cv-maps.html#to-do",
+    "title": "Model Validation + Geospacial Graphics",
+    "section": "To do…",
+    "text": "To do…\n\nPA 10: Map it!\n\nDue Thursday, 6/5 before class.\n\nFinal Project Report\n\nDue Friday, 6/6 at 11:59pm.\n\nCourse Evaluation\n\nCloses Friday, 6/6 at 11:59pm."
   }
 ]
