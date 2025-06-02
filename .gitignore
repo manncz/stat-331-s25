@@ -21,6 +21,8 @@ notes.md
 solutions/*
 exams/*
 
+student-versions/setup/*
+
 /.quarto/
 
 # Large files
